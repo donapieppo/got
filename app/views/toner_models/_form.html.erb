@@ -1,0 +1,10 @@
+<%= horizontal_form_for(@toner_model) do |toner_model| %>
+  <%= toner_model.dm_error_notification %>  
+
+  <%= toner_model.input :name %>  
+  <%= toner_model.association :vendor, hint: link_to("Aggiungi marca all'elenco", new_vendor_path) %>  
+
+  <%= toner_model.association :printer_models, as: :check_boxes %>  
+
+  <%= toner_model.submit %>
+<% end %>

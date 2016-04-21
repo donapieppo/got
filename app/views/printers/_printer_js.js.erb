@@ -1,0 +1,21 @@
+$(function(){
+  $("#details").hide();
+  from_vendor_to_models = <%= raw @from_vendor_to_models %>;
+  $("input:radio[name=vendor_id]").change(function() {
+    $("#details").hide();
+    vendor_id = $("input:radio:checked").val();
+    res = "";
+    models = from_vendor_to_models[vendor_id] || [];
+    models.forEach(function(element, index, array) {
+      console.log(element);
+      res = res + "<input type=\"radio\" name=\"printer[printer_model_id]\" value=\"" + element[0] + "\"/> " + element[1] + "<br/>";
+    });
+    res = res + "<a href=\"<%= new_printer_model_path %>?vendor_id=" + vendor_id + "\">nuovo modello</a>";
+    console.log(res);
+    $("#models").html(res);
+    $("input:radio[name='printer[printer_model_id]']").change(function() {
+      $("#details").show();
+    });
+  });
+});
+

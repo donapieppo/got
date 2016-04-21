@@ -1,0 +1,11 @@
+<h1>Nuovo modello di stampante</h1>
+
+<%= horizontal_form_for(@printer_model) do |printer_model| %>
+  <%= printer_model.dm_error_notification %>  
+
+  <%= printer_model.association :vendor, include_blank: false %>  
+  <%= printer_model.input :name %>  
+  <%= printer_model.input :laser %>  
+
+  <%= printer_model.submit 'Crea' %>
+<% end %>

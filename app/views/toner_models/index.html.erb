@@ -1,0 +1,15 @@
+<h1>Modelli di toner</h1>
+
+<dl class="dl-horizontal">
+  <% @toner_models.each do |toner_model| %>  
+    <dt><%= toner_model %></dt>
+    <% toner_model.printer_models.each do |printer_model| %>  
+      <dd><%= printer_model %>  </dd>
+    <% end %>
+    <dd>
+      <%= link_to 'modifica', edit_toner_model_path(toner_model) %>  -
+    </dd>
+  <% end %>
+</dl>
+
+<%= link_to_new 'Nuova modello di toner', new_toner_model_path %>  

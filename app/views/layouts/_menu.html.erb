@@ -1,0 +1,11 @@
+<%= dm_menu do %>  
+  <%= dm_header 'tint', 'Game of Toner', 'Gestione toner dismessi' %>
+
+  <%= dm_nav do  %>  
+    <li><%= link_to big_icon('home')      + " Home", root_path %></li>
+    <li><%= link_to big_icon('print')     + " Modelli stampanti", printer_models_path %></li>
+    <li><%= link_to big_icon('cubes')     + " Modelli toner", toner_models_path %></li>
+    <li><%= link_to big_icon('question')  + " Aiuti", helps_path %></li>
+  <% end %>
+<% end %>
+

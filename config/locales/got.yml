@@ -1,0 +1,24 @@
+it:
+  vendor: Marca
+  printer: Stampante
+
+  activerecord:
+    model:
+      vendor:          Marca
+      printer_model:   Modello
+      toner_model:     Modello
+      printer :        Stampante
+    attributes:
+      vendor: 
+        name:          Produttore
+      toner_model:
+        vendor:        Marca
+        name:          Modello
+      printer_model:
+        vendor:        Marca
+        name:          Modello
+      printer:   
+        name:          Nome
+        description:   Note
+        url:           Url 
+

@@ -1,0 +1,7 @@
+<ul>
+<% @vendors.each do |vendor| %>
+  <li><%= vendor %>  </li>
+<% end %>
+</ul>
+
+<%= link_to_new 'Nuova marca', new_vendor_path %>

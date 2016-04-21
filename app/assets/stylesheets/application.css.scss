@@ -1,0 +1,33 @@
+@import "dm_common/variables";
+@import "dm_common/dm";
+@import 'dm_common/tablesorter';
+
+.dissertation {
+  @extend .panel;
+  @extend .panel-info;
+  .title {
+    @extend .panel-heading;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .body {
+    @extend .panel-body;
+  }
+  .students {
+    @extend .table;
+    @extend .table-condensed;
+    @extend .table-striped;
+  }
+}
+
+#new_printer {
+  @include make-row();
+  .title {
+    font-weight: bold;
+  }
+  div.image {
+    @extend .col-xs-6;
+    @extend .col-md-3;
+  }
+}
+  

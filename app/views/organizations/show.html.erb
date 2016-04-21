@@ -1,0 +1,27 @@
+<h1><%= @organization %></h1>
+
+<div>
+  Aministratori: 
+  <%= @organization.admins.map {|admin| admin.to_s}.join(', ') %>
+  - <%= link_to 'nuovo amministratore', new_organization_admin_path(@organization) %>  
+</div>
+
+
+<h2>Elenco toner disponibili</h2>
+<ul>
+<% @organization.toners.each do |toner| %>  
+  <li>
+    <%= toner.number %> <%= toner %> <%= link_to_edit edit_toner_path(toner) %> <%= link_to_delete toner_path(toner)  %>  
+  </li>
+<% end %>
+</ul>
+<%= link_to_new 'nuovo toner', new_organization_toner_path(@organization) %>  
+
+<h2>Elenco stampanti possedute</h2>
+<ul>
+<% @organization.printers.each do |printer| %>  
+  <li><%= printer %></li>
+<% end %>
+</ul>
+<%= link_to_new 'nuova stampante', new_organization_printer_path(@organization) %>  
+
