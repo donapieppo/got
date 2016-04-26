@@ -2,9 +2,9 @@
 
 <ul>
 <% @printer_models.each do |printer_model| %>
-  <li><%= printer_model %></li>
+  <li><%= link_to printer_model, edit_printer_model_path(printer_model) %></li>
 <% end %>
 </ul>
 
-<%= link_to_new 'Nuova stampante', new_printer_model_path %>
+<%= link_to_new 'Aggiungi modello', new_printer_model_path %>
 

@@ -1,26 +1,26 @@
-<h1><%= @organization %></h1>
+<h1><%= @organization.name %> <small><%= @organization.description %></small>  </h1>
 
 <div>
-  Aministratori: 
+  <%= t :admins %>: 
   <%= @organization.admins.map {|admin| admin.to_s}.join(', ') %>
   - <%= link_to 'nuovo amministratore', new_organization_admin_path(@organization) %>  
 </div>
 
 
-<div class="row">
-  <div class="col-md-6">
+<div id="organization_owning">
+  <div class="toners">
     <h2>Elenco toner disponibili</h2>
     <ul>
       <% @organization.toners.each do |toner| %>  
         <li>
-          <%= toner.number %> <%= toner %> <%= link_to_edit edit_toner_path(toner) %> <%= link_to_delete toner_path(toner)  %>  
+          <strong><%= toner.number %></strong> <%= toner %> <%= link_to_edit edit_toner_path(toner) %> <%= link_to_delete toner_path(toner)  %>  
         </li>
       <% end %>
     </ul>
     <%= link_to_new 'nuovo toner', new_organization_toner_path(@organization) %>  
-
   </div>
-  <div class="col-md-6">
+
+  <div class="printers">
     <h2>Elenco stampanti possedute</h2>
     <ul>
       <% @organization.printers.each do |printer| %>  

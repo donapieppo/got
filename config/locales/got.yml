@@ -1,12 +1,14 @@
 it:
-  vendor: Marca
-  printer: Stampante
+  admins:        Amministratori
+  vendor:        Marca
+  printer:       Stampante
+  printer_model: Modello di stampante
 
   activerecord:
     model:
       vendor:          Marca
-      printer_model:   Modello
-      toner_model:     Modello
+      printer_model:   Modello di stampante
+      toner_model:     Modello di toner
       printer :        Stampante
       admin:           Amministratore
     attributes:

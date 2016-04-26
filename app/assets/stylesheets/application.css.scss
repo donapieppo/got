@@ -20,6 +20,26 @@
   }
 }
 
+#organization_owning {
+  @include make-row();
+  .title {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  div.toners {
+    @extend .col-md-6;
+  }
+  div.printers {
+    @extend .col-md-6;
+  }
+  ul {
+    @extend .list-group;
+    li {
+      @extend .list-group-item;
+    }
+  }
+}
+  
 #printer_models_checkbox {
   @include make-row();
   .title {
@@ -51,7 +71,6 @@
   }
 }
   
-
 ul.vendors {
   @extend .list-group;
   li {

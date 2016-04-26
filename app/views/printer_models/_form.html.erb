@@ -1,5 +1,8 @@
-<h1>Nuovo modello di stampante</h1>
+<h1><%= t :printer_model %></h1>
 
+<p class="info">
+  I modelli sono condivisi tra tutte le strutture. Si prega di mantenere i dati corretti.
+</p>
 <%= horizontal_form_for(@printer_model) do |printer_model| %>
   <%= printer_model.dm_error_notification %>  
 
@@ -7,5 +10,5 @@
   <%= printer_model.input :name %>  
   <%= printer_model.input :laser %>  
 
-  <%= printer_model.submit 'Crea' %>
+  <%= printer_model.submit %>
 <% end %>
