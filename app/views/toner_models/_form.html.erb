@@ -4,21 +4,31 @@
   <%= toner_model.dm_error_notification %>  
 
   <div id="details">
+    <%= toner_model.association :vendor, hint: link_to("Aggiungi una nuova marca all'elenco", new_vendor_path) %>  
     <%= toner_model.input :name %>  
-    <%= toner_model.association :vendor, hint: link_to("Aggiungi marca all'elenco", new_vendor_path) %>  
   </div>
 
   <div id="printer_models_checkbox">
     <h2>Stampanti compatibili</h2>
     <div class="vendor">
       <p class="title">Marca</p>
-      <% Vendor.order(:name).each do |vendor| %>    
-        <input type="radio" name="vendor_id" value="<%= vendor.id %>"/> <%= vendor.name %> <br/>
-      <% end %>
+      <ul>
+        <% Vendor.order(:name).each do |vendor| %>    
+          <li><%= link_to vendor, "#", id: vendor.id %> </li>
+        <% end %>
+      </ul>
     </div>
     <div class="model">
-      <p class="title">Modello</p>
+      <p class="title">Modelli</p>
       <div id="models">
+        <% Vendor.order(:name).each do |vendor| %>
+          <% models = vendor.printer_models %>  
+          <% unless models.empty?  %>  
+            <div id="vendor<%= vendor.id %>">
+              <%= toner_model.association :printer_models, collection: vendor.printer_models, as: :check_boxes, label: false %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

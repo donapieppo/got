@@ -1,18 +1,13 @@
 $(function(){
-  vendor_to_models_json = <%= vendor_to_models_json(:printers) %>;
-  actual_printer_model_ids = <%= @toner_model.printer_model_ids.to_json %>;
-  $("input:radio[name=vendor_id]").change(function() {
-    vendor_id = $("input:radio:checked").val();
-    res = "";
-    models = vendor_to_models_json[vendor_id] || [];
-    models.forEach(function(element, index, array) {
-      checked = actual_printer_model_ids.includes(element[0]) ? " checked=\"checked\"" : "" ;
-      res = res + "<input type=\"checkbox\" " + checked + " name=\"toner_model[printer_model_ids][]\" value=\"" + element[0] + "\"/> " + element[1] + "<br/>";
+  $("#models>div").hide();
+  $("input:checked").parents().parents().parents().show();
+  $(".vendor a").click(function(evt) {
+    evt.preventDefault();
+    vendor_id = evt.target.id;
+    $("input:checkbox").each(function(index) {
+      $("#vendor" + vendor_id).show();
     });
-    $("#models").html(res);
-    $("input:radio[name='printer[printer_model_id]']").change(function() {
-      $("#details").show();
-    });
+      
   });
 });
 
