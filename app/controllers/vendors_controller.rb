@@ -5,6 +5,9 @@ class VendorsController < ApplicationController
     @vendors = Vendor.all
   end
 
+  def show
+  end
+
   def new
     @vendor = Vendor.new
   end
@@ -15,7 +18,7 @@ class VendorsController < ApplicationController
   def create
     @vendor = Vendor.new(vendor_params)
     if @vendor.save
-      redirect_to @vendor, notice: 'Vendor was successfully created.'
+      redirect_to vendors_path, notice: 'La nuova marca è stata inserita.'
     else
       render :new
     end
@@ -23,7 +26,7 @@ class VendorsController < ApplicationController
 
   def update
     if @vendor.update(vendor_params)
-      redirect_to @vendor, notice: 'Vendor was successfully updated.'
+      redirect_to vendors_path, notice: 'La marca è stata aggiornata.'
     else
       render :edit
     end
@@ -31,7 +34,7 @@ class VendorsController < ApplicationController
 
   def destroy
     @vendor.destroy
-    redirect_to vendors_url, notice: 'Vendor was successfully destroyed.'
+    redirect_to vendors_path, notice: 'La marca è stata eliminata.'
   end
 
   private

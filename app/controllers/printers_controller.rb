@@ -3,8 +3,6 @@ class PrintersController < ApplicationController
 
   def new
     @printer = @organization.printers.new
-    # json from vendor id => array di models
-    @from_vendor_to_models = PrinterModel.order(:name).inject(Hash.new {|hash, key| hash[key] = []}){|res, p| res[p.vendor_id] << [p.id, p.name]; res}.to_json
   end
 
   def create

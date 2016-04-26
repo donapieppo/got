@@ -41,6 +41,6 @@ class TonerModelsController < ApplicationController
     end
 
     def toner_model_params
-      params[:toner_model].permit(:name, :laser, :vendor_id, :printer_model_ids)
+      params[:toner_model].permit(:name, :laser, :vendor_id, printer_model_ids: [])
     end
 end

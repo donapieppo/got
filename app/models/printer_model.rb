@@ -1,5 +1,6 @@
 class PrinterModel < ActiveRecord::Base
   belongs_to :vendor
+  has_and_belongs_to_many :toner_models
 
   validates :name, uniqueness: { scope: [:vendor_id], message: "Una stampante di questa marca con questo nome esiste già." }
 

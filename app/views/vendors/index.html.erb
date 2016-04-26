@@ -1,6 +1,6 @@
-<ul>
+<ul class="vendors">
 <% @vendors.each do |vendor| %>
-  <li><%= vendor %>  </li>
+  <li><%= link_to vendor, vendor_path(vendor) %>  </li>
 <% end %>
 </ul>
 

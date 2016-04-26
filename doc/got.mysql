@@ -1,0 +1,124 @@
+drop database `got`;
+create database `got`; 
+use `got`;
+
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL,
+  `upn` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `surname` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `index_users_on_upn` (`upn`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO users VALUES (364089, 'valeria.montesi4@unibo.it','Valeria', 'Montesi', NULL);
+CREATE TABLE `vendors` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `vendors` VALUES (1, 'HP');
+INSERT INTO `vendors` VALUES (2, 'Ibm');
+INSERT INTO `vendors` VALUES (3, 'Brother');
+INSERT INTO `vendors` VALUES (4, 'Canon');
+INSERT INTO `vendors` VALUES (5, 'Epson');
+INSERT INTO `vendors` VALUES (6, 'Kyocera Mita');
+INSERT INTO `vendors` VALUES (7, 'Lexmark');
+INSERT INTO `vendors` VALUES (8, 'Samsung');
+INSERT INTO `vendors` VALUES (9, 'Sharp');
+INSERT INTO `vendors` VALUES (10, 'Xerox');
+INSERT INTO `vendors` VALUES (11, 'Dell');
+INSERT INTO `vendors` VALUES (12, 'RICOH Aficio');
+
+CREATE TABLE `toner_models` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `vendor_id` int(11) unsigned NOT NULL, 
+  `name` varchar(255) DEFAULT NULL,
+  `compatible` BOOL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (vendor_id) REFERENCES vendors (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `toner_models` VALUES (0, 1, '4250a', NULL);
+INSERT INTO `toner_models` VALUES (0, 1, '4350', NULL);
+
+CREATE TABLE `printer_models` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `vendor_id` int(11) unsigned NOT NULL, 
+  `name` varchar(255) DEFAULT NULL,
+  `laser` bool,
+  `rent` bool, 
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (vendor_id) REFERENCES vendors (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `printer_models` VALUES (1, 1,  'LaserJet 4050', 1, NULL);
+INSERT INTO `printer_models` VALUES (2, 1,  'LaserJet 4300', 1, NULL);
+INSERT INTO `printer_models` VALUES (3, 1,  'LaserJet 4350', 1, NULL);
+INSERT INTO `printer_models` VALUES (4, 1,  'LaserJet 4250', 1, NULL);
+INSERT INTO `printer_models` VALUES (5, 12, 'CL3500N PS', 1, NULL);
+INSERT INTO `printer_models` VALUES (6, 10, 'Phaser 5550', 1, NULL);
+INSERT INTO `printer_models` VALUES (7, 6,  'TASKalfa 3510i', 1, 1);
+
+CREATE TABLE `printer_models_toner_models` (
+  `printer_model_id` int(11) unsigned NOT NULL,
+  `toner_model_id` int(11) unsigned NOT NULL,
+  FOREIGN KEY (printer_model_id) REFERENCES printer_models (id),
+  FOREIGN KEY (toner_model_id) REFERENCES toner_models (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `organizations` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO organizations VALUES (1, 'dipmat', 'Dipartimento di Matematica');
+INSERT INTO organizations VALUES (2, 'cesia', 'Cesia');
+
+CREATE TABLE `admins` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `organization_id` int(11) unsigned DEFAULT NULL,
+  `authlevel` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `userid` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `printers` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `organization_id` int(11) unsigned DEFAULT NULL,
+  `printer_model_id` int(11) unsigned DEFAULT NULL,
+  `name` varchar(255),
+  `description` text,
+  `url` varchar(255),
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (organization_id) REFERENCES organizations (id),
+  FOREIGN KEY (printer_model_id) REFERENCES printer_models (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `toners` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `organization_id` int(11) unsigned DEFAULT NULL,
+  `toner_model_id` int(11) unsigned DEFAULT NULL,
+  `number` int(11) unsigned DEFAULT 0,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (organization_id) REFERENCES organizations (id),
+  FOREIGN KEY (toner_model_id) REFERENCES toner_models (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL,
+  `upn` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `surname` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `index_users_on_upn` (`upn`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO users VALUES (364089,'valeria.montesi4@unibo.it','Valeria','Montesi',NULL);
+INSERT INTO users VALUES (474934,'m.ghedini@unibo.it','Massimiliano','Ghedini',NULL);
+INSERT INTO admins VALUES (0, 364089, 1, 10);
+INSERT INTO admins VALUES (0, 474934, 1, 10);

@@ -20,14 +20,41 @@
   }
 }
 
-#new_printer {
+#printer_models_checkbox {
   @include make-row();
   .title {
+    margin-left: 20px;
     font-weight: bold;
   }
-  div.image {
-    @extend .col-xs-6;
-    @extend .col-md-3;
+  div.vendor {
+    @extend .col-md-6;
+  }
+  div.model {
+    @extend .col-md-6;
   }
 }
   
+#new_printer {
+  @include make-row();
+  .title {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  div.vendor {
+    @extend .col-md-3;
+  }
+  div.model {
+    @extend .col-md-3;
+  }
+  div#details {
+    @extend .col-md-6;
+  }
+}
+  
+
+ul.vendors {
+  @extend .list-group;
+  li {
+    @extend .list-group-item;
+  }
+}

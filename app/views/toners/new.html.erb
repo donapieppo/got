@@ -1,9 +1,11 @@
+<h1>Nuovo toner</h1>
+
 <%= horizontal_form_for([@organization, @toner]) do |toner| %>
   <%= toner.dm_error_notification %>  
 
   <%= toner.association :toner_model, label_method: :name_with_vendor, hint: link_to("nuovo modello di toner", new_toner_model_path)  %>  
   <%= toner.input :number %>  
 
-  <%= toner.submit %>
+  <%= toner.submit "Aggiungi al posseduto del #{@current_organization.name}" %>
 <% end %>
 

@@ -1,0 +1,16 @@
+<h1><%= @vendor %></h1>
+
+<h2>Stampanti</h2>
+
+<ul>
+  <% @vendor.printer_models.each do |printer_model|  %>   
+    <li><%= printer_model %></li>
+  <% end %>
+</ul>
+<h2>Toners</h2>
+
+<ul>
+  <% @vendor.toner_models.each do |toner_model|  %>   
+    <li><%= toner_model %></li>
+  <% end %>
+</ul>

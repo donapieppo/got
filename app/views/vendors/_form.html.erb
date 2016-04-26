@@ -1,6 +1,6 @@
 <%= horizontal_form_for @vendor do |vendor| %>
   <%= vendor.dm_error_notification %>  
 
-  <%= vendor.input :name %>  
+  <%= vendor.input :name, hint: "Per esempio: IBM, HP, Canon..." %>  
   <%= vendor.submit %>
 <% end %>

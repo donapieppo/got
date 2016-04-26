@@ -8,15 +8,22 @@ it:
       printer_model:   Modello
       toner_model:     Modello
       printer :        Stampante
+      admin:           Amministratore
     attributes:
+      admin: 
+        user_upn:        Indirizzo mail
       vendor: 
-        name:          Produttore
+        name:          Marca
       toner_model:
-        vendor:        Marca
-        name:          Modello
+        vendor:         Marca
+        name:           Modello
+        printer_models: Utilizzabile da 
       printer_model:
         vendor:        Marca
         name:          Modello
+      toner:   
+        name:          Nome
+        number:        Numero
       printer:   
         name:          Nome
         description:   Note
