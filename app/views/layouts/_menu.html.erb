@@ -6,6 +6,12 @@
     <li><%= link_to big_icon('print')     + " Modelli stampanti", printer_models_path %></li>
     <li><%= link_to big_icon('cubes')     + " Modelli toner", toner_models_path %></li>
     <li><%= link_to big_icon('question')  + " Aiuti", helps_path %></li>
+    <!-- ricerca -->
+    <%= form_tag search_path, class: "navbar-form navbar-right", role: "search" do %>
+      <div class="form-group">
+        <input name="search_string" size="6" type="text" class="form-control" placeholder="cerca" />
+      </div>
+    <% end %>
   <% end %>
 <% end %>
 

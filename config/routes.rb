@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :printers
   resources :toners 
 
+  post 'search', to: 'home#search', as: 'search'
+
   root 'home#index'
 end

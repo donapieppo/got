@@ -1,0 +1,17 @@
+<h1>Search results</h1>
+
+<h2>Printer Models</h2>
+
+<ul>
+<% @printer_models.each do |printer_model| %>  
+  <li><%= printer_model %></li>
+<% end %>
+</ul>
+
+<h2>Toner Models</h2>
+
+<ul>
+<% @toner_models.each do |toner_model| %>  
+  <li><%= toner_model %></li>
+<% end %>
+</ul>
