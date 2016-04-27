@@ -2,6 +2,10 @@
 @import "dm_common/dm";
 @import 'dm_common/tablesorter';
 
+li {
+  list-style-type: none;
+}
+
 .dissertation {
   @extend .panel;
   @extend .panel-info;
@@ -54,7 +58,7 @@
   }
 }
   
-#new_printer {
+#printer_form {
   @include make-row();
   .title {
     margin-left: 20px;
@@ -77,3 +81,8 @@ ul.vendors {
     @extend .list-group-item;
   }
 }
+#toner_model_name {
+  text-transform: uppercase;
+}
+
+
