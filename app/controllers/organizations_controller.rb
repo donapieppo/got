@@ -1,9 +1,9 @@
 class OrganizationsController < ApplicationController
   before_action :user_cesia!, except: [:index, :show]
-  before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  before_action :set_organization, only: [:edit, :update, :destroy]
 
   def index
-    @organizations = Organization.all
+    @organizations = Organization.order(:name).all
   end
 
   # solo cesia puo' vedere altro che current_organization
@@ -25,6 +25,16 @@ class OrganizationsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    render :new
+  end
+
+  def update
+    @organization.update_attributes(organization_params)
+    redirect_to organizations_path
+  end
+
 
   private
 
