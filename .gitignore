@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# private configuration
+config/initializers/got.rb
