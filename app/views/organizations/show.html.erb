@@ -25,7 +25,10 @@
     <ul>
       <% @organization.printers.order('printers.name').includes(printer_model: :vendor).each do |printer| %>  
         <li>
-          <strong><%= printer.name %></strong> <small>(<%= printer.printer_model %>)</small>
+          <span title="<%= printer.description %>">
+            <strong><%= printer.name %></strong>
+          </span> 
+          <small>(<%= printer.printer_model %>)</small>
           <span class="actions">
           <%= link_to_edit edit_printer_path(printer) %> 
           <%= link_to_delete printer_path(printer) %> 
