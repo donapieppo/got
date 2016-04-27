@@ -8,7 +8,6 @@ module Got
       impersonate_admins:  ['pietro.donatini@unibo.it', 'valeria.montesi4@unibo.it'],
       interceptor_mails:   ['donatini@dm.unibo.it'],
       main_impersonations: [] }
-    
   end
 end
 
