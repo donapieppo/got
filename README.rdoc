@@ -1,6 +1,10 @@
 ===== GAME OF TONER 
 
-Share old toners with other organizations
+Share old toners with other organizations.
 
 Work in progress
+
+=== Installation
+
+
 
