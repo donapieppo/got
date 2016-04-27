@@ -6,24 +6,6 @@ li {
   list-style-type: none;
 }
 
-.dissertation {
-  @extend .panel;
-  @extend .panel-info;
-  .title {
-    @extend .panel-heading;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  .body {
-    @extend .panel-body;
-  }
-  .students {
-    @extend .table;
-    @extend .table-condensed;
-    @extend .table-striped;
-  }
-}
-
 #organization_owning {
   @include make-row();
   .title {
@@ -40,6 +22,16 @@ li {
     @extend .list-group;
     li {
       @extend .list-group-item;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      .toner_number {
+        @extend .badge;
+        @extend .pull-left;
+        margin-right: 10px;
+      }
+      span.actions {
+        @extend .pull-right;
+      }
     }
   }
 }
