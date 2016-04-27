@@ -1,3 +1,5 @@
+<% _vendor_printer_models_cache = Hash.new %>  
+
 <h1>Toner</h1>
 
 <%= horizontal_form_for(@toner_model) do |toner_model| %>
@@ -14,7 +16,10 @@
       <p class="title">Marca</p>
       <ul>
         <% Vendor.order(:name).each do |vendor| %>    
-          <li><%= link_to vendor, "#", id: vendor.id %> </li>
+          <% _vendor_printer_models_cache[vendor] = vendor.printer_models.all %>  
+          <% if _vendor_printer_models_cache[vendor].size > 0 %>  
+            <li><%= link_to vendor, "#", id: vendor.id %> </li>
+          <% end %>
         <% end %>
       </ul>
     </div>
@@ -24,8 +29,9 @@
         <% Vendor.order(:name).each do |vendor| %>
           <% models = vendor.printer_models %>  
           <% unless models.empty?  %>  
-            <div id="vendor<%= vendor.id %>">
-              <%= toner_model.association :printer_models, collection: vendor.printer_models, as: :check_boxes, label: false %>
+            <div class="vendor_group" id="vendor<%= vendor.id %>">
+              <p><%= vendor %></p>
+              <%= toner_model.association :printer_models, collection: _vendor_printer_models_cache[vendor], as: :check_boxes, label: false %>
             </div>
           <% end %>
         <% end %>
