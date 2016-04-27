@@ -1,10 +1,10 @@
-===== GAME OF TONER 
+===== GAME OF TONER =====
 
 Share old toners with other organizations.
 
 Work in progress
 
-=== Installation
+=== Installation ===
 
 ```bash
 git clone git@github.com:donapieppo/got.git
