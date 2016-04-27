@@ -4,12 +4,20 @@ class TonerModel < ActiveRecord::Base
 
   validates :name, uniqueness: { scope: [:vendor_id], message: "un toner di questa marca con questo nome esiste già." }
 
+  default_scope { includes(:vendor).order('vendors.name, toner_models.name') }
+
+  before_validation :upcase_name
+
   def to_s
     self.vendor.name + " " + self.name
   end
 
   def name_with_vendor
     "#{self.name} (#{self.vendor.name})"
+  end
+
+  def upcase_name
+    self.name.upcase!
   end
 end
 

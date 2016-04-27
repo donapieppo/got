@@ -4,6 +4,8 @@ class PrinterModel < ActiveRecord::Base
 
   validates :name, uniqueness: { scope: [:vendor_id], message: "Una stampante di questa marca con questo nome esiste già." }
 
+  default_scope { includes(:vendor).order('vendors.name, printer_models.name') }
+
   def to_s
     self.vendor.name + " " + self.name
   end
