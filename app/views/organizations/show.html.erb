@@ -11,7 +11,7 @@
   <div class="toners">
     <h2>Elenco toner disponibili</h2>
     <ul>
-      <% @organization.toners.each do |toner| %>  
+      <% @organization.toners.includes(toner_model: :vendor).each do |toner| %>  
         <li>
           <strong><%= toner.number %></strong> <%= toner %> <%= link_to_edit edit_toner_path(toner) %> <%= link_to_delete toner_path(toner)  %>  
         </li>
@@ -23,8 +23,13 @@
   <div class="printers">
     <h2>Elenco stampanti possedute</h2>
     <ul>
-      <% @organization.printers.each do |printer| %>  
-        <li><%= printer %></li>
+      <% @organization.printers.includes(printer_model: :vendor).each do |printer| %>  
+        <li>
+          <strong><%= printer.name %></strong> (<%= printer.printer_model.vendor %>)
+          <%= link_to(icon('external-link'), printer.url, target: 'new') if printer.url %>  
+          <%= link_to_edit edit_printer_path(printer) %> 
+          <%= link_to_delete printer_path(printer) %> 
+        </li>
       <% end %>
     </ul>
     <%= link_to_new 'nuova stampante', new_organization_printer_path(@organization) %>  

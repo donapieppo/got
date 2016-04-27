@@ -31,3 +31,4 @@ it:
         description:   Note
         url:           Url 
 
+  add_to_organization: Aggiungi al posseduto del %{organization}
