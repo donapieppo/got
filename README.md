@@ -55,7 +55,7 @@ name
 
 and toner_models
 
-``sql
+```sql
 vendor_id
 name
 ```
