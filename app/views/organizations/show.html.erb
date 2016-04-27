@@ -1,19 +1,19 @@
 <h1><%= @organization.name %> <small><%= @organization.description %></small>  </h1>
 
 <div>
-  <%= t :admins %>: 
+  <strong><%= t :admins %></strong>: 
   <%= @organization.admins.map {|admin| admin.to_s}.join(', ') %>
-  - <%= link_to 'nuovo amministratore', new_organization_admin_path(@organization) %>  
+   - <%= link_to 'nuovo amministratore', new_organization_admin_path(@organization) %>  
 </div>
-
 
 <div id="organization_owning">
   <div class="toners">
-    <h2>Elenco toner disponibili</h2>
+    <h2>Elenco toner inutilizzati</h2>
     <ul>
       <% @organization.toners.includes(toner_model: :vendor).each do |toner| %>  
         <li>
-          <strong><%= toner.number %></strong> <%= toner %> <%= link_to_edit edit_toner_path(toner) %> <%= link_to_delete toner_path(toner)  %>  
+          <span class="toner_number"><%= toner.number %></span> <%= toner %> 
+          <span class="actions"><%= link_to_edit edit_toner_path(toner) %> <%= link_to_delete toner_path(toner) %></span>
         </li>
       <% end %>
     </ul>
@@ -21,14 +21,16 @@
   </div>
 
   <div class="printers">
-    <h2>Elenco stampanti possedute</h2>
+    <h2>Elenco stampanti</h2>
     <ul>
-      <% @organization.printers.includes(printer_model: :vendor).each do |printer| %>  
+      <% @organization.printers.order('printers.name').includes(printer_model: :vendor).each do |printer| %>  
         <li>
-          <strong><%= printer.name %></strong> (<%= printer.printer_model.vendor %>)
-          <%= link_to(icon('external-link'), printer.url, target: 'new') if printer.url %>  
+          <strong><%= printer.name %></strong> <small>(<%= printer.printer_model %>)</small>
+          <span class="actions">
           <%= link_to_edit edit_printer_path(printer) %> 
           <%= link_to_delete printer_path(printer) %> 
+          <%= link_to(icon('external-link'), printer.url, target: 'new') if printer.url %>  
+          </span>
         </li>
       <% end %>
     </ul>
