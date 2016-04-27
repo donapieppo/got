@@ -2,7 +2,7 @@ class TonerModelsController < ApplicationController
   before_action :set_toner_model, only: [:show, :edit, :update, :destroy]
 
   def index
-    @toner_models = TonerModel.includes(:vendor).order('vendors.name, toner_models.name').all
+    @toner_models = TonerModel.all
   end
 
   def new

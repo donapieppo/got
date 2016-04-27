@@ -2,7 +2,7 @@ class PrinterModelsController < ApplicationController
   before_action :set_printer_model, only: [:show, :edit, :update, :destroy]
 
   def index
-    @printer_models = PrinterModel.includes(:vendor).all
+    @printer_models = PrinterModel.all
   end
 
   def new
