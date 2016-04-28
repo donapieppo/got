@@ -5,6 +5,8 @@ class Organization < ActiveRecord::Base
 
   validates :name, uniqueness: {}
 
+  attr_accessor :printer_model_ids
+
   def to_s
     self.name + " (" + self.description + ")"
   end
@@ -22,7 +24,7 @@ class Organization < ActiveRecord::Base
   end
 
   def interested?(toner)
-    @@printer_model_ids ||= self.printers.map(&:printer_model_id)
-    (toner.toner_model.printer_model_ids.to_a & @@printer_model_ids).size > 0 
+    @printer_model_ids ||= self.printers.map(&:printer_model_id)
+    (toner.toner_model.printer_model_ids.to_a & @printer_model_ids).size > 0 
   end
 end
