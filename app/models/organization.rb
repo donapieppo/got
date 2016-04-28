@@ -16,4 +16,13 @@ class Organization < ActiveRecord::Base
     toner_models_ids = TonerModel.includes(:printer_models).where('printer_models_toner_models.printer_model_id': printer_model_ids).map(&:id)
     Toner.where(toner_model_id: toner_models_ids)
   end
+
+  def admins_string
+    self.admins.map {|admin| admin.to_s}.join(', ')
+  end
+
+  def interested?(toner)
+    @@printer_model_ids ||= self.printers.map(&:printer_model_id)
+    (toner.toner_model.printer_model_ids.to_a & @@printer_model_ids).size > 0 
+  end
 end

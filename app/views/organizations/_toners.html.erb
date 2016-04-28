@@ -1,0 +1,17 @@
+<ul>
+  <% organization.toners.includes(toner_model: :vendor).each do |toner| %>  
+    <li>
+      <span class="toner_number"><%= toner.number %></span> 
+      <%= toner %> 
+      <span class="actions">
+        <% if toner.number > 0 and organization.interested?(toner) %>  
+          <%= link_to content_tag(:strong, icon(:warning), class: 'missing-field', title: 'Hai una stampante compatibile'), edit_toner_model_path(toner.toner_model) %>
+        <% end %>
+        <%= link_to_edit edit_toner_path(toner) %> 
+        <%= link_to_delete toner_path(toner) %>
+      </span>
+    </li>
+  <% end %>
+</ul>
+<%= link_to_new 'nuovo toner', new_organization_toner_path(organization) %>  
+

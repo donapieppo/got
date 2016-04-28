@@ -1,53 +1,30 @@
-<h1><%= @organization.name %> <small><%= @organization.description %></small>  </h1>
+<h1><%= @organization.name %> <small><%= @organization.description %></small></h1>
 
 <div>
   <strong><%= t :admins %></strong>: 
-  <%= @organization.admins.map {|admin| admin.to_s}.join(', ') %>
-   - <%= link_to 'nuovo amministratore', new_organization_admin_path(@organization) %>  
+  <%= @organization.admins_string %>  
+  - <%= link_to 'nuovo amministratore', new_organization_admin_path(@organization) %>  
 </div>
 
 <div id="organization_owning">
+<div class="interesting">
+  <h2>Toner disponibili per le tue stampanti</h2>
+  <ul>
+    <% @organization.available_toners.each do |toner| %>  
+      <% alert_class = (toner.organization == @organization) ? "alert-danger" : "alert-success" %>  
+      <li class="alert <%= raw alert_class %>">
+        <%= toner %> presso <strong><%= toner.organization %></strong> (<%= toner.number %> disponibile/i) 
+      </li>
+    <% end %>
+  </ul>
+</div>
   <div class="toners">
     <h2>Elenco toner inutilizzati</h2>
-    <ul>
-      <% @organization.toners.includes(toner_model: :vendor).each do |toner| %>  
-        <li>
-          <span class="toner_number"><%= toner.number %></span> <%= toner %> 
-          <span class="actions"><%= link_to_edit edit_toner_path(toner) %> <%= link_to_delete toner_path(toner) %></span>
-        </li>
-      <% end %>
-    </ul>
-    <%= link_to_new 'nuovo toner', new_organization_toner_path(@organization) %>  
+    <%= render 'toners', organization: @organization %>  
   </div>
-
   <div class="printers">
     <h2>Elenco stampanti</h2>
-    <ul>
-      <% @organization.printers.order('printers.name').includes(printer_model: :vendor).each do |printer| %>  
-        <li>
-          <span title="<%= printer.description %>">
-            <strong><%= printer.name %></strong>
-          </span> 
-          <small>(<%= printer.printer_model %>)</small>
-          <span class="actions">
-          <%= link_to_edit edit_printer_path(printer) %> 
-          <%= link_to_delete printer_path(printer) %> 
-          <%= link_to(icon('external-link'), printer.url, target: 'new') if printer.url %>  
-          </span>
-        </li>
-      <% end %>
-    </ul>
-    <%= link_to_new 'nuova stampante', new_organization_printer_path(@organization) %>  
+    <%= render 'printers', organization: @organization %>  
   </div>
 </div>
 
-<div>
-  <h2>Toner disponibili per le tue stampanti</h2>
-
-  <ul>
-  <% @organization.available_toners.each do |toner| %>  
-    <li><%= toner %> presso <%= toner.organization %> (<%= toner.number %> disponibili) </li>
-  <% end %>
-  </ul>
-  
-</div>
