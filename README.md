@@ -26,7 +26,7 @@ rake db:schema:load
 ```
 
 Before starting rails copy example configuraition  
-`cp config/initializers/got_example.rb config/initializers/got.rb`
+`cp doc/got_example.rb config/initializers/got.rb`
 and change for your use.
 
 ## The database
@@ -80,6 +80,11 @@ class PrinterModel < ActiveRecord::Base
   belongs_to :vendor
   has_and_belongs_to_many :toner_models
 ```
+
+note: vendor in PrinterModel or TonerModel 
+do not have to be the same. Xerox for example
+makes toners for HP (compatible).
+
 ### printers and toners
 
 Every organization has a list of printers and
