@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   def retrive_authlevel
     @current_organization = current_user.organizations.first or raise DmCommon::NoAccess
+    @available_organizations = current_user.organizations
   end
 
 end
