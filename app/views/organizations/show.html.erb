@@ -13,7 +13,7 @@
     <% @organization.available_toners.each do |toner| %>  
       <% alert_class = (toner.organization == @organization) ? "alert-danger" : "alert-success" %>  
       <li class="alert <%= raw alert_class %>">
-        <%= toner %> presso <strong><%= toner.organization %></strong> (<%= toner.number %> disponibile/i) 
+        <%= toner %> presso <strong><%= link_to toner.organization, helps_path %></strong> (<%= toner.number %> disponibile/i) 
       </li>
     <% end %>
   </ul>
