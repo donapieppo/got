@@ -19,5 +19,10 @@ class TonerModel < ActiveRecord::Base
   def upcase_name
     self.name.upcase!
   end
+
+  # reorder needed because of default_scope vendor
+  def printers(organization)
+    Printer.where(organization: organization).where(printer_model: self.printer_models.reorder(:name))
+  end
 end
 
