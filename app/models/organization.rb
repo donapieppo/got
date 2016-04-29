@@ -11,6 +11,10 @@ class Organization < ActiveRecord::Base
     self.name + " (" + self.description + ")"
   end
 
+  def short_description
+    "#{self.name} - #{self.description[0..70]}"
+  end
+
   # toners (in tutte organizations) for my printers
   # TODO refactor
   def available_toners
