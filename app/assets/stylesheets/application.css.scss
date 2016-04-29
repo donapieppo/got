@@ -6,6 +6,16 @@ li {
   list-style-type: none;
 }
 
+ul.organizations {
+  @extend .list-group;
+  li {
+    @extend .list-group-item;
+    span.actions {
+      @extend .pull-right;
+    }
+  }
+}
+
 #organization_owning {
   @include make-row();
   .title {
@@ -15,11 +25,8 @@ li {
   div.interesting {
     @extend .col-md-6;
   }
-  div.toners {
-    @extend .col-md-6;
-  }
   div.printers {
-    @extend .col-md-12;
+    @extend .col-md-6;
   }
   ul {
     @extend .list-group;

@@ -1,9 +1,13 @@
 it:
-  header_title:  Game of Toner - Gestione toner dismessi. Università di Bologna.
-  admins:        Amministratori
-  vendor:        Marca
-  printer:       Stampante
-  printer_model: Modello di stampante
+  header_title:   Game of Toner - Gestione toner dismessi. Università di Bologna.
+  admins:         Amministratori
+  vendor:         Marca
+  printer:        Stampante
+  printer_models: Modelli di stampante
+  toner_models:   Modelli di toner
+  printer_model:  Modello di stampante
+  toner_model:    Modello di toner
+  no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti resgistrate.
 
   activerecord:
     models:

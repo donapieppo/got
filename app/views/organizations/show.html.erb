@@ -7,23 +7,27 @@
 </div>
 
 <div id="organization_owning">
-<div class="interesting">
-  <h2>Toner disponibili per le tue stampanti</h2>
-  <ul>
-    <% @organization.available_toners.each do |toner| %>  
-      <% alert_class = (toner.organization == @organization) ? "alert-danger" : "alert-success" %>  
-      <li class="alert <%= raw alert_class %>">
-        <%= toner %> presso <strong><%= link_to toner.organization, helps_path %></strong> (<%= toner.number %> disponibile/i) 
-      </li>
+  <div class="interesting">
+    <h2><%= icon :gift %>  Toner disponibili per le tue stampanti</h2>
+    <% if @available_toners.empty? %>  
+      <p class="alert alert-warning"><%= t :no_available_toners %></p>
     <% end %>
-  </ul>
-</div>
-  <div class="toners">
-    <h2>Elenco toner inutilizzati</h2>
+    <ul>
+      <% @available_toners.each do |toner| %>  
+        <% alert_class = (toner.organization == @organization) ? "alert-danger" : "alert-success" %>  
+        <li class="alert <%= raw alert_class %>">
+          <strong><%= toner %></strong><br/>
+          per <%= toner.toner_model.printers(@organization).map(&:name).join(', ') %> <br/>
+          presso <strong><%= link_to toner.organization, helps_path %></strong> (<%= toner.number %> disponibile/i)<br/>
+          contatta <%= toner.organization.admins_string %>.
+        </li>
+      <% end %>
+    </ul>
+    <h2><%= icon :tint %> Toner inutilizzati <small><%= @organization.name %></small></h2>
     <%= render 'toners', organization: @organization %>  
   </div>
   <div class="printers">
-    <h2>Elenco stampanti</h2>
+    <h2><%= icon :print %>  Stampanti <small><%= @organization.name %></small></h2>
     <%= render 'printers', organization: @organization %>  
   </div>
 </div>

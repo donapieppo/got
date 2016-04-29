@@ -1,12 +1,18 @@
 <h1>Strutture</h1>
 
-<ul>
-<% @organizations.each do |organization| %>
-  <li>
-    <%= link_to organization, organization_path(organization) %> 
-    <%= link_to_edit(edit_organization_path(organization)) if current_user.is_cesia? %>
-  </li>
-<% end %>
+<ul class="organizations">
+  <% @organizations.each do |organization| %>
+    <li>
+      <% if organization == @current_organization %>
+        <%= link_to organization, organization_path(organization) %>  
+      <% else %> 
+        <%= organization %> 
+      <% end %>
+      <% if current_user.is_cesia? %>  
+        <span class="actions"><%= link_to_edit edit_organization_path(organization) %></span>
+      <% end %>
+    </li>
+  <% end %>
 </ul>
 
 <% if current_user.is_cesia? %>  
