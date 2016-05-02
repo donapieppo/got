@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "users", force: :cascade do |t|
     t.string   "upn",        limit: 255
+    t.string   "email",      limit: 255
     t.string   "name",       limit: 255
     t.string   "surname",    limit: 255
     t.datetime "updated_at",             null: false
