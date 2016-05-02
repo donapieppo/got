@@ -1,0 +1,27 @@
+<%= horizontal_form_for [@organization, @printer], html: {id: 'printer_form'} do |printer| %>
+  <%= printer.dm_error_notification %>  
+
+  <div class="vendor">
+    <p class="title">Marca</p>
+    <% Vendor.order(:name).each do |vendor| %>    
+      <input type="radio" name="vendor_id" value="<%= vendor.id %>"/> <%= vendor.name %><br/>
+    <% end %>
+  </div>
+  <div class="model">
+    <p class="title">Modello</p>
+    <div id="models">
+    </div>
+  </div>
+
+  <div id="details">
+    <p class="title">Dettagli</p>
+    <%= printer.input :name %>  
+    <%= printer.input :description, hint: 'Campo opzionale. Si può indicare dove si trova la stampante o altre note' %>  
+    <%= printer.input :url %>  
+    <%= printer.submit t(:add_to_organization, organization: @current_organization.name) %>
+  </div>
+<% end %>
+
+<%= javascript_tag do %>  
+  <%= render partial: 'printer_js', formats: :js %>  
+<% end %>
