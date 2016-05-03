@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :admins
 
   resources :vendors
-  resources :printer_models
+  resources :printer_models do 
+    resources :printers
+  end
   resources :toner_models 
 
   resources :printers
