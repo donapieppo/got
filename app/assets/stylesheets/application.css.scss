@@ -16,6 +16,10 @@ ul.organizations {
   }
 }
 
+span.actions {
+  @extend .pull-right;
+}
+
 #organization_owning {
   @include make-row();
   .title {
@@ -38,9 +42,6 @@ ul.organizations {
         @extend .badge;
         @extend .pull-left;
         margin-right: 10px;
-      }
-      span.actions {
-        @extend .pull-right;
       }
     }
   }

@@ -1,8 +1,13 @@
 class PrintersController < ApplicationController
-  before_action :set_printer, only: [:edit, :update, :destroy]
+  before_action :set_printer, only: [:edit, :update, :show, :destroy]
 
   def new
     @printer = @current_organization.printers.new
+    if params[:printer_model_id]
+      @printer.printer_model = PrinterModel.find(params[:printer_model_id])
+    else
+      @printer.printer_model = PrinterModel.first
+    end
   end
 
   def create
@@ -15,12 +20,14 @@ class PrintersController < ApplicationController
   end
 
   def edit
-    render :new
   end
 
   def destroy
     @printer.destroy
     redirect_to organization_path(@current_organization)
+  end
+
+  def show
   end
 
   private

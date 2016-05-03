@@ -8,5 +8,9 @@ class Printer < ActiveRecord::Base
   def to_s
     self.name + " (#{self.printer_model})"
   end
+
+  def vendor
+    self.printer_model and self.printer_model.vendor
+  end
 end
 
