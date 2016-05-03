@@ -6,7 +6,13 @@
     <% if old_vendor != (vendor = printer_model.vendor.name) %>  
       <dt><%= old_vendor = vendor %></dt>
     <% end %>
-    <dd><%= link_to printer_model.name, edit_printer_model_path(printer_model) %></dd>
+    <dd>
+    <%= link_to printer_model.name %>
+    <span class='actions'>
+      <%= link_to_edit edit_printer_model_path(printer_model) %>
+      <%= link_to icon('plus'), new_printer_model_printer_path(printer_model) %>  
+    </span>
+    </dd>
   <% end %>
 </dl>
 
