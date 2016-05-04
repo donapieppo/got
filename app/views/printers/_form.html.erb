@@ -12,23 +12,27 @@
 
 <%= javascript_tag do %>  
   $(function(){
-    // vendor_id => array of printer_models
+    // vendor_id: array of printer_models
     // { 10: [1,2,4], 20: [3,7] }
     ven_to_models = <%= vendor_to_models_array(:printers) %>;
 
     function show_vendor_printers() {
       vendor_id = $("select#printer_vendor option:selected").val();
-      $("#printer_printer_model_id option:selected").attr('selected',false);
+      // hide all
       $("#printer_printer_model_id option").hide();
-      $("#printer_printer_model_id option[value='']").show();
-      $("#printer_printer_model_id option[value='']").attr('selected',true);
+      // show only this vendor printer_models
       ven_to_models[vendor_id].forEach(function(element, index, array) {
         $("#printer_printer_model_id option[value=" + element + "]").show();
       });
     }
 
     $("select#printer_vendor").change(function() {
+      // unselect previous
+      $("#printer_printer_model_id option:selected").attr('selected',false);
       show_vendor_printers();
+      // select ''
+      $("#printer_printer_model_id option[value='']").show();
+      $("#printer_printer_model_id option[value='']").attr('selected',true);
     });
 
     show_vendor_printers();
