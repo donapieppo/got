@@ -1,9 +1,11 @@
 it:
   header_title:   Game of Toner - Gestione toner dismessi. Università di Bologna.
+  organizations:  Strutture
   admins:         Amministratori
   vendor:         Marca
   printer:        Stampante
   printer_models: Modelli di stampante
+  toners:         Toner compatibili
   toner_models:   Modelli di toner
   printer_model:  Modello di stampante
   toner_model:    Modello di toner
@@ -11,6 +13,7 @@ it:
 
   activerecord:
     models:
+      organization:  Struttura
       admin:         Amministratore
       vendor:        Marca
       printer_model: Modello di stampante
@@ -34,6 +37,8 @@ it:
         number:        Numero
       printer:   
         name:          Nome
+        vendor:        Marca
+        printer_model: Modello
         description:   Note
         url:           Url 
 
