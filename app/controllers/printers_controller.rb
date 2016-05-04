@@ -22,6 +22,14 @@ class PrintersController < ApplicationController
   def edit
   end
 
+  def update
+    if @printer.update(printer_params)
+      redirect_to organization_path(@current_organization), notice: 'La stampante è stata correttamente aggiornata.'
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @printer.destroy
     redirect_to organization_path(@current_organization)
