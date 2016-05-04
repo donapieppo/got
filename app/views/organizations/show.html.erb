@@ -16,9 +16,10 @@
       <% @available_toners.each do |toner| %>  
         <% alert_class = (toner.organization == @organization) ? "alert-danger" : "alert-success" %>  
         <li class="alert <%= raw alert_class %>">
-          <strong><%= toner %></strong><br/>
-          per <%= toner.toner_model.printers(@organization).map(&:name).join(', ') %> <br/>
-          presso <strong><%= link_to toner.organization, helps_path %></strong> (<%= toner.number %> disponibile/i)<br/>
+          per <strong><%= toner.toner_model.printers(@organization).map(&:name).join(', ') %></strong><br/>
+          <%= (toner.number > 1) ? 'sono disponibili' : 'è disponibile' %>  
+          <%= toner.number %> toner <%= toner %><br/>
+          presso <strong><%= link_to toner.organization, helps_path %></strong><br/>
           contatta <%= toner.organization.admins_string %>.
         </li>
       <% end %>
