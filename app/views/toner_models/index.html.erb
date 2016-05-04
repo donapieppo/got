@@ -7,8 +7,8 @@
       <dt><%= old_vendor = vendor %></dt>
     <% end %>
     <dd>
-    <%= link_to toner_model.name, edit_toner_model_path(toner_model) %>
-    (<%= toner_model.printer_models.map(&:name).join(', ') %>)
+    <strong><%= link_to toner_model.name, edit_toner_model_path(toner_model) %></strong>
+    <small>(<%= toner_model.printer_models.map(&:name).join(', ') %>)</small>
     </dd>
   <% end %>
 </dl>
