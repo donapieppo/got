@@ -3,6 +3,7 @@
 <p class="info">
   I modelli sono condivisi tra tutte le strutture. Si prega di mantenere i dati corretti.
 </p>
+
 <%= horizontal_form_for(@printer_model) do |printer_model| %>
   <%= printer_model.dm_error_notification %>  
 
@@ -11,4 +12,8 @@
   <%= printer_model.input :laser %>  
 
   <%= printer_model.submit %>
+
+  <% unless @printer_model.new_record? %>  
+    - <%= link_to icon('plus') + ' aggiungi stampante', new_printer_model_printer_path(@printer_model) %>
+  <% end %>
 <% end %>

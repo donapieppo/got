@@ -4,7 +4,7 @@
 
 <ul>
   <% @printer_models.each do |printer_model| %>  
-    <li><%= link_to printer_model, [:edit, printer_model] %></li>
+    <li><%= show_printer_model_with_actions(printer_model) %></li>
   <% end %>
 </ul>
 
