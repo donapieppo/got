@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "organization_id", limit: 4
     t.integer "toner_model_id",  limit: 4
     t.integer "number",          limit: 4, default: 0
+    t.boolean "gift"
   end
 
   add_index "toners", ["organization_id"], name: "organization_id", using: :btree
