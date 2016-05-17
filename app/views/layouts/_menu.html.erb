@@ -2,26 +2,28 @@
   <%= dm_header 'tint', 'Game of Toner', 'Gestione toner dismessi' %>
 
   <%= dm_nav do %>  
-    <li><%= link_to big_icon('home') + " Home", root_path %></li>
+    <% if @current_organization %>  
+      <li><%= link_to big_icon('home') + " Home", root_path %></li>
 
-    <%= dropdown_menu big_icon('database') + ' Modelli' do %>  
-      <li><%= link_to fwicon('print') + " Modelli stampanti", printer_models_path %></li>
-      <li><%= link_to fwicon('cubes') + " Modelli toner", toner_models_path %></li> 
-    <% end %>
-
-    <li><%= link_to big_icon('question')  + " Aiuti", helps_path %></li>
-
-    <%= dropdown_menu big_icon('institution') + @current_organization.name do  %>
-      <% @available_organizations.each do |organization| %>  
-        <li><%= link_to icon('home') + ' ' + organization.short_description, '#' %></li>
+      <%= dropdown_menu big_icon('database') + ' Modelli' do %>  
+        <li><%= link_to fwicon('print') + " Modelli stampanti", printer_models_path %></li>
+        <li><%= link_to fwicon('cubes') + " Modelli toner", toner_models_path %></li> 
       <% end %>
-    <% end %>
 
-    <!-- ricerca -->
-    <%= form_tag search_path, class: "navbar-form navbar-right", role: "search" do %>
-      <div class="form-group">
-        <input name="search_string" size="6" type="text" class="form-control" placeholder="cerca" />
-      </div>
+      <%= dropdown_menu big_icon('institution') + @current_organization.name do  %>
+        <% @available_organizations.each do |organization| %>  
+          <li><%= link_to icon('home') + ' ' + organization.short_description, '#' %></li>
+        <% end %>
+      <% end %>
+
+      <!-- ricerca -->
+      <%= form_tag search_path, class: "navbar-form navbar-right", role: "search" do %>
+        <div class="form-group">
+          <input name="search_string" size="6" type="text" class="form-control" placeholder="cerca" />
+        </div>
+      <% end %>
+
+      <li><%= link_to big_icon('question')  + " Aiuti", helps_path %></li>
     <% end %>
   <% end %>
 <% end %>
