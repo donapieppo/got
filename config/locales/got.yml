@@ -21,8 +21,11 @@ it:
       printer :      Stampante
       admin:         Amministratore
     attributes:
+      organization:
+        name:          Nome
+        description:   Descrizione
       admin: 
-        user_upn:        Indirizzo mail
+        user_upn:      Indirizzo mail
       vendor: 
         name:          Marca
       toner_model:
@@ -42,4 +45,4 @@ it:
         description:   Note
         url:           Url 
 
-  add_to_organization: Aggiungi al posseduto del %{organization}
+  add_to_organization: Aggiungi al posseduto della struttura %{organization}
