@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  before_action :user_cesia!, except: [:index, :show]
+  before_action :user_cesia!, except: [:show]
   before_action :set_organization, only: [:edit, :update, :destroy]
 
   def index
@@ -9,7 +9,6 @@ class OrganizationsController < ApplicationController
   # solo cesia puo' vedere altro che current_organization
   def show
     @organization = current_user.is_cesia? ? Organization.find(params[:id]) : @current_organization
-
     @available_toners = @organization.available_toners
   end
 
@@ -27,14 +26,12 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
-    render :new
   end
 
   def update
     @organization.update_attributes(organization_params)
-    redirect_to organizations_path
+    redirect_to organizations_path, notice: 'La struttura è stata aggiornata.'
   end
-
 
   private
 

@@ -14,6 +14,14 @@ class AdminsController < ApplicationController
     end
   end
 
+  def destroy
+    admin = Admin.find(params[:id])
+    if @current_user.is_cesia? or admin.organization_id == @organization.id
+      admin.destroy and flash[:notice] = 'Amministratore cancellato correttamente.'
+    end
+    redirect_to root_path
+  end
+
   private
 
   def set_organization_and_check_permission
