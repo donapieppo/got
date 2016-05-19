@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "printer_model_id", limit: 4
     t.string  "name",             limit: 255
     t.text    "description",      limit: 65535
-    t.string  "url",              limit: 255
   end
 
   add_index "printers", ["organization_id"], name: "organization_id", using: :btree

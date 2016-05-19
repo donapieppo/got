@@ -6,10 +6,11 @@
       <span class="actions">
         <%= link_to_edit edit_printer_path(printer) %> 
         <%= link_to_delete printer_path(printer) %> 
-        <%= link_to(icon('external-link'), printer.url, target: 'new') if printer.url %>  
+        <%= link_to(icon('external-link'), 'http://' + printer.name, target: 'new') if printer.name =~ /unibo.it/ %>  
       </span>
     </li>
   <% end %>
 </ul>
+
 <%= link_to_new 'nuova stampante', new_organization_printer_path(organization) %>  
 
