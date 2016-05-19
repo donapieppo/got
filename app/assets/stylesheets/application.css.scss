@@ -10,9 +10,6 @@ ul.organizations {
   @extend .list-group;
   li {
     @extend .list-group-item;
-    span.actions {
-      @extend .pull-right;
-    }
   }
 }
 
