@@ -2,7 +2,9 @@
 
 <div>
   <strong><%= t :admins %></strong>: 
-  <%= @organization.admins_string %>  
+  <% @organization.admins.each do |admin| %>  
+    <%= admin %> <%= link_to_delete admin_path(admin) %>  
+  <% end %>
   - <%= link_to 'nuovo amministratore', new_organization_admin_path(@organization) %>  
 </div>
 
