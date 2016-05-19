@@ -16,6 +16,7 @@ OrganizationsController	app/controllers/organizations_controller.rb	/^class Orga
 Printer	app/models/printer.rb	/^class Printer < ActiveRecord::Base$/;"	c
 PrinterModel	app/models/printer_model.rb	/^class PrinterModel < ActiveRecord::Base$/;"	c
 PrinterModelsController	app/controllers/printer_models_controller.rb	/^class PrinterModelsController < ApplicationController$/;"	c
+PrinterModelsHelper	app/helpers/printer_models_helper.rb	/^module PrinterModelsHelper$/;"	m
 PrintersController	app/controllers/printers_controller.rb	/^class PrintersController < ApplicationController$/;"	c
 Toner	app/models/toner.rb	/^class Toner < ActiveRecord::Base$/;"	c
 TonerModel	app/models/toner_model.rb	/^class TonerModel < ActiveRecord::Base$/;"	c
@@ -28,6 +29,7 @@ VendorsHelper	app/helpers/vendors_helper.rb	/^module VendorsHelper$/;"	m
 admin_params	app/controllers/admins_controller.rb	/^  def admin_params$/;"	f	class:AdminsController
 admins_string	app/models/organization.rb	/^  def admins_string$/;"	f	class:Organization
 available_toners	app/models/organization.rb	/^  def available_toners$/;"	f	class:Organization
+build_panel	app/helpers/application_helper.rb	/^  def build_panel(title, &block)$/;"	f	class:ApplicationHelper.vendor_to_models_json.vendor_to_models_array
 create	app/controllers/admins_controller.rb	/^  def create$/;"	f	class:AdminsController
 create	app/controllers/organizations_controller.rb	/^  def create$/;"	f	class:OrganizationsController
 create	app/controllers/printer_models_controller.rb	/^  def create$/;"	f	class:PrinterModelsController
@@ -35,6 +37,7 @@ create	app/controllers/printers_controller.rb	/^  def create$/;"	f	class:Printer
 create	app/controllers/toner_models_controller.rb	/^  def create$/;"	f	class:TonerModelsController
 create	app/controllers/toners_controller.rb	/^  def create$/;"	f	class:TonersController
 create	app/controllers/vendors_controller.rb	/^  def create$/;"	f	class:VendorsController
+destroy	app/controllers/admins_controller.rb	/^  def destroy$/;"	f	class:AdminsController
 destroy	app/controllers/printer_models_controller.rb	/^  def destroy$/;"	f	class:PrinterModelsController
 destroy	app/controllers/printers_controller.rb	/^  def destroy$/;"	f	class:PrintersController
 destroy	app/controllers/toner_models_controller.rb	/^  def destroy$/;"	f	class:TonerModelsController
@@ -79,6 +82,7 @@ short_description	app/models/organization.rb	/^  def short_description$/;"	f	cla
 show	app/controllers/organizations_controller.rb	/^  def show$/;"	f	class:OrganizationsController
 show	app/controllers/printers_controller.rb	/^  def show$/;"	f	class:PrintersController
 show	app/controllers/vendors_controller.rb	/^  def show$/;"	f	class:VendorsController
+show_printer_model_with_actions	app/helpers/printer_models_helper.rb	/^  def show_printer_model_with_actions(printer_model)$/;"	f	class:PrinterModelsHelper
 to_s	app/models/admin.rb	/^  def to_s$/;"	f	class:Admin
 to_s	app/models/organization.rb	/^  def to_s$/;"	f	class:Organization
 to_s	app/models/printer.rb	/^  def to_s$/;"	f	class:Printer
@@ -91,6 +95,7 @@ toner_params	app/controllers/toners_controller.rb	/^  def toner_params$/;"	f	cla
 upcase_name	app/models/toner_model.rb	/^  def upcase_name$/;"	f	class:TonerModel
 update	app/controllers/organizations_controller.rb	/^  def update$/;"	f	class:OrganizationsController
 update	app/controllers/printer_models_controller.rb	/^  def update$/;"	f	class:PrinterModelsController
+update	app/controllers/printers_controller.rb	/^  def update$/;"	f	class:PrintersController
 update	app/controllers/toner_models_controller.rb	/^  def update$/;"	f	class:TonerModelsController
 update	app/controllers/toners_controller.rb	/^  def update$/;"	f	class:TonersController
 update	app/controllers/vendors_controller.rb	/^  def update$/;"	f	class:VendorsController
