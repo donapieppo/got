@@ -45,4 +45,7 @@ it:
         description:   Note
         url:           Url 
 
-  add_to_organization: Aggiungi al posseduto della struttura %{organization}
+  add_to_organization:      Aggiungi al posseduto della struttura %{organization}
+  printer_description_hint: Campo opzionale. Si può indicare dove si trova la stampante o altre note
+  printer_name_hint:        Consigliamo di inserire il dns name.
+
