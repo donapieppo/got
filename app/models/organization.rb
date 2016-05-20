@@ -20,7 +20,7 @@ class Organization < ActiveRecord::Base
   def available_toners
     printer_model_ids = self.printers.map(&:printer_model_id).uniq
     toner_models_ids = TonerModel.includes(:printer_models).where('printer_models_toner_models.printer_model_id': printer_model_ids).map(&:id)
-    Toner.where(toner_model_id: toner_models_ids)
+    Toner.where(toner_model_id: toner_models_ids).where(gift: true)
   end
 
   def admins_string

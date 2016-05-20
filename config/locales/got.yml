@@ -38,6 +38,7 @@ it:
       toner:   
         name:          Nome
         number:        Numero
+        gift:          Non più utilizzato nella struttura
       printer:   
         name:          Nome
         vendor:        Marca
@@ -48,4 +49,5 @@ it:
   add_to_organization:      Aggiungi al posseduto della struttura %{organization}
   printer_description_hint: Campo opzionale. Si può indicare dove si trova la stampante o altre note
   printer_name_hint:        Consigliamo di inserire il dns name.
+  gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
 

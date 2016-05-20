@@ -5,6 +5,7 @@
 
   <%= toner.association :toner_model, label_method: :to_s, hint: link_to("nuovo modello di toner", new_toner_model_path)  %>  
   <%= toner.input :number %>  
+  <%= toner.input :gift, hint: t(:gift_hint) %>  
 
   <%= toner.submit "Salva" %>
 <% end %>
