@@ -1,16 +1,15 @@
-<h1>Modelli di toner presenti in Unibo</h1>
+<h1>Modelli di toner</h1>
 
 <dl class="dl-horizontal">
-  <% old_vendor = '' %>  
-  <% @toner_models.each do |toner_model| %>
-    <% if old_vendor != (vendor = toner_model.vendor.name) %>  
-      <dt><%= old_vendor = vendor %></dt>
+  <% @toner_models.group_by {|tm| tm.vendor}.each do |vendor, models| %>
+    <dt><%= vendor %></dt>
+    <% models.each do |model| %>  
+      <dd>
+        <strong><%= link_to model.name, edit_toner_model_path(model) %></strong>
+        <small>(<%= model.printer_models.map(&:name).join(', ') %>)</small>
+      </dd>
     <% end %>
-    <dd>
-    <strong><%= link_to toner_model.name, edit_toner_model_path(toner_model) %></strong>
-    <small>(<%= toner_model.printer_models.map(&:name).join(', ') %>)</small>
-    </dd>
   <% end %>
 </dl>
 
-<%= link_to_new 'Aggiungi modello', new_toner_model_path %>  
+<%= link_to_new 'Aggiungi modello di toner', new_toner_model_path %>  

@@ -1,14 +1,36 @@
-<h1>Modelli stampanti presenti in Unibo</h1>
+<h1>Modelli stampanti</h1>
 
-<dl class="dl-horizontal">
-  <% old_vendor = '' %>  
-  <% @printer_models.each do |printer_model| %>
-    <% if old_vendor != (vendor = printer_model.vendor.name) %>  
-      <dt><%= old_vendor = vendor %></dt>
-    <% end %>
-    <dd><%= show_printer_model_with_actions(printer_model) %></dd>
+<div class="panel-group" id="compatible_printers" role="tablist" aria-multiselectable="true">
+  <% @printer_models.to_a.group_by {|pm| pm.vendor}.each do |vendor, models| %>
+
+    <% collapseRef   = "collapse_#{vendor.id}" %>  
+    <% headingRef    = "heading_#{vendor.id}" %>  
+    <% aria_expanded = "false" %>  
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="<%= headingRef %>">
+        <div class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= collapseRef %>" aria-expanded="<%= aria_expanded %>" aria-controls="<%= collapseRef %>">
+            <%= vendor %>  
+          </a>
+        </div>
+      </div>
+      <div id="<%= collapseRef %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%= headingRef %>">
+        <div class="panel-body" >
+          <ul class="vendors">
+            <% models.each do |model| %>  
+            <li>
+              <%= link_to model.name, new_printer_model_printer_path(model), title: 'add printer' %>
+              <span class="actions"><%= link_to_edit(edit_printer_model_path(model)) %></span>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
   <% end %>
-</dl>
+</div>
 
-<%= link_to_new 'Aggiungi modello', new_printer_model_path %>
+
+<%= link_to_new 'Aggiungi modello', new_printer_model_path %> - <%= link_to_back root_path %>  
 
