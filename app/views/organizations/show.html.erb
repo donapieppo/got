@@ -12,12 +12,13 @@
   <div class="interesting">
     <h2><%= icon :gift %>  Toner disponibili per le tue stampanti</h2>
     <% if @available_toners.empty? %>  
-      <p class="alert alert-warning"><%= t :no_available_toners %></p>
+      <p class="alert alert-warning"><%= icon 'close', size: 32 %>  <%= t :no_available_toners %></p>
     <% end %>
     <ul>
       <% @available_toners.each do |toner| %>  
         <% alert_class = (toner.organization == @organization) ? "alert-danger" : "alert-success" %>  
         <li class="alert <%= raw alert_class %>">
+          <%= icon 'thumbs-o-up', size: 32 %>  
           per <strong><%= toner.toner_model.printers(@organization).map(&:name).join(', ') %></strong><br/>
           <%= (toner.number > 1) ? 'sono disponibili' : 'è disponibile' %>  
           <%= toner.number %> toner <%= toner %><br/>
