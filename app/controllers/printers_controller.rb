@@ -2,7 +2,7 @@ class PrintersController < ApplicationController
   before_action :set_printer, only: [:edit, :update, :show, :destroy]
 
   def new
-    @printer = @current_organization.printers.new
+    @printer = @current_organization.printers.new(name: Rails.configuration.domain_name)
     if params[:printer_model_id]
       @printer.printer_model = PrinterModel.find(params[:printer_model_id])
     else

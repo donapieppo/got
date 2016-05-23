@@ -5,6 +5,7 @@ CESIA_UPN = [ 'name.surname@unibo.it', 'name2.surname2@unibo.it' ]
 
 module Got
   class Application < Rails::Application
+    config.domain_name = 'unibo.it'
     config.dm_common = {
       login_method: :log_if_email, # can use application only if present in database
       message_footer: %Q{Messaggio inviato da 'Game of Toner'.\nNon rispondere a questo messaggio.\nPer problemi tecnici contattare got-support@unibo.it},       # mailer 
