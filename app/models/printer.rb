@@ -3,7 +3,7 @@ class Printer < ActiveRecord::Base
   belongs_to :printer_model
 
   validates :name, presence: {}
-  validates :name, uniqueness:   { scope: [:organization_id], message: "La stampante è già stata registrata." }
+  validates :name, uniqueness: { scope: [:organization_id], message: "La stampante è già stata registrata nella struttura." }
 
   def to_s
     self.name + " (#{self.printer_model})"
