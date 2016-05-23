@@ -34,7 +34,7 @@ class TonersController < ApplicationController
   private
 
   def toner_params
-    params[:toner].permit(:number, :toner_model_id)
+    params[:toner].permit(:number, :toner_model_id, :gift)
   end
 
   def set_toner_and_check_permission
