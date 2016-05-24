@@ -11,7 +11,7 @@
   <h2>Stampanti compatibili</h2>
 
   <dl class="printers-list">
-    <% Vendor.order(:name).each do |vendor| %>
+    <% Vendor.includes(:printer_models).order('vendors.name').each do |vendor| %>
       <% models = vendor.printer_models %>
       <% next if models.empty? %>  
 
