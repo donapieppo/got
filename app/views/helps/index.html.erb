@@ -1,17 +1,22 @@
 <div class="well">
 <p><strong>Questo applicativo permette:</strong></p>
 <ul>
-  <li>inserire le stampanti attive nella propria struttura</li>
-  <li>inserire i toner dismessi della propria struttura per renderli disponibili ad altre strutture</li>
-  <li>disporre dell'elenco dei toner dismessi da altre strutture compatibili con le proprie stampanti</li> 
+  <li>di registrare le stampanti attive presenti nella propria struttura;</li>
+  <li>di gestire i toner aquistati;</li>
+  <li>segnalare i toner dismessi dalla propria struttura per renderli disponibili ad altre strutture;</li>
+  <li><strong>disporre dell'elenco dei toner dismessi da altre strutture compatibili con le proprie stampanti.</strong></li> 
 </ul>
 </div>
 
 <h1>Strutture Unibo</h1>
 
-<dl class=''>
+<dl>
   <% @organizations.each do |organization| %>  
     <dt><%= organization.name %> <small><%= organization.description %></small></dt>
-    <dd><%= t :admins %>: <em><%= organization.admins_string %><em></dd>
+    <dd><%= t :admins %>: 
+    <em>
+      <%= raw organization.admins.map {|admin| mail_to admin.user.upn, admin.to_s}.join(', '.html_safe) %>  
+    <em>
+    </dd>
   <% end %>
 </dl>
