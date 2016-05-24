@@ -12,7 +12,7 @@
 
       <%= dropdown_menu big_icon('institution') + @current_organization.name do  %>
         <% @available_organizations.each do |organization| %>  
-          <li><%= link_to icon('home') + ' ' + organization.short_description, '#' %></li>
+          <li><%= link_to icon('home') + ' ' + organization.short_description, root_path %></li>
         <% end %>
       <% end %>
 

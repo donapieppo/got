@@ -23,11 +23,14 @@
           <%= (toner.number > 1) ? 'sono disponibili' : 'è disponibile' %>  
           <%= toner.number %> toner <%= toner %><br/>
           presso <strong><%= link_to toner.organization, helps_path %></strong><br/>
-          contatta <%= toner.organization.admins_string %>.
+          contatta 
+          <% toner.organization.admins.each do |admin| %>
+            <%= link_to admin.to_s, "mailto: #{admin.user.upn}" %>  
+          <% end %>
         </li>
       <% end %>
     </ul>
-    <h2><%= icon :tint %> Toner inutilizzati <small><%= @organization.name %></small></h2>
+    <h2><%= icon :tint %> Toner <small><%= @organization.name %></small></h2>
     <%= render 'toners', organization: @organization %>  
   </div>
   <div class="printers">

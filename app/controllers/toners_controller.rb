@@ -8,7 +8,7 @@ class TonersController < ApplicationController
   def create
     @toner = @current_organization.toners.new(toner_params)
     if @toner.save
-      redirect_to organization_path(@current_organization), notice: 'il toner è stato aggiunto come disponibile.'
+      redirect_to organization_path(@current_organization), notice: 'Il toner è stato aggiunto.'
     else
       render :new
     end
@@ -20,7 +20,7 @@ class TonersController < ApplicationController
 
   def update
     if @toner.update_attributes(toner_params)
-      redirect_to organization_path(@current_organization), notice: 'il toner è stato aggiornato.'
+      redirect_to organization_path(@current_organization), notice: 'Il toner è stato aggiornato.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class TonersController < ApplicationController
 
   def destroy
     @toner.delete 
-    redirect_to organization_path(@current_organization), notice: 'il toner è stato eliminato da quelli disponibili.'
+    redirect_to organization_path(@current_organization), notice: 'Il toner è stato eliminato da quelli disponibili.'
   end
 
   private

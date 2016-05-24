@@ -2,7 +2,7 @@ class TonerModel < ActiveRecord::Base
   belongs_to :vendor
   has_and_belongs_to_many :printer_models
 
-  validates :name, uniqueness: { scope: [:vendor_id], message: "un toner di questa marca con questo nome esiste già." }
+  validates :name, uniqueness: { scope: [:vendor_id], message: "Un toner di questa marca con questo nome esiste già." }
 
   default_scope { includes(:vendor).order('vendors.name, toner_models.name') }
 
