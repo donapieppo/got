@@ -98,4 +98,20 @@ ul.vendors {
   }
 }
 
+dl.toners-list, dl.printers-list {
+  @extend .list-group;
+  dt, dd { 
+    @extend .list-group-item;
+  }
+  dt {
+    background-color: $gray-lighter;
+    margin: 2px 0;
+  }
+  dd {
+    padding-left: 40px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+}
 

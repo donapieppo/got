@@ -1,15 +1,24 @@
 <h1>Modelli di toner</h1>
 
-<dl class="dl-horizontal">
+<dl class="toners-list">
   <% @toner_models.group_by {|tm| tm.vendor}.each do |vendor, models| %>
     <dt><%= vendor %></dt>
     <% models.each do |model| %>  
       <dd>
         <strong><%= link_to model.name, edit_toner_model_path(model) %></strong>
-        <small>(<%= model.printer_models.map(&:name).join(', ') %>)</small>
+        <small>(per le stamapnti: <%= model.printer_models.map(&:name).join(', ') %>)</small>
       </dd>
     <% end %>
   <% end %>
 </dl>
 
-<%= link_to_new 'Aggiungi modello di toner', new_toner_model_path %>  
+<p><%= link_to_new 'Aggiungi modello di toner', new_toner_model_path %> - <%= link_to_back root_path %></p>
+
+<%= javascript_tag do %>  
+  $(document).ready(function(){
+    $("dd").toggle();
+    $("dt").click(function() {
+      $(this).nextUntil("dt", "dd").slideToggle();
+    });
+  });
+<% end %>

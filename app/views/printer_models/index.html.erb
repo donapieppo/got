@@ -1,36 +1,24 @@
 <h1>Modelli stampanti</h1>
 
-<div class="panel-group" id="compatible_printers" role="tablist" aria-multiselectable="true">
-  <% @printer_models.to_a.group_by {|pm| pm.vendor}.each do |vendor, models| %>
-
-    <% collapseRef   = "collapse_#{vendor.id}" %>  
-    <% headingRef    = "heading_#{vendor.id}" %>  
-    <% aria_expanded = "false" %>  
-
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="<%= headingRef %>">
-        <div class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= collapseRef %>" aria-expanded="<%= aria_expanded %>" aria-controls="<%= collapseRef %>">
-            <%= vendor %>  
-          </a>
-        </div>
-      </div>
-      <div id="<%= collapseRef %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%= headingRef %>">
-        <div class="panel-body" >
-          <ul class="vendors">
-            <% models.each do |model| %>  
-            <li>
-              <%= link_to model.name, new_printer_model_printer_path(model), title: 'add printer' %>
-              <span class="actions"><%= link_to_edit(edit_printer_model_path(model)) %></span>
-            </li>
-          <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
+<dl class="printers-list">
+  <% @printer_models.group_by {|tm| tm.vendor}.each do |vendor, models| %>
+    <dt><%= vendor %></dt>
+    <% models.each do |model| %>  
+      <dd>
+        <%= link_to model.name, new_printer_model_printer_path(model), title: 'add printer' %>
+        <span class="actions"><%= link_to_edit(edit_printer_model_path(model)) %></span>
+      </dd>
+    <% end %>
   <% end %>
-</div>
+</dl>
 
+<p><%= link_to_new 'Aggiungi modello', new_printer_model_path %> - <%= link_to_back root_path %></p>
 
-<%= link_to_new 'Aggiungi modello', new_printer_model_path %> - <%= link_to_back root_path %>  
-
+<%= javascript_tag do %>  
+  $(document).ready(function(){
+    $("dd").toggle();
+    $("dt").click(function() {
+      $(this).nextUntil("dt", "dd").slideToggle();
+    });
+  });
+<% end %>
