@@ -1,6 +1,6 @@
 class Vendor < ActiveRecord::Base
-  has_many :printer_models, dependent: :restrict_with_error 
-  has_many :toner_models, dependent: :restrict_with_error 
+  has_many :printer_models
+  has_many :toner_models
 
   scope :with_printer_models, -> { where("id IN (SELECT DISTINCT(vendor_id) FROM printer_models)") }
 
