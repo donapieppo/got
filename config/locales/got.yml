@@ -46,8 +46,8 @@ it:
         description:   Note
         url:           Url 
 
-  add_to_organization:      Aggiungi al posseduto della struttura %{organization}
-  printer_description_hint: Campo opzionale. Si può indicare dove si trova la stampante o altre note
+  add_to_organization:      Aggiungi al posseduto della struttura %{organization}.
+  printer_description_hint: Campo opzionale. Si può indicare dove si trova la stampante o altre note.
   printer_name_hint:        Consigliamo di inserire il dns name.
   gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
 
