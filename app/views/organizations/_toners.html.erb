@@ -2,8 +2,8 @@
   <% organization.toners.includes(toner_model: :vendor).each do |toner| %>  
     <li class="<%= 'gift-class' if toner.gift %>">
       <span class="toner_number"><%= toner.number %></span> 
-      <%= '(inutilizzato/i)' if toner.gift %>  
       <%= toner %> 
+      <strong><%= '(inutilizzato)' if toner.gift %></strong>
       <span class="actions">
         <% if toner.gift and toner.number > 0 and organization.interested?(toner) %>  
           <%= link_to content_tag(:strong, icon(:warning), class: 'missing-field', title: 'Hai una stampante compatibile'), edit_toner_model_path(toner.toner_model) %>

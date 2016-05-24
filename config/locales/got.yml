@@ -9,7 +9,7 @@ it:
   toner_models:   Modelli di toner
   printer_model:  Modello di stampante
   toner_model:    Modello di toner
-  no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti resgistrate.
+  no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
 
   activerecord:
     models:
