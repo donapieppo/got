@@ -1,4 +1,4 @@
-<%= horizontal_form_for [@organization, @printer], html: {id: 'printer_form'} do |printer| %>
+<%= horizontal_form_for [@organization, @printer] do |printer| %>
   <%= printer.dm_error_notification %>  
 
   <%= printer.input :vendor, collection: Vendor.with_printer_models.order(:name).all, selected: @printer.vendor.id %>  

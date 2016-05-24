@@ -2,15 +2,11 @@
 @import "dm_common/dm";
 @import 'dm_common/tablesorter';
 
-li {
-  list-style-type: none;
-}
+li { list-style-type: none; }
 
 ul.organizations {
   @extend .list-group;
-  li {
-    @extend .list-group-item;
-  }
+  li { @extend .list-group-item; }
 }
 
 span.actions {
@@ -47,37 +43,6 @@ span.actions {
   }
 }
   
-#printer_models_checkbox {
-  @include make-row();
-  .title {
-    margin-left: 20px;
-    font-weight: bold;
-  }
-  div.vendor {
-    @extend .col-md-6;
-  }
-  div.model {
-    @extend .col-md-6;
-  }
-}
-  
-#printer_form {
-  @include make-row();
-  .title {
-    margin-left: 20px;
-    font-weight: bold;
-  }
-  div.vendor {
-    @extend .col-md-3;
-  }
-  div.model {
-    @extend .col-md-3;
-  }
-  div#details {
-    @extend .col-md-6;
-  }
-}
-  
 ul.vendors {
   @extend .list-group;
   li {
@@ -86,16 +51,6 @@ ul.vendors {
 }
 #toner_model_name {
   text-transform: uppercase;
-}
-#compatible_printers {
-  .panel-title {
-    font-size: 13px;
-    font-weight: bold;
-  }
-  .panel-heading {
-    padding-top: 7px;
-    padding-bottom: 7px;
-  }
 }
 
 dl.toners-list, dl.printers-list {
