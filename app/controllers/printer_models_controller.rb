@@ -13,12 +13,15 @@ class PrinterModelsController < ApplicationController
   end
 
   def create
-    @printer_model = PrinterModel.new(printer_model_params)
-    if @printer_model.save
-      redirect_to printer_models_path, notice: 'Printer was successfully created.'
-    else
-      render :new
+    vendor = Vendor.find(params[:printer_model][:vendor_id])
+
+    params[:printer_model][:name].split(';').each do |name|
+      @printer_model = PrinterModel.new(name: name.strip, vendor_id: vendor.id, laser: params[:printer_model][:laser])
+      if ! @printer_model.save
+        render :new
+      end
     end
+    redirect_to printer_models_path, notice: 'La stampante èstata creata.'
   end
 
   def update
