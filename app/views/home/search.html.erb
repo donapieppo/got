@@ -2,15 +2,15 @@
 
 <h2><%= t :printer_models %></h2>
 
-<ul>
+<ul class="all_clickable">
   <% @printer_models.each do |printer_model| %>  
-    <li><%= show_printer_model_with_actions(printer_model) %></li>
+    <li><%= link_to printer_model, edit_printer_model_path(printer_model) %></li>
   <% end %>
 </ul>
 
 <h2><%= t :toner_models %>  </h2>
 
-<ul>
+<ul class="all_clickable">
   <% @toner_models.each do |toner_model| %>  
     <li><%= link_to toner_model, [:edit, toner_model] %></li>
   <% end %>
