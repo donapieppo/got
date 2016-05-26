@@ -1,5 +1,5 @@
 <ul>
-  <% organization.toners.includes(toner_model: :vendor).each do |toner| %>  
+  <% organization.toners.includes(toner_model: :vendor).order('vendors.name').each do |toner| %>  
     <li class="<%= 'gift-class' if toner.gift %>">
       <span class="toner_number"><%= toner.number %></span> 
       <%= toner %> 
