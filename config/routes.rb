@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :printer_models do 
     resources :printers
   end
-  resources :toner_models 
+  resources :toner_models do
+    resources :toners
+  end
 
   resources :printers
   resources :toners 
