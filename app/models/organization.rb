@@ -5,7 +5,7 @@ class Organization < ActiveRecord::Base
 
   validates :name, uniqueness: {}
 
-  attr_accessor :printer_model_ids
+  attr_accessor :_printer_model_ids, :_toner_models
 
   def to_s
     self.name + " (" + self.description + ")"
@@ -15,12 +15,17 @@ class Organization < ActiveRecord::Base
     "#{self.name} - #{self.description[0..70]}"
   end
 
+  def printer_model_ids
+    @_printer_model_ids ||= self.printers.map(&:printer_model_id).uniq
+  end
+
+  def toner_models
+    @_toner_models ||= TonerModel.includes(:printer_models).where('printer_models_toner_models.printer_model_id': printer_model_ids)
+  end
+
   # toners (in tutte organizations) for my printers
-  # TODO refactor
   def available_toners
-    printer_model_ids = self.printers.map(&:printer_model_id).uniq
-    toner_models_ids = TonerModel.includes(:printer_models).where('printer_models_toner_models.printer_model_id': printer_model_ids).map(&:id)
-    Toner.where(toner_model_id: toner_models_ids).where(gift: true)
+    Toner.where(toner_model: toner_models.map(&:id)).where(gift: true)
   end
 
   def admins_string
