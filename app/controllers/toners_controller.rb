@@ -3,6 +3,9 @@ class TonersController < ApplicationController
 
   def new
     @toner = @current_organization.toners.new
+    if params[:toner_model_id]
+      @toner.toner_model = TonerModel.find(params[:toner_model_id])
+    end
   end
 
   def create

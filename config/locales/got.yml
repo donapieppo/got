@@ -50,4 +50,6 @@ it:
   printer_description_hint: Campo opzionale. Si può indicare dove si trova la stampante o altre note.
   printer_name_hint:        Consigliamo di inserire il dns name.
   gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
+  multiple_name_with_semicolon_hint: È possibile inserire più modelli separati da punto e virgola ;
+
 

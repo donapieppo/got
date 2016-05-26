@@ -1,3 +1,7 @@
+<% unless @printer_model.new_record? %>  
+  <p class="centered_action"><%= link_to icon('plus') + " Aggiungi stampante #{@printer_model.to_s} a #{@current_organization.name}", new_printer_model_printer_path(@printer_model), class: :button %></p>
+<% end %>
+
 <h1><%= t :printer_model %></h1>
 
 <p class="info">
@@ -7,13 +11,11 @@
 <%= horizontal_form_for(@printer_model) do |printer_model| %>
   <%= printer_model.dm_error_notification %>  
 
-  <%= printer_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to("Aggiungi una nuova marca all'elenco", new_vendor_path) %>  
-  <%= printer_model.input :name %>  
+  <%= printer_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to("Aggiungi una nuova marca all'elenco.", new_vendor_path) %>  
+  <% hint = @printer_model.new_record? ? t(:multiple_name_with_semicolon_hint) : '' %>  
+  <%= printer_model.input :name, hint: hint %>  
   <%= printer_model.input :laser %>  
 
-  <%= printer_model.submit %>
-
-  <% unless @printer_model.new_record? %>  
-    - <%= link_to icon('plus') + ' aggiungi stampante', new_printer_model_printer_path(@printer_model) %>
-  <% end %>
+  <%= printer_model.submit %> - <%= link_to_back root_path %>  
 <% end %>
+
