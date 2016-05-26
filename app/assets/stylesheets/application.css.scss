@@ -2,17 +2,6 @@
 @import "dm_common/dm";
 @import 'dm_common/tablesorter';
 
-li { list-style-type: none; }
-
-ul.organizations {
-  @extend .list-group;
-  li { @extend .list-group-item; }
-}
-
-span.actions {
-  @extend .pull-right;
-}
-
 #organization_owning {
   @include make-row();
   .title {
@@ -43,12 +32,6 @@ span.actions {
   }
 }
   
-ul.vendors {
-  @extend .list-group;
-  li {
-    @extend .list-group-item;
-  }
-}
 #toner_model_name {
   text-transform: uppercase;
 }
