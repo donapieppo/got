@@ -1,9 +1,11 @@
+<h1>Nuova Organizzazione / Dipartimento </h1>
+
 <%= horizontal_form_for(@organization) do |organization| %>
   <%= organization.dm_error_notification %>  
 
-  <%= organization.input :name %>  
+  <%= organization.input :name, hint: 'Esempi: DipMat, CeSIA, DICAM...' %>  
   <%= organization.input :description %>  
 
-  <%= organization.submit %>
+  <%= organization.submit "Crea la struttura e diventa amministratore" %>
 <% end %>
 
