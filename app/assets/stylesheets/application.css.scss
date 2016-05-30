@@ -36,20 +36,25 @@
   text-transform: uppercase;
 }
 
-dl.toners-list, dl.printers-list {
+dl.toners-list, dl.printers-list, dl.subscriptions-list {
   @extend .list-group;
   dt, dd { 
     @extend .list-group-item;
   }
   dt {
     background-color: $gray-lighter;
-    margin: 2px 0;
+    margin: 2px 0 -1px 0 ;
+    &:hover {
+      cursor: pointer;
+    }
   }
   dd {
     padding-left: 40px;
     padding-top: 7px;
     padding-bottom: 7px;
   }
-
+  dd span.details {
+    @extend .pull-right;
+  }
 }
 
