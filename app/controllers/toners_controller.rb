@@ -1,11 +1,15 @@
 class TonersController < ApplicationController
   before_action :set_toner_and_check_permission, only: [:edit, :update, :destroy]
 
+  # only one toner of a certain toner_model in organization
   def new
-    @toner = @current_organization.toners.new
     if params[:toner_model_id]
-      @toner.toner_model = TonerModel.find(params[:toner_model_id])
+      @toner_model = TonerModel.find(params[:toner_model_id])
+      if toner = @current_organization.toners.where(toner_model: @toner_model).first
+        redirect_to [:edit, toner] and return
+      end
     end
+    @toner = @current_organization.toners.new(toner_model: @toner_model)
   end
 
   def create
