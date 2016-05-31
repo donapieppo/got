@@ -11,13 +11,13 @@ ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/
 HelpsController	app/controllers/helps_controller.rb	/^class HelpsController < ApplicationController$/;"	c
 HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
 Organization	app/models/organization.rb	/^class Organization < ActiveRecord::Base$/;"	c
-OrganizationPrinter	app/models/organization_printer.rb	/^class OrganizationPrinter < ActiveRecord::Base$/;"	c
 OrganizationsController	app/controllers/organizations_controller.rb	/^class OrganizationsController < ApplicationController$/;"	c
 Printer	app/models/printer.rb	/^class Printer < ActiveRecord::Base$/;"	c
 PrinterModel	app/models/printer_model.rb	/^class PrinterModel < ActiveRecord::Base$/;"	c
 PrinterModelsController	app/controllers/printer_models_controller.rb	/^class PrinterModelsController < ApplicationController$/;"	c
 PrinterModelsHelper	app/helpers/printer_models_helper.rb	/^module PrinterModelsHelper$/;"	m
 PrintersController	app/controllers/printers_controller.rb	/^class PrintersController < ApplicationController$/;"	c
+SubscriptionsController	app/controllers/subscriptions_controller.rb	/^class SubscriptionsController < ApplicationController$/;"	c
 Toner	app/models/toner.rb	/^class Toner < ActiveRecord::Base$/;"	c
 TonerModel	app/models/toner_model.rb	/^class TonerModel < ActiveRecord::Base$/;"	c
 TonerModelsController	app/controllers/toner_models_controller.rb	/^class TonerModelsController < ApplicationController$/;"	c
@@ -29,11 +29,12 @@ VendorsHelper	app/helpers/vendors_helper.rb	/^module VendorsHelper$/;"	m
 admin_params	app/controllers/admins_controller.rb	/^  def admin_params$/;"	f	class:AdminsController
 admins_string	app/models/organization.rb	/^  def admins_string$/;"	f	class:Organization
 available_toners	app/models/organization.rb	/^  def available_toners$/;"	f	class:Organization
-build_panel	app/helpers/application_helper.rb	/^  def build_panel(title, &block)$/;"	f	class:ApplicationHelper.vendor_to_models_json.vendor_to_models_array
+compatible_printers	app/models/toner.rb	/^  def compatible_printers$/;"	f	class:Toner
 create	app/controllers/admins_controller.rb	/^  def create$/;"	f	class:AdminsController
 create	app/controllers/organizations_controller.rb	/^  def create$/;"	f	class:OrganizationsController
 create	app/controllers/printer_models_controller.rb	/^  def create$/;"	f	class:PrinterModelsController
 create	app/controllers/printers_controller.rb	/^  def create$/;"	f	class:PrintersController
+create	app/controllers/subscriptions_controller.rb	/^  def create$/;"	f	class:SubscriptionsController
 create	app/controllers/toner_models_controller.rb	/^  def create$/;"	f	class:TonerModelsController
 create	app/controllers/toners_controller.rb	/^  def create$/;"	f	class:TonersController
 create	app/controllers/vendors_controller.rb	/^  def create$/;"	f	class:VendorsController
@@ -55,17 +56,19 @@ index	app/controllers/organizations_controller.rb	/^  def index$/;"	f	class:Orga
 index	app/controllers/printer_models_controller.rb	/^  def index$/;"	f	class:PrinterModelsController
 index	app/controllers/toner_models_controller.rb	/^  def index$/;"	f	class:TonerModelsController
 index	app/controllers/vendors_controller.rb	/^  def index$/;"	f	class:VendorsController
-interested?	app/models/organization.rb	/^  def interested?(toner)$/;"	f	class:Organization
+interested_in?	app/models/organization.rb	/^  def interested_in?(toner)$/;"	f	class:Organization
 name_with_vendor	app/models/printer_model.rb	/^  def name_with_vendor$/;"	f	class:PrinterModel
 name_with_vendor	app/models/toner_model.rb	/^  def name_with_vendor$/;"	f	class:TonerModel
 new	app/controllers/admins_controller.rb	/^  def new$/;"	f	class:AdminsController
 new	app/controllers/organizations_controller.rb	/^  def new$/;"	f	class:OrganizationsController
 new	app/controllers/printer_models_controller.rb	/^  def new$/;"	f	class:PrinterModelsController
 new	app/controllers/printers_controller.rb	/^  def new$/;"	f	class:PrintersController
+new	app/controllers/subscriptions_controller.rb	/^  def new$/;"	f	class:SubscriptionsController
 new	app/controllers/toner_models_controller.rb	/^  def new$/;"	f	class:TonerModelsController
 new	app/controllers/toners_controller.rb	/^  def new$/;"	f	class:TonersController
 new	app/controllers/vendors_controller.rb	/^  def new$/;"	f	class:VendorsController
 organization_params	app/controllers/organizations_controller.rb	/^  def organization_params$/;"	f	class:OrganizationsController
+printer_model_ids	app/models/organization.rb	/^  def printer_model_ids$/;"	f	class:Organization
 printer_model_params	app/controllers/printer_models_controller.rb	/^    def printer_model_params$/;"	f	class:PrinterModelsController
 printer_params	app/controllers/printers_controller.rb	/^  def printer_params$/;"	f	class:PrintersController
 printers	app/models/toner_model.rb	/^  def printers(organization)$/;"	f	class:TonerModel
@@ -90,8 +93,10 @@ to_s	app/models/printer_model.rb	/^  def to_s$/;"	f	class:PrinterModel
 to_s	app/models/toner.rb	/^  def to_s$/;"	f	class:Toner
 to_s	app/models/toner_model.rb	/^  def to_s$/;"	f	class:TonerModel
 to_s	app/models/vendor.rb	/^  def to_s$/;"	f	class:Vendor
+toner_model_ids	app/models/organization.rb	/^  def toner_model_ids$/;"	f	class:Organization
 toner_model_params	app/controllers/toner_models_controller.rb	/^    def toner_model_params$/;"	f	class:TonerModelsController
 toner_params	app/controllers/toners_controller.rb	/^  def toner_params$/;"	f	class:TonersController
+unusable_toners	app/models/organization.rb	/^  def unusable_toners$/;"	f	class:Organization
 upcase_name	app/models/toner_model.rb	/^  def upcase_name$/;"	f	class:TonerModel
 update	app/controllers/organizations_controller.rb	/^  def update$/;"	f	class:OrganizationsController
 update	app/controllers/printer_models_controller.rb	/^  def update$/;"	f	class:PrinterModelsController
@@ -99,6 +104,7 @@ update	app/controllers/printers_controller.rb	/^  def update$/;"	f	class:Printer
 update	app/controllers/toner_models_controller.rb	/^  def update$/;"	f	class:TonerModelsController
 update	app/controllers/toners_controller.rb	/^  def update$/;"	f	class:TonersController
 update	app/controllers/vendors_controller.rb	/^  def update$/;"	f	class:VendorsController
+usable_toner_models	app/models/organization.rb	/^  def usable_toner_models$/;"	f	class:Organization
 vendor	app/models/printer.rb	/^  def vendor$/;"	f	class:Printer
 vendor_params	app/controllers/vendors_controller.rb	/^    def vendor_params$/;"	f	class:VendorsController
 vendor_to_models_array	app/helpers/application_helper.rb	/^  def vendor_to_models_array(what)$/;"	f	class:ApplicationHelper.vendor_to_models_json
