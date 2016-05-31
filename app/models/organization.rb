@@ -21,6 +21,8 @@ class Organization < ActiveRecord::Base
     self.admins.map {|admin| admin.to_s}.join(', ')
   end
 
+  # me
+
   def printer_model_ids
     @_printer_model_ids ||= self.printers.select(:printer_model_id).map(&:printer_model_id).uniq
   end
@@ -28,6 +30,12 @@ class Organization < ActiveRecord::Base
   def usable_toner_models
     @_usable_toner_models ||= TonerModel.includes(:printer_models).where('printer_models_toner_models.printer_model_id': printer_model_ids)
   end
+
+  def toner_model_ids
+    self.toners.select(:toner_model_id).map(&:toner_model_id).uniq
+  end
+
+  # others 
 
   # toners (in tutte organizations) for my printers
   def available_toners

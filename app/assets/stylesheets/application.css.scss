@@ -57,4 +57,6 @@ dl.toners-list, dl.printers-list, dl.subscriptions-list {
     @extend .pull-right;
   }
 }
-
+.owned {
+  background-color: gray;
+}

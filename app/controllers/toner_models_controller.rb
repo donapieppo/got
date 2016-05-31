@@ -3,6 +3,7 @@ class TonerModelsController < ApplicationController
 
   def index
     @toner_models = TonerModel.includes(:printer_models)
+    @organization_toner_model_ids = @current_organization.toner_model_ids
   end
 
   def new
