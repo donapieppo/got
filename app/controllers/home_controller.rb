@@ -15,7 +15,7 @@ class HomeController < ApplicationController
       @printer_models = PrinterModel.where('printer_models.name LIKE ?', s) + PrinterModel.where(vendor: @vendors)
       @toner_models   = TonerModel.where('toner_models.name LIKE ?', s) + TonerModel.where(vendor: @vendors)
     else
-      redirect_to root_path, alert: 'Raffinare la ricerca.'
+      redirect_to root_path, alert: t(:please_refine)
     end
   end
   

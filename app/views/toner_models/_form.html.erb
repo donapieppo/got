@@ -21,7 +21,7 @@
 
       <dt><%= vendor %> </dt>
       <dd><%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false %></dd>
-      <dd><%= link_to "aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id), class: :button %>  
+      <dd><%= link_to "aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id) %>  
     <% end %>
   </dl>
 

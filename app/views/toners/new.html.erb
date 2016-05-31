@@ -1,4 +1,4 @@
-<h1>Toner <small>in <%= @current_organization.name %></small></h1>
+<h1>Toner posseduto da <small><%= @current_organization.name %></small></h1>
 
 <%= horizontal_form_for([@organization, @toner]) do |toner| %>
   <%= toner.dm_error_notification %>  
