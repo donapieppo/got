@@ -1,9 +1,20 @@
 <ul>
-  <% organization.toners.includes(toner_model: :vendor).order('vendors.name').each do |toner| %>  
+  <% organization.toners.includes(toner_model: [:printer_models, :vendor]).order('vendors.name, toner_models.name').each do |toner| %>  
     <li class="<%= 'gift-class' if toner.gift %>">
       <span class="toner_number"><%= toner.number %></span> 
-      <%= toner %> 
-      <strong><%= '(inutilizzato)' if toner.gift %></strong>
+
+      <strong><%= toner %></strong> <br/>
+
+      <%= '(inutilizzato)' if toner.gift %>  
+
+      <% compatible_printers = toner.compatible_printers.all %>  
+
+      <% if compatible_printers.empty? and ! toner.gift %>
+        (verificare se utilizzabile da qualche stampante)
+      <% else %>
+        <%= compatible_printers.map(&:name).join(', ') %>  
+      <% end %>
+
       <span class="actions">
         <% if toner.gift and toner.number > 0 and organization.interested_in?(toner) %>  
           <%= link_to content_tag(:strong, icon(:warning), class: 'missing-field', title: 'Hai una stampante compatibile'), edit_toner_model_path(toner.toner_model) %>
