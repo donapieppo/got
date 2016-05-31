@@ -7,7 +7,9 @@ class Organization < ActiveRecord::Base
 
   # cache
   attr_accessor :_printer_model_ids, 
-                :_usable_toner_models
+                :_toner_model_ids, 
+                :_usable_toner_models, 
+                :_unusable_toners
 
   def to_s
     self.name + " (" + self.description + ")"
@@ -27,12 +29,16 @@ class Organization < ActiveRecord::Base
     @_printer_model_ids ||= self.printers.select(:printer_model_id).map(&:printer_model_id).uniq
   end
 
+  def toner_model_ids
+    @_toner_model_ids ||= self.toners.select(:toner_model_id).map(&:toner_model_id).uniq
+  end
+
   def usable_toner_models
     @_usable_toner_models ||= TonerModel.includes(:printer_models).where('printer_models_toner_models.printer_model_id': printer_model_ids)
   end
 
-  def toner_model_ids
-    self.toners.select(:toner_model_id).map(&:toner_model_id).uniq
+  def unusable_toners
+    @_unusable_toners ||= self.toners.where.not(toner_model: usable_toner_models.map(&:id))
   end
 
   # others 
