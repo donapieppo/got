@@ -9,10 +9,10 @@
     font-weight: bold;
   }
   div.toners {
-    @extend .col-md-6;
+    @extend .col-md-8;
   }
   div.printers {
-    @extend .col-md-6;
+    @extend .col-md-4;
   }
   ul {
     @extend .list-group;
@@ -24,6 +24,9 @@
         @extend .badge;
         @extend .pull-left;
         margin-right: 10px;
+        display: inline-block;
+        text-align: right;
+        width: 6ex;
       }
       &.gift-class {
         @extend .list-group-item-warning;
@@ -57,3 +60,10 @@ dl.toners-list, dl.printers-list, dl.subscriptions-list {
     @extend .pull-right;
   }
 }
+li span.organization_name {
+  display: inline-block;
+  text-align: right;
+  width: 12ex;
+  font-weight: bold;
+}
+
