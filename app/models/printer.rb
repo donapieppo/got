@@ -9,6 +9,11 @@ class Printer < ActiveRecord::Base
     self.name + " (#{self.printer_model})"
   end
 
+  # hostname without domain
+  def short_name
+    self.name.gsub(/\..*$/, '')
+  end
+
   def vendor
     self.printer_model and self.printer_model.vendor
   end
