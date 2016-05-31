@@ -1,0 +1,15 @@
+<h1>Benvenuto</h1>
+
+<div class="well"> 
+  Lei ha ora la possibilità di operare sulla struttura 
+
+  <br/><br/>
+    <strong><%= @organization.name %></strong>
+    <em>(<%= @organization.description %>)</em>. 
+  <br/><br/>
+  
+  per aggiungere stampanti e toner e altri amministratori.<br/><br/>
+
+  <%= link_to 'PROCEDI', root_path, class: :button %>  
+</div>
+

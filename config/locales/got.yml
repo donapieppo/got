@@ -10,6 +10,8 @@ it:
   printer_model:  Modello di stampante
   toner_model:    Modello di toner
   no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
+  add_toner:      Aggiungi il toner alla struttura
+  add_printer:    Aggiungi la stampante alla struttura
 
   activerecord:
     models:
@@ -36,7 +38,7 @@ it:
         vendor:        Marca
         name:          Modello
       toner:   
-        name:          Nome
+        toner_model:   Modello
         number:        Numero
         gift:          Non più utilizzato nella struttura
       printer:   
@@ -52,4 +54,5 @@ it:
   gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
   multiple_name_with_semicolon_hint: È possibile inserire più modelli separati da punto e virgola ;
 
+  please_refine: Si prega di raffinare i parametri di ricerca
 

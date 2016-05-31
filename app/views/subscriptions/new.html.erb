@@ -1,0 +1,39 @@
+<h1>Attuali Organizzazioni/Dipartimenti</h1>
+
+<dl class="subscriptions-list">
+  <% @organizations.each do |organization| %>  
+    <% admins = organization.admins %>  
+    <dt>
+      <%= organization.name %> <span class="pull-right">(<%= organization.description %>)</span>
+    </dt>
+    <dd>
+      <% if admins.any? %>  
+        <p><strong>Amministratori:</strong> <em><%= organization.admins_string %></em></p>
+        <p>
+          Per essere abilitati contattate gli amministratori sopra elencati o scrivete a 
+          <%= mail_to 'dipmat-supportoweb@unibo.it', 'dipmat-supportoweb@unibo.it' %>.
+        </p>
+    <% else %>
+      <p>
+        Non sono ancora stati definiti amministratori per questa Struttura.
+      </p>
+      <p>
+      <%= link_to icon('key') + ' Gestisci questa struttura', subscriptions_path(oid: organization.id), method: :post, data: { confirm: "Siete sicuri di voler gestire la struttura #{organization}?"}, class: :button %>
+      </p>
+    <% end %>
+    </dd>
+  <% end %>
+</dl>
+
+<p>
+  <%= link_to_new 'Aggiungi Organizzazione/Dipartimento', new_organization_path %>  
+</p>
+
+<%= javascript_tag do %>  
+  $(document).ready(function(){
+    $("dd").toggle();
+    $("dt").click(function() {
+     $(this).nextUntil("dt", "dd").slideToggle();
+    });
+  });
+<% end %>

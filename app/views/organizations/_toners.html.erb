@@ -5,7 +5,7 @@
       <%= toner %> 
       <strong><%= '(inutilizzato)' if toner.gift %></strong>
       <span class="actions">
-        <% if toner.gift and toner.number > 0 and organization.interested?(toner) %>  
+        <% if toner.gift and toner.number > 0 and organization.interested_in?(toner) %>  
           <%= link_to content_tag(:strong, icon(:warning), class: 'missing-field', title: 'Hai una stampante compatibile'), edit_toner_model_path(toner.toner_model) %>
         <% end %>
         <%= link_to_edit edit_toner_path(toner) %> 

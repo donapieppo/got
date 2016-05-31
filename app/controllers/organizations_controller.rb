@@ -1,5 +1,7 @@
 class OrganizationsController < ApplicationController
-  before_action :user_cesia!, except: [:show]
+  skip_filter :retrive_authlevel, only: [:new, :create]
+  before_action :user_cesia!, except: [:show, :new, :create]
+
   before_action :set_organization, only: [:edit, :update, :destroy]
 
   def index
@@ -12,14 +14,17 @@ class OrganizationsController < ApplicationController
     @available_toners = @organization.available_toners
   end
 
+  # alert: no authlevel!
   def new
     @organization = Organization.new
   end
 
+  # alert: no authlevel!
   def create
     @organization = Organization.new(organization_params)
     if @organization.save
-      redirect_to organizations_path, notice: 'Struttura creata correttamente.'
+      admin = @organization.admins.create!(user_id: current_user.id)
+      render 'subscriptions/create'
     else
       render :new
     end

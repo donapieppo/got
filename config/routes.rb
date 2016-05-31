@@ -20,5 +20,7 @@ Rails.application.routes.draw do
 
   post 'search', to: 'home#search', as: 'search'
 
+  resources  :subscriptions
+
   root 'home#index'
 end
