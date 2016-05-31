@@ -12,7 +12,7 @@
       <% if compatible_printers.empty? and ! toner.gift %>
         (verificare se utilizzabile da qualche stampante)
       <% else %>
-        <%= compatible_printers.map(&:name).join(', ') %>  
+        <%= compatible_printers.map(&:short_name).join(', ') %>  
       <% end %>
 
       <span class="actions">
