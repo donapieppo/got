@@ -1,4 +1,4 @@
-# GAME OF TONER 
+# GAME OF TONERS
 
 Give old toners to other organizations.
 
@@ -8,26 +8,34 @@ Give old toners to other organizations.
 
 ```bash
 git clone git@github.com:donapieppo/got.git
+cd got
 bundle install 
+
+cp doc/got_example.rb config/initializers/got.rb
 ```
 
+change `config/initializers/got.rb` according to
+your organization.
+
 Create the database `got` and `got_test` and
-set `GOT_DATABASE_PASSWORD` in ENV (see
-`config/database.yml`) for `got` user
+set `GOT_DATABASE_PASSWORD` and 
+`DEVISE_SECRET_KEY` in ENV (see `config/database.yml`) 
+for `got` user.
 
 For example put
-`export GOT_DATABASE_PASSWORD='verysecurepasswordtochange'`
+```bash
+export GOT_DATABASE_PASSWORD='verysecurepasswordtochange'`
+export SECRET_KEY_BASE_GOT='verysecuresecretkeye71dedghqhjhjqhdhqhdhgwhqverysecureiamreally'
+export DEVISE_SECRET_KEY='2ac52c092e4542403ref72104ab7e6a5d9er3db43115b4346da7520428dfec8703451a760ee3e0ed292ab98664e4e642254e94b238cr91e5f3f19r0994c69aa8'
+```
 in `.bashrc`
 
 Now load the database schema.
 
 ```bash
+rake db:create
 rake db:schema:load
 ```
-
-Before starting rails copy example configuraition  
-`cp doc/got_example.rb config/initializers/got.rb`
-and change for your use.
 
 ## The database
 
