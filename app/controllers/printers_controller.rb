@@ -45,7 +45,7 @@ class PrintersController < ApplicationController
   end
 
   def printer_params
-    params[:printer].permit(:name, :printer_model_id, :description)
+    params[:printer].permit(:name, :printer_model_id, :description, :rent)
   end
 end
 

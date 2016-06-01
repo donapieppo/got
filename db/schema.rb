@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "vendor_id", limit: 4,   null: false
     t.string  "name",      limit: 255
     t.boolean "laser"
-    t.boolean "rent"
   end
 
   add_index "printer_models", ["vendor_id"], name: "vendor_id", using: :btree
@@ -48,6 +47,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "printer_model_id", limit: 4
     t.string  "name",             limit: 255
     t.text    "description",      limit: 65535
+    t.boolean "rent"
   end
 
   add_index "printers", ["organization_id"], name: "organization_id", using: :btree
