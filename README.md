@@ -15,7 +15,7 @@ cp doc/got_example.rb config/initializers/got.rb
 ```
 
 change `config/initializers/got.rb` according to
-your organization.
+your needs.
 
 Create the database `got` and `got_test` and
 set `GOT_DATABASE_PASSWORD` and 
@@ -37,15 +37,24 @@ rake db:create
 rake db:schema:load
 ```
 
+and some sample data (vendors like
+HP, Dell, Kyocera, printers like
+hp 4300)
+
+```
+rake got:load_vendors
+rake got:load_models
+```
+
 ## The database
 
 Two words about the database:
 
 ### Organizations
 
-Departments/Organizations/Bunkers you name it. In Unibo
-are just organizational units each with its own 
-money to buy toners.
+Departments/Organizations/Bunkers, you name it. 
+In my University are just organizational units each 
+with its own money to buy toners.
 
 ### vendors
 
@@ -56,16 +65,26 @@ Just a list of vendors (HP, Kyocera...)
 Common to all organizations are printer_models
 
 ```sql
-vendor_id
-name
-...
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+| vendor_id | int(11)      | NO   | MUL | NULL    |                |
+| name      | varchar(255) | YES  |     | NULL    |                |
+| laser     | tinyint(1)   | YES  |     | NULL    |                |
 ```
 
 and toner_models
 
 ```sql
-vendor_id
-name
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| vendor_id  | int(11)      | NO   | MUL | NULL    |                |
+| name       | varchar(255) | YES  |     | NULL    |                |
+| compatible | tinyint(1)   | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
 ```
 
 ### association table between printer_models and toner_models
