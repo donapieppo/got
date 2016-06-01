@@ -7,6 +7,7 @@ module Got
   class Application < Rails::Application
     config.domain_name = 'unibo.it'
     config.dm_common = {
+      omniauth_provider: :google_oauth2,
       login_method: :log_if_email, # can use application only if present in database
       message_footer: %Q{Messaggio inviato da 'Game of Toners'.\nNon rispondere a questo messaggio.\nPer problemi tecnici contattare got-support@unibo.it},       # mailer 
       impersonate_admins:  ['name.surname@unibo.it'], # who can impersonate. See https://github.com/ankane/pretender
