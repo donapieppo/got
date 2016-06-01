@@ -47,12 +47,15 @@ it:
         printer_model: Modello
         description:   Note
         url:           Url 
+        rent:          In affitto
 
   add_to_organization:      Aggiungi al posseduto della struttura %{organization}.
   printer_description_hint: Campo opzionale. Si può indicare dove si trova la stampante o altre note.
   printer_name_hint:        Consigliamo di inserire il dns name.
+  printer_rent_hint:        La stampante è in affitto.
   gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
   multiple_name_with_semicolon_hint: È possibile inserire più modelli separati da punto e virgola ;
+   
 
   please_refine: Si prega di raffinare i parametri di ricerca
 
