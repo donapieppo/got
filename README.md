@@ -62,7 +62,7 @@ Just a list of vendors (HP, Kyocera...)
 
 ### printer_models and toner_models
 
-Common to all organizations are printer_models
+Common to all organizations are `printer_models`:
 
 ```sql
 +-----------+--------------+------+-----+---------+----------------+
@@ -74,7 +74,7 @@ Common to all organizations are printer_models
 | laser     | tinyint(1)   | YES  |     | NULL    |                |
 ```
 
-and toner_models
+and `toner_models`:
 
 ```sql
 +------------+--------------+------+-----+---------+----------------+
@@ -89,10 +89,18 @@ and toner_models
 
 ### association table between printer_models and toner_models
 
-printer_models_toner_models
+is done with the table `printer_models_toner_models`
 
-is the table with `printer_model_id` and 
-`toner_model_id` so that whe have
+```sql
++------------------+---------+------+-----+---------+-------+
+| Field            | Type    | Null | Key | Default | Extra |
++------------------+---------+------+-----+---------+-------+
+| printer_model_id | int(11) | NO   | MUL | NULL    |       |
+| toner_model_id   | int(11) | NO   | MUL | NULL    |       |
++------------------+---------+------+-----+---------+-------+
+```
+
+in order to have
 
 ```ruby
 class TonerModel < ActiveRecord::Base
@@ -114,17 +122,13 @@ makes toners for HP (compatible).
 
 ### printers and toners
 
-Every organization has a list of printers and
-toners. The toners are supposed to be obsolete
+Every organization has a list of printers and toners. 
+
+The toners can be marked as obsolete
 for the organization (usually the printer is broken 
 or dismissed). 
-The toners can be required from other organizations.
+This kind of toners can be required from other organizations.
 
-To help identifing the toner your organization can
-ask other organizations there is the list
-of printers.
-
-Example: 
 
 
 
