@@ -4,6 +4,7 @@ class Vendor < ActiveRecord::Base
 
   validates :name, uniqueness: {}
   scope :with_printer_models, -> { where("id IN (SELECT DISTINCT(vendor_id) FROM printer_models)") }
+  scope :with_toner_models,   -> { where("id IN (SELECT DISTINCT(vendor_id) FROM toner_models)") }
 
   def to_s
     self.name
