@@ -1,12 +1,3 @@
 <h1>Toner posseduto da <small><%= @current_organization.name %></small></h1>
 
-<%= horizontal_form_for([@organization, @toner]) do |toner| %>
-  <%= toner.dm_error_notification %>  
-
-  <%= toner.association :toner_model, label_method: :to_s, hint: link_to("Nuovo modello di toner.", new_toner_model_path)  %>  
-  <%= toner.input :number %>  
-  <%= toner.input :gift, hint: t(:gift_hint) %>  
-
-  <%= toner.submit %>
-<% end %>
-
+<%= render 'form' %>  

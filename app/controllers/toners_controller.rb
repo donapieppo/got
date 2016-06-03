@@ -8,6 +8,8 @@ class TonersController < ApplicationController
       if toner = @current_organization.toners.where(toner_model: @toner_model).first
         redirect_to [:edit, toner] and return
       end
+    else
+      @toner_model = TonerModel.first
     end
     @toner = @current_organization.toners.new(toner_model: @toner_model)
   end

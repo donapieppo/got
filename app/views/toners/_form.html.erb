@@ -1,0 +1,41 @@
+<%= horizontal_form_for([@organization, @toner]) do |toner| %>
+  <%= toner.dm_error_notification %>  
+
+  <%= toner.input :vendor, collection: Vendor.with_toner_models.order(:name).all, selected: @toner.toner_model.vendor.id %>  
+  <%= toner.association :toner_model, hint: link_to("Nuovo modello di toner.", new_toner_model_path)  %>  
+
+  <%= toner.input :number %>  
+  <%= toner.input :gift, hint: t(:gift_hint) %>  
+
+  <%= toner.submit %>
+<% end %>
+
+<%= javascript_tag do %>  
+  $(function(){
+    // vendor_id: array of toner_models
+    // { 10: [1,2,4], 20: [3,7] }
+    ven_to_models = <%= vendor_to_models_array(:toners) %>;
+
+    function show_vendor_toners() {
+      vendor_id = $("select#toner_vendor option:selected").val();
+      // hide all
+      $("#toner_toner_model_id option").hide();
+      // show only this vendor toner_models
+      ven_to_models[vendor_id].forEach(function(element, index, array) {
+        $("#toner_toner_model_id option[value=" + element + "]").show();
+      });
+    }
+
+    $("select#toner_vendor").change(function() {
+      // unselect previous
+      $("#toner_toner_model_id option:selected").attr('selected',false);
+      show_vendor_toners();
+      // select ''
+      $("#toner_toner_model_id option[value='']").show();
+      $("#toner_toner_model_id option[value='']").attr('selected',true);
+    });
+
+    show_vendor_toners();
+  });
+<% end %>
+
