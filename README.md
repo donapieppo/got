@@ -124,11 +124,41 @@ makes toners for HP (compatible).
 
 Every organization has a list of printers and toners. 
 
+`Printers`
+
+```sql
++------------------+------------------+------+-----+---------+----------------+
+| Field            | Type             | Null | Key | Default | Extra          |
++------------------+------------------+------+-----+---------+----------------+
+| id               | int(11) unsigned | NO   | PRI | NULL    | auto_increment |
+| organization_id  | int(11) unsigned | YES  | MUL | NULL    |                |
+| printer_model_id | int(11) unsigned | YES  | MUL | NULL    |                |
+| name             | varchar(255)     | YES  |     | NULL    |                |
+| description      | text             | YES  |     | NULL    |                |
+| rent             | tinyint(1)       | YES  |     | NULL    |                |
++------------------+------------------+------+-----+---------+----------------+
+```
+
+`Toners`
+
+```sql 
++-----------------+------------------+------+-----+---------+----------------+
+| Field           | Type             | Null | Key | Default | Extra          |
++-----------------+------------------+------+-----+---------+----------------+
+| id              | int(11) unsigned | NO   | PRI | NULL    | auto_increment |
+| organization_id | int(11) unsigned | YES  | MUL | NULL    |                |
+| toner_model_id  | int(11) unsigned | YES  | MUL | NULL    |                |
+| number          | int(11) unsigned | YES  |     | 0       |                |
+| gift            | tinyint(1)       | YES  |     | NULL    |                |
++-----------------+------------------+------+-----+---------+----------------+
+```
+
 The toners can be marked as obsolete
 for the organization (usually the printer is broken 
-or dismissed). 
-This kind of toners can be required from other organizations.
+or dismissed) by setting true to gift column.
 
+This kind of toners are shown to organizations
+with compatible printers can be asked.
 
 
 
