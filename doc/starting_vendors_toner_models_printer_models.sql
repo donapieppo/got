@@ -93,6 +93,32 @@ INSERT INTO `printer_models` (`id`, `vendor_id`, `name`, `laser`) VALUES (1,1,'L
 UNLOCK TABLES;
 
 --
+-- Table structure for table `printer_models_toner_models`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `printer_models_toner_models` (
+  `printer_model_id` int(11) unsigned NOT NULL,
+  `toner_model_id` int(11) unsigned NOT NULL,
+  KEY `printer_model_id` (`printer_model_id`),
+  KEY `toner_model_id` (`toner_model_id`),
+  CONSTRAINT `printer_models_toner_models_ibfk_1` FOREIGN KEY (`printer_model_id`) REFERENCES `printer_models` (`id`),
+  CONSTRAINT `printer_models_toner_models_ibfk_2` FOREIGN KEY (`toner_model_id`) REFERENCES `toner_models` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `printer_models_toner_models`
+--
+
+LOCK TABLES `printer_models_toner_models` WRITE;
+/*!40000 ALTER TABLE `printer_models_toner_models` DISABLE KEYS */;
+INSERT INTO `printer_models_toner_models` (`printer_model_id`, `toner_model_id`) VALUES (3,3),(18,1),(19,1),(22,2),(23,2),(20,2),(10,4),(11,4),(12,4),(13,4),(15,4),(6,5),(26,6),(25,6),(31,7),(30,7),(8,7),(4,3),(32,8),(36,9),(9,2),(37,10),(38,10),(39,10),(40,10),(41,11),(42,11),(43,12),(34,13),(1,13),(44,14),(45,14),(46,14),(47,14),(48,15),(48,16),(49,17),(50,17),(51,17),(52,17),(29,17),(53,18),(54,18),(55,18),(56,18),(57,19),(28,20),(58,20),(17,21);
+/*!40000 ALTER TABLE `printer_models_toner_models` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping events for database 'got'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -105,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-06 12:32:03
+-- Dump completed on 2016-06-06 12:46:15
