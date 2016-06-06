@@ -57,5 +57,6 @@ it:
   multiple_name_with_semicolon_hint: È possibile inserire più modelli separati da punto e virgola ;
    
 
+  unused: inutilizzato, disponibile per altre strutture
   please_refine: Si prega di raffinare i parametri di ricerca
 

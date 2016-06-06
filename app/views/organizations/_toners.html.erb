@@ -5,7 +5,7 @@
 
       <strong><%= toner %></strong> <br/>
 
-      <%= '(inutilizzato)' if toner.gift %>  
+      <%= t(:unused) if toner.gift %>  
 
       <% compatible_printers = toner.compatible_printers.all %>  
 
