@@ -1,7 +1,8 @@
 <%= horizontal_form_for([@organization, @toner]) do |toner| %>
   <%= toner.dm_error_notification %>  
 
-  <%= toner.input :vendor, collection: Vendor.with_toner_models.order(:name).all, selected: @toner.toner_model.vendor.id %>  
+  <%= toner.input       :vendor, collection: Vendor.with_toner_models.order(:name).all, 
+                                 selected: @toner.vendor.id if @toner.vendor %>  
   <%= toner.association :toner_model, hint: link_to("Nuovo modello di toner.", new_toner_model_path)  %>  
 
   <%= toner.input :number %>  

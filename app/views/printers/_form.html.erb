@@ -1,11 +1,12 @@
 <%= horizontal_form_for [@organization, @printer] do |printer| %>
   <%= printer.dm_error_notification %>  
 
-  <%= printer.input :vendor, collection: Vendor.with_printer_models.order(:name).all, selected: @printer.vendor.id %>  
+  <%= printer.input       :vendor, collection: Vendor.with_printer_models.order(:name).all, 
+                                   selected: @printer.vendor.id if @printer.vendor %>  
   <%= printer.association :printer_model, hint: link_to("Nuovo modello di stampante.", new_printer_model_path)  %>  
-  <%= printer.input :name,        hint: t(:printer_name_hint) %>  
-  <%= printer.input :description, hint: t(:printer_description_hint) %>
-  <%= printer.input :rent,        hint: t(:printer_rent_hint) %>
+  <%= printer.input       :name,        hint: t(:printer_name_hint) %>  
+  <%= printer.input       :description, hint: t(:printer_description_hint) %>
+  <%= printer.input       :rent,        hint: t(:printer_rent_hint) %>
   <%= printer.submit t(:add_to_organization, organization: @current_organization.name) %>
 <% end %>
 
