@@ -7,7 +7,7 @@
       <dd>
         <%= icon('check') if @organization_toner_model_ids.include?(model.id) %>
         <strong><%= link_to model.name, new_toner_model_toner_path(model), title: t(:add_toner) %></strong>
-        <small>(per le stamapnti: <%= model.printer_models.map(&:name).join(', ') %>)</small>
+        <small>(per le stampanti: <%= model.printer_models.map(&:name).join(', ') %>)</small>
         <span class="actions"><%= link_to_edit(edit_toner_model_path(model)) %></span>
       </dd>
     <% end %>
