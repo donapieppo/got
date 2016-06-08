@@ -1,5 +1,5 @@
 class Admin < ActiveRecord::Base
-  extend DmCommon::UserUpnMethods::ClassMethods
+  extend DmUniboCommon::UserUpnMethods::ClassMethods
 
   belongs_to_dsa_user :user
   belongs_to :organization

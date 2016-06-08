@@ -10,5 +10,5 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require dm_common
+//= require dm_unibo_common
 //= require_tree .
