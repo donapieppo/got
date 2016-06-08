@@ -5,9 +5,9 @@
     <% if @current_organization %>  
       <li><%= link_to big_icon('home') + " Home", root_path %></li>
 
-      <%= dropdown_menu big_icon('database') + ' Modelli' do %>  
-        <li><%= link_to fwicon('print') + " Modelli stampanti", printer_models_path %></li>
-        <li><%= link_to fwicon('cubes') + " Modelli toner", toner_models_path %></li> 
+      <%= dropdown_menu big_icon('database') + ' ' + t(:models) do %>  
+        <li><%= link_to fwicon('print') + " " + t(:printer_models), printer_models_path %></li>
+        <li><%= link_to fwicon('cubes') + " " + t(:toner_models), toner_models_path %></li> 
       <% end %>
 
       <%= dropdown_menu big_icon('institution') + @current_organization.name do  %>

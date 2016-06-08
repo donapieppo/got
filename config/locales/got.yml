@@ -3,6 +3,7 @@ it:
   organizations:  Strutture
   admins:         Amministratori
   vendor:         Marca
+  models:         Modelli
   printer:        Stampante
   printer_models: Modelli di stampante
   toners:         Toner compatibili
