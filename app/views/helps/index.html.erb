@@ -16,7 +16,7 @@
     <dd><%= t :admins %>: 
     <em>
       <%= raw organization.admins.map {|admin| mail_to admin.user.upn, admin.to_s}.join(', '.html_safe) %>  
-    <em>
+    </em>
     </dd>
   <% end %>
 </dl>
