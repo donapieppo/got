@@ -2,16 +2,23 @@
 
 <h2><%= t :printer_models %></h2>
 
-<ul class="all_clickable">
+<ul class="bordered">
   <% @printer_models.each do |printer_model| %>  
-    <li><%= link_to printer_model, new_printer_model_printer_path(printer_model) %></li>
+    <li>
+      <%= link_to printer_model, new_printer_model_printer_path(printer_model), title: t(:add_printer) %>
+      <span class="actions"><%= link_to_edit(edit_printer_model_path(printer_model)) %></span>
+    </li>
   <% end %>
 </ul>
 
 <h2><%= t :toner_models %>  </h2>
 
-<ul class="all_clickable">
+<ul class="bordered">
   <% @toner_models.each do |toner_model| %>  
-    <li><%= link_to toner_model, new_toner_model_toner_path(toner_model) %></li>
+    <li>
+      <strong><%= link_to toner_model.name, new_toner_model_toner_path(toner_model), title: t(:add_toner) %></strong>
+      <small>(per le stampanti: <%= toner_model.printer_models.map(&:name).join(', ') %>)</small>
+      <span class="actions"><%= link_to_edit(edit_toner_model_path(toner_model)) %></span>
+    </li>
   <% end %>
 </ul>
