@@ -3,7 +3,7 @@
 
   <%= toner.input       :vendor, collection: Vendor.with_toner_models.order(:name).all, 
                                  selected: @toner.vendor.id if @toner.vendor %>  
-  <%= toner.association :toner_model, hint: link_to("Nuovo modello di toner.", new_toner_model_path)  %>  
+  <%= toner.association :toner_model, hint: link_to(t(:add_new_toner_model), new_toner_model_path)  %>  
 
   <%= toner.input :number %>  
   <%= toner.input :gift, hint: t(:gift_hint) %>  
