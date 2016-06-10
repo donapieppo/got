@@ -20,5 +20,9 @@ class Printer < ActiveRecord::Base
   def vendor
     self.printer_model and self.printer_model.vendor
   end
+
+  def toner_models
+    self.printer_model.toner_models
+  end
 end
 
