@@ -1,7 +1,7 @@
 class HelpsController < ApplicationController
 
   def index
-    @organizations = Organization.all
+    @organizations = Organization.order(:name)
   end
 
 end
