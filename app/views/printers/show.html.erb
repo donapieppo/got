@@ -1,0 +1,12 @@
+<h1><%= @printer.name %></h1>
+
+<dl class="dl-horizontal">
+  <dt>Descrzione:</dt>
+  <dd><%= @printer.description %></dd>
+
+  <dt>Modello:</dt>
+  <dd><%= @printer.printer_model %></dd>
+
+  <dt>Toner compatibili:</dt>
+  <dd><%= @printer.toner_models.map(&:to_s).join(', ') %></dd>
+</dl> 
