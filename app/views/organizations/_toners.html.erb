@@ -3,7 +3,7 @@
     <li class="<%= 'gift-class' if toner.gift %>">
       <span class="toner_number"><%= toner.number %></span> 
 
-      <strong><%= toner %></strong> <br/>
+      <strong><%= content_tag(:span, toner.to_s, title: toner.printer_models.map(&:name).join(', ')) %></strong><br/>
 
       <%= t(:unused) if toner.gift %>  
 
