@@ -14,6 +14,10 @@ class Toner < ActiveRecord::Base
     self.toner_model.printers(self.organization)
   end
 
+  def printer_models
+    self.toner_model.printer_models
+  end
+
   def vendor
     self.toner_model and self.toner_model.vendor
   end
