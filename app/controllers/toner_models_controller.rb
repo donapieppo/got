@@ -27,7 +27,7 @@ class TonerModelsController < ApplicationController
     if @toner_model.update(toner_model_params)
       redirect_to toner_models_path, notice: 'toner was successfully updated.'
     else
-      render :edit
+      render :new
     end
   end
 
