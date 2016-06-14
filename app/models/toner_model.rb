@@ -1,5 +1,6 @@
 class TonerModel < ActiveRecord::Base
   belongs_to :vendor
+  has_many :toners
   has_and_belongs_to_many :printer_models
 
   validates :name, uniqueness: { scope: [:vendor_id], message: "Un toner di questa marca con questo nome esiste già." }
@@ -21,8 +22,10 @@ class TonerModel < ActiveRecord::Base
   end
 
   # reorder needed because of default_scope vendor
-  def printers(organization)
-    Printer.where(organization: organization).where(printer_model: self.printer_models.reorder(:name))
+  def printers(organization = nil)
+    res = Printer.where(printer_model: self.printer_models.reorder(:name))
+    res = res.where(organization: organization) if organization
+    res
   end
 end
 
