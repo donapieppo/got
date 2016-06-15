@@ -4,9 +4,7 @@
 
 <h1><%= t :toner_model %></h1>
 
-<p class="info">
-  I modelli sono condivisi tra tutte le strutture. Si prega di mantenere i dati corretti.
-</p>
+<p class="info"><%= t :please_mantain_correct_data %></p>
 
 <%= horizontal_form_for(@toner_model) do |toner_model| %>
   <%= toner_model.dm_error_notification %>  

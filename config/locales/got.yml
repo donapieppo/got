@@ -41,6 +41,7 @@ it:
         vendor:        Marca
         name:          Modello
       toner:   
+        vendor:        Marca
         toner_model:   Modello
         number:        Numero
         gift:          Non più utilizzato nella struttura
@@ -62,4 +63,5 @@ it:
 
   unused: inutilizzato, disponibile per altre strutture
   please_refine: Si prega di raffinare i parametri di ricerca
+  please_mantain_correct_data: I modelli sono condivisi tra tutte le strutture. Si prega di mantenere i dati corretti.
 
