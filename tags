@@ -4,10 +4,17 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
 Admin	app/models/admin.rb	/^class Admin < ActiveRecord::Base$/;"	c
 AdminsController	app/controllers/admins_controller.rb	/^class AdminsController < ApplicationController$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Got
+Application	config/initializers/got.rb	/^  class Application < Rails::Application$/;"	c	class:Got
+Application	doc/got_example.rb	/^  class Application < Rails::Application$/;"	c	class:Got
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+Got	config/application.rb	/^module Got$/;"	m
+Got	config/initializers/got.rb	/^module Got$/;"	m
+Got	doc/got_example.rb	/^module Got$/;"	m
 HelpsController	app/controllers/helps_controller.rb	/^class HelpsController < ApplicationController$/;"	c
 HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
 Organization	app/models/organization.rb	/^class Organization < ActiveRecord::Base$/;"	c
@@ -70,8 +77,9 @@ new	app/controllers/vendors_controller.rb	/^  def new$/;"	f	class:VendorsControl
 organization_params	app/controllers/organizations_controller.rb	/^  def organization_params$/;"	f	class:OrganizationsController
 printer_model_ids	app/models/organization.rb	/^  def printer_model_ids$/;"	f	class:Organization
 printer_model_params	app/controllers/printer_models_controller.rb	/^    def printer_model_params$/;"	f	class:PrinterModelsController
+printer_models	app/models/toner.rb	/^  def printer_models$/;"	f	class:Toner
 printer_params	app/controllers/printers_controller.rb	/^  def printer_params$/;"	f	class:PrintersController
-printers	app/models/toner_model.rb	/^  def printers(organization)$/;"	f	class:TonerModel
+printers	app/models/toner_model.rb	/^  def printers(organization = nil)$/;"	f	class:TonerModel
 retrive_authlevel	app/controllers/application_controller.rb	/^  def retrive_authlevel$/;"	f	class:ApplicationController
 search	app/controllers/home_controller.rb	/^  def search$/;"	f	class:HomeController
 set_organization	app/controllers/organizations_controller.rb	/^  def set_organization$/;"	f	class:OrganizationsController
@@ -82,6 +90,7 @@ set_toner_and_check_permission	app/controllers/toners_controller.rb	/^  def set_
 set_toner_model	app/controllers/toner_models_controller.rb	/^    def set_toner_model$/;"	f	class:TonerModelsController
 set_vendor	app/controllers/vendors_controller.rb	/^    def set_vendor$/;"	f	class:VendorsController
 short_description	app/models/organization.rb	/^  def short_description$/;"	f	class:Organization
+short_name	app/models/printer.rb	/^  def short_name$/;"	f	class:Printer
 show	app/controllers/organizations_controller.rb	/^  def show$/;"	f	class:OrganizationsController
 show	app/controllers/printers_controller.rb	/^  def show$/;"	f	class:PrintersController
 show	app/controllers/vendors_controller.rb	/^  def show$/;"	f	class:VendorsController
@@ -95,6 +104,7 @@ to_s	app/models/toner_model.rb	/^  def to_s$/;"	f	class:TonerModel
 to_s	app/models/vendor.rb	/^  def to_s$/;"	f	class:Vendor
 toner_model_ids	app/models/organization.rb	/^  def toner_model_ids$/;"	f	class:Organization
 toner_model_params	app/controllers/toner_models_controller.rb	/^    def toner_model_params$/;"	f	class:TonerModelsController
+toner_models	app/models/printer.rb	/^  def toner_models$/;"	f	class:Printer
 toner_params	app/controllers/toners_controller.rb	/^  def toner_params$/;"	f	class:TonersController
 unusable_toners	app/models/organization.rb	/^  def unusable_toners$/;"	f	class:Organization
 upcase_name	app/models/toner_model.rb	/^  def upcase_name$/;"	f	class:TonerModel
@@ -106,6 +116,7 @@ update	app/controllers/toners_controller.rb	/^  def update$/;"	f	class:TonersCon
 update	app/controllers/vendors_controller.rb	/^  def update$/;"	f	class:VendorsController
 usable_toner_models	app/models/organization.rb	/^  def usable_toner_models$/;"	f	class:Organization
 vendor	app/models/printer.rb	/^  def vendor$/;"	f	class:Printer
+vendor	app/models/toner.rb	/^  def vendor$/;"	f	class:Toner
 vendor_params	app/controllers/vendors_controller.rb	/^    def vendor_params$/;"	f	class:VendorsController
 vendor_to_models_array	app/helpers/application_helper.rb	/^  def vendor_to_models_array(what)$/;"	f	class:ApplicationHelper.vendor_to_models_json
 vendor_to_models_json	app/helpers/application_helper.rb	/^  def vendor_to_models_json(what)$/;"	f	class:ApplicationHelper

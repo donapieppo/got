@@ -1,0 +1,56 @@
+require 'rails_helper'
+
+RSpec.describe Organization, :type => :model do
+
+  let (:organization)  { FactoryGirl.create(:organization) }
+  let (:printer_model) { FactoryGirl.create(:printer_model) }
+  let (:toner_model)   { FactoryGirl.create(:toner_model) }
+
+  it "owns printers" do
+    printer = FactoryGirl.create(:printer, printer_model: printer_model, organization: organization)
+    expect(organization.printers).to include(printer)
+  end
+
+  context "given printer in organization" do  
+    let!(:printer) { FactoryGirl.create(:printer, printer_model: printer_model, organization: organization) }
+
+    it "#printer_model_ids is [printer.printer_model_id]" do
+      expect(organization.printer_model_ids).to eq([printer.printer_model_id])
+    end
+
+    context "given the printer has a compatible toner model in database" do
+      before do 
+        @toner_model = FactoryGirl.create(:toner_model)
+        printer.printer_model.toner_models << @toner_model
+      end
+
+      it "#usable_toner_models should include printer.toner_models" do
+        expect(organization.usable_toner_models.to_a).to include(@toner_model)
+      end 
+    end
+
+    context "given printer in other organization" do 
+      let!(:printer2) { FactoryGirl.create(:printer) }
+
+      it "#printer_model_ids is still [printer.printer_model_id]" do
+        expect(organization.printer_model_ids).to eq([printer.printer_model_id])
+      end
+    end
+  end
+
+  context "given toner in organization" do  
+    let!(:toner) { FactoryGirl.create(:toner, toner_model: toner_model, organization: organization) }
+
+    it "#toner_model_ids is [toner.toner_model_id]" do
+      expect(organization.toner_model_ids).to eq([toner.toner_model_id])
+    end
+
+    context "given toner in other organization" do 
+      let!(:toner2) { FactoryGirl.create(:toner) }
+
+      it "#toner_model_ids is still [toner.toner_model_id]" do
+        expect(organization.toner_model_ids).to eq([toner.toner_model_id])
+      end
+    end
+  end
+end
