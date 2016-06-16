@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Organization, :type => :model do
+RSpec.describe Organization, type: :model do
 
   let (:organization)  { FactoryGirl.create(:organization) }
   let (:printer_model) { FactoryGirl.create(:printer_model) }
@@ -14,7 +14,7 @@ RSpec.describe Organization, :type => :model do
   context "given printer in organization" do  
     let!(:printer) { FactoryGirl.create(:printer, printer_model: printer_model, organization: organization) }
 
-    it "#printer_model_ids is [printer.printer_model_id]" do
+    it "#printer_model_ids consists of its model id]" do
       expect(organization.printer_model_ids).to eq([printer.printer_model_id])
     end
 
@@ -50,6 +50,21 @@ RSpec.describe Organization, :type => :model do
 
       it "#toner_model_ids is still [toner.toner_model_id]" do
         expect(organization.toner_model_ids).to eq([toner.toner_model_id])
+      end
+    end
+
+    it "#unusable_toners includes this toner" do
+      expect(organization.unusable_toners).to include(toner)
+    end
+
+    context "given a compatible printer for this toner" do
+      before do
+        @printer = FactoryGirl.create(:printer, printer_model: printer_model, organization: organization)
+        printer_model.toner_models << toner.toner_model
+      end
+       
+      it "#unusable_toners does not includes this toner" do
+        expect(organization.unusable_toners).not_to include(toner)
       end
     end
   end
