@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'dm_unibo_common'
+gem 'dm_unibo_common', '= 1.1.1'
 
 gem "prawn"
 gem "prawn-table"
