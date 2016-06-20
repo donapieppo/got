@@ -18,3 +18,4 @@
 
 # private configuration
 config/initializers/got.rb
+config/dm_unibo_common.yml
