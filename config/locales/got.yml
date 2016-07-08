@@ -16,6 +16,11 @@ it:
   add_new_toner_model:   Aggiungi un nuovo modello di toner.
   add_new_printer_model: Aggiungi un nuovo modello di stampante.
 
+  helpers:
+    submit:
+      organization: 
+        create:      Crea la struttura e diventa amministratore
+
   activerecord:
     models:
       organization:  Struttura
