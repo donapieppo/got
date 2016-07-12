@@ -18,11 +18,11 @@ COPY . .
 # configuration
 RUN ["/bin/cp", "doc/dm_unibo_common.yml", "config"]
 RUN ["/bin/cp", "doc/got_example.rb",      "config/initializers/got.rb"]
-RUN ["/bin/cp", "doc/sqlite_database.yml", "config/database.yml"
+RUN ["/bin/cp", "doc/sqlite_database.yml", "config/database.yml"]
 
 # db
-CMD ["bin/rake", "db:create"]
-CMD ["bin/rake", "db:schema:load"]
+CMD ["rake", "db:create"]
+CMD ["rake", "db:schema:load"]
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
