@@ -1,5 +1,6 @@
 production:
   omniauth_provider: :google_oauth2
+  searchable_provider: false
   host:              example.com
   smtp_address:      mailhost.example.com
   smtp_domain:       example.com
@@ -12,6 +13,7 @@ production:
 
 development:
   omniauth_provider: :shibboleth 
+  searchable_provider: false
   host:              tester.example.com
   smtp_address:      mailhost.example.com
   smtp_domain:       example.com
