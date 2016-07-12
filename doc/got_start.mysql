@@ -1,0 +1,107 @@
+use `got`;
+
+CREATE TABLE `admins` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `organization_id` int(11) unsigned DEFAULT NULL,
+  `authlevel` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `userid` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `organizations` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `printer_models` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `vendor_id` int(11) unsigned NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `laser` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `vendor_id` (`vendor_id`),
+  CONSTRAINT `printer_models_ibfk_1` FOREIGN KEY (`vendor_id`) REFERENCES `vendors` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `printer_models_toner_models` (
+  `printer_model_id` int(11) unsigned NOT NULL,
+  `toner_model_id` int(11) unsigned NOT NULL,
+  KEY `printer_model_id` (`printer_model_id`),
+  KEY `toner_model_id` (`toner_model_id`),
+  CONSTRAINT `printer_models_toner_models_ibfk_1` FOREIGN KEY (`printer_model_id`) REFERENCES `printer_models` (`id`),
+  CONSTRAINT `printer_models_toner_models_ibfk_2` FOREIGN KEY (`toner_model_id`) REFERENCES `toner_models` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `printers` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `organization_id` int(11) unsigned DEFAULT NULL,
+  `printer_model_id` int(11) unsigned DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `description` text,
+  `rent` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `organization_id` (`organization_id`),
+  KEY `printer_model_id` (`printer_model_id`),
+  CONSTRAINT `printers_ibfk_1` FOREIGN KEY (`organization_id`) REFERENCES `organizations` (`id`),
+  CONSTRAINT `printers_ibfk_2` FOREIGN KEY (`printer_model_id`) REFERENCES `printer_models` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `toner_models` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `vendor_id` int(11) unsigned NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `compatible` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `vendor_id` (`vendor_id`),
+  CONSTRAINT `toner_models_ibfk_1` FOREIGN KEY (`vendor_id`) REFERENCES `vendors` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `toners` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `organization_id` int(11) unsigned DEFAULT NULL,
+  `toner_model_id` int(11) unsigned DEFAULT NULL,
+  `number` int(11) unsigned DEFAULT '0',
+  `gift` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `organization_id` (`organization_id`),
+  KEY `toner_model_id` (`toner_model_id`),
+  CONSTRAINT `toners_ibfk_1` FOREIGN KEY (`organization_id`) REFERENCES `organizations` (`id`),
+  CONSTRAINT `toners_ibfk_2` FOREIGN KEY (`toner_model_id`) REFERENCES `toner_models` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL,
+  `upn` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `surname` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `index_users_on_upn` (`upn`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `vendors` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `vendors` VALUES (1, 'HP');
+INSERT INTO `vendors` VALUES (2, 'Ibm');
+INSERT INTO `vendors` VALUES (3, 'Brother');
+INSERT INTO `vendors` VALUES (4, 'Canon');
+INSERT INTO `vendors` VALUES (5, 'Epson');
+INSERT INTO `vendors` VALUES (6, 'Kyocera Mita');
+INSERT INTO `vendors` VALUES (7, 'Lexmark');
+INSERT INTO `vendors` VALUES (8, 'Samsung');
+INSERT INTO `vendors` VALUES (9, 'Sharp');
+INSERT INTO `vendors` VALUES (10, 'Xerox');
+INSERT INTO `vendors` VALUES (11, 'Dell');
+INSERT INTO `vendors` VALUES (12, 'RICOH Aficio');
+
+INSERT INTO `toner_models` VALUES (0, 1, '4250a', NULL);
+INSERT INTO `toner_models` VALUES (0, 1, '4350', NULL);
+
+INSERT INTO `printer_models` VALUES (1, 1,  'LaserJet 4050', 1, NULL);
+INSERT INTO `printer_models` VALUES (2, 1,  'LaserJet 4300', 1, NULL);
+INSERT INTO `printer_models` VALUES (3, 1,  'LaserJet 4350', 1, NULL);
+INSERT INTO `printer_models` VALUES (4, 1,  'LaserJet 4250', 1, NULL);
+INSERT INTO `printer_models` VALUES (5, 12, 'CL3500N PS', 1, NULL);
+INSERT INTO `printer_models` VALUES (6, 10, 'Phaser 5550', 1, NULL);
+INSERT INTO `printer_models` VALUES (7, 6,  'TASKalfa 3510i', 1, 1);
