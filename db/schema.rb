@@ -32,15 +32,15 @@ ActiveRecord::Schema.define(version: 0) do
     t.boolean "laser"
   end
 
-  add_index "printer_models", ["vendor_id"], name: "vendor_id", using: :btree
+  add_index "printer_models", ["vendor_id"], name: "p_vendor_id", using: :btree
 
   create_table "printer_models_toner_models", id: false, force: :cascade do |t|
     t.integer "printer_model_id", limit: 4, null: false
     t.integer "toner_model_id",   limit: 4, null: false
   end
 
-  add_index "printer_models_toner_models", ["printer_model_id"], name: "printer_model_id", using: :btree
-  add_index "printer_models_toner_models", ["toner_model_id"], name: "toner_model_id", using: :btree
+  add_index "printer_models_toner_models", ["printer_model_id"], name: "a_printer_model_id", using: :btree
+  add_index "printer_models_toner_models", ["toner_model_id"], name: "a_toner_model_id", using: :btre
 
   create_table "printers", force: :cascade do |t|
     t.integer "organization_id",  limit: 4
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.boolean "rent"
   end
 
-  add_index "printers", ["organization_id"], name: "organization_id", using: :btree
+  add_index "printers", ["organization_id"], name: "p_organization_id", using: :btree
   add_index "printers", ["printer_model_id"], name: "printer_model_id", using: :btree
 
   create_table "toner_models", force: :cascade do |t|
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.boolean "compatible"
   end
 
-  add_index "toner_models", ["vendor_id"], name: "vendor_id", using: :btree
+  add_index "toner_models", ["vendor_id"], name: "t_vendor_id", using: :btree
 
   create_table "toners", force: :cascade do |t|
     t.integer "organization_id", limit: 4
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.boolean "gift"
   end
 
-  add_index "toners", ["organization_id"], name: "organization_id", using: :btree
+  add_index "toners", ["organization_id"], name: "t_organization_id", using: :btree
   add_index "toners", ["toner_model_id"], name: "toner_model_id", using: :btree
 
   create_table "users", force: :cascade do |t|
