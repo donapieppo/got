@@ -18,7 +18,7 @@ for installation details.
 In the [WIKI](https://github.com/donapieppo/got/wiki)
 you can find informations abount the database structure.
 
-Please take a look if you're insterested in helping
+Please take a look if you're interested in helping
 the project development.
 
 
