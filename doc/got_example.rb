@@ -9,7 +9,6 @@ module Got
   class Application < Rails::Application
     config.domain_name = 'example.com'
     config.dm_unibo_common.update(
-      omniauth_provider:   :google_oauth2,
       login_method:        :log_if_email,                # can use application only if present in database
       impersonate_admins:  ['name.surname@example.com'], # who can impersonate. See https://github.com/ankane/pretender
       interceptor_mails:   ['name@example.com'],         # who gets emails in development
