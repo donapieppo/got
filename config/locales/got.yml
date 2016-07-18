@@ -62,6 +62,7 @@ it:
   printer_description_hint: Campo opzionale. Si può indicare dove si trova la stampante o altre note.
   printer_name_hint:        Consigliamo di inserire il dns name.
   printer_rent_hint:        La stampante è in affitto.
+  toner_model_name_hint:    Inserire il nome più generico. Per esempio, per stampanti a colori quale HP ColorLaserJet 4650, inserire 641A e non i dettagli sul colore (C9721A o C9722A).
   gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
   multiple_name_with_semicolon_hint: È possibile inserire più modelli separati da punto e virgola ;
    
