@@ -2,7 +2,7 @@ GIT
   remote: https://github.com/donapieppo/dm_unibo_common.git
   revision: 653912a5978da9f0cb1783db69fa9b7fab0a0df4
   ref: omniauth
-  branch: omniauth
+  branch: master
   specs:
     dm_unibo_common (1.2.0)
       bootstrap-sass
@@ -14,7 +14,7 @@ GIT
       omniauth
       omniauth-google-oauth2
       omniauth-shibboleth
-      pretender
+      pretender (~> 0.2)
       rails (~> 4.2.6)
       sass-rails (>= 5.0.3)
       simple_form
