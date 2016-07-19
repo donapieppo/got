@@ -5,6 +5,11 @@ class PrinterModelsController < ApplicationController
     @printer_models = PrinterModel.all
   end
 
+  # remote
+  def show
+    @available_toners = Toner.where(gift: true).where(toner_model: @printer_model.toner_model_ids)
+  end
+
   def new
     @printer_model = PrinterModel.new(laser: true, vendor_id: params[:vendor_id])
   end
