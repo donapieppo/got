@@ -1,0 +1,3 @@
+<% res = content_tag(:p, "contatta: #{@available_toners.map(&:organization).join(', ')}") %> 
+$("#pm_<%= @printer_model.id %>").append("<%= escape_javascript(res) %> ");
+
