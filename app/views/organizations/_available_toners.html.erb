@@ -11,10 +11,10 @@
       <%= toner.number %> toner <%= toner %><br/>
       presso <strong><%= link_to toner.organization, helps_path %></strong><br/>
       contatta 
-      <% toner.organization.admins.each do |admin| %>
-        <%= link_to admin.to_s, "mailto: #{admin.user.upn}" %>  
-      <% end %>
+      <%= toner.organization.admins.map{|admin| link_to admin.to_s, "mailto: #{admin.user.upn}"}.join(', ').html_safe %>
     </li>
   <% end %>
 </ul>
+
+<p>Puoi controllare direttamente l'<%= link_to 'elenco di tutte le stampanti compatibili', toners_path %> con tutti toner disponibili.</p>
 
