@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Got
   class Application < Rails::Application
+    config.autoload_paths += %W(#{Rails.root}/app/pdfs)
     config.time_zone = 'Rome'
     config.i18n.default_locale = :it
 

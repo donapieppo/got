@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :toners 
 
   post 'search', to: 'home#search', as: 'search'
+  get  'report', to: 'home#report', as: 'report'
 
   resources  :subscriptions
 
