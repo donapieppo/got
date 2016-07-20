@@ -16,4 +16,9 @@ class ApplicationController < ActionController::Base
 
     @current_organization = @available_organizations.first
   end
+
+  def pdf_output(printable)
+    send_data printable.render, filename: printable.filename, type: 'application/pdf', disposition: 'inline'
+  end
+
 end
