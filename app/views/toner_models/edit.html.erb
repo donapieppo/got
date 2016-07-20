@@ -1,0 +1,6 @@
+<p class="centered_action">
+  <%= link_to icon('plus') + " Aggiungi toner #{@toner_model.to_s} a #{@current_organization.name}", new_toner_model_toner_path(@toner_model), class: :button %>
+</p>
+
+<%= render 'form' %>
+

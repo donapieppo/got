@@ -1,16 +1,23 @@
-<% unless @toner_model.new_record? %>  
-  <p class="centered_action"><%= link_to icon('plus') + " Aggiungi toner #{@toner_model.to_s} a #{@current_organization.name}", new_toner_model_toner_path(@toner_model), class: :button %></p>
-<% end %>
-
 <h1><%= t :toner_model %></h1>
 
-<p class="info"><%= t :please_mantain_correct_data %></p>
+<p>
+  <% if @toners.any? %>  
+    Questo toner è presente in: 
+    <ul>
+      <% @toners.each do |toner| %>
+        <li><%= toner.organization %>  (<strong><%= toner.gift ? 'Disponibile' : 'Non disponibile' %></strong>)</li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<p class="info"> <%= t :please_mantain_correct_data %> </p>
 
 <%= horizontal_form_for(@toner_model) do |toner_model| %>
   <%= toner_model.dm_error_notification %>  
 
   <div id="details">
-    <%= toner_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to("Aggiungi una nuova marca all'elenco", new_vendor_path) %>  
+    <%= toner_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to("Aggiungi una nuova marca all'elenco.", new_vendor_path) %>  
     <%= toner_model.input :name, hint: t(:toner_model_name_hint) %>  
   </div>
 

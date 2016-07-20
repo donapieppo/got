@@ -10,10 +10,6 @@ class TonerModelsController < ApplicationController
     @toner_model = TonerModel.new(vendor_id: params[:vendor_id])
   end
 
-  def edit
-    render :new
-  end
-
   def create
     @toner_model = TonerModel.new(toner_model_params)
     if @toner_model.save
@@ -23,11 +19,15 @@ class TonerModelsController < ApplicationController
     end
   end
 
+  def edit
+    @toners = @toner_model.toners.includes(:organization)
+  end
+
   def update
     if @toner_model.update(toner_model_params)
       redirect_to toner_models_path, notice: 'toner was successfully updated.'
     else
-      render :new
+      render :edit
     end
   end
 
