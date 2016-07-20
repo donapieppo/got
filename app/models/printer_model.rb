@@ -14,5 +14,10 @@ class PrinterModel < ActiveRecord::Base
   def name_with_vendor
     "#{self.name} (#{self.vendor.name})"
   end
+
+  def self.with_gift_toner
+    gift_toner_model_ids = Toner.where(gift: true).select(:toner_model_id).map(&:toner_model_id)
+    PrinterModel.includes(:toner_models).where('toner_models.id': gift_toner_model_ids)
+  end
 end
 

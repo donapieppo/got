@@ -1,6 +1,11 @@
 class TonersController < ApplicationController
   before_action :set_toner_and_check_permission, only: [:edit, :update, :destroy]
 
+  # only the gift
+  def index
+    @printer_models = PrinterModel.with_gift_toner
+  end
+
   # only one toner of a certain toner_model in organization
   def new
     if params[:toner_model_id]
