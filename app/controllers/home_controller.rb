@@ -18,6 +18,12 @@ class HomeController < ApplicationController
       redirect_to root_path, alert: t(:please_refine)
     end
   end
+
+  def report
+    printable = Printable.new('Toner Disponibili')
+    printable.toners
+    pdf_output(printable)
+  end
   
 end
 
