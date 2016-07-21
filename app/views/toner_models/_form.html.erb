@@ -1,16 +1,3 @@
-<h1><%= t :toner_model %></h1>
-
-<p>
-  <% if @toners.any? %>  
-    Questo toner è presente in: 
-    <ul>
-      <% @toners.each do |toner| %>
-        <li><%= toner.organization %>  (<strong><%= toner.gift ? 'Disponibile' : 'Non disponibile' %></strong>)</li>
-      <% end %>
-    </ul>
-  <% end %>
-</p>
-
 <p class="info"> <%= t :please_mantain_correct_data %> </p>
 
 <%= horizontal_form_for(@toner_model) do |toner_model| %>
@@ -39,8 +26,8 @@
 
 <%= javascript_tag do %>  
   $(document).ready(function(){
-    $("dd").toggle();
-    $("dt").click(function() {
+    $(".printers-list dd").toggle();
+    $(".printers-list dt").click(function() {
       $(this).nextUntil("dt", "dd").slideToggle();
     });
     $("input:checked").closest("dd").show();

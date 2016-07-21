@@ -20,7 +20,7 @@ class TonerModelsController < ApplicationController
   end
 
   def edit
-    @toners = @toner_model.toners.includes(:organization)
+    @actual_toners = @toner_model.toners.includes(:organization)
   end
 
   def update
