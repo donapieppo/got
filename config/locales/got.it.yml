@@ -1,0 +1,73 @@
+it:
+  header_title:   Game of Toners - Gestione toner dismessi. Università di Bologna.
+  organizations:  Strutture
+  admins:         Amministratori
+  vendor:         Marca
+  models:         Modelli
+  printer:        Stampante
+  printer_models: Modelli di stampante
+  toners:         Toner compatibili
+  toner_models:   Modelli di toner
+  printer_model:  Modello di stampante
+  toner_model:    Modello di toner
+  no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
+  add_toner:       Aggiungi il toner alla struttura
+  add_printer:     Aggiungi la stampante alla struttura
+  add_new_toner_model:   Aggiungi un nuovo modello di toner.
+  add_new_printer_model: Aggiungi un nuovo modello di stampante.
+  pdf_report_title: Elenco stampanti compatibili con toner dismessi
+
+  helpers:
+    submit:
+      organization: 
+        create:      Crea la struttura e diventa amministratore
+
+  activerecord:
+    models:
+      organization:  Struttura
+      admin:         Amministratore
+      vendor:        Marca
+      printer_model: Modello di stampante
+      toner_model:   Modello di toner
+      printer :      Stampante
+    attributes:
+      organization:
+        name:          Nome
+        description:   Descrizione
+      admin: 
+        user_upn:      Indirizzo mail
+      vendor: 
+        name:          Marca
+      toner_model:
+        vendor:         Marca
+        name:           Modello
+        printer_models: Utilizzabile da 
+      printer_model:
+        vendor:        Marca
+        name:          Modello
+      toner:   
+        vendor:        Marca
+        toner_model:   Modello
+        number:        Numero
+        gift:          Non più utilizzato nella struttura
+      printer:   
+        name:          Nome
+        vendor:        Marca
+        printer_model: Modello
+        description:   Note
+        url:           Url 
+        rent:          In affitto
+
+  add_to_organization:      Aggiungi al posseduto della struttura %{organization}.
+  printer_description_hint: Campo opzionale. Si può indicare dove si trova la stampante o altre note.
+  printer_name_hint:        Consigliamo di inserire il dns name.
+  printer_rent_hint:        La stampante è in affitto.
+  toner_model_name_hint:    Inserire il nome più generico. Per esempio, per stampanti a colori quale HP ColorLaserJet 4650, inserire 641A e non i dettagli sul colore (C9721A o C9722A).
+  gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
+  multiple_name_with_semicolon_hint: È possibile inserire più modelli separati da punto e virgola ;
+   
+
+  unused: inutilizzato, disponibile per altre strutture
+  please_refine: Si prega di raffinare i parametri di ricerca
+  please_mantain_correct_data: I modelli sono condivisi tra tutte le strutture. Si prega di mantenere i dati corretti.
+
