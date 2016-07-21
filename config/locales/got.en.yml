@@ -39,10 +39,16 @@ en:
   printer_name_hint:        Consigliamo di inserire il dns name.
   printer_rent_hint:        The printer is rented.
   toner_model_name_hint:    Add the most generic name. For example, for color printers as HP ColorLaserJet 4650, add 641A and not color details (C9721A o C9722A).
+  vendor_hint:              For example "HP", "Canon" ...
   gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
   multiple_name_with_semicolon_hint: È possibile inserire più modelli separati da punto e virgola ;
    
-  unused: inutilizzato, disponibile per altre strutture
-  please_refine: Si prega di raffinare i parametri di ricerca
-  please_mantain_correct_data: I modelli sono condivisi tra tutte le strutture. Si prega di mantenere i dati corretti.
+  unused:                      Unused, available to other organizations
+  please_refine:               Si prega di raffinare i parametri di ricerca
+  please_mantain_correct_data: All models are shared between organizations. Please keep all data correct.
+
+  add_new_vendor: Add new vendor to this list.
+
+
+
 

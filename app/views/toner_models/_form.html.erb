@@ -4,7 +4,7 @@
   <%= toner_model.dm_error_notification %>  
 
   <div id="details">
-    <%= toner_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to("Aggiungi una nuova marca all'elenco.", new_vendor_path) %>  
+    <%= toner_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to(t(:add_new_vendor), new_vendor_path) %>  
     <%= toner_model.input :name, hint: t(:toner_model_name_hint) %>  
   </div>
 
