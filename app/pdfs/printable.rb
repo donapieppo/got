@@ -7,13 +7,14 @@ class Printable
   attr_accessor :data
 
   IMAGE_DIR = "#{Rails.root.to_s}/app/assets/images"
+  LOGO      = IMAGE_DIR + "/sigillo1.png"
   SPACE = "\xC2\xA0"
 
   def initialize(title = nil, orientation: :portrait)
     @pdf = Prawn::Document.new(page_size: 'A4', page_layout: orientation)
     @title = title
     @filename = title.gsub(' ', '_')
-    @pdf.image "#{IMAGE_DIR}/sigillo1.png", width: 54, height: 52, position: :center
+    @pdf.image LOGO, width: 54, height: 52, position: :center if File.exists?(LOGO)
     @pdf.move_down(5)
     @pdf.font_families.update("FreeFont" => {
       bold:   "/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf",
