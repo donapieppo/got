@@ -20,7 +20,7 @@ class HomeController < ApplicationController
   end
 
   def report
-    printable = Printable.new('Toner Disponibili')
+    printable = Printable.new(t :pdf_report_title)
     printable.toners
     pdf_output(printable)
   end

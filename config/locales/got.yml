@@ -15,6 +15,7 @@ it:
   add_printer:     Aggiungi la stampante alla struttura
   add_new_toner_model:   Aggiungi un nuovo modello di toner.
   add_new_printer_model: Aggiungi un nuovo modello di stampante.
+  pdf_report_title: Elenco stampanti compatibili con toner dismessi
 
   helpers:
     submit:
