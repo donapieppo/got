@@ -1,4 +1,4 @@
-<h1>Modelli di toner</h1>
+<h1><%= t :toner_models %></h1>
 
 <dl class="toners-list">
   <% @toner_models.group_by {|tm| tm.vendor}.each do |vendor, models| %>

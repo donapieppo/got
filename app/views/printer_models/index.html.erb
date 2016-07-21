@@ -1,4 +1,4 @@
-<h1>Modelli stampanti</h1>
+<h1><%= t :printer_models %></h1>
 
 <dl class="printers-list">
   <% @printer_models.group_by {|tm| tm.vendor}.each do |vendor, models| %>
