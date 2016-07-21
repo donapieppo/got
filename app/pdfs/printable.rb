@@ -35,16 +35,17 @@ class Printable
       toner.toner_model.printer_models.order('printer_models.name').each do |printer_model|
         res[printer_model.vendor.name] ||= Hash.new
         res[printer_model.vendor.name][printer_model.name] ||= Array.new
-        res[printer_model.vendor.name][printer_model.name] << toner.organization.name + " (#{toner.number} #{toner.toner_model.name})"
+        res[printer_model.vendor.name][printer_model.name] << " (#{toner.number} toner #{toner.toner_model.name} presso #{toner.organization.name})"
         max_lenght_name = printer_model.name.length if printer_model.name.length > max_lenght_name
       end
     end
     res.keys.sort.each do |vendor_name|
-      @pdf.move_down(10)
-      @pdf.text vendor_name, style: :bold
+      @pdf.move_down(15)
+      @pdf.text vendor_name, style: :bold, align: :center
+      @pdf.move_down(15)
       res[vendor_name].keys.sort.each do |printer_model_name|
-        @pdf.text SPACE + SPACE + printer_model_name.rjust(max_lenght_name) +
-                  " presso #{res[vendor_name][printer_model_name].map(&:to_s).join(', ')}"
+        @pdf.text SPACE + SPACE + "<b>" + printer_model_name.rjust(max_lenght_name) + "</b>" +
+                  " <font size='8'>#{res[vendor_name][printer_model_name].map(&:to_s).join(', ')}</font>", inline_format: true
       end
     end
   end
