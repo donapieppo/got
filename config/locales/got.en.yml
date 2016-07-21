@@ -1,0 +1,48 @@
+en:
+  header_title:   Game of Toners - Unused toners. Università di Bologna.
+  admins:         Administrators
+  no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
+  add_toner:       Add the tonet to your organization
+  add_printer:     add the printer to your organization
+  pdf_report_title: Compatible printers
+
+  helpers:
+    submit:
+      organization: 
+        create:      Create the organization and became adminstrator
+
+  activerecord:
+    models:
+      admin:         Amministrator
+    attributes:
+      organization:
+      admin: 
+        user_upn:      Mail address
+      vendor: 
+        name:          Vendor
+      toner_model:
+        name:           Model
+        printer_models: compatible with
+      printer_model:
+        name:          Model
+      toner:   
+        toner_model:   Model
+        gift:          Non più utilizzato nella struttura
+      printer:   
+        printer_model: Model
+        description:   Notes
+        url:           Url 
+        rent:          On rent
+
+  add_to_organization:      Add to the organization %{organization}.
+  printer_description_hint: Optional field. Where is located the printer or other notes.
+  printer_name_hint:        Consigliamo di inserire il dns name.
+  printer_rent_hint:        The printer is rented.
+  toner_model_name_hint:    Add the most generic name. For example, for color printers as HP ColorLaserJet 4650, add 641A and not color details (C9721A o C9722A).
+  gift_hint:                Se spuntate questa opzione il toner risulterà disponbile alle strutture che possiedono una stampante compatibile.
+  multiple_name_with_semicolon_hint: È possibile inserire più modelli separati da punto e virgola ;
+   
+  unused: inutilizzato, disponibile per altre strutture
+  please_refine: Si prega di raffinare i parametri di ricerca
+  please_mantain_correct_data: I modelli sono condivisi tra tutte le strutture. Si prega di mantenere i dati corretti.
+
