@@ -7,6 +7,8 @@ with a [https://github.com/intridea/omniauth] strategy
 installing got can help authenticated users to share 
 unused toners.
 
+!!! Work in progress !!!
+
 ## Possible Scenario ##
 
 Big organization with CAS authentication (University of 
@@ -20,8 +22,6 @@ Some toners are no more useful in his department
 
 Users in other divisions with compatible printers
 will be automatically notified.
-
-!!! Work in progress !!!
 
 ## Installation 
 
@@ -37,8 +37,8 @@ for installation details.
 In the [WIKI](https://github.com/donapieppo/got/wiki)
 you can find informations abount the database structure.
 
-Please take a look if you're interested in helping
-the project development.
+Please take a look if you're interested in 
+**helping the project development**.
 
 
 
