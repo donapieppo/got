@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  skip_filter :retrive_authlevel
+  skip_before_action :retrive_authlevel
 
   def new
     @organizations = Organization.includes(admins: :user).order('organizations.name').all
