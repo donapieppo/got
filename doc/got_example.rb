@@ -8,6 +8,11 @@ CESIA_UPN = [ 'name.surname@unibo.it', 'name2.surname2@unibo.it' ]
 module Got
   class Application < Rails::Application
     config.domain_name = 'example.com'
+
+    config.header_title    = 'Game of Toners'
+    config.header_subtitle = 'Gestione toner dismessi'
+    config.header_icon     = 'tint'
+
     config.dm_unibo_common.update(
       login_method:        :log_if_email,                # can use application only if present in database
       impersonate_admins:  ['name.surname@example.com'], # who can impersonate. See https://github.com/ankane/pretender
