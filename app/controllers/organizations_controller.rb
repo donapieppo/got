@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  skip_filter :retrive_authlevel, only: [:new, :create]
+  skip_before_action :retrive_authlevel, only: [:new, :create]
   before_action :user_cesia!, except: [:show, :new, :create]
 
   before_action :set_organization, only: [:edit, :update, :destroy]
