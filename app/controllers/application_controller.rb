@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   impersonates :user
 
-  before_filter :log_current_user, :force_sso_user, :retrive_authlevel
+  before_action :log_current_user, :force_sso_user, :retrive_authlevel
 
   def retrive_authlevel
     @available_organizations = current_user.organizations.all
