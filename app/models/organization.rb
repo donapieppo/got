@@ -1,4 +1,4 @@
-class Organization < ActiveRecord::Base
+class Organization < ApplicationRecord
   has_many :admins
   has_many :printers
   has_many :toners

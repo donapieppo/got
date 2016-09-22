@@ -1,4 +1,4 @@
-class Admin < ActiveRecord::Base
+class Admin < ApplicationRecord
   extend DmUniboCommon::UserUpnMethods::ClassMethods
 
   belongs_to_dsa_user :user # see dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb

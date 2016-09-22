@@ -1,4 +1,4 @@
-class Toner < ActiveRecord::Base
+class Toner < ApplicationRecord
   belongs_to :organization
   belongs_to :toner_model
 

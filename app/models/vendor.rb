@@ -1,4 +1,4 @@
-class Vendor < ActiveRecord::Base
+class Vendor < ApplicationRecord
   has_many :printer_models
   has_many :toner_models
 

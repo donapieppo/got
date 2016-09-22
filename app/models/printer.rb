@@ -1,4 +1,4 @@
-class Printer < ActiveRecord::Base
+class Printer < ApplicationRecord
   belongs_to :organization
   belongs_to :printer_model
 
