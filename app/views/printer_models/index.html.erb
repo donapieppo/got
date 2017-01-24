@@ -5,8 +5,7 @@
     <dt><%= vendor %></dt>
     <% models.each do |model| %>  
       <dd>
-        <%= link_to model.name, new_printer_model_printer_path(model), title: t(:add_printer) %>
-        <span class="actions"><%= link_to_edit(edit_printer_model_path(model)) %></span>
+        <%= link_to model.name, printer_model_path(model, modal: true), remote: true %>
       </dd>
     <% end %>
   <% end %>

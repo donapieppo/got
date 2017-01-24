@@ -1,0 +1,19 @@
+<dl>
+<dt>Toner compatibili:</dt>
+<% @compatible_toners.each do |compatible_toner| %>  
+  <dd><%= link_to compatible_toner, compatible_toner %></dd>
+<% end %>
+
+<% if @available_toners.empty? %>  
+  <dt>Non ci sono toner disponibili in unibo</dt>
+<% else %>
+  <dt>Sono disponibili toner presso</dt>
+  <% @available_toners.each do |available_toner| %>
+    <dd><%= available_toner.organization %> (<%= available_toner.organization.admins_string %>)</dd>
+  <% end %>
+<% end %>
+</dl>
+
+<p>Stampanti di questo modello si trovano presso:
+<%= @printer_model.printers.map(&:organization).uniq.join(', ') %>  
+</p>

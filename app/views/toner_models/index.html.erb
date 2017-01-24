@@ -6,9 +6,10 @@
     <% models.each do |model| %>  
       <dd>
         <%= icon('check') if @organization_toner_model_ids.include?(model.id) %>
-        <strong><%= link_to model.name, new_toner_model_toner_path(model), title: t(:add_toner) %></strong>
-        <small>(per le stampanti: <%= model.printer_models.map(&:name).join(', ') %>)</small>
-        <span class="actions"><%= link_to_edit(edit_toner_model_path(model)) %></span>
+        <strong><%= link_to model.name, toner_model_path(model, modal: true), remote: true %></strong>
+        <% unless (printer_models_string = model.printer_models.map(&:name).join(', ')).blank? %>  
+          <span class="details"><small>(per le stampanti: <%= printer_models_string %>)</small></span>
+        <% end %>
       </dd>
     <% end %>
   <% end %>

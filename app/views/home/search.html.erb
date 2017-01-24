@@ -1,24 +1,27 @@
 <h1>Search results <small>for "<%= params[:search_string] %>"</small></h1>
 
-<h2><%= t :printer_models %></h2>
+<div class="row">
+  <div class="col-md-6">
+    <h2><%= t :printer_models %></h2>
 
-<ul class="bordered">
-  <% @printer_models.each do |printer_model| %>  
-    <li>
-      <%= link_to printer_model, new_printer_model_printer_path(printer_model), title: t(:add_printer) %>
-      <span class="actions"><%= link_to_edit(edit_printer_model_path(printer_model)) %></span>
-    </li>
-  <% end %>
-</ul>
+    <ul class="bordered">
+      <% @printer_models.each do |printer_model| %>  
+        <li><strong><%= link_to printer_model, printer_model_path(printer_model, modal: true), remote: :true %></strong></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h2><%= t :toner_models %>  </h2>
 
-<h2><%= t :toner_models %>  </h2>
-
-<ul class="bordered">
-  <% @toner_models.each do |toner_model| %>  
-    <li>
-      <strong><%= link_to toner_model.name, new_toner_model_toner_path(toner_model), title: t(:add_toner) %></strong>
-      <small>(per le stampanti: <%= toner_model.printer_models.map(&:name).join(', ') %>)</small>
-      <span class="actions"><%= link_to_edit(edit_toner_model_path(toner_model)) %></span>
-    </li>
-  <% end %>
-</ul>
+    <ul class="bordered">
+      <% @toner_models.each do |toner_model| %>  
+        <li>
+          <strong><%= link_to toner_model, toner_model_path(toner_model, modal: true), remote: :true %></strong>
+          <strong><%= link_to toner_model.name, new_toner_model_toner_path(toner_model), title: t(:add_toner) %></strong>
+          <small>(per le stampanti: <%= toner_model.printer_models.map(&:name).join(', ') %>)</small>
+          <span class="actions"><%= link_to_edit(edit_toner_model_path(toner_model)) %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
