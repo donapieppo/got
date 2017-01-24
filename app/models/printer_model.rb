@@ -1,4 +1,5 @@
 class PrinterModel < ApplicationRecord
+  has_many :printers
   belongs_to :vendor
   has_and_belongs_to_many :toner_models
 
