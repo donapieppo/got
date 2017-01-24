@@ -1,9 +1,5 @@
-<% if @modal %>  
-  $('#main-modal').modal('show');
-  $('.modal-title').html("<%= j(@printer_model.to_s) %>");
-  $('.modal-body').html("<%= j(render(@printer_model)) %>");
-  $('.modal-footer').html("<%= j(render partial: 'actions') %>");
-<% else %>  
-  $("#pm_<%= @printer_model.id %>").append("<%= escape_javascript(render @printer_model) %>");
-<% end %>
+$('#main-modal').modal('show');
+$('.modal-title').html("<%= j(@printer_model.to_s) %>");
+$('.modal-body').html("<%= j(render(@printer_model)) %>");
+$('.modal-footer').html("<%= j(render partial: 'actions') %>");
 

@@ -6,7 +6,7 @@
 
     <ul class="bordered">
       <% @printer_models.each do |printer_model| %>  
-        <li><strong><%= link_to printer_model, printer_model_path(printer_model, modal: true), remote: :true %></strong></li>
+        <li><strong><%= link_to printer_model, printer_model_path(printer_model), remote: :true %></strong></li>
       <% end %>
     </ul>
   </div>
@@ -16,7 +16,7 @@
     <ul class="bordered">
       <% @toner_models.each do |toner_model| %>  
         <li>
-          <strong><%= link_to toner_model, toner_model_path(toner_model, modal: true), remote: :true %></strong>
+          <strong><%= link_to toner_model, toner_model_path(toner_model), remote: :true %></strong>
           <strong><%= link_to toner_model.name, new_toner_model_toner_path(toner_model), title: t(:add_toner) %></strong>
           <small>(per le stampanti: <%= toner_model.printer_models.map(&:name).join(', ') %>)</small>
           <span class="actions"><%= link_to_edit(edit_toner_model_path(toner_model)) %></span>

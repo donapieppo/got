@@ -7,7 +7,6 @@ class PrinterModelsController < ApplicationController
 
   # remote
   def show
-    @modal = params[:modal]
     @compatible_toners = @printer_model.toner_models
     @available_toners = Toner.where(gift: true).where(toner_model: @printer_model.toner_model_ids)
   end

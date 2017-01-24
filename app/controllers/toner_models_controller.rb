@@ -8,7 +8,6 @@ class TonerModelsController < ApplicationController
 
   # remote
   def show
-    @modal = params[:modal]
     @compatible_printers = @toner_model.printer_models
     @available_toners = @toner_model.toners
   end

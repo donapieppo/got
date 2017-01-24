@@ -6,7 +6,7 @@
     <% if old_vendor != printer_model.vendor and old_vendor = printer_model.vendor %>  
       <dt><%= printer_model.vendor %></dt>
     <% end %>
-    <dd id="pm_<%= printer_model.id %>">
+    <dd>
       <%= link_to printer_model.name, printer_model_path(printer_model), remote: true %>  
     </dd>
   <% end %>
