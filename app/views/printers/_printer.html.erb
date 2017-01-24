@@ -1,3 +1,13 @@
-<%= t :toners %>:  <%= printer.printer_model.toner_models.map(&:to_s) %>  
+<div>
+<p><em><%= @printer.description unless @printer.description.blank? %></em></p>
+<dl>
+  <dt>Modello</dt>
+  <dd><%= link_to @printer.printer_model, @printer.printer_model %></dd>
+  <dt><%= t :toners %></dt>
+  <% printer.printer_model.toner_models.each do |toner_model| %>  
+    <dd><%= link_to toner_model, toner_model %> </dd>
+  <% end %>
+</dl>
+</div>
 
 

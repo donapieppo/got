@@ -1,2 +1,2 @@
-$("#p_<%= @printer.id %> span.details").html("<br/><em><%= @printer.description unless @printer.description.blank? %></em><br/><strong>Modello:</strong> <%= escape_javascript(@printer.printer_model.to_s) %><br/><strong>Toner compatibili:</strong> <%= escape_javascript(@printer.printer_model.toner_models.map(&:to_s).join(', ')) %> ");
+$("#p_<%= @printer.id %> div.details").html("<%= j(render(@printer)) %>");
 

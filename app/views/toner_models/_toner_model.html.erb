@@ -7,9 +7,9 @@
 <% if @available_toners.empty? %>  
   <dt>Non ci sono toner disponibili in unibo</dt>
 <% else %>
-  <dt>Sono disponibili toner presso</dt>
+  <dt>Sono disponibili toner presso:</dt>
   <% @available_toners.each do |available_toner| %>
-    <dd><%= available_toner.organization %> (<%= available_toner.organization.admins_string %>)</dd>
+    <dd><%= available_toner.organization.name %> (<%= available_toner.organization.admins_string %>)</dd>
   <% end %>
 <% end %>
 </dl>

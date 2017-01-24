@@ -2,12 +2,12 @@
   <% organization.printers.order('printers.name').includes(printer_model: :vendor).each do |printer| %>  
     <li id="p_<%= printer.id %>">
       <%= link_to printer.name, printer_path(printer), remote: true %>
-      <span class="details"></span>
       <span class="actions">
         <%= link_to_edit edit_printer_path(printer) %> 
         <%= link_to_delete printer_path(printer) %> 
         <%= link_to(icon('external-link'), 'http://' + printer.name, target: 'new') if printer.name =~ /unibo.it/ %>  
       </span>
+      <div class="details"><!-- filled by remote --></div>
     </li>
   <% end %>
 </ul>
