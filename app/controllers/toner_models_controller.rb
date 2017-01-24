@@ -6,6 +6,13 @@ class TonerModelsController < ApplicationController
     @organization_toner_model_ids = @current_organization.toner_model_ids
   end
 
+  # remote
+  def show
+    @modal = params[:modal]
+    @compatible_printers = @toner_model.printer_models
+    @available_toners = @toner_model.toners
+  end
+
   def new
     @toner_model = TonerModel.new(vendor_id: params[:vendor_id])
   end
