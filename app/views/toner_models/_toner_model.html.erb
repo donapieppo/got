@@ -1,11 +1,14 @@
 <dl>
 <dt>Stampanti compatibili:</dt>
+<% if @compatible_printers.empty? %>  
+  Registrazione incompleta. Si prega di aggiungere stampanti compatibili.
+<% end %>
 <% @compatible_printers.each do |compatible_printer| %>  
   <dd><%= link_to compatible_printer, compatible_printer %></dd>
 <% end %>
 
 <% if @available_toners.empty? %>  
-  <dt>Non ci sono toner disponibili in unibo</dt>
+  <dt class="alert alert-warning">Non sono al momento disponibili toner di questo modello in Unibo.</dt>
 <% else %>
   <dt>Sono disponibili toner presso:</dt>
   <% @available_toners.each do |available_toner| %>
