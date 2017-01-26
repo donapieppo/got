@@ -1,25 +1,32 @@
-<dl>
-<dt>Toner compatibili:</dt>
-<% if @compatible_toners.empty? %>  
-  Registrazione incompleta. Si prega di aggiungere i modelli di toner compatibili.
-<% end %>
-<% @compatible_toners.each do |compatible_toner| %>  
-  <dd><%= link_to compatible_toner, compatible_toner %></dd>
+<% if @available_toners.empty? %>  
+  <p class="alert alert-warning"><%= t :no_available_toners_for_this_printer %></p>
+<% else %>
+  <div class="alert alert-success">
+    Sono disponibili toner presso:
+    <ul>
+      <% @available_toners.each do |available_toner| %>
+        <li><%= link_to available_toner.organization, available_toner.organization %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
-<% if @available_toners.empty? %>  
-  <dt class="alert alert-warning">Non sono al momento disponibili toner compatibili con questo modello di toner in Unibo.</dt>
+<% if @compatible_toners.empty? %>  
+  <p class="alert alert-warning">Registrazione incompleta. Si prega di aggiungere i modelli di toner compatibili.</p>
 <% else %>
-  <dt>Sono disponibili toner presso</dt>
-  <% @available_toners.each do |available_toner| %>
-    <dd><%= available_toner.organization %> (<%= available_toner.organization.admins_string %>)</dd>
-  <% end %>
+  <dl>
+    <dt>Modelli di toner compatibili:</dt>
+    <% @compatible_toners.each do |compatible_toner| %>  
+      <dd><%= link_to compatible_toner, compatible_toner %></dd>
+    <% end %>
+  </dl>
 <% end %>
 
 <% if (models = @printer_model.printers).any? %>  
+  <dl>
   <dt>Stampanti di questo modello si trovano presso:</dt>
-  <% models.map(&:organization).uniq.each do |organization| %>  
-    <dd><%= organization %></dd>
-  <% end %>
+    <% models.map(&:organization).uniq.each do |organization| %>  
+      <dd><%= link_to organization, organization %></dd>
+    <% end %>
+  </dl>
 <% end %>
-</dl>
