@@ -10,7 +10,7 @@ class OrganizationsController < ApplicationController
 
   # solo cesia puo' vedere altro che current_organization
   def show
-    @organization = current_user.is_cesia? ? Organization.find(params[:id]) : @current_organization
+    @organization = Organization.find(params[:id]) 
     @available_toners = @organization.available_toners
   end
 

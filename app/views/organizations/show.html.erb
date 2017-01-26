@@ -1,23 +1,31 @@
-<h1><%= @organization.name %> <small><%= @organization.description %></small></h1>
+<h1><%= @organization.name %><br/><small><%= @organization.description %></small></h1>
 
 <div>
-  <%= render 'admins', organization: @organization %>  
+  <%= render 'admins', organization: @organization, modifiable: (@organization == @current_organization) %>  
 </div>
 
-<div>
-  <h2><%= icon :gift %> Toner disponibili per le tue stampanti</h2>
-  <%= render 'available_toners', organization: @organization %>  
-</div>
-
-<div id="organization_owning">
-  <div class="toners">
-    <h2><%= icon :tint %> Toner <small>in <%= @organization.name %></small></h2>
-    <%= render 'toners', organization: @organization %>  
+<% if @organization == @current_organization %>  
+  <div>
+    <h2><%= icon :gift %> Toner disponibili per le tue stampanti</h2>
+    <%= render 'available_toners', organization: @organization %>  
   </div>
 
-  <div class="printers">
-    <h2><%= icon :print %> Stampanti <small>in <%= @organization.name %></small></h2>
-    <%= render 'printers', organization: @organization %>  
-  </div>
-</div>
+  <div id="organization_owning">
+    <div class="toners">
+      <h2><%= icon :tint %> Toner <small>in <%= @organization.name %></small></h2>
+      <%= render 'toners', organization: @organization %>  
+    </div>
 
+    <div class="printers">
+      <h2><%= icon :print %> Stampanti <small>in <%= @organization.name %></small></h2>
+      <%= render 'printers', organization: @organization %>  
+    </div>
+  </div>
+<% elsif (unusable_toners = @organization.unusable_toners).any? %>
+  <dl>
+    <dt><%= icon :gift %>Toner resi disponibili per altre strutture</dt>
+    <% unusable_toners.each do |toner| %>
+      <dd><%= link_to toner.toner_model, toner.toner_model %></dd>
+    <% end %>
+  </dl>
+<% end %>
