@@ -1,15 +1,30 @@
 namespace :got do
-  desc "Show available toners from other organizations. "
-  task show_gifts: :environment do
-    gift_toner_model_ids = Toner.where(gift: true).select(:toner_model_id).map(&:toner_model_id)
-    printer_model_ids    = Printer.select(:printer_model_id).map(&:printer_model_id)
+  desc "Notify available toners from other organizations."
+  task notify_gifts: :environment do
+    res = Hash.new
 
-    TonerModel.joins(:printer_models)
-              .where('printer_models.id': printer_model_ids)
-              .where(id: gift_toner_model_ids).each do |toner_model|
-      p toner_model.toners.where(gift:true)
-      p toner_model.printers
+    Toner.where(gift: true).each do |toner|
+      Printer.where(printer_model_id: toner.toner_model.printer_model_ids).each do |printer|
+        res[printer.organization] ||= Array.new
+        res[printer.organization] << { toner: toner, printer: printer } 
+      end
     end
+
+    res.each do |organization, gifts_array|
+      p organization
+      gifts_array.each do |gift|
+        puts "for #{gift[:printer]} use #{gift[:toner].toner_model} from #{gift[:toner].organization}"
+      end
+      NotificationMailer.notify_organization(organization, gifts_array).deliver
+      break
+    end
+
+    # TonerModel.joins(:printer_models)
+    #           .where('printer_models.id': printer_model_ids)
+    #           .where(id: gift_toner_model_ids).each do |toner_model|
+    #   p toner_model.toners.where(gift:true)
+    #   p toner_model.printers
+    # end
   end
 end
 

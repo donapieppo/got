@@ -1,0 +1,27 @@
+Ai referenti tecnici della struttura
+<%= @organization %>  
+
+Attraverso il programma got (Game of toners)
+all'indirizzo https://www.dm.unibo.it/got
+sono stati registrati come disponibili i seguenti toner
+che potrebbero interessarvi:
+
+<% @gifts_array.each do |gift| %>
+*  per la vostra stampante "<%= gift[:printer] %>"
+   è stato registrato come disponibile un toner
+   "<%= gift[:toner].toner_model %>"
+   presso <%= gift[:toner].organization %>
+   Potete contattare i seguenti referenti:
+   <% gift[:toner].organization.admins.each do |admin| %>  
+     <%= admin.user.cn %> - <<%= admin.user.upn %>>
+   <% end %>
+
+<% end %>
+
+Questo programma è attualmente in fase di test.
+Vi preghiamo di segnalare eventuali problemi
+o possibili miglioramenti all'indirizzo
+dipmat-supportoweb@unibo.it
+
+Cordiali saluti
+
