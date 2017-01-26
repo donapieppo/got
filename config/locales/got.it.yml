@@ -11,6 +11,7 @@ it:
   printer_model:  Modello di stampante
   toner_model:    Modello di toner
   no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
+  no_available_toners_for_this_printer: Non sono al momento disponibili in Unibo toner compatibili con questo modello di stampante.
   add_toner:       Aggiungi il toner alla struttura
   add_printer:     Aggiungi la stampante alla struttura
   add_new_toner_model:   Aggiungi un nuovo modello di toner.
