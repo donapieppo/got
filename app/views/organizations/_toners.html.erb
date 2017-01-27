@@ -5,7 +5,12 @@
 
       <strong><%= content_tag(:span, toner.to_s, title: toner.printer_models.map(&:name).join(', ')) %></strong><br/>
 
-      <%= t(:unused) if toner.gift %>  
+      <% if toner.gift %>  
+        <%= t(:unused) if toner.gift %> 
+        <% toner.toner_model.interested_organizations.each do |organization| %>   
+          <br/><%= link_to organization, organization %>  
+        <% end %>
+      <% end %>
 
       <% compatible_printers = toner.compatible_printers.all %>  
 

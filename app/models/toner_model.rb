@@ -28,5 +28,11 @@ class TonerModel < ApplicationRecord
     res = res.where(organization: organization) if organization
     res
   end
+
+  # FIXME 
+  # render scope with group_by
+  def interested_organizations
+    Printer.where(printer_model_id: self.printer_model_ids).includes(:organization).map(&:organization).uniq
+  end
 end
 
