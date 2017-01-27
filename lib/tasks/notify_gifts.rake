@@ -16,7 +16,7 @@ namespace :got do
         puts "for #{gift[:printer]} use #{gift[:toner].toner_model} from #{gift[:toner].organization}"
       end
       NotificationMailer.notify_organization(organization, gifts_array).deliver
-      break
+      sleep 10
     end
 
     # TonerModel.joins(:printer_models)

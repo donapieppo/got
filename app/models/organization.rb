@@ -20,7 +20,11 @@ class Organization < ApplicationRecord
   end
 
   def admins_string
-    self.admins.map {|admin| admin.to_s}.join(', ')
+    self.admins.includes(:user).map {|admin| admin.to_s}.join(', ')
+  end
+
+  def admins_mail_array
+    self.admins.includes(:user).map {|admin| admin.user.upn}
   end
 
   # me
