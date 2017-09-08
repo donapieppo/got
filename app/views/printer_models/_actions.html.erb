@@ -1,3 +1,3 @@
-<%= link_to('add to ' + @current_organization.name, new_printer_model_printer_path(@printer_model), class: :button) %>
 <%= link_to('edit', [:edit, @printer_model], class: :button) %>
+<%= link_to('add a printer of this model to ' + @current_organization.name, new_printer_model_printer_path(@printer_model), class: :button) %>
 
