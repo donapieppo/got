@@ -1,4 +1,4 @@
-<%= horizontal_form_for [@organization, @printer] do |printer| %>
+<%= dm_form_for [@organization, @printer], title: "Stampante in #{@current_organization}" do |printer| %>
   <%= printer.dm_error_notification %>  
 
   <%= printer.input       :vendor, collection: Vendor.with_printer_models.order(:name).all, 

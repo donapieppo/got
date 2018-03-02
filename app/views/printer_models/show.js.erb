@@ -1,5 +1,0 @@
-$('#main-modal').modal('show');
-$('.modal-title').html("<%= j(@printer_model.to_s) %>");
-$('.modal-body').html("<%= j(render(@printer_model)) %>");
-$('.modal-footer').html("<%= j(render partial: 'actions') %>");
-

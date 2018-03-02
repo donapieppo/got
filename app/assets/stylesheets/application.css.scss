@@ -46,7 +46,7 @@ dl.toners-list, dl.printers-list, dl.subscriptions-list {
     @extend .list-group-item;
   }
   dt {
-    background-color: #dedede;
+    background-color: #eee;
     margin: 2px 0 -1px 0 ;
     &:hover {
       cursor: pointer;

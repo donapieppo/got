@@ -1,4 +1,4 @@
-<%= horizontal_form_for([@organization, @toner]) do |toner| %>
+<%= dm_form_for [@organization, @toner], title: "Toner posseduto da #{@current_organization}" do |toner| %>
   <%= toner.dm_error_notification %>  
 
   <%= toner.input       :vendor, collection: Vendor.with_toner_models.order(:name).all, 

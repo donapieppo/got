@@ -5,7 +5,7 @@
       <span class="actions">
         <%= link_to_edit edit_printer_path(printer) %> 
         <%= link_to_delete printer_path(printer) %> 
-        <%= link_to(icon('external-link'), 'http://' + printer.name, target: 'new') if printer.name =~ /unibo.it/ %>  
+        <%= link_to(icon('external-link-alt'), 'http://' + printer.name, target: 'new') if printer.name =~ /unibo.it/ %>  
       </span>
       <div class="details"><!-- filled by remote --></div>
     </li>

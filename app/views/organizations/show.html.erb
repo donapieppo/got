@@ -23,7 +23,7 @@
   </div>
 <% elsif (unusable_toners = @organization.unusable_toners).any? %>
   <dl>
-    <dt><%= icon :gift %>Toner resi disponibili per altre strutture</dt>
+    <dt><%= icon :gift %> Toner resi disponibili per altre strutture:</dt>
     <% unusable_toners.each do |toner| %>
       <dd><%= link_to toner.toner_model, toner.toner_model %></dd>
     <% end %>
