@@ -24,7 +24,7 @@
 
 <% if (models = @printer_model.printers).any? %>  
   <dl>
-  <dt>Stampanti di questo modello si trovano presso:</dt>
+    <dt>Stampanti di questo modello si trovano presso:</dt>
     <% models.map(&:organization).uniq.each do |organization| %>  
       <dd><%= link_to organization, organization %></dd>
     <% end %>

@@ -1,5 +1,10 @@
-<h1><%= @printer_model %> </h1>
-
-<%= render(@printer_model) %>
-<%= render partial: 'actions' %>
+<div class="dm-card">
+<div class="dm-card-title"><%= @printer_model %></div>
+<div class="dm-card-body">
+  <%= render(@printer_model) %>
+</div>
+<div class="dm-card-footer">
+  <%= render partial: 'actions' %>
+</div>
+</div>
 

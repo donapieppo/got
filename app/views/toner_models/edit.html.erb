@@ -1,19 +1,19 @@
-<p class="centered_action">
-<%= link_to icon('plus') + " Aggiungi toner #{@toner_model.to_s} a #{@current_organization.name}", new_toner_model_toner_path(@toner_model), class: :button %>
+<p class="centered_action mb-3 mt-3">
+<%= link_to new_toner_model_toner_path(@toner_model), class: 'btn btn-success btn-lg'  do %>
+  <%= icon('plus') %> Aggiungi toner <br/>
+  <%= @toner_model %><br/>
+  a <%= @current_organization %>
+<% end %>
 </p>
 
-<h1>Modifica del modello di toner <%= @toner_model.name %></h1>
-
-<p>
 <% if @actual_toners.any? %>  
-  <dl class="dl-horizontal">
-    <dt>presente in:</dt>
+  <dl>
+    <dt>Toner presente in:</dt>
     <% @actual_toners.each do |toner| %>
       <dd><%= toner.organization %>  (<strong><%= toner.gift ? 'Disponibile' : 'Non disponibile' %></strong>)</dd>
     <% end %>
   </dl>
 <% end %>
-</p>
 
 <%= render 'form' %>
 

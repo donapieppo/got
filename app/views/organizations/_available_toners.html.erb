@@ -1,5 +1,5 @@
 <% if @available_toners.empty? %>  
-  <p class="alert alert-warning"><%= icon 'close', size: 32 %>  <%= t :no_available_toners %></p>
+  <p class="alert alert-warning"><%= icon 'times-circle', size: 32 %> <%= t :no_available_toners %></p>
 <% end %>
 <ul>
   <% @available_toners.each do |toner| %>  

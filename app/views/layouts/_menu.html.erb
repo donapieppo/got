@@ -5,21 +5,21 @@
     <% if @current_organization %>  
       <li><%= link_to big_icon('home') + " Home", root_path %></li>
 
-      <%= dropdown_menu big_icon('database') + ' ' + t(:models) do %>  
-        <li><%= link_to fwicon('print') + " " + t(:printer_models), printer_models_path %></li>
-        <li><%= link_to fwicon('cubes') + " " + t(:toner_models), toner_models_path %></li> 
+      <%= dropdown_menu :models, big_icon('database') + ' ' + t(:models) do %>  
+        <%= link_to fwicon('print') + " " + t(:printer_models), printer_models_path %>
+        <%= link_to fwicon('cubes') + " " + t(:toner_models), toner_models_path %>
       <% end %>
 
-      <%= dropdown_menu big_icon('institution') + @current_organization.name do  %>
+      <%= dropdown_menu :organization, big_icon('building') + @current_organization.name do  %>
         <% @available_organizations.each do |organization| %>  
-          <li><%= link_to icon('home') + ' ' + organization.short_description, root_path %></li>
+          <%= link_to icon('home') + ' ' + organization.short_description, root_path %>
         <% end %>
       <% end %>
 
       <!-- ricerca -->
-      <%= form_tag search_path, class: "navbar-form navbar-right", role: "search" do %>
+      <%= form_tag search_path, class: "form-inline my-2 my-lg-0 ml-3", role: "search" do %>
         <div class="form-group">
-          <input name="search_string" size="6" type="text" class="form-control" placeholder="cerca" />
+          <input name="search_string" size="6" type="search" class="form-control mr-sm-2" placeholder="cerca" aria-label="Cerca" />
         </div>
       <% end %>
 

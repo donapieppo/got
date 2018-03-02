@@ -4,39 +4,103 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
-Admin	app/models/admin.rb	/^class Admin < ActiveRecord::Base$/;"	c
+$.fn.datepicker	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	var old = $.fn.datepicker;$/;"	c
+Admin	app/models/admin.rb	/^class Admin < ApplicationRecord$/;"	c
 AdminsController	app/controllers/admins_controller.rb	/^class AdminsController < ApplicationController$/;"	c
-Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Got
-Application	config/initializers/got.rb	/^  class Application < Rails::Application$/;"	c	class:Got
-Application	doc/got_example.rb	/^  class Application < Rails::Application$/;"	c	class:Got
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
-Got	config/application.rb	/^module Got$/;"	m
-Got	config/initializers/got.rb	/^module Got$/;"	m
-Got	doc/got_example.rb	/^module Got$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+ClassMethods	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  module ClassMethods$/;"	m	class:DmUniboCommon
+ClassMethods	dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb	/^    module ClassMethods$/;"	m	class:DmUniboCommon.UserUpnMethods
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+Controllers	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^  module Controllers$/;"	m	class:DmUniboCommon
+CurrencyFloatInput	dm_unibo_common/app/inputs/currency_float_input.rb	/^class CurrencyFloatInput < SimpleForm::Inputs::Base$/;"	c
+CurrencyInput	dm_unibo_common/app/inputs/currency_input.rb	/^class CurrencyInput < SimpleForm::Inputs::Base$/;"	c
+DatePickerInput	dm_unibo_common/app/inputs/date_picker_input.rb	/^class DatePickerInput < SimpleForm::Inputs::Base$/;"	c
+DateRangePicker	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	var DateRangePicker = function(element, options){$/;"	c
+Datepicker	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	var Datepicker = function(element, options){$/;"	c
+DatetimePickerInput	dm_unibo_common/app/inputs/datetime_picker_input.rb	/^class DatetimePickerInput < SimpleForm::Inputs::Base$/;"	c
+DevelopmentMailInterceptor	dm_unibo_common/lib/dm_unibo_common/development_mail_interceptor.rb	/^class DevelopmentMailInterceptor  $/;"	c	class:DmUniboCommon
+DmUniboCommon	dm_unibo_common/doc/configuration.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	dm_unibo_common/lib/dm_unibo_common.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	dm_unibo_common/lib/dm_unibo_common/development_mail_interceptor.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	dm_unibo_common/lib/dm_unibo_common/user.rb	/^module DmUniboCommon::User$/;"	m
+DmUniboCommon	dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	dm_unibo_common/lib/dm_unibo_common/version.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommonHelper	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^module DmUniboCommonHelper $/;"	m
+DmUniboFormHelper	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^module DmUniboFormHelper$/;"	m
+DmUniboLinkHelper	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^module DmUniboLinkHelper$/;"	m
+DmUniboMenuHelper	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^module DmUniboMenuHelper$/;"	m
+DmUniboOrganizationsHelper	dm_unibo_common/app/helpers/dm_unibo_organizations_helper.rb	/^module DmUniboOrganizationsHelper $/;"	m
+DmUniboPrivacyHelper	dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^module DmUniboPrivacyHelper $/;"	m
+Engine	dm_unibo_common/lib/dm_unibo_common.rb	/^  class Engine < Rails::Engine$/;"	c	class:DmUniboCommon
+FormBuilder	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  class FormBuilder < ActionView::Helpers::FormBuilder$/;"	c	class:SimpleForm
+Helpers	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^    module Helpers$/;"	m	class:DmUniboCommon.Controllers
 HelpsController	app/controllers/helps_controller.rb	/^class HelpsController < ApplicationController$/;"	c
 HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
-Organization	app/models/organization.rb	/^class Organization < ActiveRecord::Base$/;"	c
+ImpersonationsController	dm_unibo_common/app/controllers/impersonations_controller.rb	/^class ImpersonationsController < ApplicationController$/;"	c
+LoginsController	dm_unibo_common/app/controllers/logins_controller.rb	/^class LoginsController < ApplicationController$/;"	c
+MismatchOrganization	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class MismatchOrganization < RuntimeError; end$/;"	c	class:DmUniboCommon
+NoAccess	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class NoAccess             < RuntimeError; end$/;"	c	class:DmUniboCommon
+NoUser	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class NoUser       < RuntimeError$/;"	c	class:DmUniboCommon
+NotAuthorized	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class NotAuthorized        < RuntimeError; end$/;"	c	class:DmUniboCommon
+NotOwner	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class NotOwner             < RuntimeError; end$/;"	c	class:DmUniboCommon
+NotificationMailer	app/mailers/notification_mailer.rb	/^class NotificationMailer < ActionMailer::Base$/;"	c
+Organization	app/models/organization.rb	/^class Organization < ApplicationRecord$/;"	c
 OrganizationsController	app/controllers/organizations_controller.rb	/^class OrganizationsController < ApplicationController$/;"	c
-Printer	app/models/printer.rb	/^class Printer < ActiveRecord::Base$/;"	c
-PrinterModel	app/models/printer_model.rb	/^class PrinterModel < ActiveRecord::Base$/;"	c
+Printable	app/pdfs/printable.rb	/^class Printable$/;"	c
+Printer	app/models/printer.rb	/^class Printer < ApplicationRecord$/;"	c
+PrinterModel	app/models/printer_model.rb	/^class PrinterModel < ApplicationRecord$/;"	c
 PrinterModelsController	app/controllers/printer_models_controller.rb	/^class PrinterModelsController < ApplicationController$/;"	c
 PrinterModelsHelper	app/helpers/printer_models_helper.rb	/^module PrinterModelsHelper$/;"	m
 PrintersController	app/controllers/printers_controller.rb	/^class PrintersController < ApplicationController$/;"	c
+SimpleForm	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^module SimpleForm$/;"	m
 SubscriptionsController	app/controllers/subscriptions_controller.rb	/^class SubscriptionsController < ApplicationController$/;"	c
-Toner	app/models/toner.rb	/^class Toner < ActiveRecord::Base$/;"	c
-TonerModel	app/models/toner_model.rb	/^class TonerModel < ActiveRecord::Base$/;"	c
+Toner	app/models/toner.rb	/^class Toner < ApplicationRecord$/;"	c
+TonerModel	app/models/toner_model.rb	/^class TonerModel < ApplicationRecord$/;"	c
 TonerModelsController	app/controllers/toner_models_controller.rb	/^class TonerModelsController < ApplicationController$/;"	c
 TonersController	app/controllers/toners_controller.rb	/^class TonersController < ApplicationController$/;"	c
-User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
-Vendor	app/models/vendor.rb	/^class Vendor < ActiveRecord::Base$/;"	c
+TooManyUsers	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class TooManyUsers < RuntimeError$/;"	c	class:DmUniboCommon
+UTCDate	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	function UTCDate(){$/;"	f
+UTCToday	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	function UTCToday(){$/;"	f
+User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+UserUpnMethods	dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb	/^  module UserUpnMethods$/;"	m	class:DmUniboCommon
+Vendor	app/models/vendor.rb	/^class Vendor < ApplicationRecord$/;"	c
 VendorsController	app/controllers/vendors_controller.rb	/^class VendorsController < ApplicationController$/;"	c
 VendorsHelper	app/helpers/vendors_helper.rb	/^module VendorsHelper$/;"	m
+_events	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^		},$/;"	p	class:Datepicker
+_process_options	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^		constructor: Datepicker,$/;"	m	class:Datepicker
+a.fn.sortable	dm_unibo_common/vendor/assets/javascripts/jquery.sortable.min.js	/^ *\/(function(a){var b,c=a();a.fn.sortable=function(d){var e=String(d);return d=a.extend({connectWith:!1},d),this.each(function(){if(\/^enable|disable|destroy$\/.test(e)){var f=a(this).children(a(this).data("items")).attr("draggable",e=="enable");e=="destroy"&&f.add(this).removeData("connectWith items").off("dragstart.h5s dragend.h5s selectstart.h5s dragover.h5s dragenter.h5s drop.h5s");return}var g,h,f=a(this).children(d.items),i=a("<"+(\/^ul|ol$\/i.test(this.tagName)?"li":"div")+' class="sortable-placeholder">');f.find(d.handle).mousedown(function(){g=!0}).mouseup(function(){g=!1}),a(this).data("items",d.items),c=c.add(i),d.connectWith&&a(d.connectWith).add(this).data("connectWith",d.connectWith),f.attr("draggable","true").on("dragstart.h5s",function(c){if(d.handle&&!g)return!1;g=!1;var e=c.originalEvent.dataTransfer;e.effectAllowed="move",e.setData("Text","dummy"),h=(b=a(this)).addClass("sortable-dragging").index()}).on("dragend.h5s",function(){b.removeClass("sortable-dragging").show(),c.detach(),h!=b.index()&&f.parent().trigger("sortupdate",{item:b}),b=null}).not("a[href], img").on("selectstart.h5s",function(){return this.dragDrop&&this.dragDrop(),!1}).end().add([this,i]).on("dragover.h5s dragenter.h5s drop.h5s",function(e){return!f.is(b)&&d.connectWith!==a(b).parent().data("connectWith")?!0:e.type=="drop"?(e.stopPropagation(),c.filter(":visible").after(b),!1):(e.preventDefault(),e.originalEvent.dataTransfer.dropEffect="move",f.is(this)?(d.forcePlaceholderSize&&i.height(b.outerHeight()),b.hide(),a(this)[i.index()<a(this).index()?"after":"before"](i),c.not(i).detach()):!c.is(this)&&!a(this).children(d.items).length&&(c.detach(),a(this).append(i)),!1)})})}})(jQuery);$/;"	f
+abbr	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def abbr$/;"	f	class:DmUniboCommon
+admin_mails	dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def admin_mails $/;"	f	class:DmUniboCommon.ClassMethods
 admin_params	app/controllers/admins_controller.rb	/^  def admin_params$/;"	f	class:AdminsController
+admins_mail_array	app/models/organization.rb	/^  def admins_mail_array$/;"	f	class:Organization
 admins_string	app/models/organization.rb	/^  def admins_string$/;"	f	class:Organization
+alias	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	function alias(method){$/;"	f
+allow_and_create	dm_unibo_common/app/controllers/logins_controller.rb	/^  def allow_and_create$/;"	f	class:LoginsController
+allow_if_email	dm_unibo_common/app/controllers/logins_controller.rb	/^  def allow_if_email$/;"	f	class:LoginsController
+assistenza_cesia	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def assistenza_cesia$/;"	f	class:DmUniboLinkHelper
 available_toners	app/models/organization.rb	/^  def available_toners$/;"	f	class:Organization
+belongs_to_dsa_user	dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb	/^      def belongs_to_dsa_user(*args)$/;"	f	class:DmUniboCommon.UserUpnMethods.ClassMethods
+big_icon	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def big_icon(name, size: 26, reg: nil)$/;"	f	class:DmUniboCommonHelper
+bootstrap_flash	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def bootstrap_flash$/;"	f	class:DmUniboCommonHelper
+bootstrap_modal_div	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def bootstrap_modal_div$/;"	f	class:DmUniboCommonHelper
+check_organization!	dm_unibo_common/app/helpers/dm_unibo_organizations_helper.rb	/^  def check_organization!(obj)$/;"	f	class:DmUniboOrganizationsHelper
+check_user_is_cesia	dm_unibo_common/app/helpers/dm_unibo_organizations_helper.rb	/^  def check_user_is_cesia$/;"	f	class:DmUniboOrganizationsHelper
+class_active	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def class_active(x,y)$/;"	f	class:DmUniboCommonHelper
+class_active_val	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def class_active_val(x,y)$/;"	f	class:DmUniboCommonHelper
+clsName	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			var clsName;$/;"	v
+cn	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def cn$/;"	f	class:DmUniboCommon
+cn_militar	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def cn_militar$/;"	f	class:DmUniboCommon
 compatible_printers	app/models/toner.rb	/^  def compatible_printers$/;"	f	class:Toner
+constructor	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	Datepicker.prototype = {$/;"	p	class:Datepicker
 create	app/controllers/admins_controller.rb	/^  def create$/;"	f	class:AdminsController
 create	app/controllers/organizations_controller.rb	/^  def create$/;"	f	class:OrganizationsController
 create	app/controllers/printer_models_controller.rb	/^  def create$/;"	f	class:PrinterModelsController
@@ -45,25 +109,95 @@ create	app/controllers/subscriptions_controller.rb	/^  def create$/;"	f	class:Su
 create	app/controllers/toner_models_controller.rb	/^  def create$/;"	f	class:TonerModelsController
 create	app/controllers/toners_controller.rb	/^  def create$/;"	f	class:TonersController
 create	app/controllers/vendors_controller.rb	/^  def create$/;"	f	class:VendorsController
+current_user	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+dateChanged	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			var dateChanged = false,$/;"	v
+dateUpdated	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^		},$/;"	m	class:DateRangePicker
+days	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.it.js	/^	$.fn.datepicker.dates['it'] = {$/;"	p	class:fn.datepicker.dates
+delivering_email	dm_unibo_common/lib/dm_unibo_common/development_mail_interceptor.rb	/^  def self.delivering_email(message)  $/;"	F	class:DmUniboCommon.DevelopmentMailInterceptor
+description	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def description$/;"	f	class:DmUniboCommon
 destroy	app/controllers/admins_controller.rb	/^  def destroy$/;"	f	class:AdminsController
 destroy	app/controllers/printer_models_controller.rb	/^  def destroy$/;"	f	class:PrinterModelsController
 destroy	app/controllers/printers_controller.rb	/^  def destroy$/;"	f	class:PrintersController
 destroy	app/controllers/toner_models_controller.rb	/^  def destroy$/;"	f	class:TonerModelsController
 destroy	app/controllers/toners_controller.rb	/^  def destroy$/;"	f	class:TonersController
 destroy	app/controllers/vendors_controller.rb	/^  def destroy$/;"	f	class:VendorsController
+developer	dm_unibo_common/app/controllers/logins_controller.rb	/^  def developer$/;"	f	class:LoginsController
+dl_field	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def dl_field(object, what)$/;"	f	class:DmUniboCommonHelper
+dm_card	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def dm_card(title: '')$/;"	f	class:DmUniboCommonHelper
+dm_error_notification	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^    def dm_error_notification(options = {})$/;"	f	class:SimpleForm.FormBuilder
+dm_footer	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_footer$/;"	f	class:DmUniboMenuHelper
+dm_form_for	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def dm_form_for(record, options={}, &block)$/;"	f	class:DmUniboFormHelper
+dm_header	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_header$/;"	f	class:DmUniboMenuHelper
+dm_menu	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_menu(&block)$/;"	f	class:DmUniboMenuHelper
+dm_nav	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_nav(&block)$/;"	f	class:DmUniboMenuHelper
+dropdown_menu	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dropdown_menu(id, title, &block)$/;"	f	class:DmUniboMenuHelper
+dsaSearchClient	dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def dsaSearchClient$/;"	f	class:DmUniboCommon.ClassMethods
 edit	app/controllers/organizations_controller.rb	/^  def edit$/;"	f	class:OrganizationsController
 edit	app/controllers/printer_models_controller.rb	/^  def edit$/;"	f	class:PrinterModelsController
 edit	app/controllers/printers_controller.rb	/^  def edit$/;"	f	class:PrintersController
 edit	app/controllers/toner_models_controller.rb	/^  def edit$/;"	f	class:TonerModelsController
 edit	app/controllers/toners_controller.rb	/^  def edit$/;"	f	class:TonersController
 edit	app/controllers/vendors_controller.rb	/^  def edit$/;"	f	class:VendorsController
+element	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			var element;$/;"	v
+ellipsisText	dm_unibo_common/vendor/assets/javascripts/jquery.jtruncate.js	/^			lessText: "less",$/;"	p	class:fn.jTruncate.defaults
+find_or_syncronize	dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def find_or_syncronize(upn_or_id)$/;"	f	class:DmUniboCommon.ClassMethods
+fn.jTruncate	dm_unibo_common/vendor/assets/javascripts/jquery.jtruncate.js	/^(function($){$/;"	f
+force_sso_user	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def force_sso_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+form_legend	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def form_legend(what)$/;"	f
+fwicon	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def fwicon(name, text: "", size: 18, reg: nil)$/;"	f	class:DmUniboCommonHelper
+google_oauth2	dm_unibo_common/app/controllers/logins_controller.rb	/^  def google_oauth2$/;"	f	class:LoginsController
+horizontal_form_for	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def horizontal_form_for(record, options={}, &block)$/;"	f
+html	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			var html = [];$/;"	v
+icon	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def icon(name, text: "", size: 18, reg: nil)$/;"	f	class:DmUniboCommonHelper
+impersonate	dm_unibo_common/app/controllers/impersonations_controller.rb	/^  def impersonate$/;"	f	class:ImpersonationsController
+included	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def self.included(base)$/;"	F	class:DmUniboCommon.Controllers.Helpers
+included	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def self.included(base)$/;"	F	class:DmUniboCommon
 index	app/controllers/helps_controller.rb	/^  def index$/;"	f	class:HelpsController
 index	app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
 index	app/controllers/organizations_controller.rb	/^  def index$/;"	f	class:OrganizationsController
 index	app/controllers/printer_models_controller.rb	/^  def index$/;"	f	class:PrinterModelsController
 index	app/controllers/toner_models_controller.rb	/^  def index$/;"	f	class:TonerModelsController
+index	app/controllers/toners_controller.rb	/^  def index$/;"	f	class:TonersController
 index	app/controllers/vendors_controller.rb	/^  def index$/;"	f	class:VendorsController
+initialize	app/pdfs/printable.rb	/^  def initialize(title = nil, orientation: :portrait)$/;"	f	class:Printable
+input	dm_unibo_common/app/inputs/currency_float_input.rb	/^  def input(wrapper_options)$/;"	f	class:CurrencyFloatInput
+input	dm_unibo_common/app/inputs/currency_input.rb	/^  def input(wrapper_options)$/;"	f	class:CurrencyInput
+input	dm_unibo_common/app/inputs/date_picker_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatePickerInput
+input	dm_unibo_common/app/inputs/datetime_picker_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimePickerInput
 interested_in?	app/models/organization.rb	/^  def interested_in?(toner)$/;"	f	class:Organization
+interested_organizations	app/models/toner_model.rb	/^  def interested_organizations$/;"	f	class:TonerModel
+is_admin?	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def is_admin?$/;"	f	class:DmUniboCommon
+is_cesia?	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def is_cesia?$/;"	f	class:DmUniboCommon
+is_chief?	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def is_chief?$/;"	f	class:DmUniboCommon
+left	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			var left = offset.left,$/;"	v
+length	dm_unibo_common/vendor/assets/javascripts/jquery.jtruncate.js	/^		var defaults = {$/;"	p	class:fn.jTruncate.defaults
+lessAni	dm_unibo_common/vendor/assets/javascripts/jquery.jtruncate.js	/^			moreAni: "",$/;"	p	class:fn.jTruncate.defaults
+lessText	dm_unibo_common/vendor/assets/javascripts/jquery.jtruncate.js	/^			moreText: "more",$/;"	p	class:fn.jTruncate.defaults
+link_to_back	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_back url$/;"	f	class:DmUniboLinkHelper
+link_to_delete	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_delete(name = "", url, button: false)$/;"	f	class:DmUniboLinkHelper
+link_to_download	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_download(url)$/;"	f	class:DmUniboLinkHelper
+link_to_edit	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_edit(name = "", url, button: false, modal: false)$/;"	f	class:DmUniboLinkHelper
+link_to_edit2	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_edit2(name = "", url)$/;"	f	class:DmUniboLinkHelper
+link_to_modal_edit	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_modal_edit(url)$/;"	f	class:DmUniboLinkHelper
+link_to_modal_new	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_modal_new(name = "", url)$/;"	f	class:DmUniboLinkHelper
+link_to_new	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_new(name = "", url, button: true, modal: false)$/;"	f	class:DmUniboLinkHelper
+link_to_show	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_show(name = "", url)$/;"	f	class:DmUniboLinkHelper
+locale_opts	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	var locale_opts = $.fn.datepicker.locale_opts = [$/;"	v
+log_current_user	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def log_current_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+log_unibo_omniauth	dm_unibo_common/app/controllers/logins_controller.rb	/^  def log_unibo_omniauth$/;"	f	class:LoginsController
+logged_user	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def logged_user$/;"	f	class:DmUniboMenuHelper
+login_link	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def login_link$/;"	f	class:DmUniboMenuHelper
+login_method	dm_unibo_common/app/controllers/logins_controller.rb	/^  def login_method$/;"	f	class:LoginsController
+logout	dm_unibo_common/app/controllers/logins_controller.rb	/^  def logout$/;"	f	class:LoginsController
+logout_link	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def logout_link$/;"	f	class:DmUniboMenuHelper
+mail	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def mail$/;"	f	class:DmUniboCommon
+main_title	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def main_title(srt)$/;"	f	class:DmUniboCommonHelper
+minTrail	dm_unibo_common/vendor/assets/javascripts/jquery.jtruncate.js	/^			length: 300,$/;"	p	class:fn.jTruncate.defaults
+modal_link_to	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def modal_link_to(name, url)$/;"	f	class:DmUniboLinkHelper
+modal_page	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def modal_page$/;"	f	class:DmUniboCommon.Controllers.Helpers
+modes	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	var DPGlobal = {$/;"	p	class:DPGlobal
+moreAni	dm_unibo_common/vendor/assets/javascripts/jquery.jtruncate.js	/^			ellipsisText: "...",$/;"	p	class:fn.jTruncate.defaults
+moreText	dm_unibo_common/vendor/assets/javascripts/jquery.jtruncate.js	/^			minTrail: 20,$/;"	p	class:fn.jTruncate.defaults
 name_with_vendor	app/models/printer_model.rb	/^  def name_with_vendor$/;"	f	class:PrinterModel
 name_with_vendor	app/models/toner_model.rb	/^  def name_with_vendor$/;"	f	class:TonerModel
 new	app/controllers/admins_controller.rb	/^  def new$/;"	f	class:AdminsController
@@ -74,14 +208,36 @@ new	app/controllers/subscriptions_controller.rb	/^  def new$/;"	f	class:Subscrip
 new	app/controllers/toner_models_controller.rb	/^  def new$/;"	f	class:TonerModelsController
 new	app/controllers/toners_controller.rb	/^  def new$/;"	f	class:TonersController
 new	app/controllers/vendors_controller.rb	/^  def new$/;"	f	class:VendorsController
+no_access	dm_unibo_common/app/controllers/logins_controller.rb	/^  def no_access$/;"	f	class:LoginsController
+notify_organization	app/mailers/notification_mailer.rb	/^  def notify_organization(organization, gifts_array)$/;"	f	class:NotificationMailer
+old	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	var old = $.fn.datepicker;$/;"	v
+opts_from_el	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	function opts_from_el(el, prefix){$/;"	f
+opts_from_locale	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	function opts_from_locale(lang){$/;"	f
 organization_params	app/controllers/organizations_controller.rb	/^  def organization_params$/;"	f	class:OrganizationsController
+owns!	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def owns!(what)$/;"	f	class:DmUniboCommon
+owns?	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def owns?(what)$/;"	f	class:DmUniboCommon
+parse_google_omniauth	dm_unibo_common/app/controllers/logins_controller.rb	/^  def parse_google_omniauth$/;"	f	class:LoginsController
+parse_unibo_omniauth	dm_unibo_common/app/controllers/logins_controller.rb	/^  def parse_unibo_omniauth$/;"	f	class:LoginsController
+pdf_output	app/controllers/application_controller.rb	/^  def pdf_output(printable)$/;"	f	class:ApplicationController
+pippo_show	dm_unibo_common/app/controllers/logins_controller.rb	/^  def pippo_show$/;"	f	class:LoginsController
+popover_help	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def popover_help(title, content)$/;"	f	class:DmUniboCommonHelper
 printer_model_ids	app/models/organization.rb	/^  def printer_model_ids$/;"	f	class:Organization
 printer_model_params	app/controllers/printer_models_controller.rb	/^    def printer_model_params$/;"	f	class:PrinterModelsController
 printer_models	app/models/toner.rb	/^  def printer_models$/;"	f	class:Toner
 printer_params	app/controllers/printers_controller.rb	/^  def printer_params$/;"	f	class:PrintersController
 printers	app/models/toner_model.rb	/^  def printers(organization = nil)$/;"	f	class:TonerModel
+privacy_alert	dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^  def privacy_alert$/;"	f	class:DmUniboPrivacyHelper
+privacy_cookie_name	dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^  def privacy_cookie_name$/;"	f	class:DmUniboPrivacyHelper
+re_lower	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^		function re_lower(_,a){$/;"	f	function:opts_from_el
+redirect_unsigned_user	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def redirect_unsigned_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+remove	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^		},$/;"	m	class:DateRangePicker
+render	app/pdfs/printable.rb	/^  def render$/;"	f	class:Printable
+report	app/controllers/home_controller.rb	/^  def report$/;"	f	class:HomeController
 retrive_authlevel	app/controllers/application_controller.rb	/^  def retrive_authlevel$/;"	f	class:ApplicationController
 search	app/controllers/home_controller.rb	/^  def search$/;"	f	class:HomeController
+search	dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def search(str)$/;"	f	class:DmUniboCommon.ClassMethods
+set_current_user	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def set_current_user(user)$/;"	f	class:DmUniboCommon.Controllers.Helpers
+set_memberof_session	dm_unibo_common/app/controllers/logins_controller.rb	/^  def set_memberof_session(isMemberOf)$/;"	f	class:LoginsController
 set_organization	app/controllers/organizations_controller.rb	/^  def set_organization$/;"	f	class:OrganizationsController
 set_organization_and_check_permission	app/controllers/admins_controller.rb	/^  def set_organization_and_check_permission$/;"	f	class:AdminsController
 set_printer	app/controllers/printers_controller.rb	/^  def set_printer$/;"	f	class:PrintersController
@@ -89,12 +245,25 @@ set_printer_model	app/controllers/printer_models_controller.rb	/^    def set_pri
 set_toner_and_check_permission	app/controllers/toners_controller.rb	/^  def set_toner_and_check_permission$/;"	f	class:TonersController
 set_toner_model	app/controllers/toner_models_controller.rb	/^    def set_toner_model$/;"	f	class:TonerModelsController
 set_vendor	app/controllers/vendors_controller.rb	/^    def set_vendor$/;"	f	class:VendorsController
+shibapplicationid	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def shibapplicationid$/;"	f	class:DmUniboCommon.Controllers.Helpers
+shibboleth	dm_unibo_common/app/controllers/logins_controller.rb	/^  def shibboleth$/;"	f	class:LoginsController
 short_description	app/models/organization.rb	/^  def short_description$/;"	f	class:Organization
 short_name	app/models/printer.rb	/^  def short_name$/;"	f	class:Printer
 show	app/controllers/organizations_controller.rb	/^  def show$/;"	f	class:OrganizationsController
+show	app/controllers/printer_models_controller.rb	/^  def show$/;"	f	class:PrinterModelsController
 show	app/controllers/printers_controller.rb	/^  def show$/;"	f	class:PrintersController
+show	app/controllers/toner_models_controller.rb	/^  def show$/;"	f	class:TonerModelsController
 show	app/controllers/vendors_controller.rb	/^  def show$/;"	f	class:VendorsController
 show_printer_model_with_actions	app/helpers/printer_models_helper.rb	/^  def show_printer_model_with_actions(printer_model)$/;"	f	class:PrinterModelsHelper
+sign_in_and_redirect	dm_unibo_common/app/controllers/logins_controller.rb	/^  def sign_in_and_redirect(user)$/;"	f	class:LoginsController
+sso_user_upn	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def sso_user_upn$/;"	f	class:DmUniboCommonHelper
+start_impersonation_link	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def start_impersonation_link$/;"	f	class:DmUniboLinkHelper
+stop_impersonating	dm_unibo_common/app/controllers/impersonations_controller.rb	/^  def stop_impersonating$/;"	f	class:ImpersonationsController
+stop_impersonation_link	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def stop_impersonation_link$/;"	f	class:DmUniboLinkHelper
+support_mail	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def support_mail$/;"	f	class:DmUniboLinkHelper
+syncronize	dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def syncronize(upn_or_id, c = User)$/;"	f	class:DmUniboCommon.ClassMethods
+target	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			var target = $(e.target).closest('span, td, th'),$/;"	v
+test	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^				new_date.setUTCDate(day);$/;"	f
 to_s	app/models/admin.rb	/^  def to_s$/;"	f	class:Admin
 to_s	app/models/organization.rb	/^  def to_s$/;"	f	class:Organization
 to_s	app/models/printer.rb	/^  def to_s$/;"	f	class:Printer
@@ -102,10 +271,18 @@ to_s	app/models/printer_model.rb	/^  def to_s$/;"	f	class:PrinterModel
 to_s	app/models/toner.rb	/^  def to_s$/;"	f	class:Toner
 to_s	app/models/toner_model.rb	/^  def to_s$/;"	f	class:TonerModel
 to_s	app/models/vendor.rb	/^  def to_s$/;"	f	class:Vendor
+to_s	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^    def to_s$/;"	f	class:DmUniboCommon.NoUser
+to_s	dm_unibo_common/lib/dm_unibo_common/errors.rb	/^    def to_s$/;"	f	class:DmUniboCommon.TooManyUsers
+to_s	dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def to_s$/;"	f	class:DmUniboCommon
+toggle_button	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def toggle_button$/;"	f	class:DmUniboMenuHelper
 toner_model_ids	app/models/organization.rb	/^  def toner_model_ids$/;"	f	class:Organization
 toner_model_params	app/controllers/toner_models_controller.rb	/^    def toner_model_params$/;"	f	class:TonerModelsController
 toner_models	app/models/printer.rb	/^  def toner_models$/;"	f	class:Printer
 toner_params	app/controllers/toners_controller.rb	/^  def toner_params$/;"	f	class:TonersController
+toners	app/pdfs/printable.rb	/^  def toners$/;"	f	class:Printable
+tooltip	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def tooltip(key)$/;"	f	class:DmUniboCommonHelper
+true_user_can_impersonate?	dm_unibo_common/app/controllers/impersonations_controller.rb	/^  def true_user_can_impersonate?$/;"	f	class:ImpersonationsController
+true_user_can_impersonate?	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def true_user_can_impersonate?$/;"	f	class:DmUniboCommonHelper
 unusable_toners	app/models/organization.rb	/^  def unusable_toners$/;"	f	class:Organization
 upcase_name	app/models/toner_model.rb	/^  def upcase_name$/;"	f	class:TonerModel
 update	app/controllers/organizations_controller.rb	/^  def update$/;"	f	class:OrganizationsController
@@ -114,9 +291,25 @@ update	app/controllers/printers_controller.rb	/^  def update$/;"	f	class:Printer
 update	app/controllers/toner_models_controller.rb	/^  def update$/;"	f	class:TonerModelsController
 update	app/controllers/toners_controller.rb	/^  def update$/;"	f	class:TonersController
 update	app/controllers/vendors_controller.rb	/^  def update$/;"	f	class:VendorsController
+updateDates	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^	DateRangePicker.prototype = {$/;"	m	class:DateRangePicker
+updateRanges	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^		},$/;"	m	class:DateRangePicker
 usable_toner_models	app/models/organization.rb	/^  def usable_toner_models$/;"	f	class:Organization
+user_admin!	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def user_admin!$/;"	f	class:DmUniboCommon.Controllers.Helpers
+user_admin?	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def user_admin?$/;"	f	class:DmUniboCommon.Controllers.Helpers
+user_cesia!	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def user_cesia!$/;"	f	class:DmUniboCommon.Controllers.Helpers
+user_cesia?	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def user_cesia?$/;"	f	class:DmUniboCommon.Controllers.Helpers
+user_owns!	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def user_owns!(what)$/;"	f	class:DmUniboCommon.Controllers.Helpers
+user_owns?	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def user_owns?(what)$/;"	f	class:DmUniboCommon.Controllers.Helpers
+user_signed_in?	dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def user_signed_in?$/;"	f	class:DmUniboCommon.Controllers.Helpers
 vendor	app/models/printer.rb	/^  def vendor$/;"	f	class:Printer
 vendor	app/models/toner.rb	/^  def vendor$/;"	f	class:Toner
 vendor_params	app/controllers/vendors_controller.rb	/^    def vendor_params$/;"	f	class:VendorsController
 vendor_to_models_array	app/helpers/application_helper.rb	/^  def vendor_to_models_array(what)$/;"	f	class:ApplicationHelper.vendor_to_models_json
 vendor_to_models_json	app/helpers/application_helper.rb	/^  def vendor_to_models_json(what)$/;"	f	class:ApplicationHelper
+vertical_form_for	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def vertical_form_for(record, options={}, &block)$/;"	f
+who_impersonate	dm_unibo_common/app/controllers/impersonations_controller.rb	/^  def who_impersonate$/;"	f	class:ImpersonationsController
+with_gift_toner	app/models/printer_model.rb	/^  def self.with_gift_toner$/;"	F	class:PrinterModel
+x	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			o.orientation = {x: 'auto', y: 'auto'};$/;"	p	class:o.o
+y	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			o.orientation = {x: 'auto', y: 'auto'};$/;"	p	class:o.o
+years	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			var years = $.map(this.dates, function(d){$/;"	v
+zIndex	dm_unibo_common/vendor/assets/javascripts/bootstrap-datepicker.js	/^			var zIndex = parseInt(this.element.parents().filter(function(){$/;"	v

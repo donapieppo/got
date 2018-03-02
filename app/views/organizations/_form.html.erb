@@ -1,4 +1,4 @@
-<%= horizontal_form_for(@organization) do |organization| %>
+<%= dm_form_for @organization, title: t(:organization) do |organization| %>
   <%= organization.dm_error_notification %>  
 
   <%= organization.input :name, hint: 'Esempi: DipMat, CeSIA, DICAM...' %>  

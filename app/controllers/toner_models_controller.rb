@@ -10,6 +10,7 @@ class TonerModelsController < ApplicationController
   def show
     @compatible_printers = @toner_model.printer_models
     @available_toners = @toner_model.toners
+    render layout: false if modal_page
   end
 
   def new

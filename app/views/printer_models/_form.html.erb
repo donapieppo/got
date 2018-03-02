@@ -1,12 +1,6 @@
-<% unless @printer_model.new_record? %>  
-  <p class="centered_action"><%= link_to icon('plus') + " Aggiungi stampante #{@printer_model.to_s} a #{@current_organization.name}", new_printer_model_printer_path(@printer_model), class: :button %></p>
-<% end %>
+<p class="alert alert-warning"> <%= t :please_mantain_correct_data %></p>
 
-<h1><%= t :printer_model %></h1>
-
-<p class="info"><%= t :please_mantain_correct_data %></p>
-
-<%= horizontal_form_for(@printer_model) do |printer_model| %>
+<%= dm_form_for @printer_model, title: t(:printer_model) do |printer_model| %>
   <%= printer_model.dm_error_notification %>  
 
   <%= printer_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to("Aggiungi una nuova marca all'elenco.", new_vendor_path) %>  

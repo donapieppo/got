@@ -9,6 +9,7 @@ class PrinterModelsController < ApplicationController
   def show
     @compatible_toners = @printer_model.toner_models
     @available_toners = Toner.where(gift: true).where(toner_model: @printer_model.toner_model_ids)
+    render layout: false if modal_page
   end
 
   def new

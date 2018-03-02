@@ -5,7 +5,7 @@
     <dt><%= vendor %></dt>
     <% models.each do |model| %>  
       <dd>
-        <%= link_to model.name, printer_model_path(model), remote: true %>
+        <%= modal_link_to model.name, printer_model_path(model) %>
       </dd>
     <% end %>
   <% end %>
