@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'sqlite3'
 
 gem 'dm_unibo_common',      git: 'https://github.com/donapieppo/dm_unibo_common.git',      ref: 'omniauth', branch: 'master'
+# gem 'dm_unibo_common', path: '/home/rails/gems/dm_unibo_common/'
 gem 'dm_unibo_user_search', git: 'https://github.com/donapieppo/dm_unibo_user_search.git', ref: 'master', branch: 'master'
 
 gem "prawn"
