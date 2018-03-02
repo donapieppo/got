@@ -1,4 +1,4 @@
-<%= main_title toner_model %>
+<%= main_title "toner: #{toner_model}" %>
 
 <% if @available_toners.empty? %>  
   <p class="alert alert-warning">Non sono al momento disponibili toner di questo modello in Unibo</p>
@@ -19,9 +19,9 @@
   <dl>
     <dt>Stampanti compatibili:</dt>
     <% @compatible_printers.each do |compatible_printer| %>  
-      <dd><%= link_to compatible_printer, compatible_printer %></dd>
+      <dd><%= modal_link_to compatible_printer, compatible_printer %></dd>
     <% end %>
   </dl>
 <% end %>
 
-
+<%= dm_modal_js_helper %>  

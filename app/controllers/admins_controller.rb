@@ -1,6 +1,10 @@
 class AdminsController < ApplicationController
   before_action :set_organization_and_check_permission
 
+  def index
+    @admins = @organization.admins
+  end
+
   def new
     @admin = @organization.admins.new
   end

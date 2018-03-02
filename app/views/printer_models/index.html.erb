@@ -11,7 +11,9 @@
   <% end %>
 </dl>
 
-<p><%= link_to_new 'Aggiungi modello', new_printer_model_path %> - <%= link_to_back root_path %></p>
+<p class="mt-3">
+  <%= link_to_new 'Aggiungi modello', new_printer_model_path %> - <%= link_to_back root_path %>
+</p>
 
 <%= javascript_tag do %>  
   $(document).ready(function(){

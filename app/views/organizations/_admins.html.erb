@@ -1,11 +1,10 @@
 <strong><%= t :admins %></strong>: 
 <% organization.admins.each do |admin| %>  
-  <%= mail_to admin.user.email, admin.user.cn %> 
-  <%= link_to_delete(admin_path(admin)) if modifiable %>  
+  <%= mail_to admin.user.email, admin.user.cn, class: 'btn btn-outline-info' %>
 <% end %>
 
 <% if modifiable %>  
-  - <%= link_to 'nuovo amministratore', new_organization_admin_path(organization) %>  
+  <%= link_to 'gestisci amministratori', admins_path, class: "btn btn-primary" %>  
 <% end %>
 
 

@@ -1,3 +1,5 @@
+<%= main_title "printer: #{printer_model}" %>
+
 <% if @available_toners.empty? %>  
   <p class="alert alert-warning"><%= t :no_available_toners_for_this_printer %></p>
 <% else %>
@@ -17,7 +19,7 @@
   <dl>
     <dt>Modelli di toner compatibili:</dt>
     <% @compatible_toners.each do |compatible_toner| %>  
-      <dd><%= link_to compatible_toner, compatible_toner %></dd>
+      <dd><%= modal_link_to compatible_toner, compatible_toner %></dd>
     <% end %>
   </dl>
 <% end %>
@@ -30,3 +32,5 @@
     <% end %>
   </dl>
 <% end %>
+
+<%= dm_modal_js_helper %>  

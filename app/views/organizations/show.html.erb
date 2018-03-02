@@ -22,10 +22,11 @@
     </div>
   </div>
 <% elsif (unusable_toners = @organization.unusable_toners).any? %>
-  <dl>
-    <dt><%= icon :gift %> Toner resi disponibili per altre strutture:</dt>
+  <%= dm_card title: icon(:gift) + ' Toner resi disponibili per altre strutture:' do %>  
+    <ul>
     <% unusable_toners.each do |toner| %>
-      <dd><%= link_to toner.toner_model, toner.toner_model %></dd>
+      <li><%= modal_link_to toner.toner_model, toner.toner_model %></li>
     <% end %>
-  </dl>
+    </ul>
+  <% end %>
 <% end %>
