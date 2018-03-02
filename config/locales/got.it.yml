@@ -3,6 +3,7 @@ it:
   organizations:  Strutture
   admins:         Amministratori
   vendor:         Marca
+  model:          Modello
   models:         Modelli
   printer:        Stampante
   printer_models: Modelli di stampante
@@ -17,6 +18,7 @@ it:
   add_new_toner_model:   Aggiungi un nuovo modello di toner.
   add_new_printer_model: Aggiungi un nuovo modello di stampante.
   pdf_report_title: Elenco stampanti compatibili con toner dismessi
+  search_results: Risultati ricerca per 
 
   helpers:
     submit:

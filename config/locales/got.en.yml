@@ -5,6 +5,7 @@ en:
   add_toner:       Add the tonet to your organization
   add_printer:     add the printer to your organization
   pdf_report_title: Compatible printers
+  search_results: Search results for 
 
   helpers:
     submit:
@@ -48,6 +49,8 @@ en:
   please_mantain_correct_data: All models are shared between organizations. Please keep all data correct.
 
   add_new_vendor: Add new vendor to this list.
+
+
 
 
 
