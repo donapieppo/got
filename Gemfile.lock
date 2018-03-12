@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/donapieppo/dm_unibo_common.git
-  revision: 97e1ca0e8f044a2eb453f47d316878a0cb795ed3
-  ref: omniauth
+  revision: 9fcf4168217b069a4c5926123a146039fbe5b83b
+  ref: master
   branch: master
   specs:
     dm_unibo_common (2.0.1)
