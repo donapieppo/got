@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
 
   def index
     @admins = @organization.admins
+    render layout: false if modal_page
   end
 
   def new
