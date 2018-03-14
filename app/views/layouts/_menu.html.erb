@@ -1,18 +1,17 @@
 <%= dm_menu do %>  
   <%= dm_header %>
-
   <%= dm_nav do %>  
     <% if @current_organization %>  
-      <li><%= link_to big_icon('home') + " Home", root_path %></li>
+      <li><%= link_to big_icon('home', text: "Home"), root_path %></li>
 
-      <%= dropdown_menu :models, big_icon('database') + ' ' + t(:models) do %>  
-        <%= link_to fwicon('print') + " " + t(:printer_models), printer_models_path %>
-        <%= link_to fwicon('cubes') + " " + t(:toner_models), toner_models_path %>
+      <%= dropdown_menu :models, big_icon('database', text: t(:models)) do %>  
+        <%= link_to fwicon('print', text: t(:printer_models)), printer_models_path %>
+        <%= link_to fwicon('cubes', text: t(:toner_models)), toner_models_path %>
       <% end %>
 
-      <%= dropdown_menu :organization, big_icon('building') + @current_organization.name do  %>
+      <%= dropdown_menu :organization, big_icon('building', text: @current_organization.name) do  %>
         <% @available_organizations.each do |organization| %>  
-          <%= link_to icon('home') + ' ' + organization.short_description, root_path %>
+          <%= link_to icon('home', text: organization.short_description), root_path %>
         <% end %>
       <% end %>
 

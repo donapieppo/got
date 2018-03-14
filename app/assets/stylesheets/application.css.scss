@@ -40,7 +40,7 @@
   text-transform: uppercase;
 }
 
-dl.toners-list, dl.printers-list, dl.subscriptions-list {
+dl.subscriptions-list {
   @extend .list-group;
   dt, dd { 
     @extend .list-group-item;

@@ -3,25 +3,23 @@
 <%= dm_form_for @toner_model, title: "Modifica del modello di toner #{@toner_model.name}" do |toner_model| %>
   <%= toner_model.dm_error_notification %>  
 
-  <div id="details">
-    <%= toner_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to(t(:add_new_vendor), new_vendor_path) %>  
-    <%= toner_model.input :name, hint: t(:toner_model_name_hint) %>  
-  </div>
+  <%= toner_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to(t(:add_new_vendor), new_vendor_path) %>  
+  <%= toner_model.input :name, hint: t(:toner_model_name_hint) %>  
 
   <h2>Stampanti compatibili</h2>
 
-    <% Vendor.includes(:printer_models).order('vendors.name').each do |vendor| %>
-      <% models = vendor.printer_models %>
-      <% next if models.empty? %>  
+  <% Vendor.includes(:printer_models).order('vendors.name').each do |vendor| %>
+    <% models = vendor.printer_models %>
+    <% next if models.empty? %>  
 
-      <div class="card">
-        <div class="card-header"><%= vendor %></div>
-        <div class="card-body">
-          <%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false %>
-          <%= link_to "aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id) %>
-        </div>
+    <div class="card">
+      <div class="card-header"><%= vendor %></div>
+      <div class="card-body">
+        <%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false %>
+        <%= link_to "aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id) %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 
   <%= toner_model.submit 'Salva' %> - <%= link_to_back toner_models_path %>  
 <% end %>

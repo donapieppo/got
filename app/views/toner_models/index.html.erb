@@ -1,27 +1,27 @@
 <h1><%= t :toner_models %></h1>
 
-<dl class="toners-list">
+<ul class="list-group">
   <% @toner_models.group_by {|tm| tm.vendor}.each do |vendor, models| %>
-    <dt><%= vendor %></dt>
-    <% models.each do |model| %>  
-      <dd>
-        <%= icon('check') if @organization_toner_model_ids.include?(model.id) %>
-        <strong><%= modal_link_to model.name, toner_model_path(model) %></strong>
-        <% unless (printer_models_string = model.printer_models.map(&:name).join(', ')).blank? %>  
-          <span class="details"><small>(per le stampanti: <%= printer_models_string %>)</small></span>
-        <% end %>
-      </dd>
-    <% end %>
+    <li class="list-group-item"><%= vendor %></li>
+    <div class="models_list">
+      <% models.each do |model| %>  
+        <span class="btn btn-outline-info m-1">
+          <%= icon('check') if @organization_toner_model_ids.include?(model.id) %>
+          <strong><%= modal_link_to model.name, toner_model_path(model) %></strong>
+        </span>
+      <% end %>
+    </div>
   <% end %>
-</dl>
+</ul>
 
 <p class="mt-3"><%= link_to_new 'Aggiungi modello di toner', new_toner_model_path %> - <%= link_to_back root_path %></p>
 
 <%= javascript_tag do %>  
   $(document).ready(function(){
-    $("dd").toggle();
-    $("dt").click(function() {
-      $(this).nextUntil("dt", "dd").slideToggle();
+    $(".models_list").toggle();
+    $("li").click(function() {
+      $(this).css('font-weight', 'bold');
+      $(this).next(".models_list").slideToggle();
     });
   });
 <% end %>
