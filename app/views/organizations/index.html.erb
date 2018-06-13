@@ -1,6 +1,6 @@
 <h1><%= t :organizations %></h1>
 
-<ul class="bordered">
+<ul class="bordered mb-3">
   <% @organizations.each do |organization| %>
     <li>
       <% name = "<span class='organization_name'>#{ h organization.name}</span> - #{h organization.description}".html_safe %>  
