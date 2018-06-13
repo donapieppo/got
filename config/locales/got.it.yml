@@ -14,7 +14,9 @@ it:
   no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
   no_available_toners_for_this_printer: Non sono al momento disponibili in Unibo toner compatibili con questo modello di stampante.
   add_toner:       Aggiungi il toner alla struttura
+  new_toner:       Nuovo toner
   add_printer:     Aggiungi la stampante alla struttura
+  new_printer:     Nuova stampante
   add_new_toner_model:   Aggiungi un nuovo modello di toner.
   add_new_printer_model: Aggiungi un nuovo modello di stampante.
   pdf_report_title: Elenco stampanti compatibili con toner dismessi
@@ -75,4 +77,5 @@ it:
   please_refine: Si prega di raffinare i parametri di ricerca
   please_mantain_correct_data: I modelli sono condivisi tra tutte le strutture. Si prega di mantenere i dati corretti.
   add_new_vendor: Aggiungi una nuova marca all'elenco.
-
+  new_administrator: Nuovo Amministratore
+  toner_available_for_your_printers: Toner disponibili per le tue stampanti
