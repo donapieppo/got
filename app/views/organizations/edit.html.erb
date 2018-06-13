@@ -9,7 +9,7 @@
         <li><%= admin %> <span class="float-right"><%= link_to_delete admin_path(admin) %></span></li>
       <% end %>
     </ul>
-    <%= link_to_new 'Nuovo Amministratore', new_organization_admin_path(@organization) %>  
+    <%= link_to_new t(:new_administrator), new_organization_admin_path(@organization) %>  
   <% end %>
 </div>
 </div>
