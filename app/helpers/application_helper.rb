@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def current_organization
+    @current_organization
+  end
+
   # { "10": [[1,"4200"], [20, "4300"]] }
   def vendor_to_models_json(what)
     m = what.to_s.capitalize[0...-1] + "Model"
