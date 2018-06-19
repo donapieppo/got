@@ -28,7 +28,12 @@
   <dl>
     <dt>Stampanti di questo modello si trovano presso:</dt>
     <% models.map(&:organization).uniq.each do |organization| %>  
-      <dd><%= link_to organization, organization %></dd>
+      <dd <%= 'style="font-weight: bold"'.html_safe if organization == current_organization %>>
+        <%= link_to organization, organization %>
+        <% if organization == current_organization %>  
+          - <%= @printer_model.printers.where(organization_id: organization.id).map(&:name).join(', ') %>
+        <% end %>
+      </dd>
     <% end %>
   </dl>
 <% end %>
