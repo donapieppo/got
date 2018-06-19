@@ -1,5 +1,8 @@
 <div>
-<p><em><%= @printer.description unless @printer.description.blank? %></em></p>
+  <p>
+    <em><%= @printer.description unless @printer.description.blank? %></em>
+    <%= '<u>Affitto</u>'.html_safe if @printer.rent %>  
+  </p>
 <dl>
   <dt><%= t :model %></dt>
   <dd><%= modal_link_to @printer.printer_model, @printer.printer_model %></dd>
