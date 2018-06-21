@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :printer_model do
     association :vendor
     sequence(:name) { |n| "PrinterTest #{n}" }

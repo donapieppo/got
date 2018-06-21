@@ -2,17 +2,17 @@ require 'rails_helper'
 
 RSpec.describe Organization, type: :model do
 
-  let (:organization)  { FactoryGirl.create(:organization) }
-  let (:printer_model) { FactoryGirl.create(:printer_model) }
-  let (:toner_model)   { FactoryGirl.create(:toner_model) }
+  let (:organization)  { FactoryBot.create(:organization) }
+  let (:printer_model) { FactoryBot.create(:printer_model) }
+  let (:toner_model)   { FactoryBot.create(:toner_model) }
 
   it "owns printers" do
-    printer = FactoryGirl.create(:printer, printer_model: printer_model, organization: organization)
+    printer = FactoryBot.create(:printer, printer_model: printer_model, organization: organization)
     expect(organization.printers).to include(printer)
   end
 
   context "given printer in organization" do  
-    let!(:printer) { FactoryGirl.create(:printer, printer_model: printer_model, organization: organization) }
+    let!(:printer) { FactoryBot.create(:printer, printer_model: printer_model, organization: organization) }
 
     it "#printer_model_ids consists of its model id]" do
       expect(organization.printer_model_ids).to eq([printer.printer_model_id])
@@ -20,7 +20,7 @@ RSpec.describe Organization, type: :model do
 
     context "given the printer has a compatible toner model in database" do
       before do 
-        @toner_model = FactoryGirl.create(:toner_model)
+        @toner_model = FactoryBot.create(:toner_model)
         printer.printer_model.toner_models << @toner_model
       end
 
@@ -30,7 +30,7 @@ RSpec.describe Organization, type: :model do
     end
 
     context "given printer in other organization" do 
-      let!(:printer2) { FactoryGirl.create(:printer) }
+      let!(:printer2) { FactoryBot.create(:printer) }
 
       it "#printer_model_ids is still [printer.printer_model_id]" do
         expect(organization.printer_model_ids).to eq([printer.printer_model_id])
@@ -39,14 +39,14 @@ RSpec.describe Organization, type: :model do
   end
 
   context "given toner in organization" do  
-    let!(:toner) { FactoryGirl.create(:toner, toner_model: toner_model, organization: organization) }
+    let!(:toner) { FactoryBot.create(:toner, toner_model: toner_model, organization: organization) }
 
     it "#toner_model_ids is [toner.toner_model_id]" do
       expect(organization.toner_model_ids).to eq([toner.toner_model_id])
     end
 
     context "given toner in other organization" do 
-      let!(:toner2) { FactoryGirl.create(:toner) }
+      let!(:toner2) { FactoryBot.create(:toner) }
 
       it "#toner_model_ids is still [toner.toner_model_id]" do
         expect(organization.toner_model_ids).to eq([toner.toner_model_id])
@@ -59,7 +59,7 @@ RSpec.describe Organization, type: :model do
 
     context "given a compatible printer for this toner" do
       before do
-        @printer = FactoryGirl.create(:printer, printer_model: printer_model, organization: organization)
+        @printer = FactoryBot.create(:printer, printer_model: printer_model, organization: organization)
         printer_model.toner_models << toner.toner_model
       end
        
