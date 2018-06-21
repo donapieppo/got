@@ -14,7 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'rspec-rails'
-  gem "factory_girl_rails"
+  gem 'factory_bot_rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'spring'
 end
 
