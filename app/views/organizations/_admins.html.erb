@@ -1,6 +1,6 @@
 <strong><%= t :admins %></strong>: 
 <% organization.admins.each do |admin| %>  
-  <%= mail_to admin.user.email, admin.user.cn, class: 'btn btn-outline-info' %>
+  <%= mail_to admin.user.upn, admin.user.cn, class: 'btn btn-outline-info' %>
 <% end %>
 
 <% if modifiable %>  
