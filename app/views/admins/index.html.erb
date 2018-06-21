@@ -1,0 +1,9 @@
+<%= main_title( t :admins ) %>
+
+<ul>
+<% @admins.each do |admin| %>  
+  <li><%= admin %> <%= link_to_delete(admin_path(admin)) %> </li>
+<% end %>
+</ul>
+
+<%= link_to icon('plus') + ' nuovo amministratore', new_admin_path, class: :button %>  
