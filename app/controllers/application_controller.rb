@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
     session[:locale] = params[:locale] if params[:locale]
     I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
   end
+
+  def current_organization
+    @current_organization
+  end
 end

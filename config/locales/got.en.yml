@@ -1,6 +1,8 @@
 en:
   header_title:   Game of Toners - Unused toners. Università di Bologna.
   admins:         Administrators
+  present_toners:   Toner of this kind are present in  Unibo
+  no_present_toners: No present toner of this kind in Unibo
   no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
   add_toner:       Add the tonet to your organization
   add_printer:     add the printer to your organization

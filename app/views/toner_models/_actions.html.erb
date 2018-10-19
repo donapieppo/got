@@ -1,2 +1,7 @@
-<%= link_to(icon('edit') + ' edit', [:edit, @toner_model], class: :button) %>
-<%= link_to(icon('plus') + ' add a toner of this model to ' + @current_organization.name, new_toner_model_toner_path(@toner_model), class: :button) %>
+<%= link_to(icon('edit') + ' edit toner model', [:edit, @toner_model], class: :button) %>
+
+<% if toner = @current_organization.toners.where(toner_model_id: @toner_model.id).first %>  
+  <%= link_to icon('warehouse') + " edit presence in #{@current_organization.name}", edit_toner_path(toner), class: :button %>  
+<% else %>
+  <%= link_to(icon('plus') + ' add a toner of this model to ' + @current_organization.name, new_toner_model_toner_path(@toner_model), class: :button) %>
+<% end %>

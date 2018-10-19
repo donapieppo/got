@@ -1,13 +1,18 @@
 <%= main_title "toner: #{toner_model}" %>
 
 <% if @available_toners.empty? %>  
-  <p class="alert alert-warning">Non sono al momento disponibili toner di questo modello in Unibo</p>
+  <p class="alert alert-warning"><%= t :no_present_toners %></p>
 <% else %>
   <div class="alert alert-success">
-    Sono disponibili toner presso:
+    <%= t :present_toners %>:
     <ul>
       <% @available_toners.each do |available_toner| %>
-        <li><%= link_to available_toner.organization, available_toner.organization %></li>
+        <li>
+          <%= link_to available_toner.organization, available_toner.organization %>
+          <% if current_organization == available_toner.organization %>  
+            <%= link_to_edit edit_toner_path(available_toner) %>  
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -17,7 +22,7 @@
   <p class="alert alert-warning">Registrazione incompleta. Si prega di aggiungere stampanti compatibili.</p>
 <% else %>
   <dl>
-    <dt>Stampanti compatibili:</dt>
+    <dt><%= t :compatible_printers %>:</dt>
     <% @compatible_printers.each do |compatible_printer| %>  
       <dd><%= modal_link_to compatible_printer, compatible_printer %></dd>
     <% end %>

@@ -9,7 +9,7 @@
       per <strong><%= toner.toner_model.printers(organization).map(&:name).join(', ') %></strong><br/>
       <%= (toner.number > 1) ? 'sono disponibili' : 'è disponibile' %>  
       <%= toner.number %> toner <%= toner %><br/>
-      presso <strong><%= link_to toner.organization, helps_path %></strong><br/>
+      presso <strong><%= link_to toner.organization, toner.organization %></strong><br/>
       contatta 
       <%= toner.organization.admins.map{|admin| link_to admin.to_s, "mailto: #{admin.user.upn}"}.join(', ').html_safe %>
     </li>

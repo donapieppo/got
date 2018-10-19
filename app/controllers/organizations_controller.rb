@@ -2,15 +2,14 @@ class OrganizationsController < ApplicationController
   skip_before_action :retrive_authlevel, only: [:new, :create]
   before_action :user_cesia!, except: [:show, :new, :create]
 
-  before_action :set_organization, only: [:edit, :update, :destroy]
+  before_action :set_organization, only: [:show, :edit, :update, :destroy]
 
   def index
     @organizations = Organization.order(:name).all
   end
 
-  # solo cesia puo' vedere altro che current_organization
+  # all can see all (in part)
   def show
-    @organization = Organization.find(params[:id]) 
     @available_toners = @organization.available_toners
   end
 

@@ -1,10 +1,10 @@
 <h1><%= @organization.name %> - <small><%= @organization.description %></small></h1>
 
 <div class='mb-3'>
-  <%= render 'admins', organization: @organization, modifiable: (@organization == @current_organization) %>  
+  <%= render 'admins', organization: @organization, modifiable: (@organization == current_organization) %>  
 </div>
 
-<% if @organization == @current_organization %>  
+<% if @organization == current_organization %>  
   <div>
     <h2><%= icon :gift %> <%= t(:toner_available_for_your_printers) %></h2>
     <%= render 'available_toners', organization: @organization %>  

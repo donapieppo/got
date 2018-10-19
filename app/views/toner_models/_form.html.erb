@@ -6,6 +6,7 @@
   <%= toner_model.association :vendor, collection: Vendor.order(:name), include_blank: false, hint: link_to(t(:add_new_vendor), new_vendor_path) %>  
   <%= toner_model.input :name, hint: t(:toner_model_name_hint) %>  
 
+  <div class="mb-3" id="compatible_printers">
   <h2>Stampanti compatibili</h2>
 
   <% Vendor.includes(:printer_models).order('vendors.name').each do |vendor| %>
@@ -15,12 +16,12 @@
     <div class="card">
       <div class="card-header"><%= vendor %></div>
       <div class="card-body">
-        <%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false %>
+        <%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false, wrapper_html: {class: 'pippo123'}, wrapper: false %>
         <%= link_to "aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id) %>
       </div>
     </div>
   <% end %>
-
+  </div>
   <%= toner_model.submit 'Salva' %> - <%= link_to_back toner_models_path %>  
 <% end %>
 

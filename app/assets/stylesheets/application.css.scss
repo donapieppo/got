@@ -73,3 +73,11 @@ li span.organization_name {
   font-weight: bold;
 }
 
+#compatible_printers {
+  div.col-sm-9 {
+    max-width: 100%;
+  }
+  input {
+    display: inline;
+  }
+}

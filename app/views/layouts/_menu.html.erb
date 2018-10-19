@@ -13,6 +13,9 @@
         <% @available_organizations.each do |organization| %>  
           <%= link_to icon('home', text: organization.short_description), root_path %>
         <% end %>
+        <% if current_user.is_cesia? %>  
+          <%= link_to icon('building', text: t(:organizations)), organizations_path %> 
+        <% end %>
       <% end %>
 
       <!-- ricerca -->
