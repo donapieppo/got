@@ -12,6 +12,8 @@ gem "prawn-table"
 gem 'mini_racer'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# gem 'turbolinks', '~> 5'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
