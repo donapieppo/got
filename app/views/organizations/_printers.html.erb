@@ -7,7 +7,7 @@
         <%= link_to_delete printer_path(printer) %> 
         <%= link_to(icon('external-link-alt'), 'http://' + printer.name, target: 'new') if printer.name =~ /unibo.it/ %>  
       </span>
-      <div class="details"><!-- filled by remote --></div>
+      <div class="details"><!-- filled by remote app/views/printers/_printer.html.erb --></div>
     </li>
   <% end %>
 </ul>
