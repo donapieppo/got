@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,76 +12,69 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "admins", force: :cascade do |t|
-    t.integer "user_id",         limit: 4
-    t.integer "organization_id", limit: 4
-    t.integer "authlevel",       limit: 4
+  create_table "admins", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", unsigned: true
+    t.integer "organization_id", unsigned: true
+    t.integer "authlevel"
+    t.index ["user_id"], name: "userid"
   end
 
-  add_index "admins", ["user_id"], name: "userid", using: :btree
-
-  create_table "organizations", force: :cascade do |t|
-    t.string "name",        limit: 255
-    t.string "description", limit: 255
+  create_table "organizations", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
   end
 
-  create_table "printer_models", force: :cascade do |t|
-    t.integer "vendor_id", limit: 4,   null: false
-    t.string  "name",      limit: 255
+  create_table "printer_models", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "vendor_id", null: false, unsigned: true
+    t.string "name"
     t.boolean "laser"
+    t.index ["vendor_id"], name: "vendor_id"
   end
 
-  add_index "printer_models", ["vendor_id"], name: "p_vendor_id", using: :btree
-
-  create_table "printer_models_toner_models", id: false, force: :cascade do |t|
-    t.integer "printer_model_id", limit: 4, null: false
-    t.integer "toner_model_id",   limit: 4, null: false
+  create_table "printer_models_toner_models", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "printer_model_id", null: false, unsigned: true
+    t.integer "toner_model_id", null: false, unsigned: true
+    t.index ["printer_model_id"], name: "printer_model_id"
+    t.index ["toner_model_id"], name: "toner_model_id"
   end
 
-  add_index "printer_models_toner_models", ["printer_model_id"], name: "a_printer_model_id", using: :btree
-  add_index "printer_models_toner_models", ["toner_model_id"], name: "a_toner_model_id", using: :btre
-
-  create_table "printers", force: :cascade do |t|
-    t.integer "organization_id",  limit: 4
-    t.integer "printer_model_id", limit: 4
-    t.string  "name",             limit: 255
-    t.text    "description",      limit: 65535
+  create_table "printers", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "organization_id", unsigned: true
+    t.integer "printer_model_id", unsigned: true
+    t.string "name"
+    t.text "description"
     t.boolean "rent"
+    t.index ["organization_id"], name: "organization_id"
+    t.index ["printer_model_id"], name: "printer_model_id"
   end
 
-  add_index "printers", ["organization_id"], name: "p_organization_id", using: :btree
-  add_index "printers", ["printer_model_id"], name: "printer_model_id", using: :btree
-
-  create_table "toner_models", force: :cascade do |t|
-    t.integer "vendor_id",  limit: 4,   null: false
-    t.string  "name",       limit: 255
+  create_table "toner_models", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "vendor_id", null: false, unsigned: true
+    t.string "name"
     t.boolean "compatible"
+    t.index ["vendor_id"], name: "vendor_id"
   end
 
-  add_index "toner_models", ["vendor_id"], name: "t_vendor_id", using: :btree
-
-  create_table "toners", force: :cascade do |t|
-    t.integer "organization_id", limit: 4
-    t.integer "toner_model_id",  limit: 4
-    t.integer "number",          limit: 4, default: 0
+  create_table "toners", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "organization_id", unsigned: true
+    t.integer "toner_model_id", unsigned: true
+    t.integer "number", default: 0, unsigned: true
     t.boolean "gift"
+    t.index ["organization_id"], name: "organization_id"
+    t.index ["toner_model_id"], name: "toner_model_id"
   end
 
-  add_index "toners", ["organization_id"], name: "t_organization_id", using: :btree
-  add_index "toners", ["toner_model_id"], name: "toner_model_id", using: :btree
-
-  create_table "users", force: :cascade do |t|
-    t.string   "upn",        limit: 255
-    t.string   "email",      limit: 255
-    t.string   "name",       limit: 255
-    t.string   "surname",    limit: 255
-    t.datetime "updated_at",             null: false
+  create_table "users", id: :integer, unsigned: true, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "upn"
+    t.string "email"
+    t.string "name"
+    t.string "surname"
+    t.timestamp "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.index ["upn"], name: "index_users_on_upn"
   end
 
-  add_index "users", ["upn"], name: "index_users_on_upn", using: :btree
-
-  create_table "vendors", force: :cascade do |t|
-    t.string "name", limit: 255
+  create_table "vendors", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
   end
 
   add_foreign_key "printer_models", "vendors", name: "printer_models_ibfk_1"
