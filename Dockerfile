@@ -24,7 +24,7 @@ COPY . .
 # configuration
 RUN ["/bin/cp", "doc/dm_unibo_common_docker.yml", "config/dm_unibo_common.yml"]
 RUN ["/bin/cp", "doc/got_example_docker.rb",      "config/initializers/got.rb"]
-RUN ["/bin/cp", "doc/sqlite_database.yml",        "config/database.yml"]
+RUN ["/bin/cp", "doc/docker_database.yml",        "config/database.yml"]
 RUN ["/bin/cp", "doc/docker_seeds.rb",            "db/seeds.rb"]
 
 # old without docker compose
