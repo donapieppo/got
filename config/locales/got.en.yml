@@ -1,6 +1,6 @@
 en:
   header_title:   Game of Toners - Unused toners. Università di Bologna.
-  admins:         Administrators
+  permissions:    Administrators
   present_toners:   Toner of this kind are present in  Unibo
   no_present_toners: No present toner of this kind in Unibo
   no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
@@ -16,10 +16,10 @@ en:
 
   activerecord:
     models:
-      admin:         Amministrator
+      permission:         Amministrator
     attributes:
       organization:
-      admin: 
+      permission: 
         user_upn:      Mail address
       vendor: 
         name:          Vendor
