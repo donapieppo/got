@@ -1,23 +1,14 @@
 class Organization < ApplicationRecord
-  has_many :admins
+  include DmUniboCommon::Organization
+
   has_many :printers
   has_many :toners
-
-  validates :name, uniqueness: {}
 
   # cache
   attr_accessor :_printer_model_ids, 
                 :_toner_model_ids, 
                 :_usable_toner_models, 
                 :_unusable_toners
-
-  def to_s
-    self.name + " (" + self.description + ")"
-  end
-
-  def short_description
-    "#{self.name} - #{self.description[0..70]}"
-  end
 
   def admins_string
     self.admins.includes(:user).map {|admin| admin.to_s}.join(', ')

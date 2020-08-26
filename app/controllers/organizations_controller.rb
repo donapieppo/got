@@ -1,28 +1,22 @@
 class OrganizationsController < ApplicationController
-  skip_before_action :retrive_authlevel, only: [:new, :create]
-  before_action :user_cesia!, except: [:show, :new, :create]
+  before_action :set_organization_and_check_permission, only: [:show, :edit, :update, :destroy]
 
-  before_action :set_organization, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @organizations = Organization.order(:name).all
-  end
-
-  # all can see all (in part)
   def show
-    @available_toners = @organization.available_toners
   end
 
   # alert: no authlevel!
   def new
     @organization = Organization.new
+    authorize @organization
   end
 
   # alert: no authlevel!
   def create
     @organization = Organization.new(organization_params)
+    authorize @organization
     if @organization.save
-      admin = @organization.admins.create!(user_id: current_user.id)
+      @organization.permissions.create!(user_id: current_user.id,
+                                        authlevel: DmUniboCommon::Authorization::TO_MANAGE)
       render 'subscriptions/create'
     else
       render :new
@@ -40,11 +34,12 @@ class OrganizationsController < ApplicationController
   private
 
   def organization_params
-    params[:organization].permit(:name, :description)
+    params[:organization].permit(:code, :name, :description)
   end
 
-  def set_organization
+  def set_organization_and_check_permission
     @organization = Organization.find(params[:id])
+    authorize @organization
   end
 end
 

@@ -1,2 +1,8 @@
-$("#p_<%= @printer.id %> div.details").html("<%= j(render(@printer)) %>");
+$("#p_<%= @printer.id %> div.details").toggle();
+$("#p_<%= @printer.id %> .list-group-item").toggleClass('active');
+
+if ($("#p_<%= @printer.id %> div.details").is(":visible")){
+  $("#p_<%= @printer.id %> div.details").html("<%= j(render(@printer)) %>");
+  $("#p_<%= @printer.id %> div.details").addClass('alert');
+}
 

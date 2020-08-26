@@ -1,20 +1,24 @@
 <%= dm_menu do %>  
   <%= dm_header %>
   <%= dm_nav do %>  
-    <% if @current_organization %>  
-      <li><%= link_to big_icon('home', text: "Home"), root_path %></li>
+    <% if current_organization %>  
+      <li><%= link_to big_dmicon('home', text: "Home"), current_organization_root_path %></li>
 
-      <%= dropdown_menu :models, big_icon('database', text: t(:models)) do %>  
-        <%= link_to fwicon('print', text: t(:printer_models)), printer_models_path %>
-        <%= link_to fwicon('cubes', text: t(:toner_models)), toner_models_path %>
+      <%= dropdown_menu :models, big_dmicon('database', text: t(:models)) do %>  
+        <%= link_to fwdmicon('print', text: t(:printer_models)), printer_models_path %>
+        <%= link_to fwdmicon('cubes', text: t(:toner_models)), toner_models_path %>
       <% end %>
 
-      <%= dropdown_menu :organization, big_icon('building', text: @current_organization.name) do  %>
-        <% @available_organizations.each do |organization| %>  
-          <%= link_to icon('home', text: organization.short_description), root_path %>
+      <%= dropdown_menu :organization, big_dmicon('building', text: current_organization.name) do %>
+        <% current_user.my_organizations.each do |organization| %>  
+          <% if organization == current_organization %>  
+            <%= link_to dmicon('home', text: organization.short_description), current_organization_root_path %>
+          <% else %>  
+            <%= link_to dmicon('building', text: organization.short_description), root_path(__org__: organization.id) %>
+          <% end %>
         <% end %>
         <% if current_user.is_cesia? %>  
-          <%= link_to icon('building', text: t(:organizations)), organizations_path %> 
+          <%# <%= link_to dmicon('building', text: t(:organizations)), organizations_path %1> %> 
         <% end %>
       <% end %>
 
@@ -24,11 +28,10 @@
           <input name="search_string" size="6" type="search" class="form-control mr-sm-2" placeholder="cerca" aria-label="Cerca" />
         </div>
       <% end %>
-
-      <li><%= link_to big_icon('question'), helps_path %></li>
-      <li><%= link_to 'en', root_path(locale: 'en') %></li>
-      <li><%= link_to 'it', root_path(locale: 'it') %></li>  
     <% end %>
+    <li><%= link_to big_dmicon('question'), helps_path %></li>
+    <li><%= link_to 'en', root_path(locale: 'en') %></li>
+    <li><%= link_to 'it', root_path(locale: 'it') %></li>  
   <% end %>
 <% end %>
 

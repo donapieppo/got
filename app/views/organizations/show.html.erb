@@ -1,32 +1,15 @@
 <h1><%= @organization.name %> - <small><%= @organization.description %></small></h1>
 
 <div class='mb-3'>
-  <%= render 'admins', organization: @organization, modifiable: (@organization == current_organization) %>  
+  <%= render 'home/admins', organization: @organization, modifiable: (@organization == current_organization) %>  
 </div>
 
-<% if @organization == current_organization %>  
-  <div>
-    <h2><%= icon :gift %> <%= t(:toner_available_for_your_printers) %></h2>
-    <%= render 'available_toners', organization: @organization %>  
-  </div>
-
-  <div id="organization_owning">
-    <div class="toners">
-      <h2><%= icon :tint %> <%= t :toners %> <small>in <%= @organization.name %></small></h2>
-      <%= render 'toners', organization: @organization %>  
-    </div>
-
-    <div class="printers">
-      <h2><%= icon :print %> <%= t :printers %> <small>in <%= @organization.name %></small></h2>
-      <%= render 'printers', organization: @organization %>  
-    </div>
-  </div>
-<% elsif (unusable_toners = @organization.unusable_toners).any? %>
-  <%= dm_card title: icon(:gift) + ' Toner resi disponibili per altre strutture:' do %>  
+<% if (unusable_toners = @organization.unusable_toners).any? %>
+  <%= dm_card title: dmicon(:gift) + ' Toner resi disponibili per altre strutture:' do %>  
     <ul>
-    <% unusable_toners.each do |toner| %>
-      <li><%= modal_link_to toner.toner_model, toner.toner_model %></li>
-    <% end %>
+      <% unusable_toners.each do |toner| %>
+        <li><%= modal_link_to toner.toner_model, toner.toner_model %></li>
+      <% end %>
     </ul>
   <% end %>
 <% end %>

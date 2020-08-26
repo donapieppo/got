@@ -1,8 +1,9 @@
 class PrintersController < ApplicationController
-  before_action :set_printer, only: [:edit, :update, :show, :destroy]
+  before_action :set_printer_and_check_permission, only: [:edit, :update, :show, :destroy]
 
   def new
-    @printer = @current_organization.printers.new(name: Rails.configuration.domain_name)
+    @printer = current_organization.printers.new(name: Rails.configuration.domain_name)
+    authorize @printer
     if params[:printer_model_id]
       @printer.printer_model = PrinterModel.find(params[:printer_model_id])
     else
@@ -11,9 +12,10 @@ class PrintersController < ApplicationController
   end
 
   def create
-    @printer = @current_organization.printers.new(printer_params)
+    @printer = current_organization.printers.new(printer_params)
+    authorize @printer
     if @printer.save
-      redirect_to organization_path(@current_organization), notice: 'Printer was successfully created.'
+      redirect_to current_organization_root_path, notice: 'Printer was successfully created.'
     else
       render :new
     end
@@ -24,7 +26,7 @@ class PrintersController < ApplicationController
 
   def update
     if @printer.update(printer_params)
-      redirect_to organization_path(@current_organization), notice: 'La stampante è stata correttamente aggiornata.'
+      redirect_to current_organization_root_path, notice: 'La stampante è stata correttamente aggiornata.'
     else
       render :edit
     end
@@ -32,7 +34,7 @@ class PrintersController < ApplicationController
 
   def destroy
     @printer.destroy
-    redirect_to organization_path(@current_organization)
+    redirect_to current_organization_root_path
   end
 
   def show
@@ -40,8 +42,9 @@ class PrintersController < ApplicationController
 
   private
 
-  def set_printer
-    @printer = @current_organization.printers.find(params[:id])
+  def set_printer_and_check_permission
+    @printer = current_organization.printers.find(params[:id])
+    authorize @printer
   end
 
   def printer_params

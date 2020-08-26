@@ -1,0 +1,24 @@
+<h1><%= current_organization.name %> - <small><%= current_organization.description %></small></h1>
+
+<div class='mb-3'>
+  <%= render 'admins', organization: current_organization %>  
+</div>
+
+<div>
+  <h2><%= dmicon :gift %> <%= t(:toner_available_for_your_printers) %></h2>
+  <%= render 'available_toners', organization: current_organization %>  
+</div>
+
+<% if policy(current_organization).edit? %>  
+  <div id="organization_owning">
+    <div class="toners">
+      <h2><%= dmicon :tint %> <%= t :toners %> <small>in <%= current_organization.name %></small></h2>
+      <%= render 'toners', organization: current_organization %>  
+    </div>
+
+    <div class="printers">
+      <h2><%= dmicon :print %> <%= t :printers %> <small>in <%= current_organization.name %></small></h2>
+      <%= render 'printers', organization: current_organization %>  
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<%= main_title( t :admins ) %>
+
+<h2><%= current_organization %></h2>
+
+<ul>
+  <% @permissions.each do |p| %>  
+    <li>
+      <%= p.user %> 
+      <%= p.organization %>  
+      <%= current_user.authorization.can_manage?(p.organization_id).inspect %>
+      <% if policy(p).destroy? %>  
+        <%= link_to_delete(permission_path(p)) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<% if policy(current_organization).edit? %>
+  <%= link_to dmicon('plus') + ' nuovo amministratore', new_permission_path, class: :button %>  
+<% end %>

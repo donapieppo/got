@@ -4,25 +4,27 @@ class TonersController < ApplicationController
   # only the gift
   def index
     @printer_models = PrinterModel.with_gift_toner
+    authorize :toner
   end
 
   # only one toner of a certain toner_model in organization
   def new
     if params[:toner_model_id]
       @toner_model = TonerModel.find(params[:toner_model_id])
-      if toner = @current_organization.toners.where(toner_model: @toner_model).first
+      if toner = current_organization.toners.where(toner_model: @toner_model).first
         redirect_to [:edit, toner] and return
       end
     else
       @toner_model = TonerModel.first
     end
-    @toner = @current_organization.toners.new(toner_model: @toner_model)
+    @toner = current_organization.toners.new(toner_model: @toner_model)
+    authorize @toner
   end
 
   def create
-    @toner = @current_organization.toners.new(toner_params)
+    @toner = current_organization.toners.new(toner_params)
     if @toner.save
-      redirect_to organization_path(@current_organization), notice: 'Il toner è stato aggiunto.'
+      redirect_to current_organization_root_path, notice: 'Il toner è stato aggiunto.'
     else
       render :new
     end
@@ -34,7 +36,7 @@ class TonersController < ApplicationController
 
   def update
     if @toner.update_attributes(toner_params)
-      redirect_to organization_path(@current_organization), notice: 'Il toner è stato aggiornato.'
+      redirect_to current_organization_root_path, notice: 'Il toner è stato aggiornato.'
     else
       render :new
     end
@@ -42,7 +44,7 @@ class TonersController < ApplicationController
 
   def destroy
     @toner.delete 
-    redirect_to organization_path(@current_organization), notice: 'Il toner è stato eliminato da quelli disponibili.'
+    redirect_to current_organization_root_path, notice: 'Il toner è stato eliminato da quelli disponibili.'
   end
 
   private
@@ -52,7 +54,8 @@ class TonersController < ApplicationController
   end
 
   def set_toner_and_check_permission
-    @toner = @current_organization.toners.find(params[:id])
+    @toner = current_organization.toners.find(params[:id])
+    authorize @toner
   end
 
 end

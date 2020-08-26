@@ -1,6 +1,4 @@
-class NotificationMailer < ActionMailer::Base
-  default from: 'noreply-got@dm.unibo.it'
-  layout 'mailer'
+class NotificationMailer < ApplicationMailer
 
   def notify_organization(organization, gifts_array)
     @organization = organization

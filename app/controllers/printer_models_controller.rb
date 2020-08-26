@@ -1,8 +1,9 @@
 class PrinterModelsController < ApplicationController
-  before_action :set_printer_model, only: [:show, :edit, :update, :destroy]
+  before_action :set_printer_model_and_check_permission, only: [:show, :edit, :update, :destroy]
 
   def index
     @printer_models = PrinterModel.all
+    authorize :printer_model
   end
 
   # remote
@@ -14,9 +15,7 @@ class PrinterModelsController < ApplicationController
 
   def new
     @printer_model = PrinterModel.new(laser: true, vendor_id: params[:vendor_id])
-  end
-
-  def edit
+    authorize @printer_model
   end
 
   def create
@@ -24,11 +23,15 @@ class PrinterModelsController < ApplicationController
 
     params[:printer_model][:name].split(';').each do |name|
       @printer_model = PrinterModel.new(name: name.strip, vendor_id: vendor.id, laser: params[:printer_model][:laser])
+      authorize @printer_model
       if ! @printer_model.save
         render :new
       end
     end
-    redirect_to printer_models_path, notice: 'La stampante èstata creata.'
+    redirect_to printer_models_path, notice: 'La stampante è stata creata.'
+  end
+
+  def edit
   end
 
   def update
@@ -45,8 +48,9 @@ class PrinterModelsController < ApplicationController
   end
 
   private
-    def set_printer_model
+    def set_printer_model_and_check_permission
       @printer_model = PrinterModel.find(params[:id])
+      authorize @printer_model
     end
 
     def printer_model_params

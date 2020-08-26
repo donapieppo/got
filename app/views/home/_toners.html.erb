@@ -8,7 +8,7 @@
       <% if toner.gift %>  
         <%= t(:unused) if toner.gift %> 
         <% toner.toner_model.interested_organizations.each do |organization| %>   
-          <br/><%= link_to organization, organization %>  
+          <br/><%= link_to organization, root_path(__org__: organization.code) %>  
         <% end %>
       <% end %>
 
@@ -22,7 +22,7 @@
 
       <span class="actions">
         <% if toner.gift and toner.number > 0 and organization.interested_in?(toner) %>  
-          <%= link_to content_tag(:strong, icon(:warning), class: 'missing-field', title: 'Hai una stampante compatibile'), edit_toner_model_path(toner.toner_model) %>
+          <%= link_to content_tag(:strong, dmicon(:warning), class: 'missing-field', title: 'Hai una stampante compatibile'), edit_toner_model_path(toner.toner_model) %>
         <% end %>
         <%= link_to_edit edit_toner_path(toner) %> 
         <%= link_to_delete toner_path(toner) %>
@@ -31,5 +31,5 @@
   <% end %>
 </ul>
 
-<p class="mt-3"><%= link_to_new t(:new_toner), new_organization_toner_path(organization) %></p>
+<p class="mt-3"><%= link_to_new t(:new_toner), new_toner_path() %></p>
 

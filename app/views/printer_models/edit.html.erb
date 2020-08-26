@@ -1,8 +1,8 @@
 <p class="centered_action mb-3 mt-3">
 <%= link_to new_printer_model_printer_path(@printer_model), class: 'btn btn-success btn-lg'  do %>
-  <%= icon('plus') %> Aggiungi stampante <br/>
+  <%= dmicon('plus') %> Aggiungi stampante <br/>
   <%= @printer_model %><br/>
-  a <%= @current_organization %>
+  a <%= current_organization %>
 <% end %>
 </p>
 

@@ -1,7 +1,0 @@
-<h1><%= t :new %> <%= t 'activerecord.models.admin' %></h1>
-
-<%= dm_form_for [@organization, @admin], title: @organization do |admin| %>
-  <%= admin.dm_error_notification %>  
-  <%= admin.input :user_upn, hint: 'Indicare la mail istituzionale', placeholder: 'nome.cognome@unibo.it' %>
-  <%= admin.submit %>  
-<% end %>

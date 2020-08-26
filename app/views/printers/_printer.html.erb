@@ -1,16 +1,21 @@
 <div>
   <p>
-    <em><%= @printer.description unless @printer.description.blank? %></em>
-    <%= '<u>Affitto</u>'.html_safe if @printer.rent %>  
+  <em><%= @printer.description unless @printer.description.blank? %></em>
+  <%= '<u>Affitto</u>'.html_safe if @printer.rent %>  
   </p>
-<dl>
-  <dt><%= t :model %></dt>
-  <dd><%= modal_link_to @printer.printer_model, @printer.printer_model %></dd>
-  <dt><%= t :toners %></dt>
-  <% printer.printer_model.toner_models.each do |toner_model| %>  
-    <dd><%= modal_link_to toner_model, toner_model %> </dd>
-  <% end %>
-</dl>
+  <dl>
+    <dt><%= t :model %></dt>
+    <dd><%= modal_link_to @printer.printer_model, @printer.printer_model %></dd>
+    <dt><%= t :toners %></dt>
+    <% printer.printer_model.toner_models.each do |toner_model| %>  
+      <dd><%= modal_link_to toner_model, toner_model %></dd>
+    <% end %>
+  </dl>
+  <div class="float-right">
+    <%= link_to_edit edit_printer_path(printer) %> 
+    <%= link_to_delete printer_path(printer) %> 
+    <%= link_to(dmicon('external-link-alt'), 'http://' + printer.name, target: 'new') if printer.name =~ /unibo.it/ %>  
+  </div>
 </div>
 
 <%= dm_modal_js_helper %>  

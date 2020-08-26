@@ -1,11 +1,3 @@
-<p class="centered_action mb-3 mt-3">
-<%= link_to new_toner_model_toner_path(@toner_model), class: 'btn btn-success btn-lg'  do %>
-  <%= icon('plus') %> Aggiungi toner <br/>
-  <%= @toner_model %><br/>
-  a <%= @current_organization %>
-<% end %>
-</p>
-
 <% if @actual_toners.any? %>  
   <dl>
     <dt>Toner presente in:</dt>

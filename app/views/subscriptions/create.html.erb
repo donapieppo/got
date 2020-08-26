@@ -1,15 +1,13 @@
-<h1>Benvenuto</h1>
+<%= dm_card title: 'Benvenuto!' do %>
+  Hai ora la possibilità di operare sulla struttura 
 
-<div class="well"> 
-  Lei ha ora la possibilità di operare sulla struttura 
+  <div class="my-5">
+  <strong><%= @organization.name %></strong>
+  <em>(<%= @organization.description %>)</em>
+  </div>
 
-  <br/><br/>
-    <strong><%= @organization.name %></strong>
-    <em>(<%= @organization.description %>)</em>. 
-  <br/><br/>
-  
   per aggiungere stampanti, toner e altri amministratori.<br/><br/>
 
   <%= link_to 'PROCEDI', root_path, class: :button %>  
-</div>
+<% end %>
 

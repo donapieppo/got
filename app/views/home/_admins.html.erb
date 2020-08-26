@@ -1,0 +1,11 @@
+<strong><%= t :admins %></strong>: 
+
+<% organization.permissions.each do |p| %>  
+  <%= mail_to p.user.upn, p.user.cn, class: 'btn btn-outline-info' %>
+<% end %>
+
+<% if policy(organization).edit? %>
+  <%= link_to t(:modify_admins), permissions_path, class: "btn btn-primary modal-link" %>  
+<% end %>
+
+

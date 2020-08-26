@@ -1,5 +1,5 @@
-@import "dm_unibo_common/variables";
-@import "dm_unibo_common/dm";
+@import "variables";
+@import "dm";
 
 #organization_owning {
   @extend .row;
@@ -47,7 +47,7 @@ dl.subscriptions-list {
     @extend .list-group-item;
   }
   dt {
-    background-color: #eee;
+    @extend .list-group-item-primary;
     margin: 2px 0 -1px 0 ;
     &:hover {
       cursor: pointer;

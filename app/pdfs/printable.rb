@@ -6,7 +6,7 @@ class Printable
   attr_accessor :title
   attr_accessor :data
 
-  IMAGE_DIR = "#{Rails.root.to_s}/app/assets/images"
+  IMAGE_DIR = "#{Rails.root.to_s}/app/javascript/images"
   LOGO      = IMAGE_DIR + "/sigillo1.png"
   SPACE = "\xC2\xA0"
 

@@ -1,14 +1,18 @@
 class HomeController < ApplicationController
 
   def index
-    if current_user.is_cesia?
-      redirect_to organizations_path
+    authorize :home
+    if false && current_user.is_cesia?
+      redirect_to organizations_path and return
+    elsif current_organization
+      @available_toners = current_organization.available_toners
     else
-      redirect_to organization_path(@current_organization)
+      redirect_to choose_organization_path and return
     end
   end
 
   def search
+    authorize :home
     if params[:search_string].size > 1 
       s = "%" + params[:search_string].strip + "%"
       @vendors = Vendor.where('vendors.name LIKE ?', s)
@@ -23,6 +27,10 @@ class HomeController < ApplicationController
     printable = Printable.new(t :pdf_report_title)
     printable.toners
     pdf_output(printable)
+  end
+
+  def choose_organization
+    authorize :home
   end
   
 end

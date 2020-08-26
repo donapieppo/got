@@ -1,0 +1,7 @@
+<h1><%= t :new %> <%= t 'activerecord.models.permission' %></h1>
+
+<%= dm_form_for @permission, title: @current_organization do |permission| %>
+  <%= permission.dm_error_notification %>  
+  <%= permission.input :user_upn, hint: 'Indicare la mail istituzionale', placeholder: 'nome.cognome@unibo.it' %>
+  <%= permission.submit %>  
+<% end %>

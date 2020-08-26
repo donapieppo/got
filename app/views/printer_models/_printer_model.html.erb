@@ -7,7 +7,7 @@
     Sono disponibili toner presso:
     <ul>
       <% @available_toners.each do |available_toner| %>
-        <li><%= link_to available_toner.organization, available_toner.organization %></li>
+        <li><%= link_to available_toner.organization, root_path(__org__: available_toner.organization.code) %></li>
       <% end %>
     </ul>
   </div>
@@ -24,12 +24,12 @@
   </dl>
 <% end %>
 
-<% if (models = @printer_model.printers).any? %>  
+<% if (printers = @printer_model.printers).any? %>  
   <dl>
     <dt>Stampanti di questo modello si trovano presso:</dt>
-    <% models.map(&:organization).uniq.each do |organization| %>  
+    <% printers.map(&:organization).uniq.each do |organization| %>  
       <dd <%= 'style="font-weight: bold"'.html_safe if organization == current_organization %>>
-        <%= link_to organization, organization %>
+        <%= link_to organization, current_organization_root_path %>
         <% if organization == current_organization %>  
           - <%= @printer_model.printers.where(organization_id: organization.id).map(&:name).join(', ') %>
         <% end %>
