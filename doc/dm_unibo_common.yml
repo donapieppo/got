@@ -10,10 +10,11 @@ production:
   logout_icon:       dm_unibo_common/ssologo18x18.png
   logo_page:         http://www.example.com
   logo_image:        dm_unibo_common/unibo.png
+  default_current_organization: mat
 
 development:
   omniauth_provider: :shibboleth 
-  searchable_provider: false
+  searchable_provider: true
   host:              tester.example.com
   smtp_address:      mailhost.example.com
   smtp_domain:       example.com
@@ -23,4 +24,5 @@ development:
   logout_icon:       dm_unibo_common/ssologo18x18.png
   logo_page:         http://www.example.com
   logo_image:        dm_unibo_common/unibo.png
+  default_current_organization: mat
 
