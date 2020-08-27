@@ -3,7 +3,7 @@
 Give old toners to other organizations. 
 
 If you have a Central Authentication Service compatible 
-with a [https://github.com/intridea/omniauth] strategy 
+with a [omniauth](https://github.com/intridea/omniauth) strategy 
 installing got can help authenticated users to share 
 unused toners.
 
