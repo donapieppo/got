@@ -9,7 +9,7 @@ it:
   models:         Modelli
   printer:        Stampante
   printer_models: Modelli di stampante
-  toners:         Toner compatibili  
+  toners:         Toner 
   compatible_printers:  Stampanti compatibili
   toner_models:   Modelli di toner
   printer_model:  Modello di stampante
@@ -26,6 +26,7 @@ it:
   add_new_printer_model: Aggiungi un nuovo modello di stampante.
   pdf_report_title: Elenco stampanti compatibili con toner dismessi
   search_results: Risultati ricerca per 
+  save: Salva
 
   helpers:
     submit:
