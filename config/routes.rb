@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get '/choose_organization', to: "home#choose_organization"
 
   resources :helps
-  resources :organizations
 
   scope ":__org__" do
+    resources :organizations
     resources :permissions
 
     resources :vendors
