@@ -1,7 +1,7 @@
 <div class="list-group">
   <% organization.printers.order('printers.name').includes(printer_model: :vendor).each do |printer| %>  
     <div id="p_<%= printer.id %>">
-      <%= link_to printer.name, printer_path(printer), remote: true, class: "list-group-item list-group-item-action" %>
+      <%= modal_link_to printer.name, printer_path(printer), addclass: "list-group-item list-group-item-action py-2" %>
       <div class="details" style="display: none"><!-- filled by remote app/views/printers/_printer.html.erb --></div>
     </div>
   <% end %>
@@ -9,3 +9,4 @@
 
 <p class="mt-3"><%= link_to_new t(:new_printer), new_printer_path() %></p>
 
+<%= dm_modal_js_helper %>  
