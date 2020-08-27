@@ -38,6 +38,7 @@ class PrintersController < ApplicationController
   end
 
   def show
+    render layout: false if modal_page
   end
 
   private
