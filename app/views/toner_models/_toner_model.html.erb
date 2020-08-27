@@ -8,7 +8,7 @@
     <ul>
       <% @available_toners.each do |available_toner| %>
         <li>
-          <%= link_to available_toner.organization, root_path(__org__: available_toner.organization.code) %>
+          <%= link_to available_toner.organization, organization_path(available_toner.organization) %>  
           <% if current_organization == available_toner.organization %>  
             <%= link_to_edit edit_toner_path(available_toner) %>  
           <% end %>

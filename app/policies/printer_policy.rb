@@ -4,7 +4,11 @@ class PrinterPolicy < ApplicationPolicy
   end
 
   def update?
-    create?
+    record_organization_manager?
+  end
+
+  def destroy?
+    record_organization_manager?
   end
 end
 

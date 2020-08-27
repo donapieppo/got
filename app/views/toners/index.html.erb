@@ -1,12 +1,16 @@
 <%= dm_card title: 'Sono disponibili toner per le seguenti stampanti' do %>
 
-<% old_vendor = nil %>  
-<dl>
-  <% @printer_models.each do |printer_model| %>  
-    <% if old_vendor != printer_model.vendor and old_vendor = printer_model.vendor %>  
-      <dt><%= printer_model.vendor %></dt>
+  <% old_vendor = nil %>  
+  <dl>
+    <% @printer_models.each do |printer_model| %>  
+      <% if old_vendor != printer_model.vendor and old_vendor = printer_model.vendor %>  
+        <dt><%= printer_model.vendor %></dt>
+      <% end %>
+      <dd style="display: inline-block">
+      <%= modal_link_to printer_model.name, printer_model_path(printer_model), addclass: "btn btn-outline-primary" %>
+      </dd>
     <% end %>
-    <dd style="display: inline-block" class="btn btn-outline-primary"><%= modal_link_to printer_model.name, printer_model_path(printer_model) %></dd>
-  <% end %>
-</dl>
+  </dl>
 <% end %>
+
+<%= dm_modal_js_helper %>  

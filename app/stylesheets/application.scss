@@ -1,7 +1,7 @@
 @import "variables";
 @import "dm";
 
-#organization_owning {
+.organization-owning {
   @extend .row;
   .title {
     margin-left: 20px;
@@ -9,9 +9,13 @@
   }
   div.toners {
     @extend .col-md-8;
+    background-color: #eee;
+    @extend .py-2;
   }
   div.printers {
     @extend .col-md-4;
+    background-color: #eee;
+    @extend .py-2;
   }
   ul {
     @extend .list-group;

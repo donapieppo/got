@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     authorize :home
     if false && current_user.is_cesia?
       redirect_to organizations_path and return
-    elsif current_organization
+    elsif current_organization && current_user.can_read?(current_organization)
       @available_toners = current_organization.available_toners
     else
       redirect_to choose_organization_path and return

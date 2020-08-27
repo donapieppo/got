@@ -1,15 +1,15 @@
-<h1><%= @organization.name %> - <small><%= @organization.description %></small></h1>
+<h1>Toner resi disponibili per altre strutture</h1>
+<h2>da: <%= @organization.name %></h2>
+
+<% if (unusable_toners = @organization.unusable_toners).any? %>
+  <div class="list-group">
+    <% unusable_toners.each do |toner| %>
+      <%= modal_link_to toner.toner_model, toner.toner_model, addclass: 'list-group-item list-group-item-action py-1' %></li>
+  <% end %>
+  </div>
+<% end %>
 
 <div class='mb-3'>
   <%= render 'home/admins', organization: @organization, modifiable: (@organization == current_organization) %>  
 </div>
 
-<% if (unusable_toners = @organization.unusable_toners).any? %>
-  <%= dm_card title: dmicon(:gift) + ' Toner resi disponibili per altre strutture:' do %>  
-    <ul>
-      <% unusable_toners.each do |toner| %>
-        <li><%= modal_link_to toner.toner_model, toner.toner_model %></li>
-      <% end %>
-    </ul>
-  <% end %>
-<% end %>

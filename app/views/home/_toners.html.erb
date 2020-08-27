@@ -8,7 +8,7 @@
       <% if toner.gift %>  
         <%= t(:unused) if toner.gift %> 
         <% toner.toner_model.interested_organizations.each do |organization| %>   
-          <br/><%= link_to organization, root_path(__org__: organization.code) %>  
+          <br/><%= link_to organization, organization_path(organization) %>  
         <% end %>
       <% end %>
 

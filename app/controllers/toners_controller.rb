@@ -23,6 +23,7 @@ class TonersController < ApplicationController
 
   def create
     @toner = current_organization.toners.new(toner_params)
+    authorize @toner
     if @toner.save
       redirect_to current_organization_root_path, notice: 'Il toner è stato aggiunto.'
     else
