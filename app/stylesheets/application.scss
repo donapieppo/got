@@ -9,12 +9,12 @@
   }
   div.toners {
     @extend .col-md-8;
-    background-color: #eee;
+    border: 2px solid #eef;
     @extend .py-2;
   }
   div.printers {
     @extend .col-md-4;
-    background-color: #eee;
+    border: 2px solid #eef;
     @extend .py-2;
   }
   ul {
@@ -84,5 +84,13 @@ li span.organization_name {
   }
   input {
     display: inline;
+  }
+}
+
+.model-list-group {
+  @extend .list-group;
+  li {
+    @extend .list-group-item;
+    cursor: pointer;
   }
 }
