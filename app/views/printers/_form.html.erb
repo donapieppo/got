@@ -7,7 +7,7 @@
   <%= printer.input       :name,        hint: t(:printer_name_hint) %>  
   <%= printer.input       :description, hint: t(:printer_description_hint) %>
   <%= printer.input       :rent,        hint: t(:printer_rent_hint) %>
-  <%= printer.submit %>
+  <%= printer.submit %> - <%= link_to_back current_organization_root_path %>  
 <% end %>
 
 
