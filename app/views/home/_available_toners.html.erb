@@ -5,11 +5,10 @@
   <% @available_toners.each do |toner| %>  
     <% alert_class = (toner.organization == current_organization) ? "alert-danger" : "alert-success" %>  
     <li class="alert <%= raw alert_class %>">
-      <%= dmicon 'thumbs-o-up', size: 32 %>  
-      per <strong><%= toner.toner_model.printers(current_organization).map(&:name).join(', ') %></strong><br/>
+      Per <strong><%= toner.toner_model.printers(current_organization).map(&:name).join(', ') %></strong>
       <%= (toner.number > 1) ? 'sono disponibili' : 'è disponibile' %>  
       <%= toner.number %> toner <%= toner %><br/>
-      presso <strong><%= link_to toner.organization, organization_path(toner.organization) %></strong><br/>
+      presso <strong><%= link_to toner.organization.name, organization_path(toner.organization) %></strong><br/>
       contatta 
       <%= toner.organization.permissions.map{|p| link_to p.user.to_s, "mailto: #{p.user.upn}"}.join(', ').html_safe %>
     </li>
