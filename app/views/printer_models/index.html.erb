@@ -1,8 +1,8 @@
 <h1><%= t :printer_models %></h1>
 
-<ul class="list-group">
+<ul class="model-list-group">
   <% @printer_models.group_by {|tm| tm.vendor}.each do |vendor, models| %>
-    <li class="list-group-item"><%= vendor %></li>
+    <li><%= vendor %></li>
     <div class="models_list">
       <% models.each do |model| %>  
         <span class="btn btn-outline-info m-1"> <%= modal_link_to model.name, printer_model_path(model) %> </span>

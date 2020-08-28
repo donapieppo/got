@@ -1,14 +1,12 @@
 <h1><%= t :toner_models %></h1>
 
-<ul class="list-group">
+<ul class="model-list-group">
   <% @toner_models.group_by {|tm| tm.vendor}.each do |vendor, models| %>
-    <li class="list-group-item"><%= vendor %></li>
+    <li><%= vendor %></li>
     <div class="models_list">
       <% models.each do |model| %>  
-        <span class="btn btn-outline-info m-1">
-          <%= dmicon('check') if @organization_toner_model_ids.include?(model.id) %>
-          <strong><%= modal_link_to model.name, toner_model_path(model) %></strong>
-        </span>
+        <% btn_style = @organization_toner_model_ids.include?(model.id) ? 'btn-success' : 'btn-outline-info' %>  
+        <%= modal_link_to model.name, toner_model_path(model), addclass: "btn #{btn_style} m-1" %>
       <% end %>
     </div>
   <% end %>
