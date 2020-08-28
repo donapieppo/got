@@ -9,6 +9,7 @@ class TonersController < ApplicationController
 
   # only one toner of a certain toner_model in organization
   def new
+    authorize current_organization, :manage?
     if params[:toner_model_id]
       @toner_model = TonerModel.find(params[:toner_model_id])
       if toner = current_organization.toners.where(toner_model: @toner_model).first
@@ -18,7 +19,6 @@ class TonersController < ApplicationController
       @toner_model = TonerModel.first
     end
     @toner = current_organization.toners.new(toner_model: @toner_model)
-    authorize @toner
   end
 
   def create
