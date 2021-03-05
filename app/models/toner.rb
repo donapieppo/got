@@ -19,8 +19,6 @@ class Toner < ApplicationRecord
   end
 
   def vendor
-    self.toner_model and self.toner_model.vendor
+    self.toner_model&.vendor
   end
 end
-
-
