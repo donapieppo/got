@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-3 alert alert-success centered">
+    <% if @available_toners.empty? %>
+      <i class="fas fa-sad-tear" style="font-size: 120px"></i>
+    <% else %>
+      <i class="fas fa-smile" style="font-size: 120px"></i>
+    <% end %>
+  </div>
+  <div class="col-md-9">
+    <h2><%= t(:toner_available_for_your_printers) %></h2>
+    <% if @available_toners.empty? %>  
+      <p class="alert alert-warning"><%= @cross_icon %> <%= t :no_available_toners %></p>
+    <% end %>
+    <ul>
+      <% @available_toners.each do |toner| %>  
+        <li>
+          Per <strong><%= toner.toner_model.printers(@organization).map(&:name).join(', ') %></strong>
+          <%= (toner.number > 1) ? 'sono disponibili' : 'è disponibile' %>  
+          <%= toner.number %> toner <%= toner %><br/>
+          presso <strong><%= link_to toner.organization.name, current_organization_root_path(__org__: toner.organization.code) %></strong><br/>
+          contatta 
+          <%= toner.organization.permissions.map{|p| link_to p.user.to_s, "mailto: #{p.user.upn}"}.join(', ').html_safe %>
+        </li>
+      <% end %>
+    </ul>
+
+    <p>
+    Puoi controllare direttamente l'<%= link_to 'elenco di tutte le stampanti compatibili', toners_path %> con i toner disponibili. 
+    <%# <%= link_to dmicon('file-pdf-o'), report_path %1> %>  
+    </p>
+  </div>
+</div>
