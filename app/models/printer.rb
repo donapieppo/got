@@ -3,7 +3,7 @@ class Printer < ApplicationRecord
   belongs_to :printer_model
 
   validates :name, presence: {}
-  validates :name, uniqueness: { scope: [:organization_id], message: "La stampante è già stata registrata nella struttura." }
+  validates :name, uniqueness: { scope: [:organization_id], message: 'La stampante è già stata registrata nella struttura.' }
 
   validates :organization, presence: {}
   validates :printer_model, presence: {}
@@ -18,11 +18,10 @@ class Printer < ApplicationRecord
   end
 
   def vendor
-    self.printer_model and self.printer_model.vendor
+    self.printer_model&.vendor
   end
 
   def toner_models
     self.printer_model.toner_models
   end
 end
-
