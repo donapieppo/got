@@ -1,7 +1,6 @@
 class OrganizationsController < ApplicationController
-  before_action :set_organization_and_check_permission, only: [:show, :edit, :update, :destroy]
-
   def show
+    authorize Organization
   end
 
   # alert: no authlevel!
@@ -27,7 +26,7 @@ class OrganizationsController < ApplicationController
   end
 
   def update
-    @organization.update_attributes(organization_params)
+    @organization.update(organization_params)
     redirect_to organizations_path, notice: 'La struttura è stata aggiornata.'
   end
 
@@ -36,10 +35,4 @@ class OrganizationsController < ApplicationController
   def organization_params
     params[:organization].permit(:code, :name, :description)
   end
-
-  def set_organization_and_check_permission
-    @organization = Organization.find(params[:id])
-    authorize @organization
-  end
 end
-
