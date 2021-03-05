@@ -9,4 +9,4 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
 
 module.exports = environment
 
-environment.config.output.publicPath = "/seminari/packs/";
+environment.config.output.publicPath = "/got/packs/";
