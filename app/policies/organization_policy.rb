@@ -1,4 +1,6 @@
 class OrganizationPolicy < DmUniboCommon::OrganizationPolicy
+  configure_authlevels
+
   def show?
     true
   end
