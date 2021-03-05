@@ -3,23 +3,20 @@
 <div class="row">
   <div class="col-md-6">
     <%= dm_card title: t(:printer_models) do %>  
-      <ul class="bordered">
+      <div class="list-group">
         <% @printer_models.each do |printer_model| %>  
-          <li><%= modal_link_to printer_model, printer_model_path(printer_model) %></li>
+          <%= modal_link_to printer_model, printer_model_path(printer_model), addclass: "list-group-item list-group-item-action" %>
         <% end %>
-      </ul>
+      </div>
     <% end %>
   </div>
   <div class="col-md-6">
     <%= dm_card title: t(:toner_models) do %>  
-      <ul class="bordered">
+      <div class="list-group">
         <% @toner_models.each do |toner_model| %>  
-          <li>
-            <%= modal_link_to toner_model, toner_model_path(toner_model) %>
-            <small>(per le stampanti: <%= toner_model.printer_models.map(&:name).join(', ') %>)</small>
-          </li>
+          <%= modal_link_to toner_model, toner_model_path(toner_model), addclass: "list-group-item list-group-item-action" %>
         <% end %>
-      </ul>
+      </div>
     <% end %>
   </div>
 </div>

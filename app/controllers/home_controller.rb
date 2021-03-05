@@ -1,11 +1,10 @@
 class HomeController < ApplicationController
-
   def index
     authorize :home
     if false && current_user.is_cesia?
       redirect_to organizations_path and return
-    elsif current_organization && current_user.can_read?(current_organization)
-      @available_toners = current_organization.available_toners
+    elsif current_organization && policy(current_organization).show?
+      #  
     else
       redirect_to choose_organization_path and return
     end
@@ -32,7 +31,4 @@ class HomeController < ApplicationController
   def choose_organization
     authorize :home
   end
-  
 end
-
-

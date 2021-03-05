@@ -1,5 +1,6 @@
 <ul>
-  <% organization.toners.includes(toner_model: [:printer_models, :vendor]).order('vendors.name, toner_models.name').each do |toner| %>  
+  <%# FIXME FIXME FIXME vendors_toner_models -> vendors %>  
+  <% organization.toners.includes(toner_model: [:printer_models, :vendor]).order('vendors_toner_models.name, toner_models.name').references(:vendors).each do |toner| %>  
     <li class="<%= 'gift-class' if toner.gift %>">
       <span class="toner_number"><%= toner.number %></span> 
 
@@ -8,7 +9,7 @@
       <% if toner.gift %>  
         <%= t(:unused) if toner.gift %> 
         <% toner.toner_model.interested_organizations.each do |organization| %>   
-          <br/><%= link_to organization, organization_path(organization) %>  
+          <br/><%= link_to organization, root_path(__org__: organization.code) %>  
         <% end %>
       <% end %>
 

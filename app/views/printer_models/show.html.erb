@@ -1,3 +1,8 @@
-<%= render @printer_model %>
+<%= main_title "#{t :printer_model}: #{@printer_model}" %>
+
+<div class="my-5">
+  <%= render @printer_model %>
+</div>
+
 <%= render partial: 'actions' %>
 

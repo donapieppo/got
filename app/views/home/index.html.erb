@@ -1,9 +1,4 @@
-<div>
-  <h2><%= dmicon :gift %> <%= t(:toner_available_for_your_printers) %></h2>
-  <%= render 'available_toners', organization: current_organization %>  
-</div>
-
-<hr/>
+<%= render(AvailableTonerComponent.new(organization: current_organization)) %>
 
 <% if policy(current_organization).edit? %>  
   <div class="organization-owning my-5">

@@ -1,41 +1,38 @@
-<%= main_title "#{t :printer_model}: #{printer_model}" %>
-
-<% if @available_toners.empty? %>  
-  <p class="alert alert-warning"><%= t :no_available_toners_for_this_printer %></p>
-<% else %>
-  <div class="alert alert-success">
-    Sono disponibili toner presso:
-    <ul>
+<%= dm_card title: 'Sono disponibili toner presso' do  %>  
+  <% if @available_toners.empty? %>  
+    <p class="alert alert-warning"><%= t :no_available_toners_for_this_printer %></p>
+  <% else %>
+    <div class="list-group">
       <% @available_toners.each do |available_toner| %>
-        <li><%= link_to available_toner.organization, organization_path(available_toner.organization) %></li>
-      <% end %>
-    </ul>
-  </div>
+        <%= link_to available_toner.organization, organization_path(available_toner.organization), class: "list-group-item list-group-item-action" %></li>
+    <% end %>
+    </div>
+  <% end %>
 <% end %>
 
-<% if @compatible_toners.empty? %>  
-  <p class="alert alert-warning">Registrazione incompleta. Si prega di aggiungere i modelli di toner compatibili.</p>
-<% else %>
-  <dl>
-    <dt>Modelli di toner compatibili:</dt>
-    <% @compatible_toners.each do |compatible_toner| %>  
-      <dd><%= modal_link_to compatible_toner, compatible_toner %></dd>
-    <% end %>
-  </dl>
+<%= dm_card title: 'Modelli di toner compatibili' do %>
+  <% if @compatible_toners.empty? %>  
+    <p class="alert alert-warning">Registrazione incompleta. Si prega di aggiungere i modelli di toner compatibili.</p>
+  <% else %>
+    <div class="list-group my-3">
+      <% @compatible_toners.each do |compatible_toner| %>  
+        <%= modal_link_to compatible_toner, compatible_toner, addclass: "list-group-item list-group-item-action" %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
 
 <% if (printers = @printer_model.printers).any? %>  
-  <dl>
-    <dt>Stampanti di questo modello si trovano presso:</dt>
-    <% printers.map(&:organization).uniq.each do |organization| %>  
-      <dd <%= 'style="font-weight: bold"'.html_safe if organization == current_organization %>>
-        <%= link_to organization, current_organization_root_path %>
-        <% if organization == current_organization %>  
-          - <%= @printer_model.printers.where(organization_id: organization.id).map(&:name).join(', ') %>
-        <% end %>
-      </dd>
-    <% end %>
-  </dl>
+  <%= dm_card title: 'Stampanti di questo modello si trovano presso' do %>
+    <div class="list-group my-3">
+      <% printers.map(&:organization).uniq.each do |organization| %>  
+        <%= link_to organization, organization_path(organization), class: "list-group-item list-group-item-action" %>
+        <%# <% if organization == current_organization %1> %>  
+          <%#   - <%= @printer_model.printers.where(organization_id: organization.id).map(&:name).join(', ') %1> %>
+          <%# <% end %1> %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
 
 <%= dm_modal_js_helper %>  

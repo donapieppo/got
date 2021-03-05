@@ -5,7 +5,7 @@
     <li><%= vendor %></li>
     <div class="models_list">
       <% models.each do |model| %>  
-        <span class="btn btn-outline-info m-1"> <%= modal_link_to model.name, printer_model_path(model) %> </span>
+        <%= modal_link_to model.name, printer_model_path(model), addclass: 'btn btn-outline-info m-1' %> 
       <% end %>
     </div>
   <% end %>
