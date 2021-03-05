@@ -10,7 +10,13 @@ module Got
   class Application < Rails::Application
     config.autoload_paths += %W(#{Rails.root}/app/pdfs)
     config.time_zone = 'Rome'
+    config.load_defaults 6.0
     config.i18n.default_locale = :it
+
+    config.hosts << "tester.dm.unibo.it"
+    config.hosts << "www.dm.unibo.it"
+
+    config.authlevels = { read: 1, manage: 2 }
 
     config.action_mailer.default_url_options = { protocol: 'https' }
     config.dm_unibo_common = ActiveSupport::HashWithIndifferentAccess.new config_for(:dm_unibo_common)
