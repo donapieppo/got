@@ -10,7 +10,7 @@ module Got
   class Application < Rails::Application
     config.autoload_paths += %W(#{Rails.root}/app/pdfs)
     config.time_zone = 'Rome'
-    config.load_defaults 6.0
+    config.load_defaults 6.1
     config.i18n.default_locale = :it
 
     config.hosts << "tester.dm.unibo.it"
