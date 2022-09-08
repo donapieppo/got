@@ -1,21 +1,11 @@
 {
-  "name": "got",
-  "private": true,
+  "name": "app",
+  "private": "true",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.1",
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.2.1",
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "moment": "^2.24.0",
-    "popper.js": "^1.16.1",
-    "turbolinks": "^5.2.0",
-    "typeahead.js": "^0.11.1"
+    "dm_unibo_common": "file:../gems/dm_unibo_common"
   },
-  "version": "0.1.0",
-  "devDependencies": {
-    "webpack-dev-server": "^3.11.2"
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
 }
