@@ -5,16 +5,16 @@
       <li><%= link_to big_dmicon('home', text: "Home"), current_organization_root_path %></li>
 
       <%= dropdown_menu :models, big_dmicon('database', text: t(:models)) do %>  
-        <%= link_to fwdmicon('print', text: t(:printer_models)), printer_models_path %>
-        <%= link_to fwdmicon('cubes', text: t(:toner_models)), toner_models_path %>
+        <li><%= link_to fwdmicon('print', text: t(:printer_models)), printer_models_path %></li>
+        <li><%= link_to fwdmicon('cubes', text: t(:toner_models)), toner_models_path %></li>
       <% end %>
 
       <%= dropdown_menu :organization, big_dmicon('building', text: current_organization.name) do %>
         <% current_user.my_organizations.each do |organization| %>  
           <% if organization == current_organization %>  
-            <%= link_to dmicon('home', text: organization.short_description), current_organization_root_path %>
+            <li><%= link_to dmicon('home', text: organization.short_description), current_organization_root_path %></li>
           <% else %>  
-            <%= link_to dmicon('building', text: organization.short_description), root_path(__org__: organization.id) %>
+            <li><%= link_to dmicon('building', text: organization.short_description), root_path(__org__: organization.id) %></li>
           <% end %>
         <% end %>
         <% if current_user.is_cesia? %>  
@@ -23,7 +23,7 @@
       <% end %>
 
       <!-- ricerca -->
-      <%= form_tag search_path, class: "form-inline my-2 my-lg-0 ml-3", role: "search" do %>
+      <%= form_tag search_path, class: "form-inline my-2 my-lg-0 ms-3", role: "search" do %>
         <div class="form-group">
           <input name="search_string" size="6" type="search" class="form-control mr-sm-2" placeholder="cerca" aria-label="Cerca" />
         </div>
