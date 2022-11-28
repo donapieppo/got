@@ -20,7 +20,7 @@ class PermissionsController < ApplicationController
       redirect_to permissions_path, notice: 'Utente aggiunto.'
     else
       raise @permission.errors.inspect
-      render :new
+      render action: :new, status: :unprocessable_entity
     end
   end
 

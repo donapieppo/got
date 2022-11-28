@@ -25,7 +25,7 @@ class PrinterModelsController < ApplicationController
       @printer_model = PrinterModel.new(name: name.strip, vendor_id: vendor.id, laser: params[:printer_model][:laser])
       authorize @printer_model
       if ! @printer_model.save
-        render :new
+        render action: :new, status: :unprocessable_entity
       end
     end
     redirect_to printer_models_path, notice: 'La stampante è stata creata.'

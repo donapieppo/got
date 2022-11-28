@@ -25,7 +25,7 @@ class TonerModelsController < ApplicationController
     if @toner_model.save
       redirect_to toner_models_path, notice: 'toner was successfully created.'
     else
-      render :new
+      render action: :new, status: :unprocessable_entity
     end
   end
 

@@ -27,19 +27,19 @@ class TonersController < ApplicationController
     if @toner.save
       redirect_to current_organization_root_path, notice: 'Il toner è stato aggiunto.'
     else
-      render :new
+      render action: :new, status: :unprocessable_entity
     end
   end
   
   def edit
-    render :new
+    render action: :new, status: :unprocessable_entity
   end
 
   def update
     if @toner.update(toner_params)
       redirect_to current_organization_root_path, notice: 'Il toner è stato aggiornato.'
     else
-      render :new
+      render action: :new, status: :unprocessable_entity
     end
   end
 

@@ -1,5 +1,5 @@
 class VendorsController < ApplicationController
-  before_action :set_vendor, only: [:show, :edit, :update, :destroy]
+  before_action :set_vendor_and_check_permission, only: [:show, :edit, :update, :destroy]
 
   def index
     @vendors = Vendor.all
@@ -10,6 +10,7 @@ class VendorsController < ApplicationController
 
   def new
     @vendor = Vendor.new
+    authorize @vendor
   end
 
   def edit
@@ -17,10 +18,11 @@ class VendorsController < ApplicationController
 
   def create
     @vendor = Vendor.new(vendor_params)
+    authorize @vendor
     if @vendor.save
       redirect_to vendors_path, notice: 'La nuova marca è stata inserita.'
     else
-      render :new
+      render action: :new, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +30,7 @@ class VendorsController < ApplicationController
     if @vendor.update(vendor_params)
       redirect_to vendors_path, notice: 'La marca è stata aggiornata.'
     else
-      render :edit
+      render action: :edit, status: :unprocessable_entity
     end
   end
 
@@ -38,8 +40,9 @@ class VendorsController < ApplicationController
   end
 
   private
-    def set_vendor
+    def set_vendor_and_check_permission
       @vendor = Vendor.find(params[:id])
+      authorize @vendor
     end
 
     def vendor_params
