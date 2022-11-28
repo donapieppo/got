@@ -18,7 +18,7 @@ class OrganizationsController < ApplicationController
                                         authlevel: DmUniboCommon::Authorization::TO_MANAGE)
       render 'subscriptions/create'
     else
-      render :new
+      render action: :new, status: :unprocessable_entity
     end
   end
 
