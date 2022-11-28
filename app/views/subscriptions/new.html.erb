@@ -4,7 +4,7 @@
   <% @organizations.each do |organization| %>  
     <% admins = organization.admins %>  
     <dt>
-      <%= organization.name %> <span class="float-right small">(<%= organization.description %>)</span>
+      <%= organization.name %> <span class="float-end small">(<%= organization.description %>)</span>
     </dt>
     <dd>
       <% if admins.any? %>  
