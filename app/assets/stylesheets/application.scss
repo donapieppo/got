@@ -1,0 +1,102 @@
+@import "variables";
+
+.organization-owning {
+  @extend .row;
+  .title {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  div.toners {
+    @extend .col-md-8;
+    @extend .py-2;
+  }
+  div.printers {
+    @extend .col-md-4;
+    @extend .py-2;
+  }
+  ul {
+    @extend .list-group;
+    li {
+      @extend .list-group-item;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      .toner_number {
+        @extend .badge;
+        @extend .bg-info;
+        @extend .float-end;
+        font-size: 14px;
+        margin-right: 10px;
+        display: inline-block;
+        text-align: right;
+        width: 6ex;
+      }
+      &.gift-class {
+        @extend .list-group-item-success;
+      }
+    }
+  }
+}
+  
+#toner_model_name {
+  text-transform: uppercase;
+}
+
+dl.subscriptions-list {
+  @extend .list-group;
+  dt, dd { 
+    @extend .list-group-item;
+  }
+  dt {
+    @extend .list-group-item-primary;
+    margin: 2px 0 -1px 0 ;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  dd {
+    padding-left: 40px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  dd span.details {
+    @extend .float-end;
+  }
+}
+dl.organizations_list {
+  dd {
+    margin-left: 10px;
+  }
+}
+li span.organization_name {
+  display: inline-block;
+  text-align: right;
+  width: 16ex;
+  font-weight: bold;
+}
+
+#compatible_printers {
+  div.col-sm-9 {
+    max-width: 100%;
+  }
+  input {
+    display: inline;
+  }
+}
+
+.model-list-group {
+  @extend .list-group;
+  li {
+    @extend .list-group-item;
+    cursor: pointer;
+  }
+}
+
+#vendorList .form-check {
+  display: inline-block;
+  padding-right: 8px;
+  margin-right: 8px;
+  input:checked + label {
+          color: red;
+          font-size: 26px;
+  }
+}
