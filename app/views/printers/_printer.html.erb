@@ -16,7 +16,7 @@
     <% end %>
   </dl>
 
-  <div class="float-right">
+  <div class="float-end">
     <% if policy(printer).edit? %>  
       <%= link_to_edit edit_printer_path(printer) %> 
       <%= link_to_delete printer_path(printer) %> 
@@ -24,5 +24,3 @@
     <%= link_to(dmicon('external-link-alt'), 'http://' + printer.name, target: 'new') if printer.name =~ /unibo.it/ %>  
   </div>
 </div>
-
-<%= dm_modal_js_helper %>  

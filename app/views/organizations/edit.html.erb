@@ -6,7 +6,7 @@
   <%= dm_card title: t(:admins) do %>  
     <ul>
       <% @organization.admins.each do |admin| %>  
-        <li><%= admin %> <span class="float-right"><%= link_to_delete admin_path(admin) %></span></li>
+        <li><%= admin %> <span class="float-end"><%= link_to_delete admin_path(admin) %></span></li>
       <% end %>
     </ul>
     <%= link_to_new t(:new_administrator), new_organization_admin_path(@organization) %>  
