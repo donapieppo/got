@@ -9,18 +9,14 @@
     <meta name="author" content="Dipartimento di Matematica - Unibo">
     <title><%= t :header_title %></title>
 
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_pack_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= dm_unibo_common_headers %>  
   </head>
   <body>
+    <%= turbo_frame_tag "modal" %>
     <%= render partial: 'layouts/menu' %>
 
     <div class="container">
       <%= bootstrap_flash %>
-      <%= bootstrap_modal_div %>
       <%= yield %>
     </div><!-- container -->
 
