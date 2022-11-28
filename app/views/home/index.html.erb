@@ -1,14 +1,14 @@
-<%= render(AvailableTonerComponent.new(organization: current_organization)) %>
+<%= render Organization::AvailableTonerComponent.new(organization: current_organization) %>
 
 <% if policy(current_organization).edit? %>  
   <div class="organization-owning my-5">
     <div class="toners">
-      <h2><%= dmicon :tint %> <%= t :toners %> <br/> <small>in <%= current_organization.name %></small></h2>
+      <h2><%= dmicon :tint %> <%= t :toners %> presenti in <%= current_organization.name %></h2> 
       <%= render 'toners', organization: current_organization %>  
     </div>
 
     <div class="printers">
-      <h2><%= dmicon :print %> <%= t :printers %> <br/> <small>in <%= current_organization.name %></small></h2>
+      <h2><%= dmicon :print %> <%= t :printers %> registrate in <%= current_organization.name %></h2>
       <%= render 'printers', organization: current_organization %>  
     </div>
   </div>
