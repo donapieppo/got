@@ -1,6 +1,10 @@
 class PrintersController < ApplicationController
   before_action :set_printer_and_check_permission, only: [:edit, :update, :show, :destroy]
 
+  def show
+    render layout: nil if modal_page
+  end
+
   def new
     @printer = current_organization.printers.new(name: Rails.configuration.domain_name)
     authorize @printer
@@ -17,7 +21,7 @@ class PrintersController < ApplicationController
     if @printer.save
       redirect_to current_organization_root_path, notice: 'Printer was successfully created.'
     else
-      render :new
+      render action: :new, status: :unprocessable_entity
     end
   end
 
@@ -35,10 +39,6 @@ class PrintersController < ApplicationController
   def destroy
     @printer.destroy
     redirect_to current_organization_root_path
-  end
-
-  def show
-    render layout: false if modal_page
   end
 
   private
