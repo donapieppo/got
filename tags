@@ -4,89 +4,119 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Api	app/controllers/api/toner_models_controller.rb	/^class Api::TonerModelsController < ApplicationController$/;"	c
+Application	../gems/dm_unibo_common/spec/dummy/config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Dummy
+ApplicationCable	../gems/dm_unibo_common/spec/dummy/app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	../gems/dm_unibo_common/spec/dummy/app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
 ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
 ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	../gems/dm_unibo_common/app/controllers/dm_unibo_common/application_controller.rb	/^  class ApplicationController < ActionController::Base$/;"	c	class:DmUniboCommon
+ApplicationController	../gems/dm_unibo_common/spec/dummy/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < DmUniboCommon::ApplicationController$/;"	c
-ApplicationController	dm_unibo_common/app/controllers/dm_unibo_common/application_controller.rb	/^  class ApplicationController < ActionController::Base$/;"	c	class:DmUniboCommon
+ApplicationHelper	../gems/dm_unibo_common/app/helpers/dm_unibo_common/application_helper.rb	/^  module ApplicationHelper$/;"	m	class:DmUniboCommon
+ApplicationHelper	../gems/dm_unibo_common/spec/dummy/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
-ApplicationHelper	dm_unibo_common/app/helpers/dm_unibo_common/application_helper.rb	/^  module ApplicationHelper$/;"	m	class:DmUniboCommon
+ApplicationJob	../gems/dm_unibo_common/app/jobs/dm_unibo_common/application_job.rb	/^  class ApplicationJob < ActiveJob::Base$/;"	c	class:DmUniboCommon
+ApplicationJob	../gems/dm_unibo_common/spec/dummy/app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
 ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
-ApplicationJob	dm_unibo_common/app/jobs/dm_unibo_common/application_job.rb	/^  class ApplicationJob < ActiveJob::Base$/;"	c	class:DmUniboCommon
-ApplicationMailer	dm_unibo_common/app/mailers/dm_unibo_common/application_mailer.rb	/^  class ApplicationMailer < ActionMailer::Base$/;"	c	class:DmUniboCommon
+ApplicationMailer	../gems/dm_unibo_common/app/mailers/dm_unibo_common/application_mailer.rb	/^  class ApplicationMailer < ActionMailer::Base$/;"	c	class:DmUniboCommon
+ApplicationMailer	../gems/dm_unibo_common/spec/dummy/app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationPolicy	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^  class ApplicationPolicy$/;"	c	class:DmUniboCommon
+ApplicationPolicy	../gems/dm_unibo_common/spec/dummy/app/policies/application_policy.rb	/^class ApplicationPolicy < DmUniboCommon::ApplicationPolicy$/;"	c
 ApplicationPolicy	app/policies/application_policy.rb	/^class ApplicationPolicy < DmUniboCommon::ApplicationPolicy$/;"	c
-ApplicationPolicy	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^  class ApplicationPolicy$/;"	c	class:DmUniboCommon
+ApplicationRecord	../gems/dm_unibo_common/app/models/dm_unibo_common/application_record.rb	/^  class ApplicationRecord < ActiveRecord::Base$/;"	c	class:DmUniboCommon
+ApplicationRecord	../gems/dm_unibo_common/spec/dummy/app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
 ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
-ApplicationRecord	dm_unibo_common/app/models/dm_unibo_common/application_record.rb	/^  class ApplicationRecord < ActiveRecord::Base$/;"	c	class:DmUniboCommon
-Authorization	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^class Authorization$/;"	c	class:DmUniboCommon
+Authorization	../gems/dm_unibo_common/spec/dummy/app/models/authorization.rb	/^class Authorization$/;"	c
+Authorization	app/models/authorization.rb	/^class Authorization$/;"	c
+Channel	../gems/dm_unibo_common/spec/dummy/app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
 Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
-ClassMethods	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  module ClassMethods$/;"	m	class:DmUniboCommon
-ClassMethods	dm_unibo_common//lib/dm_unibo_common/user_upn_methods.rb	/^    module ClassMethods$/;"	m	class:DmUniboCommon.UserUpnMethods
+ClassMethods	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  module ClassMethods$/;"	m	class:DmUniboCommon
+ClassMethods	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  module ClassMethods$/;"	m	class:DmUniboCommon
+ClassMethods	../gems/dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb	/^    module ClassMethods$/;"	m	class:DmUniboCommon.UserUpnMethods
+Connection	../gems/dm_unibo_common/spec/dummy/app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
 Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
-Controllers	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^  module Controllers$/;"	m	class:DmUniboCommon
-CurrencyFloatInput	dm_unibo_common/app/inputs/currency_float_input.rb	/^class CurrencyFloatInput < SimpleForm::Inputs::Base$/;"	c
-CurrencyInput	dm_unibo_common/app/inputs/currency_input.rb	/^class CurrencyInput < SimpleForm::Inputs::Base$/;"	c
-DateHtml5Input	dm_unibo_common/app/inputs/date_html5_input.rb	/^class DateHtml5Input < SimpleForm::Inputs::Base$/;"	c
-DatePickerInput	dm_unibo_common/app/inputs/date_picker_input.rb	/^class DatePickerInput < SimpleForm::Inputs::Base$/;"	c
-DatetimeHtml5Input	dm_unibo_common/app/inputs/datetime_html5_input.rb	/^class DatetimeHtml5Input < SimpleForm::Inputs::Base$/;"	c
-DatetimePicker2Input	dm_unibo_common/app/inputs/datetime_picker2_input.rb	/^class DatetimePicker2Input < SimpleForm::Inputs::Base$/;"	c
-DatetimePickerInput	dm_unibo_common/app/inputs/datetime_picker_input.rb	/^class DatetimePickerInput < SimpleForm::Inputs::Base$/;"	c
-DevelopmentMailInterceptor	dm_unibo_common//lib/dm_unibo_common/development_mail_interceptor.rb	/^class DevelopmentMailInterceptor  $/;"	c	class:DmUniboCommon
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/development_mail_interceptor.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/engine.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/organization.rb	/^module DmUniboCommon::Organization$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/policies/organization_policy.rb	/^class DmUniboCommon::OrganizationPolicy < DmUniboCommon::ApplicationPolicy$/;"	c
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/policies/permission_policy.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/user.rb	/^module DmUniboCommon::User$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/user_upn_methods.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common//lib/dm_unibo_common/version.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/controllers/dm_unibo_common/application_controller.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/helpers/dm_unibo_common/application_helper.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/jobs/dm_unibo_common/application_job.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/mailers/dm_unibo_common/application_mailer.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/models/dm_unibo_common/application_record.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommon	dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^module DmUniboCommon::CurrentUser$/;"	m
-DmUniboCommon	dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^module DmUniboCommon$/;"	m
-DmUniboCommonHelper	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^module DmUniboCommonHelper $/;"	m
-DmUniboFormHelper	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^module DmUniboFormHelper$/;"	m
-DmUniboLinkHelper	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^module DmUniboLinkHelper$/;"	m
-DmUniboMenuHelper	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^module DmUniboMenuHelper$/;"	m
-DmUniboModalHelper	dm_unibo_common/app/helpers/dm_unibo_modal_helper.rb	/^module DmUniboModalHelper$/;"	m
-DmUniboOrganizationsHelper	dm_unibo_common/app/helpers/dm_unibo_organizations_helper.rb	/^module DmUniboOrganizationsHelper $/;"	m
-DmUniboPrivacyHelper	dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^module DmUniboPrivacyHelper $/;"	m
-Engine	dm_unibo_common//lib/dm_unibo_common/engine.rb	/^  class Engine < ::Rails::Engine$/;"	c	class:DmUniboCommon
-FormBuilder	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  class FormBuilder < ActionView::Helpers::FormBuilder$/;"	c	class:SimpleForm
+Controllers	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^  module Controllers$/;"	m	class:DmUniboCommon
+CurrencyFloatInput	../gems/dm_unibo_common/app/inputs/currency_float_input.rb	/^class CurrencyFloatInput < SimpleForm::Inputs::Base$/;"	c
+CurrencyInput	../gems/dm_unibo_common/app/inputs/currency_input.rb	/^class CurrencyInput < SimpleForm::Inputs::Base$/;"	c
+DateHtml5Input	../gems/dm_unibo_common/app/inputs/date_html5_input.rb	/^class DateHtml5Input < SimpleForm::Inputs::Base$/;"	c
+DatePickerInput	../gems/dm_unibo_common/app/inputs/date_picker_input.rb	/^class DatePickerInput < SimpleForm::Inputs::Base$/;"	c
+DatetimeHtml5Input	../gems/dm_unibo_common/app/inputs/datetime_html5_input.rb	/^class DatetimeHtml5Input < SimpleForm::Inputs::Base$/;"	c
+DatetimePicker2Input	../gems/dm_unibo_common/app/inputs/datetime_picker2_input.rb	/^class DatetimePicker2Input < SimpleForm::Inputs::Base$/;"	c
+DatetimePickerInput	../gems/dm_unibo_common/app/inputs/datetime_picker_input.rb	/^class DatetimePickerInput < SimpleForm::Inputs::Base$/;"	c
+DevelopmentMailInterceptor	../gems/dm_unibo_common/lib/dm_unibo_common/development_mail_interceptor.rb	/^class DevelopmentMailInterceptor  $/;"	c	class:DmUniboCommon
+DmUniboCommon	../gems/dm_unibo_common/app/controllers/dm_unibo_common/application_controller.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/controllers/dm_unibo_common/users_controller.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/helpers/dm_unibo_common/application_helper.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/jobs/dm_unibo_common/application_job.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/mailers/dm_unibo_common/application_mailer.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/models/dm_unibo_common/application_record.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^module DmUniboCommon::CurrentUser$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/doc/configuration.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^module DmUniboCommon::Authorization$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/components/menu/header_component.rb	/^class DmUniboCommon::Menu::HeaderComponent < ViewComponent::Base$/;"	c
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/components/menu/menu_component.rb	/^class DmUniboCommon::Menu::MenuComponent < ViewComponent::Base$/;"	c
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/components/modal_component.rb	/^class DmUniboCommon::ModalComponent < ViewComponent::Base$/;"	c
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/development_mail_interceptor.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/engine.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/organization.rb	/^module DmUniboCommon::Organization$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/policies/impersonation_policy.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/policies/organization_policy.rb	/^class DmUniboCommon::OrganizationPolicy < DmUniboCommon::ApplicationPolicy$/;"	c
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/policies/permission_policy.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/policies/user_policy.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^module DmUniboCommon::User$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/lib/dm_unibo_common/version.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommon	../gems/dm_unibo_common/spec/models/policy_spec.rb	/^module DmUniboCommon$/;"	m
+DmUniboCommonHelper	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^module DmUniboCommonHelper $/;"	m
+DmUniboFormHelper	../gems/dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^module DmUniboFormHelper$/;"	m
+DmUniboIconHelper	../gems/dm_unibo_common/app/helpers/dm_unibo_icon_helper.rb	/^module DmUniboIconHelper $/;"	m
+DmUniboLinkHelper	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^module DmUniboLinkHelper$/;"	m
+DmUniboMenuHelper	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^module DmUniboMenuHelper$/;"	m
+DmUniboModalHelper	../gems/dm_unibo_common/app/helpers/dm_unibo_modal_helper.rb	/^module DmUniboModalHelper$/;"	m
+DmUniboPrivacyHelper	../gems/dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^module DmUniboPrivacyHelper $/;"	m
+Dummy	../gems/dm_unibo_common/spec/dummy/config/application.rb	/^module Dummy$/;"	m
+Engine	../gems/dm_unibo_common/lib/dm_unibo_common/engine.rb	/^  class Engine < ::Rails::Engine$/;"	c	class:DmUniboCommon
+FormBuilder	../gems/dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  class FormBuilder < ActionView::Helpers::FormBuilder$/;"	c	class:SimpleForm
+FridayStepHelper	../gems/dm_unibo_common/spec/dummy/features/step_definitions/stepdefs.rb	/^module FridayStepHelper$/;"	m
 HelpPolicy	app/policies/help_policy.rb	/^class HelpPolicy < ApplicationPolicy$/;"	c
-Helpers	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^    module Helpers$/;"	m	class:DmUniboCommon.Controllers
+Helpers	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^    module Helpers$/;"	m	class:DmUniboCommon.Controllers
 HelpsController	app/controllers/helps_controller.rb	/^class HelpsController < ApplicationController$/;"	c
+HomeController	../gems/dm_unibo_common/spec/dummy/app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
 HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
 HomePolicy	app/policies/home_policy.rb	/^class HomePolicy < ApplicationPolicy$/;"	c
-ImpersonationsController	dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^class ImpersonationsController < ::ApplicationController$/;"	c	class:DmUniboCommon
-LoginsController	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^class LoginsController < ::ApplicationController$/;"	c	class:DmUniboCommon
-MismatchOrganization	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^  class MismatchOrganization < RuntimeError; end$/;"	c	class:DmUniboCommon
-NoAccess	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^  class NoAccess             < RuntimeError; end$/;"	c	class:DmUniboCommon
-NoUser	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^  class NoUser       < RuntimeError$/;"	c	class:DmUniboCommon
-NotAuthorized	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^  class NotAuthorized        < RuntimeError; end$/;"	c	class:DmUniboCommon
-NotOwner	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^  class NotOwner             < RuntimeError; end$/;"	c	class:DmUniboCommon
+ImpersonationPolicy	../gems/dm_unibo_common/lib/dm_unibo_common/policies/impersonation_policy.rb	/^class ImpersonationPolicy < ApplicationPolicy$/;"	c	class:DmUniboCommon
+ImpersonationsController	../gems/dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^class ImpersonationsController < ::ApplicationController$/;"	c	class:DmUniboCommon
+LoginsController	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^class LoginsController < ::ApplicationController$/;"	c	class:DmUniboCommon
+MismatchOrganization	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class MismatchOrganization < RuntimeError; end$/;"	c	class:DmUniboCommon
+NoAccess	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class NoAccess             < RuntimeError; end$/;"	c	class:DmUniboCommon
+NoUser	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class NoUser       < RuntimeError$/;"	c	class:DmUniboCommon
+NotAuthorized	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class NotAuthorized        < RuntimeError; end$/;"	c	class:DmUniboCommon
+NotOwner	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class NotOwner             < RuntimeError; end$/;"	c	class:DmUniboCommon
 NotificationMailer	app/mailers/notification_mailer.rb	/^class NotificationMailer < ApplicationMailer$/;"	c
+Organization	../gems/dm_unibo_common/spec/dummy/app/models/organization.rb	/^class Organization < ApplicationRecord$/;"	c
+Organization	app/components/organization/available_toner_component.rb	/^class Organization::AvailableTonerComponent < ViewComponent::Base$/;"	c
 Organization	app/models/organization.rb	/^class Organization < ApplicationRecord$/;"	c
+OrganizationPolicy	../gems/dm_unibo_common/spec/dummy/app/policies/organization_policy.rb	/^class OrganizationPolicy < DmUniboCommon::OrganizationPolicy$/;"	c
 OrganizationPolicy	app/policies/organization_policy.rb	/^class OrganizationPolicy < DmUniboCommon::OrganizationPolicy$/;"	c
+OrganizationsController	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^class OrganizationsController < ::ApplicationController$/;"	c	class:DmUniboCommon
 OrganizationsController	app/controllers/organizations_controller.rb	/^class OrganizationsController < ApplicationController$/;"	c
-OrganizationsController	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^class OrganizationsController < ::ApplicationController$/;"	c	class:DmUniboCommon
+Permission	../gems/dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^class Permission < ApplicationRecord$/;"	c	class:DmUniboCommon
 Permission	app/models/permission.rb	/^class Permission < DmUniboCommon::Permission $/;"	c
-Permission	dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^class Permission < ApplicationRecord$/;"	c	class:DmUniboCommon
+PermissionPolicy	../gems/dm_unibo_common/lib/dm_unibo_common/policies/permission_policy.rb	/^class PermissionPolicy < ApplicationPolicy$/;"	c	class:DmUniboCommon
 PermissionPolicy	app/policies/permission_policy.rb	/^class PermissionPolicy < ApplicationPolicy$/;"	c
-PermissionPolicy	dm_unibo_common//lib/dm_unibo_common/policies/permission_policy.rb	/^class PermissionPolicy < ApplicationPolicy$/;"	c	class:DmUniboCommon
+PermissionsController	../gems/dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^class PermissionsController < ::ApplicationController$/;"	c	class:DmUniboCommon
 PermissionsController	app/controllers/permissions_controller.rb	/^class PermissionsController < ApplicationController$/;"	c
-PermissionsController	dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^class PermissionsController < ::ApplicationController$/;"	c	class:DmUniboCommon
 Printable	app/pdfs/printable.rb	/^class Printable$/;"	c
 Printer	app/models/printer.rb	/^class Printer < ApplicationRecord$/;"	c
 PrinterModel	app/models/printer_model.rb	/^class PrinterModel < ApplicationRecord$/;"	c
@@ -95,57 +125,66 @@ PrinterModelsController	app/controllers/printer_models_controller.rb	/^class Pri
 PrinterModelsHelper	app/helpers/printer_models_helper.rb	/^module PrinterModelsHelper$/;"	m
 PrinterPolicy	app/policies/printer_policy.rb	/^class PrinterPolicy < ApplicationPolicy$/;"	c
 PrintersController	app/controllers/printers_controller.rb	/^class PrintersController < ApplicationController$/;"	c
-Scope	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    class Scope$/;"	c	class:DmUniboCommon.ApplicationPolicy
-SimpleForm	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^module SimpleForm$/;"	m
+Scope	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    class Scope$/;"	c	class:DmUniboCommon.ApplicationPolicy
+SimpleForm	../gems/dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^module SimpleForm$/;"	m
 SubscriptionsController	app/controllers/subscriptions_controller.rb	/^class SubscriptionsController < ApplicationController$/;"	c
+Thing	../gems/dm_unibo_common/spec/dummy/app/models/thing.rb	/^class Thing < ApplicationRecord$/;"	c
 Toner	app/models/toner.rb	/^class Toner < ApplicationRecord$/;"	c
 TonerModel	app/models/toner_model.rb	/^class TonerModel < ApplicationRecord$/;"	c
 TonerModelPolicy	app/policies/toner_model_policy.rb	/^class TonerModelPolicy < ApplicationPolicy$/;"	c
 TonerModelsController	app/controllers/toner_models_controller.rb	/^class TonerModelsController < ApplicationController$/;"	c
 TonerPolicy	app/policies/toner_policy.rb	/^class TonerPolicy < ApplicationPolicy$/;"	c
 TonersController	app/controllers/toners_controller.rb	/^class TonersController < ApplicationController$/;"	c
-TooManyUsers	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^  class TooManyUsers < RuntimeError$/;"	c	class:DmUniboCommon
+TooManyUsers	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^  class TooManyUsers < RuntimeError$/;"	c	class:DmUniboCommon
+User	../gems/dm_unibo_common/spec/dummy/app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
 User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c
-UserUpnMethods	dm_unibo_common//lib/dm_unibo_common/user_upn_methods.rb	/^  module UserUpnMethods$/;"	m	class:DmUniboCommon
+UserPolicy	../gems/dm_unibo_common/lib/dm_unibo_common/policies/user_policy.rb	/^class UserPolicy < ApplicationPolicy$/;"	c	class:DmUniboCommon
+UserUpnMethods	../gems/dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb	/^  module UserUpnMethods$/;"	m	class:DmUniboCommon
+UsersController	../gems/dm_unibo_common/app/controllers/dm_unibo_common/users_controller.rb	/^class UsersController < ::ApplicationController$/;"	c	class:DmUniboCommon
 Vendor	app/models/vendor.rb	/^class Vendor < ApplicationRecord$/;"	c
+VendorPolicy	app/policies/vendor_policy.rb	/^class VendorPolicy < ApplicationPolicy$/;"	c
 VendorsController	app/controllers/vendors_controller.rb	/^class VendorsController < ApplicationController$/;"	c
 VendorsHelper	app/helpers/vendors_helper.rb	/^module VendorsHelper$/;"	m
-abbr	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def abbr$/;"	f	class:DmUniboCommon
+abbr	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def abbr$/;"	f	class:DmUniboCommon
 add_printer?	app/policies/organization_policy.rb	/^  def add_printer?$/;"	f	class:OrganizationPolicy
 add_toner?	app/policies/organization_policy.rb	/^  def add_toner?$/;"	f	class:OrganizationPolicy
-admin_mails	dm_unibo_common//lib/dm_unibo_common/user.rb	/^    def admin_mails $/;"	f	class:DmUniboCommon.ClassMethods
+admin_mails	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def admin_mails $/;"	f	class:DmUniboCommon.ClassMethods
 admins_mail_array	app/models/organization.rb	/^  def admins_mail_array$/;"	f	class:Organization
 admins_string	app/models/organization.rb	/^  def admins_string$/;"	f	class:Organization
-all_level_list	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def self.all_level_list$/;"	F	class:DmUniboCommon.Authorization
-allow_and_create	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def allow_and_create$/;"	f	class:DmUniboCommon.LoginsController
-allow_if_email	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def allow_if_email$/;"	f	class:DmUniboCommon.LoginsController
-any?	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def any?$/;"	f	class:DmUniboCommon.Authorization
-assistenza_cesia	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def assistenza_cesia$/;"	f	class:DmUniboLinkHelper
-attr_day	dm_unibo_common/app/inputs/date_html5_input.rb	/^  def attr_day$/;"	f	class:DateHtml5Input
-attr_day	dm_unibo_common/app/inputs/datetime_html5_input.rb	/^  def attr_day$/;"	f	class:DatetimeHtml5Input
-attr_day	dm_unibo_common/app/inputs/datetime_picker2_input.rb	/^  def attr_day$/;"	f	class:DatetimePicker2Input
-authlevel	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def authlevel(o)$/;"	f	class:DmUniboCommon.Authorization
-authlevel_string	dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^  def authlevel_string$/;"	f	class:DmUniboCommon.Permission
-authlevels_reload	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def self.authlevels_reload!$/;"	F	class:DmUniboCommon.Authorization
-authorization	dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def authorization$/;"	f	class:DmUniboCommon
+all_authlevels	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^    def all_authlevels$/;"	f
+all_level_list	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^    def all_level_list$/;"	f
+allow_and_create	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def allow_and_create$/;"	f	class:DmUniboCommon.LoginsController
+allow_if_email	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def allow_if_email$/;"	f	class:DmUniboCommon.LoginsController
+any?	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def any?$/;"	f	class:DmUniboCommon
+assistenza_cesia	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def assistenza_cesia$/;"	f
+attr_day	../gems/dm_unibo_common/app/inputs/date_html5_input.rb	/^  def attr_day$/;"	f	class:DateHtml5Input
+attr_day	../gems/dm_unibo_common/app/inputs/datetime_html5_input.rb	/^  def attr_day$/;"	f	class:DatetimeHtml5Input
+attr_day	../gems/dm_unibo_common/app/inputs/datetime_picker2_input.rb	/^  def attr_day$/;"	f	class:DatetimePicker2Input
+authlevel	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def authlevel(o)$/;"	f	class:DmUniboCommon
+authlevel_string	../gems/dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^  def authlevel_string$/;"	f	class:DmUniboCommon.Permission
+authlevels_reload!	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^    def authlevels_reload!$/;"	f
+authorization	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def authorization$/;"	f	class:DmUniboCommon
 available_toners	app/models/organization.rb	/^  def available_toners$/;"	f	class:Organization
-belongs_to_dsa_user	dm_unibo_common//lib/dm_unibo_common/user_upn_methods.rb	/^      def belongs_to_dsa_user(*args)$/;"	f	class:DmUniboCommon.UserUpnMethods.ClassMethods
-big_dmicon	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def big_dmicon(name, text: "", size: 26, prefix: 'fas')$/;"	f	class:DmUniboCommonHelper
-bootstrap_flash	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def bootstrap_flash$/;"	f	class:DmUniboCommonHelper
-bootstrap_modal_div	dm_unibo_common/app/helpers/dm_unibo_modal_helper.rb	/^  def bootstrap_modal_div$/;"	f	class:DmUniboModalHelper
-can_manage?	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def can_manage?(oid)$/;"	f	class:DmUniboCommon.Authorization
-can_manage?	dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def can_manage?(oid)$/;"	f	class:DmUniboCommon
-can_read?	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def can_read?(oid)$/;"	f	class:DmUniboCommon.Authorization
-can_read?	dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def can_read?(oid)$/;"	f	class:DmUniboCommon
-check_organization!	dm_unibo_common/app/helpers/dm_unibo_organizations_helper.rb	/^  def check_organization!(obj)$/;"	f	class:DmUniboOrganizationsHelper
-check_user_is_cesia	dm_unibo_common/app/helpers/dm_unibo_organizations_helper.rb	/^  def check_user_is_cesia$/;"	f	class:DmUniboOrganizationsHelper
+before_render	app/components/organization/available_toner_component.rb	/^  def before_render$/;"	f	class:Organization
+belongs_to_dsa_user	../gems/dm_unibo_common/lib/dm_unibo_common/user_upn_methods.rb	/^      def belongs_to_dsa_user(*args)$/;"	f	class:DmUniboCommon.UserUpnMethods.ClassMethods
+big_dmicon	../gems/dm_unibo_common/app/helpers/dm_unibo_icon_helper.rb	/^  def big_dmicon(name, text: "", size: 24, prefix: 'fas')$/;"	f	class:DmUniboIconHelper
+bootstrap_flash	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def bootstrap_flash$/;"	f	class:DmUniboCommonHelper
+can_manage?	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def can_manage?(oid)$/;"	f	class:DmUniboCommon
+can_manage_an_organization?	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def can_manage_an_organization?$/;"	f	class:DmUniboCommon
+can_read?	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def can_read?(oid)$/;"	f	class:DmUniboCommon
+check_user_is_cesia	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def check_user_is_cesia$/;"	f
 choose_organization	app/controllers/home_controller.rb	/^  def choose_organization$/;"	f	class:HomeController
 choose_organization?	app/policies/home_policy.rb	/^  def choose_organization?$/;"	f	class:HomePolicy
-class_active	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def class_active(x,y)$/;"	f	class:DmUniboCommonHelper
-class_active_val	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def class_active_val(x,y)$/;"	f	class:DmUniboCommonHelper
-cn	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def cn$/;"	f	class:DmUniboCommon
-cn_militar	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def cn_militar$/;"	f	class:DmUniboCommon
+class_active	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def class_active(x,y)$/;"	f	class:DmUniboCommonHelper
+class_active_val	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def class_active_val(x,y)$/;"	f	class:DmUniboCommonHelper
+cn	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def cn$/;"	f	class:DmUniboCommon
+cn_militar	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def cn_militar$/;"	f	class:DmUniboCommon
 compatible_printers	app/models/toner.rb	/^  def compatible_printers$/;"	f	class:Toner
+configure_authlevels	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^    def configure_authlevels$/;"	f	class:DmUniboCommon.ClassMethods
+configure_authlevels	../gems/dm_unibo_common/lib/dm_unibo_common/policies/organization_policy.rb	/^    def configure_authlevels$/;"	f	class:DmUniboCommon
+create	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def create$/;"	f	class:DmUniboCommon.OrganizationsController
+create	../gems/dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def create$/;"	f	class:DmUniboCommon.PermissionsController
+create	../gems/dm_unibo_common/app/controllers/dm_unibo_common/users_controller.rb	/^  def create$/;"	f	class:DmUniboCommon.UsersController
 create	app/controllers/organizations_controller.rb	/^  def create$/;"	f	class:OrganizationsController
 create	app/controllers/permissions_controller.rb	/^  def create$/;"	f	class:PermissionsController
 create	app/controllers/printer_models_controller.rb	/^  def create$/;"	f	class:PrinterModelsController
@@ -154,76 +193,93 @@ create	app/controllers/subscriptions_controller.rb	/^  def create$/;"	f	class:Su
 create	app/controllers/toner_models_controller.rb	/^  def create$/;"	f	class:TonerModelsController
 create	app/controllers/toners_controller.rb	/^  def create$/;"	f	class:TonersController
 create	app/controllers/vendors_controller.rb	/^  def create$/;"	f	class:VendorsController
-create	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def create$/;"	f	class:DmUniboCommon.OrganizationsController
-create	dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def create$/;"	f	class:DmUniboCommon.PermissionsController
+create?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def create?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+create?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/organization_policy.rb	/^  def create?$/;"	f	class:DmUniboCommon
+create?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/permission_policy.rb	/^  def create?$/;"	f	class:DmUniboCommon.PermissionPolicy
+create?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/user_policy.rb	/^  def create?$/;"	f	class:DmUniboCommon.UserPolicy
 create?	app/policies/organization_policy.rb	/^  def create?$/;"	f	class:OrganizationPolicy
 create?	app/policies/permission_policy.rb	/^  def create?$/;"	f	class:PermissionPolicy
 create?	app/policies/printer_model_policy.rb	/^  def create?$/;"	f	class:PrinterModelPolicy
 create?	app/policies/printer_policy.rb	/^  def create?$/;"	f	class:PrinterPolicy
 create?	app/policies/toner_model_policy.rb	/^  def create?$/;"	f	class:TonerModelPolicy
 create?	app/policies/toner_policy.rb	/^  def create?$/;"	f	class:TonerPolicy
-create?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def create?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-create?	dm_unibo_common//lib/dm_unibo_common/policies/organization_policy.rb	/^  def create?$/;"	f	class:DmUniboCommon
-create?	dm_unibo_common//lib/dm_unibo_common/policies/permission_policy.rb	/^  def create?$/;"	f	class:DmUniboCommon.PermissionPolicy
-current_organization	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_organization$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user_admin!	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_admin!$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user_admin?	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_admin?$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user_cesia!	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_cesia!$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user_cesia?	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_cesia?$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user_has_some_authorization?	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_has_some_authorization?$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user_owns!	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_owns!(what)$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user_owns?	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_owns?(what)$/;"	f	class:DmUniboCommon.Controllers.Helpers
-current_user_possible_organizations	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_possible_organizations$/;"	f	class:DmUniboCommon.Controllers.Helpers
-default_url_options	dm_unibo_common/app/controllers/dm_unibo_common/application_controller.rb	/^    def default_url_options(_options={})$/;"	f	class:DmUniboCommon.ApplicationController
-delivering_email	dm_unibo_common//lib/dm_unibo_common/development_mail_interceptor.rb	/^  def self.delivering_email(message)  $/;"	F	class:DmUniboCommon.DevelopmentMailInterceptor
-description	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def description$/;"	f	class:DmUniboCommon
+create?	app/policies/vendor_policy.rb	/^  def create?$/;"	f	class:VendorPolicy
+current_organization	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def current_organization$/;"	f	class:DmUniboCommon
+current_organization	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_organization$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_organization=	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def current_organization=(o)$/;"	f	class:DmUniboCommon
+current_organization_manager?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def current_organization_manager?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+current_organization_reader?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def current_organization_reader?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+current_user	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_user_admin!	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_admin!$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_user_admin?	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_admin?$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_user_cesia!	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_cesia!$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_user_cesia?	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_cesia?$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_user_has_some_authorization?	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_has_some_authorization?$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_user_owns!	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_owns!(what)$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_user_owns?	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_owns?(what)$/;"	f	class:DmUniboCommon.Controllers.Helpers
+current_user_possible_organizations	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def current_user_possible_organizations$/;"	f	class:DmUniboCommon.Controllers.Helpers
+debug_authorizations	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def debug_authorizations$/;"	f	class:DmUniboCommon
+default_url_options	../gems/dm_unibo_common/app/controllers/dm_unibo_common/application_controller.rb	/^    def default_url_options(_options={})$/;"	f	class:DmUniboCommon.ApplicationController
+delivering_email	../gems/dm_unibo_common/lib/dm_unibo_common/development_mail_interceptor.rb	/^  def self.delivering_email(message)  $/;"	F	class:DmUniboCommon.DevelopmentMailInterceptor
+destroy	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def destroy$/;"	f	class:DmUniboCommon.OrganizationsController
+destroy	../gems/dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def destroy$/;"	f	class:DmUniboCommon.PermissionsController
 destroy	app/controllers/permissions_controller.rb	/^  def destroy$/;"	f	class:PermissionsController
 destroy	app/controllers/printer_models_controller.rb	/^  def destroy$/;"	f	class:PrinterModelsController
 destroy	app/controllers/printers_controller.rb	/^  def destroy$/;"	f	class:PrintersController
 destroy	app/controllers/toner_models_controller.rb	/^  def destroy$/;"	f	class:TonerModelsController
 destroy	app/controllers/toners_controller.rb	/^  def destroy$/;"	f	class:TonersController
 destroy	app/controllers/vendors_controller.rb	/^  def destroy$/;"	f	class:VendorsController
-destroy	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def destroy$/;"	f	class:DmUniboCommon.OrganizationsController
-destroy	dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def destroy$/;"	f	class:DmUniboCommon.PermissionsController
+destroy?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def destroy?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+destroy?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/permission_policy.rb	/^  def destroy?$/;"	f	class:DmUniboCommon.PermissionPolicy
+destroy?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/user_policy.rb	/^  def destroy?$/;"	f	class:DmUniboCommon.UserPolicy
 destroy?	app/policies/permission_policy.rb	/^  def destroy?$/;"	f	class:PermissionPolicy
 destroy?	app/policies/printer_policy.rb	/^  def destroy?$/;"	f	class:PrinterPolicy
 destroy?	app/policies/toner_policy.rb	/^  def destroy?$/;"	f	class:TonerPolicy
-destroy?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def destroy?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-destroy?	dm_unibo_common//lib/dm_unibo_common/policies/permission_policy.rb	/^  def destroy?$/;"	f	class:DmUniboCommon.PermissionPolicy
-developer	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def developer$/;"	f	class:DmUniboCommon.LoginsController
-dl_field	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def dl_field(object, what)$/;"	f	class:DmUniboCommonHelper
-dm_card	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def dm_card(title: '', add_class: '')$/;"	f	class:DmUniboCommonHelper
-dm_error_notification	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^    def dm_error_notification(options = {})$/;"	f	class:SimpleForm.FormBuilder
-dm_footer	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_footer$/;"	f
-dm_form_default_title	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def dm_form_default_title(record)$/;"	f	class:DmUniboFormHelper
-dm_form_for	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def dm_form_for(record, options={}, &block)$/;"	f	class:DmUniboFormHelper
-dm_header	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_header(dm_header_title: Rails.configuration.header_title, dm_header_subtitle: Rails.configuration.header_subtitle)$/;"	f
-dm_menu	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_menu(&block)$/;"	f
-dm_modal_js_helper	dm_unibo_common/app/helpers/dm_unibo_modal_helper.rb	/^  def dm_modal_js_helper$/;"	f	class:DmUniboModalHelper
-dm_nav	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_nav(&block)$/;"	f
-dm_unibo_user_search_client	dm_unibo_common//lib/dm_unibo_common/user.rb	/^    def dm_unibo_user_search_client$/;"	f	class:DmUniboCommon.ClassMethods
-dmicon	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def dmicon(name, text: "", size: 18, prefix: 'fas')$/;"	f	class:DmUniboCommonHelper
-dropdown_menu	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dropdown_menu(id, title, &block)$/;"	f
+destroy?	app/policies/vendor_policy.rb	/^  def destroy?$/;"	f	class:VendorPolicy
+developer	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def developer$/;"	f	class:DmUniboCommon.LoginsController
+dl_field	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def dl_field(object, what)$/;"	f	class:DmUniboCommonHelper
+dm_card	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def dm_card(title: '', add_class: '')$/;"	f	class:DmUniboCommonHelper
+dm_error_notification	../gems/dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^    def dm_error_notification(options = {})$/;"	f	class:SimpleForm.FormBuilder
+dm_footer	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_footer$/;"	f
+dm_form_default_title	../gems/dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def dm_form_default_title(record)$/;"	f	class:DmUniboFormHelper
+dm_form_for	../gems/dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def dm_form_for(record, options={}, &block)$/;"	f	class:DmUniboFormHelper
+dm_header	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_header(dm_header_title: Rails.configuration.header_title, dm_header_subtitle: Rails.configuration.header_subtitle)$/;"	f
+dm_menu	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_menu(&block)$/;"	f
+dm_nav	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dm_nav(&block)$/;"	f
+dm_unibo_common_headers	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def dm_unibo_common_headers$/;"	f	class:DmUniboCommonHelper
+dm_unibo_user_search_client	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def dm_unibo_user_search_client$/;"	f	class:DmUniboCommon.ClassMethods
+dmicon	../gems/dm_unibo_common/app/helpers/dm_unibo_icon_helper.rb	/^  def dmicon(name, text: "", size: 18, prefix: 'fas', style: '')$/;"	f	class:DmUniboIconHelper
+dropdown_menu	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def dropdown_menu(id, title, &block)$/;"	f
+each_network	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def each_network$/;"	f
+edit	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def edit$/;"	f	class:DmUniboCommon.OrganizationsController
 edit	app/controllers/organizations_controller.rb	/^  def edit$/;"	f	class:OrganizationsController
 edit	app/controllers/printer_models_controller.rb	/^  def edit$/;"	f	class:PrinterModelsController
 edit	app/controllers/printers_controller.rb	/^  def edit$/;"	f	class:PrintersController
 edit	app/controllers/toner_models_controller.rb	/^  def edit$/;"	f	class:TonerModelsController
 edit	app/controllers/toners_controller.rb	/^  def edit$/;"	f	class:TonersController
 edit	app/controllers/vendors_controller.rb	/^  def edit$/;"	f	class:VendorsController
+edit?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def edit?$/;"	f	class:DmUniboCommon.ApplicationPolicy
 edit?	app/policies/organization_policy.rb	/^  def edit?$/;"	f	class:OrganizationPolicy
-edit?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def edit?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-find_or_syncronize	dm_unibo_common//lib/dm_unibo_common/user.rb	/^    def find_or_syncronize(upn_or_id, select_proc = nil, c = User)$/;"	f	class:DmUniboCommon.ClassMethods
-first_organization_id	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def first_organization_id$/;"	f	class:DmUniboCommon.Authorization
-force_sso_user	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def force_sso_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
-fwdmicon	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def fwdmicon(name, text: "", size: 18, prefix: 'fas')$/;"	f	class:DmUniboCommonHelper
-get_organization_and_check_permission	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def get_organization_and_check_permission$/;"	f	class:DmUniboCommon.OrganizationsController
-google_oauth2	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def google_oauth2$/;"	f	class:DmUniboCommon.LoginsController
-has_some_authorization?	dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def has_some_authorization?$/;"	f	class:DmUniboCommon
-horizontal_form_for	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def horizontal_form_for(record, options={}, &block)$/;"	f
-impersonate	dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^  def impersonate$/;"	f	class:DmUniboCommon.ImpersonationsController
-included	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def self.included(base)$/;"	F	class:DmUniboCommon.Controllers.Helpers
-included	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def self.included(base)$/;"	F	class:DmUniboCommon
+find_or_syncronize	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def find_or_syncronize(upn_or_id, select_proc = nil, c = User)$/;"	f	class:DmUniboCommon.ClassMethods
+first_organization_id	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def first_organization_id$/;"	f	class:DmUniboCommon
+force_sso_user	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def force_sso_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+from.display_unless	../gems/dm_unibo_common/js/index.js	/^export { default as TurboModalController } from ".\/turbo_modal_controller"$/;"	f
+fwdmicon	../gems/dm_unibo_common/app/helpers/dm_unibo_icon_helper.rb	/^  def fwdmicon(name, text: "", size: 18, prefix: 'fas')$/;"	f	class:DmUniboIconHelper
+get_organization_and_check_permission	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def get_organization_and_check_permission$/;"	f	class:DmUniboCommon.OrganizationsController
+google_icon	../gems/dm_unibo_common/app/helpers/dm_unibo_icon_helper.rb	/^  def google_icon$/;"	f	class:DmUniboIconHelper
+google_oauth2	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def google_oauth2$/;"	f	class:DmUniboCommon.LoginsController
+has_some_authorization?	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def has_some_authorization?$/;"	f	class:DmUniboCommon
+horizontal_form_for	../gems/dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def horizontal_form_for(record, options={}, &block)$/;"	f
+impersonate	../gems/dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^  def impersonate$/;"	f	class:DmUniboCommon.ImpersonationsController
+impersonate?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/impersonation_policy.rb	/^  def impersonate?$/;"	f	class:DmUniboCommon.ImpersonationPolicy
+included	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def self.included(base)$/;"	F	class:DmUniboCommon
+included	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def self.included(base)$/;"	F	class:DmUniboCommon.Controllers.Helpers
+included	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def self.included(base)$/;"	F	class:DmUniboCommon
+index	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def index$/;"	f	class:DmUniboCommon.OrganizationsController
+index	../gems/dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def index$/;"	f	class:DmUniboCommon.PermissionsController
+index	../gems/dm_unibo_common/app/controllers/dm_unibo_common/users_controller.rb	/^  def index$/;"	f	class:DmUniboCommon.UsersController
+index	../gems/dm_unibo_common/spec/dummy/app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
+index	app/controllers/api/toner_models_controller.rb	/^  def index$/;"	f	class:Api
 index	app/controllers/helps_controller.rb	/^  def index$/;"	f	class:HelpsController
 index	app/controllers/home_controller.rb	/^  def index$/;"	f	class:HomeController
 index	app/controllers/permissions_controller.rb	/^  def index$/;"	f	class:PermissionsController
@@ -231,56 +287,62 @@ index	app/controllers/printer_models_controller.rb	/^  def index$/;"	f	class:Pri
 index	app/controllers/toner_models_controller.rb	/^  def index$/;"	f	class:TonerModelsController
 index	app/controllers/toners_controller.rb	/^  def index$/;"	f	class:TonersController
 index	app/controllers/vendors_controller.rb	/^  def index$/;"	f	class:VendorsController
-index	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def index$/;"	f	class:DmUniboCommon.OrganizationsController
-index	dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def index$/;"	f	class:DmUniboCommon.PermissionsController
+index?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def index?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+index?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/organization_policy.rb	/^  def index?$/;"	f	class:DmUniboCommon
+index?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/permission_policy.rb	/^  def index?$/;"	f	class:DmUniboCommon.PermissionPolicy
+index?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/user_policy.rb	/^  def index?$/;"	f	class:DmUniboCommon.UserPolicy
 index?	app/policies/help_policy.rb	/^  def index?$/;"	f	class:HelpPolicy
 index?	app/policies/home_policy.rb	/^  def index?$/;"	f	class:HomePolicy
 index?	app/policies/printer_model_policy.rb	/^  def index?$/;"	f	class:PrinterModelPolicy
 index?	app/policies/toner_model_policy.rb	/^  def index?$/;"	f	class:TonerModelPolicy
 index?	app/policies/toner_policy.rb	/^  def index?$/;"	f	class:TonerPolicy
-index?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def index?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-index?	dm_unibo_common//lib/dm_unibo_common/policies/organization_policy.rb	/^  def index?$/;"	f	class:DmUniboCommon
-index?	dm_unibo_common//lib/dm_unibo_common/policies/permission_policy.rb	/^  def index?$/;"	f	class:DmUniboCommon.PermissionPolicy
+initialize	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def initialize(client_ip, user)$/;"	f	class:DmUniboCommon
+initialize	../gems/dm_unibo_common/lib/dm_unibo_common/components/menu/header_component.rb	/^  def initialize(current_user)$/;"	f	class:DmUniboCommon
+initialize	../gems/dm_unibo_common/lib/dm_unibo_common/components/menu/menu_component.rb	/^  def initialize(current_user)$/;"	f	class:DmUniboCommon
+initialize	../gems/dm_unibo_common/lib/dm_unibo_common/components/modal_component.rb	/^  def initialize(title: "", hidden: false, noactions: false)$/;"	f	class:DmUniboCommon
+initialize	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^      def initialize(user, scope)$/;"	f	class:DmUniboCommon.ApplicationPolicy.Scope
+initialize	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def initialize(user, record)$/;"	f	class:DmUniboCommon.ApplicationPolicy
+initialize	app/components/organization/available_toner_component.rb	/^  def initialize(organization:)$/;"	f	class:Organization
 initialize	app/pdfs/printable.rb	/^  def initialize(title = nil, orientation: :portrait)$/;"	f	class:Printable
-initialize	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def initialize(client_ip, user)$/;"	f	class:DmUniboCommon.Authorization
-initialize	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^      def initialize(user, scope)$/;"	f	class:DmUniboCommon.ApplicationPolicy.Scope
-initialize	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def initialize(user, record)$/;"	f	class:DmUniboCommon.ApplicationPolicy
-input	dm_unibo_common/app/inputs/currency_float_input.rb	/^  def input(wrapper_options)$/;"	f	class:CurrencyFloatInput
-input	dm_unibo_common/app/inputs/currency_input.rb	/^  def input(wrapper_options)$/;"	f	class:CurrencyInput
-input	dm_unibo_common/app/inputs/date_html5_input.rb	/^  def input(wrapper_options)$/;"	f	class:DateHtml5Input
-input	dm_unibo_common/app/inputs/date_picker_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatePickerInput
-input	dm_unibo_common/app/inputs/datetime_html5_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimeHtml5Input
-input	dm_unibo_common/app/inputs/datetime_picker2_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimePicker2Input
-input	dm_unibo_common/app/inputs/datetime_picker_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimePickerInput
+input	../gems/dm_unibo_common/app/inputs/currency_float_input.rb	/^  def input(wrapper_options)$/;"	f	class:CurrencyFloatInput
+input	../gems/dm_unibo_common/app/inputs/currency_input.rb	/^  def input(wrapper_options)$/;"	f	class:CurrencyInput
+input	../gems/dm_unibo_common/app/inputs/date_html5_input.rb	/^  def input(wrapper_options)$/;"	f	class:DateHtml5Input
+input	../gems/dm_unibo_common/app/inputs/date_picker_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatePickerInput
+input	../gems/dm_unibo_common/app/inputs/datetime_html5_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimeHtml5Input
+input	../gems/dm_unibo_common/app/inputs/datetime_picker2_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimePicker2Input
+input	../gems/dm_unibo_common/app/inputs/datetime_picker_input.rb	/^  def input(wrapper_options)$/;"	f	class:DatetimePickerInput
 interested_in?	app/models/organization.rb	/^  def interested_in?(toner)$/;"	f	class:Organization
 interested_organizations	app/models/toner_model.rb	/^  def interested_organizations$/;"	f	class:TonerModel
-is_cesia?	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def is_cesia?$/;"	f	class:DmUniboCommon.Authorization
-is_cesia?	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def is_cesia?$/;"	f	class:DmUniboCommon
-level_description	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def self.level_description(level, html=1)$/;"	F	class:DmUniboCommon.Authorization
-link_to_back	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_back url$/;"	f	class:DmUniboLinkHelper
-link_to_delete	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_delete(name = "", url, button: false)$/;"	f	class:DmUniboLinkHelper
-link_to_download	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_download(url, txt = "")$/;"	f	class:DmUniboLinkHelper
-link_to_edit	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_edit(name = "", url, button: false, modal: false)$/;"	f	class:DmUniboLinkHelper
-link_to_edit2	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_edit2(name = "", url)$/;"	f	class:DmUniboLinkHelper
-link_to_new	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_new(name = "", url, button: true, modal: false)$/;"	f	class:DmUniboLinkHelper
-link_to_show	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_show(name = "", url)$/;"	f	class:DmUniboLinkHelper
-log_current_user	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def log_current_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
-log_unibo_omniauth	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def log_unibo_omniauth$/;"	f	class:DmUniboCommon.LoginsController
-logged_user	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def logged_user$/;"	f
-login_link	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def login_link$/;"	f	class:DmUniboMenuHelper
-login_method	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def login_method$/;"	f	class:DmUniboCommon.LoginsController
-logout	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def logout$/;"	f	class:DmUniboCommon.LoginsController
-logout_link	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def logout_link$/;"	f
-mail	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def mail$/;"	f	class:DmUniboCommon
-mail_to_contact	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def mail_to_contact$/;"	f
-main_title	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def main_title(srt)$/;"	f	class:DmUniboCommonHelper
-manage?	dm_unibo_common//lib/dm_unibo_common/policies/organization_policy.rb	/^  def manage?$/;"	f	class:DmUniboCommon
-modal_link_to	dm_unibo_common/app/helpers/dm_unibo_modal_helper.rb	/^  def modal_link_to(name, url, addclass: '')$/;"	f	class:DmUniboModalHelper
-modal_page	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def modal_page$/;"	f	class:DmUniboCommon.Controllers.Helpers
-multi_organizations?	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def multi_organizations?$/;"	f	class:DmUniboCommon.Authorization
-my_organizations	dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def my_organizations$/;"	f	class:DmUniboCommon
+is_cesia?	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def is_cesia?$/;"	f	class:DmUniboCommon
+is_cesia?	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def is_cesia?$/;"	f	class:DmUniboCommon
+is_it_friday	../gems/dm_unibo_common/spec/dummy/features/step_definitions/stepdefs.rb	/^  def is_it_friday(day)$/;"	f	class:FridayStepHelper
+level_description	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^    def level_description(level, html=1)$/;"	f
+link_to_back	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_back url$/;"	f	class:DmUniboLinkHelper
+link_to_delete	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_delete(name = "", url, button: false, _class: '')$/;"	f	class:DmUniboLinkHelper
+link_to_download	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_download(url, txt = "")$/;"	f
+link_to_edit	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_edit(name = "", url, button: false)$/;"	f
+link_to_new	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_new(name = "", url, button: true)$/;"	f
+link_to_show	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def link_to_show(name = "", url)$/;"	f
+log_current_user	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def log_current_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+log_unibo_omniauth	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def log_unibo_omniauth$/;"	f	class:DmUniboCommon.LoginsController
+logged_user	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def logged_user$/;"	f
+login_link	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def login_link$/;"	f	class:DmUniboMenuHelper
+login_method	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def login_method$/;"	f	class:DmUniboCommon.LoginsController
+logout	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def logout$/;"	f	class:DmUniboCommon.LoginsController
+logout_link	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def logout_link$/;"	f
+mail	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def mail$/;"	f	class:DmUniboCommon
+mail_to_contact	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def mail_to_contact$/;"	f
+main_title	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def main_title(srt)$/;"	f	class:DmUniboCommonHelper
+modal_link_to	../gems/dm_unibo_common/app/helpers/dm_unibo_modal_helper.rb	/^  def modal_link_to(name, url, addclass: '')$/;"	f	class:DmUniboModalHelper
+modal_page	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def modal_page$/;"	f	class:DmUniboCommon.Controllers.Helpers
+multi_organizations?	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def multi_organizations?$/;"	f	class:DmUniboCommon
+multi_organizations?	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def multi_organizations?$/;"	f	class:DmUniboCommon
+my_organizations	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def my_organizations$/;"	f	class:DmUniboCommon
 name_with_vendor	app/models/printer_model.rb	/^  def name_with_vendor$/;"	f	class:PrinterModel
 name_with_vendor	app/models/toner_model.rb	/^  def name_with_vendor$/;"	f	class:TonerModel
+new	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def new$/;"	f	class:DmUniboCommon.OrganizationsController
+new	../gems/dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def new$/;"	f	class:DmUniboCommon.PermissionsController
+new	../gems/dm_unibo_common/app/controllers/dm_unibo_common/users_controller.rb	/^  def new$/;"	f	class:DmUniboCommon.UsersController
 new	app/controllers/organizations_controller.rb	/^  def new$/;"	f	class:OrganizationsController
 new	app/controllers/permissions_controller.rb	/^  def new$/;"	f	class:PermissionsController
 new	app/controllers/printer_models_controller.rb	/^  def new$/;"	f	class:PrinterModelsController
@@ -289,120 +351,132 @@ new	app/controllers/subscriptions_controller.rb	/^  def new$/;"	f	class:Subscrip
 new	app/controllers/toner_models_controller.rb	/^  def new$/;"	f	class:TonerModelsController
 new	app/controllers/toners_controller.rb	/^  def new$/;"	f	class:TonersController
 new	app/controllers/vendors_controller.rb	/^  def new$/;"	f	class:VendorsController
-new	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def new$/;"	f	class:DmUniboCommon.OrganizationsController
-new	dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def new$/;"	f	class:DmUniboCommon.PermissionsController
-new?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def new?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-no_access	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def no_access$/;"	f	class:DmUniboCommon.LoginsController
+new?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def new?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+no_access	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def no_access$/;"	f	class:DmUniboCommon.LoginsController
 notify_organization	app/mailers/notification_mailer.rb	/^  def notify_organization(organization, gifts_array)$/;"	f	class:NotificationMailer
+organization_authlevel	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def organization_authlevel(oid)$/;"	f	class:DmUniboCommon
+organization_manager?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def organization_manager?(o)$/;"	f	class:DmUniboCommon.ApplicationPolicy
+organization_params	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def organization_params$/;"	f	class:DmUniboCommon.OrganizationsController
 organization_params	app/controllers/organizations_controller.rb	/^  def organization_params$/;"	f	class:OrganizationsController
-organization_params	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def organization_params$/;"	f	class:DmUniboCommon.OrganizationsController
-organizations	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def organizations$/;"	f	class:DmUniboCommon.Authorization
-owner?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def owner?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-owner_or_record_organization_manager?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def owner_or_record_organization_manager?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-owns!	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def owns!(what)$/;"	f	class:DmUniboCommon
-owns?	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def owns?(what)$/;"	f	class:DmUniboCommon
-parse_google_omniauth	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def parse_google_omniauth$/;"	f	class:DmUniboCommon.LoginsController
-parse_unibo_omniauth	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def parse_unibo_omniauth$/;"	f	class:DmUniboCommon.LoginsController
+organization_reader?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def organization_reader?(o)$/;"	f	class:DmUniboCommon.ApplicationPolicy
+organizations	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def organizations$/;"	f	class:DmUniboCommon
+owner?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def owner?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+owner_or_record_organization_manager?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def owner_or_record_organization_manager?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+owns!	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def owns!(what)$/;"	f	class:DmUniboCommon
+owns?	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def owns?(what)$/;"	f	class:DmUniboCommon
+parse_google_omniauth	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def parse_google_omniauth$/;"	f	class:DmUniboCommon.LoginsController
+parse_unibo_omniauth	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def parse_unibo_omniauth$/;"	f	class:DmUniboCommon.LoginsController
 pdf_output	app/controllers/application_controller.rb	/^  def pdf_output(printable)$/;"	f	class:ApplicationController
-pippo_show	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def pippo_show$/;"	f	class:DmUniboCommon.LoginsController
-popover_help	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def popover_help(title, content)$/;"	f	class:DmUniboCommonHelper
+pippo_show	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def pippo_show$/;"	f	class:DmUniboCommon.LoginsController
+popover_help	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def popover_help(title, content)$/;"	f	class:DmUniboCommonHelper
 printer_model_ids	app/models/organization.rb	/^  def printer_model_ids$/;"	f	class:Organization
 printer_model_params	app/controllers/printer_models_controller.rb	/^    def printer_model_params$/;"	f	class:PrinterModelsController
 printer_models	app/models/toner.rb	/^  def printer_models$/;"	f	class:Toner
 printer_params	app/controllers/printers_controller.rb	/^  def printer_params$/;"	f	class:PrintersController
 printers	app/models/toner_model.rb	/^  def printers(organization = nil)$/;"	f	class:TonerModel
-privacy_alert	dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^  def privacy_alert$/;"	f	class:DmUniboPrivacyHelper
-privacy_cookie_name	dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^  def privacy_cookie_name$/;"	f	class:DmUniboPrivacyHelper
-read?	dm_unibo_common//lib/dm_unibo_common/policies/organization_policy.rb	/^  def read?$/;"	f	class:DmUniboCommon
-record_organization_manager?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def record_organization_manager?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-redirect_unsigned_user	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def redirect_unsigned_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
-reload_authlevels!	dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^  def reload_authlevels!$/;"	f	class:DmUniboCommon.Permission
+privacy_alert	../gems/dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^  def privacy_alert$/;"	f	class:DmUniboPrivacyHelper
+privacy_cookie_name	../gems/dm_unibo_common/app/helpers/dm_unibo_privacy_helper.rb	/^  def privacy_cookie_name$/;"	f	class:DmUniboPrivacyHelper
+record_organization_manager?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def record_organization_manager?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+redirect_unsigned_user	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def redirect_unsigned_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+reload_authlevels!	../gems/dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^  def reload_authlevels!$/;"	f	class:DmUniboCommon.Permission
 render	app/pdfs/printable.rb	/^  def render$/;"	f	class:Printable
 report	app/controllers/home_controller.rb	/^  def report$/;"	f	class:HomeController
-resolve	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^      def resolve$/;"	f	class:DmUniboCommon.ApplicationPolicy.Scope
+resolve	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^      def resolve$/;"	f	class:DmUniboCommon.ApplicationPolicy.Scope
+search	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def search(str)$/;"	f	class:DmUniboCommon.ClassMethods
 search	app/controllers/home_controller.rb	/^  def search$/;"	f	class:HomeController
-search	dm_unibo_common//lib/dm_unibo_common/user.rb	/^    def search(str)$/;"	f	class:DmUniboCommon.ClassMethods
 search?	app/policies/home_policy.rb	/^  def search?$/;"	f	class:HomePolicy
-set_current_organization	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def set_current_organization$/;"	f	class:DmUniboCommon.Controllers.Helpers
-set_current_user	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def set_current_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
+set_current_organization	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def set_current_organization$/;"	f	class:DmUniboCommon.Controllers.Helpers
+set_current_user	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def set_current_user$/;"	f	class:DmUniboCommon.Controllers.Helpers
 set_locale	app/controllers/application_controller.rb	/^  def set_locale$/;"	f	class:ApplicationController
-set_memberof_session	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def set_memberof_session(isMemberOf)$/;"	f	class:DmUniboCommon.LoginsController
-set_organization_and_check_permission	app/controllers/organizations_controller.rb	/^  def set_organization_and_check_permission$/;"	f	class:OrganizationsController
+set_memberof_session	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def set_memberof_session(isMemberOf)$/;"	f	class:DmUniboCommon.LoginsController
 set_printer_and_check_permission	app/controllers/printers_controller.rb	/^  def set_printer_and_check_permission$/;"	f	class:PrintersController
 set_printer_model_and_check_permission	app/controllers/printer_models_controller.rb	/^    def set_printer_model_and_check_permission$/;"	f	class:PrinterModelsController
 set_toner_and_check_permission	app/controllers/toners_controller.rb	/^  def set_toner_and_check_permission$/;"	f	class:TonersController
 set_toner_model_and_check_authorization	app/controllers/toner_models_controller.rb	/^  def set_toner_model_and_check_authorization$/;"	f	class:TonerModelsController
-set_vendor	app/controllers/vendors_controller.rb	/^    def set_vendor$/;"	f	class:VendorsController
-shibapplicationid	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def shibapplicationid$/;"	f	class:DmUniboCommon.Controllers.Helpers
-shibboleth	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def shibboleth$/;"	f	class:DmUniboCommon.LoginsController
-short_description	dm_unibo_common//lib/dm_unibo_common/organization.rb	/^  def short_description$/;"	f	class:DmUniboCommon
+set_vendor_and_check_permission	app/controllers/vendors_controller.rb	/^    def set_vendor_and_check_permission$/;"	f	class:VendorsController
+shibapplicationid	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def shibapplicationid$/;"	f	class:DmUniboCommon.Controllers.Helpers
+shibboleth	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def shibboleth$/;"	f	class:DmUniboCommon.LoginsController
+short_description	../gems/dm_unibo_common/lib/dm_unibo_common/organization.rb	/^  def short_description$/;"	f	class:DmUniboCommon
 short_name	app/models/printer.rb	/^  def short_name$/;"	f	class:Printer
+show	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def show$/;"	f	class:DmUniboCommon.OrganizationsController
+show	../gems/dm_unibo_common/app/controllers/dm_unibo_common/permissions_controller.rb	/^  def show$/;"	f	class:DmUniboCommon.PermissionsController
 show	app/controllers/organizations_controller.rb	/^  def show$/;"	f	class:OrganizationsController
 show	app/controllers/printer_models_controller.rb	/^  def show$/;"	f	class:PrinterModelsController
 show	app/controllers/printers_controller.rb	/^  def show$/;"	f	class:PrintersController
 show	app/controllers/toner_models_controller.rb	/^  def show$/;"	f	class:TonerModelsController
 show	app/controllers/vendors_controller.rb	/^  def show$/;"	f	class:VendorsController
-show	dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def show$/;"	f	class:DmUniboCommon.OrganizationsController
+show?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def show?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+show?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/organization_policy.rb	/^  def show?$/;"	f	class:DmUniboCommon
+show?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/permission_policy.rb	/^  def show?$/;"	f	class:DmUniboCommon.PermissionPolicy
 show?	app/policies/organization_policy.rb	/^  def show?$/;"	f	class:OrganizationPolicy
 show?	app/policies/printer_model_policy.rb	/^  def show?$/;"	f	class:PrinterModelPolicy
+show?	app/policies/printer_policy.rb	/^  def show?$/;"	f	class:PrinterPolicy
 show?	app/policies/toner_model_policy.rb	/^  def show?$/;"	f	class:TonerModelPolicy
-show?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def show?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-show?	dm_unibo_common//lib/dm_unibo_common/policies/organization_policy.rb	/^  def show?$/;"	f	class:DmUniboCommon
+show?	app/policies/vendor_policy.rb	/^  def show?$/;"	f	class:VendorPolicy
 show_printer_model_with_actions	app/helpers/printer_models_helper.rb	/^  def show_printer_model_with_actions(printer_model)$/;"	f	class:PrinterModelsHelper
-sign_in_and_redirect	dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def sign_in_and_redirect(user)$/;"	f	class:DmUniboCommon.LoginsController
-sso_user_upn	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def sso_user_upn$/;"	f	class:DmUniboCommonHelper
-start_impersonation_link	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def start_impersonation_link$/;"	f	class:DmUniboLinkHelper
-stop_impersonating	dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^  def stop_impersonating$/;"	f	class:DmUniboCommon.ImpersonationsController
-stop_impersonation_link	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def stop_impersonation_link$/;"	f	class:DmUniboLinkHelper
-support_mail	dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def support_mail$/;"	f	class:DmUniboLinkHelper
-syncronize	dm_unibo_common//lib/dm_unibo_common/user.rb	/^    def syncronize(upn_or_id, c = User)$/;"	f	class:DmUniboCommon.ClassMethods
-syncronize_with_select	dm_unibo_common//lib/dm_unibo_common/user.rb	/^    def syncronize_with_select(upn_or_id, select_proc = nil, c = User)$/;"	f	class:DmUniboCommon.ClassMethods
+sign_in_and_redirect	../gems/dm_unibo_common/app/controllers/dm_unibo_common/logins_controller.rb	/^  def sign_in_and_redirect(user)$/;"	f	class:DmUniboCommon.LoginsController
+sso_user_upn	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def sso_user_upn$/;"	f	class:DmUniboCommonHelper
+start_impersonation_link	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def start_impersonation_link$/;"	f
+stop_impersonating	../gems/dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^  def stop_impersonating$/;"	f	class:DmUniboCommon.ImpersonationsController
+stop_impersonating?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/impersonation_policy.rb	/^  def stop_impersonating?$/;"	f	class:DmUniboCommon.ImpersonationPolicy
+stop_impersonation_link	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def stop_impersonation_link$/;"	f
+support_mail	../gems/dm_unibo_common/app/helpers/dm_unibo_link_helper.rb	/^  def support_mail$/;"	f
+syncronize	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def syncronize(upn_or_id, c = User)$/;"	f	class:DmUniboCommon.ClassMethods
+syncronize_with_select	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^    def syncronize_with_select(upn_or_id, select_proc = nil, c = User)$/;"	f	class:DmUniboCommon.ClassMethods
+system!	../gems/dm_unibo_common/spec/dummy/bin/setup	/^def system!(*args)$/;"	f
+to_s	../gems/dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^  def to_s$/;"	f	class:DmUniboCommon.Permission
+to_s	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^    def to_s$/;"	f	class:DmUniboCommon.NoUser
+to_s	../gems/dm_unibo_common/lib/dm_unibo_common/errors.rb	/^    def to_s$/;"	f	class:DmUniboCommon.TooManyUsers
+to_s	../gems/dm_unibo_common/lib/dm_unibo_common/organization.rb	/^  def to_s$/;"	f	class:DmUniboCommon
+to_s	../gems/dm_unibo_common/lib/dm_unibo_common/user.rb	/^  def to_s$/;"	f	class:DmUniboCommon
 to_s	app/models/printer.rb	/^  def to_s$/;"	f	class:Printer
 to_s	app/models/printer_model.rb	/^  def to_s$/;"	f	class:PrinterModel
 to_s	app/models/toner.rb	/^  def to_s$/;"	f	class:Toner
 to_s	app/models/toner_model.rb	/^  def to_s$/;"	f	class:TonerModel
 to_s	app/models/vendor.rb	/^  def to_s$/;"	f	class:Vendor
-to_s	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^    def to_s$/;"	f	class:DmUniboCommon.NoUser
-to_s	dm_unibo_common//lib/dm_unibo_common/errors.rb	/^    def to_s$/;"	f	class:DmUniboCommon.TooManyUsers
-to_s	dm_unibo_common//lib/dm_unibo_common/organization.rb	/^  def to_s$/;"	f	class:DmUniboCommon
-to_s	dm_unibo_common//lib/dm_unibo_common/user.rb	/^  def to_s$/;"	f	class:DmUniboCommon
-to_s	dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^  def to_s$/;"	f	class:DmUniboCommon.Permission
-toggle_button	dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def toggle_button$/;"	f
+toggle_button	../gems/dm_unibo_common/app/helpers/dm_unibo_menu_helper.rb	/^  def toggle_button$/;"	f
 toner_model_ids	app/models/organization.rb	/^  def toner_model_ids$/;"	f	class:Organization
 toner_model_params	app/controllers/toner_models_controller.rb	/^  def toner_model_params$/;"	f	class:TonerModelsController
 toner_models	app/models/printer.rb	/^  def toner_models$/;"	f	class:Printer
 toner_params	app/controllers/toners_controller.rb	/^  def toner_params$/;"	f	class:TonersController
 toners	app/pdfs/printable.rb	/^  def toners$/;"	f	class:Printable
-tooltip	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def tooltip(key)$/;"	f	class:DmUniboCommonHelper
-true_user_can_impersonate?	dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^  def true_user_can_impersonate?$/;"	f	class:DmUniboCommon.ImpersonationsController
-true_user_can_impersonate?	dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def true_user_can_impersonate?$/;"	f	class:DmUniboCommonHelper
+tooltip	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def tooltip(key)$/;"	f	class:DmUniboCommonHelper
+true_user_can_impersonate?	../gems/dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^  def true_user_can_impersonate?$/;"	f	class:DmUniboCommon.ImpersonationsController
+true_user_can_impersonate?	../gems/dm_unibo_common/app/helpers/dm_unibo_common_helper.rb	/^  def true_user_can_impersonate?$/;"	f	class:DmUniboCommonHelper
 unusable_toners	app/models/organization.rb	/^  def unusable_toners$/;"	f	class:Organization
 upcase_name	app/models/toner_model.rb	/^  def upcase_name$/;"	f	class:TonerModel
+update	../gems/dm_unibo_common/app/controllers/dm_unibo_common/organizations_controller.rb	/^  def update$/;"	f	class:DmUniboCommon.OrganizationsController
 update	app/controllers/organizations_controller.rb	/^  def update$/;"	f	class:OrganizationsController
 update	app/controllers/printer_models_controller.rb	/^  def update$/;"	f	class:PrinterModelsController
 update	app/controllers/printers_controller.rb	/^  def update$/;"	f	class:PrintersController
 update	app/controllers/toner_models_controller.rb	/^  def update$/;"	f	class:TonerModelsController
 update	app/controllers/toners_controller.rb	/^  def update$/;"	f	class:TonersController
 update	app/controllers/vendors_controller.rb	/^  def update$/;"	f	class:VendorsController
+update?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/application_policy.rb	/^    def update?$/;"	f	class:DmUniboCommon.ApplicationPolicy
+update?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/organization_policy.rb	/^  def update?$/;"	f	class:DmUniboCommon
+update?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/permission_policy.rb	/^  def update?$/;"	f	class:DmUniboCommon.PermissionPolicy
+update?	../gems/dm_unibo_common/lib/dm_unibo_common/policies/user_policy.rb	/^  def update?$/;"	f	class:DmUniboCommon.UserPolicy
 update?	app/policies/printer_model_policy.rb	/^  def update?$/;"	f	class:PrinterModelPolicy
 update?	app/policies/printer_policy.rb	/^  def update?$/;"	f	class:PrinterPolicy
 update?	app/policies/toner_model_policy.rb	/^  def update?$/;"	f	class:TonerModelPolicy
 update?	app/policies/toner_policy.rb	/^  def update?$/;"	f	class:TonerPolicy
-update?	dm_unibo_common//lib/dm_unibo_common/policies/application_policy.rb	/^    def update?$/;"	f	class:DmUniboCommon.ApplicationPolicy
-update?	dm_unibo_common//lib/dm_unibo_common/policies/organization_policy.rb	/^  def update?$/;"	f	class:DmUniboCommon
-update?	dm_unibo_common//lib/dm_unibo_common/policies/permission_policy.rb	/^  def update?$/;"	f	class:DmUniboCommon.PermissionPolicy
-update_authlevels_by_ip	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def update_authlevels_by_ip(client_ip)$/;"	f	class:DmUniboCommon.Authorization
-update_authlevels_by_network	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def update_authlevels_by_network(net)$/;"	f	class:DmUniboCommon.Authorization
-update_authlevels_cache	dm_unibo_common//lib/dm_unibo_common/authorization.rb	/^  def update_authlevels_cache(k)$/;"	f	class:DmUniboCommon.Authorization
-update_authorization	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def update_authorization$/;"	f	class:DmUniboCommon.Controllers.Helpers
-update_authorization_by_ip	dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def update_authorization_by_ip(ip)$/;"	f	class:DmUniboCommon
+update?	app/policies/vendor_policy.rb	/^  def update?$/;"	f	class:VendorPolicy
+update_authlevels_cache	../gems/dm_unibo_common/lib/dm_unibo_common/authorization.rb	/^  def update_authlevels_cache(k)$/;"	f
+update_authorization	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def update_authorization$/;"	f	class:DmUniboCommon.Controllers.Helpers
+update_authorization_by_ip	../gems/dm_unibo_common/app/models/dm_unibo_common/current_user.rb	/^  def update_authorization_by_ip(ip)$/;"	f	class:DmUniboCommon
 usable_toner_models	app/models/organization.rb	/^  def usable_toner_models$/;"	f	class:Organization
-user_signed_in?	dm_unibo_common//lib/dm_unibo_common/controllers/helpers.rb	/^      def user_signed_in?$/;"	f	class:DmUniboCommon.Controllers.Helpers
+user_or_network	../gems/dm_unibo_common/app/models/dm_unibo_common/permission.rb	/^  def user_or_network$/;"	f	class:DmUniboCommon.Permission
+user_signed_in?	../gems/dm_unibo_common/lib/dm_unibo_common/controllers/helpers.rb	/^      def user_signed_in?$/;"	f	class:DmUniboCommon.Controllers.Helpers
+users_with_permission_level	../gems/dm_unibo_common/lib/dm_unibo_common/organization.rb	/^  def users_with_permission_level(level_symbol = nil)$/;"	f	class:DmUniboCommon
 vendor	app/models/printer.rb	/^  def vendor$/;"	f	class:Printer
 vendor	app/models/toner.rb	/^  def vendor$/;"	f	class:Toner
 vendor_params	app/controllers/vendors_controller.rb	/^    def vendor_params$/;"	f	class:VendorsController
 vendor_to_models_array	app/helpers/application_helper.rb	/^  def vendor_to_models_array(what)$/;"	f	class:ApplicationHelper.vendor_to_models_json
 vendor_to_models_json	app/helpers/application_helper.rb	/^  def vendor_to_models_json(what)$/;"	f	class:ApplicationHelper
-vertical_form_for	dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def vertical_form_for(record, options={}, &block)$/;"	f
-who_impersonate	dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^  def who_impersonate$/;"	f	class:DmUniboCommon.ImpersonationsController
+vertical_form_for	../gems/dm_unibo_common/app/helpers/dm_unibo_form_helper.rb	/^  def vertical_form_for(record, options={}, &block)$/;"	f
+who_impersonate	../gems/dm_unibo_common/app/controllers/dm_unibo_common/impersonations_controller.rb	/^  def who_impersonate$/;"	f	class:DmUniboCommon.ImpersonationsController
+window.display_if	../gems/dm_unibo_common/js/index.js	/^window.display_if = function (txt, what, condition_input) {$/;"	f
+window.display_if_checked	../gems/dm_unibo_common/js/index.js	/^window.display_if_checked = function (what, condition_input) {$/;"	f
+window.toggleVisible	../gems/dm_unibo_common/js/index.js	/^window.toggleVisible = function (item) {$/;"	f
+window.toggle_div	../gems/dm_unibo_common/js/index.js	/^window.toggle_div = function (boolean, first, second, with_listener = true) {$/;"	f
 with_gift_toner	app/models/printer_model.rb	/^  def self.with_gift_toner$/;"	F	class:PrinterModel
