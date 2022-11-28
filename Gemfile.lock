@@ -328,10 +328,14 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  cssbundling-rails (~> 1.1)
   debug
   dm_unibo_common!
   dm_unibo_user_search!
+  jsbundling-rails
   selenium-webdriver
+  sprockets-rails
+  turbo-rails
   tzinfo-data
   web-console
   webdrivers
