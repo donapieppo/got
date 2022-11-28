@@ -6,3 +6,5 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+import { DmTest, TurboModalController } from "dm_unibo_common"
+application.register("turbo-modal", TurboModalController)
