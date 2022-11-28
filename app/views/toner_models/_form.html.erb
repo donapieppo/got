@@ -1,4 +1,6 @@
-<p class="alert alert-warning"> <%= t :please_mantain_correct_data %></p>
+<div class="alert alert-warning">
+  <%= t :please_mantain_correct_data %>
+</div>
 
 <%= dm_form_for @toner_model, title: "Modifica del modello di toner #{@toner_model.name}" do |toner_model| %>
   <%= toner_model.dm_error_notification %>  
@@ -7,30 +9,29 @@
   <%= toner_model.input :name, hint: t(:toner_model_name_hint) %>  
 
   <div class="mb-3" id="compatible_printers">
-  <h2>Stampanti compatibili</h2>
+    <h2>Stampanti compatibili</h2>
 
-  <% Vendor.includes(:printer_models).order('vendors.name').each do |vendor| %>
-    <% models = vendor.printer_models %>
-    <% next if models.empty? %>  
+    <div class="accordion" id="vendorList">
+      <% Vendor.includes(:printer_models).order('vendors.name').each do |vendor| %>
+        <% models = vendor.printer_models %>
+        <% next if models.empty? %>  
 
-    <div class="card">
-      <div class="card-header"><%= vendor %></div>
-      <div class="card-body">
-        <%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false, wrapper_html: {class: 'pippo123'}, wrapper: false %>
-        <%= link_to "aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id) %>
-      </div>
+        <div class="accordion-item">
+          <div class="accordion-header" id="heading<%= dom_id(vendor) %>">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= dom_id(vendor) %>" aria-expanded="true" aria-controls="collapse<%= dom_id(vendor) %>">
+              <%= vendor %>
+            </button>
+          </div>
+          <div id="collapse<%= dom_id(vendor) %>" class="accordion-collapse collapse" aria-labelledby="heading<%= dom_id(vendor) %>" data-bs-parent="#vendorList">
+            <div class="accordion-body">
+              <%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false, wrapper_html: {class: 'pippo123'}, wrapper: false %>
+              <%= link_to "aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
   </div>
   <%= toner_model.submit 'Salva' %> - <%= link_to_back toner_models_path %>  
 <% end %>
 
-<%= javascript_tag do %>  
-  $(document).ready(function(){
-    $(".card-body").toggle();
-    $(".card-header").click(function() {
-      $(this).next(".card-body").slideToggle();
-    });
-    $("input:checked").closest(".card-body").show();
-  });
-<% end %>
