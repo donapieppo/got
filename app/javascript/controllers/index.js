@@ -6,5 +6,9 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-import { DmTest, TurboModalController } from "dm_unibo_common"
+import ModelSelectorController from "./model_selector_controller"
+application.register("model-selector", ModelSelectorController)
+import { DmTest, TurboModalController, LimitVisibleController } from "dm_unibo_common"
 application.register("turbo-modal", TurboModalController)
+application.register("limit-visible", LimitVisibleController)
+
