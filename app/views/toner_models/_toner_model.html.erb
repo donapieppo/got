@@ -4,7 +4,7 @@
   <%= dm_card title: t(:present_toners) do %>  
     <div class="list-group">
       <% @available_toners.each do |available_toner| %>
-        <%= link_to available_toner.organization.code, root_path(__org__: available_toner.organization.code), class: "list-group-item list-group-item-action" %>  
+        <%= link_to available_toner.organization, root_path(__org__: available_toner.organization.code), class: "list-group-item list-group-item-action" %>  
       <% end %>
     </div>
   <% end %>
