@@ -1,8 +1,8 @@
 <% if policy(@printer_model).edit? %>  
-  <%= link_to(dmicon('edit') + ' edit', [:edit, @printer_model], class: :button) %>
+  <%= link_to dm_icon("edit", text: "edit"), [:edit, @printer_model], class: :button %>
 <% end %>
 
 <% if policy(current_organization).add_printer? %>  
-  <%= link_to(dmicon('plus') + ' add a printer of this model to ' + current_organization.name, new_printer_model_printer_path(@printer_model), class: :button) %>
+  <%= link_to dm_icon("plus", text: "aggiungi una stampante di questo nodello a #{current_organization.name}"), new_printer_model_printer_path(@printer_model), class: :button %>
 <% end %>
 

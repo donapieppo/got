@@ -16,5 +16,5 @@
 </ul>
 
 <% if policy(current_organization).edit? %>
-  <%= link_to dmicon('plus') + ' nuovo amministratore', new_permission_path, class: :button %>  
+  <%= link_to dm_icon("plus", text: "nuovo amministratore"), new_permission_path, class: :button %>  
 <% end %>
