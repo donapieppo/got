@@ -9,7 +9,7 @@
       <%= p.organization %>  
       <%= current_user.authorization.can_manage?(p.organization_id).inspect %>
       <% if policy(p).destroy? %>  
-        <%= link_to_delete(permission_path(p)) %>
+        <%= link_to_delete "", permission_path(p) %>
       <% end %>
     </li>
   <% end %>

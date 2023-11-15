@@ -5,26 +5,26 @@
     <% else %>
       <i class="fa-solid fa-face-smile fa-2xl text-success me-2"></i>
     <% end %>
-    <%= t(:toner_available_for_your_printers) %>
+    Toner diponibili per la struttura <%= @organization.name %>
   </h2>
   <% if @available_toners.empty? %>  
     <p><%= t :no_available_toners %></p>
+  <% else %>
+    <ul>
+      <% @available_toners.each do |toner| %>  
+        <li>
+          Per <strong><%= toner.toner_model.printers(@organization).map(&:name).join(', ') %></strong>
+          <%= (toner.number > 1) ? 'sono disponibili' : 'è disponibile' %>  
+          <%= toner.number %> toner <%= "toner" %><br/>
+          presso <strong><%= link_to toner.organization.name, current_organization_root_path(__org__: toner.organization.code) %></strong><br/>
+          contatta 
+          <%= toner.organization.permissions.map{|p| link_to p.user.to_s, "mailto: #{p.user.upn}"}.join(', ').html_safe %>
+        </li>
+      <% end %>
+    </ul>
   <% end %>
-  <ul>
-    <% @available_toners.each do |toner| %>  
-      <li>
-        Per <strong><%= toner.toner_model.printers(@organization).map(&:name).join(', ') %></strong>
-        <%= (toner.number > 1) ? 'sono disponibili' : 'è disponibile' %>  
-        <%= toner.number %> toner <%= toner %><br/>
-        presso <strong><%= link_to toner.organization.name, current_organization_root_path(__org__: toner.organization.code) %></strong><br/>
-        contatta 
-        <%= toner.organization.permissions.map{|p| link_to p.user.to_s, "mailto: #{p.user.upn}"}.join(', ').html_safe %>
-      </li>
-    <% end %>
-  </ul>
 
   <p>
   Puoi controllare direttamente l'<%= link_to 'elenco di tutte le stampanti compatibili', toners_path %> con i relativi toner disponibili. 
-  <%# <%= link_to dmicon('file-pdf-o'), report_path %1> %>  
   </p>
 </div>

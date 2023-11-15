@@ -5,17 +5,17 @@ class Organization < ApplicationRecord
   has_many :toners
 
   # cache
-  attr_accessor :_printer_model_ids, 
-                :_toner_model_ids, 
-                :_usable_toner_models, 
-                :_unusable_toners
+  attr_accessor :_printer_model_ids,
+    :_toner_model_ids,
+    :_usable_toner_models,
+    :_unusable_toner
 
   def admins_string
-    self.admins.includes(:user).map {|admin| admin.to_s}.join(', ')
+    self.admins.includes(:user).map { |admin| admin.to_s }.join(", ")
   end
 
   def admins_mail_array
-    self.admins.includes(:user).map {|admin| admin.user.upn}
+    self.admins.includes(:user).map { |admin| admin.user.upn }
   end
 
   # me
@@ -29,14 +29,14 @@ class Organization < ApplicationRecord
   end
 
   def usable_toner_models
-    @_usable_toner_models ||= TonerModel.includes(:printer_models).where('printer_models_toner_models.printer_model_id': printer_model_ids)
+    @_usable_toner_models ||= TonerModel.includes(:printer_models).where("printer_models_toner_models.printer_model_id": printer_model_ids)
   end
 
   def unusable_toners
     @_unusable_toners ||= self.toners.where.not(toner_model: usable_toner_models.map(&:id))
   end
 
-  # others 
+  # others
 
   # toners (in tutte organizations) for my printers
   def available_toners

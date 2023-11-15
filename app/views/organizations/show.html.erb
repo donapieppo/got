@@ -1,16 +1,17 @@
 <h1>Toner resi disponibili per altre strutture</h1>
-<h2>da: <%= current_organization.name %></h2>
 
-<% if (unusable_toners = current_organization.unusable_toners).any? %>
-  <div class="list-group">
+<h2>da: <%= @organization.name %></h2>
+
+<% if (unusable_toners = @organization.unusable_toners).any? %>
+  <div class="list-group my-3">
     <% unusable_toners.each do |toner| %>
-      <%= modal_link_to toner.toner_model, toner.toner_model, addclass: 'list-group-item list-group-item-action py-1' %></li>
+      <%= modal_link_to toner.toner_model, toner.toner_model, addclass: 'list-group-item list-group-item-action' %></li>
   <% end %>
   </div>
 <% end %>
 
-<div class='mb-3'>
-  <%= render 'home/admins', organization: current_organization %>  
+<div class='my-3'>
+  <%= render 'home/admins', organization: @organization %>  
 </div>
 
 

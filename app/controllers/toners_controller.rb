@@ -12,7 +12,7 @@ class TonersController < ApplicationController
     authorize current_organization, :manage?
     if params[:toner_model_id]
       @toner_model = TonerModel.find(params[:toner_model_id])
-      if toner = current_organization.toners.where(toner_model: @toner_model).first
+      if (toner = current_organization.toners.where(toner_model: @toner_model).first)
         redirect_to [:edit, toner] and return
       end
     else
@@ -25,27 +25,27 @@ class TonersController < ApplicationController
     @toner = current_organization.toners.new(toner_params)
     authorize @toner
     if @toner.save
-      redirect_to current_organization_root_path, notice: 'Il toner è stato aggiunto.'
+      redirect_to current_organization_root_path, notice: "Il toner è stato aggiunto."
     else
       render action: :new, status: :unprocessable_entity
     end
   end
-  
+
   def edit
     render action: :new, status: :unprocessable_entity
   end
 
   def update
     if @toner.update(toner_params)
-      redirect_to current_organization_root_path, notice: 'Il toner è stato aggiornato.'
+      redirect_to current_organization_root_path, notice: "Il toner è stato aggiornato."
     else
       render action: :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @toner.delete 
-    redirect_to current_organization_root_path, notice: 'Il toner è stato eliminato da quelli disponibili.'
+    @toner.delete
+    redirect_to current_organization_root_path, notice: "Il toner è stato eliminato da quelli disponibili."
   end
 
   private
@@ -58,7 +58,4 @@ class TonersController < ApplicationController
     @toner = current_organization.toners.find(params[:id])
     authorize @toner
   end
-
 end
-
-

@@ -2,16 +2,16 @@ class OrganizationPolicy < DmUniboCommon::OrganizationPolicy
   configure_authlevels
 
   def show?
-    true
+    @user
   end
 
-  # everyone can crate. When created he has permission on 
+  # everyone can crate. When created he has permission on
   def create?
-    true
+    @user
   end
 
   def edit?
-    @user.authorization.can_manage?(@record)
+    manage?
   end
 
   def add_printer?

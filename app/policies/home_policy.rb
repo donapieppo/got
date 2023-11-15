@@ -11,4 +11,3 @@ class HomePolicy < ApplicationPolicy
     true
   end
 end
-

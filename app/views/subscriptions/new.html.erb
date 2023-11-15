@@ -18,7 +18,7 @@
         Non sono ancora stati definiti amministratori per questa Struttura.
       </p>
       <p>
-      <%= link_to dmicon('key') + ' Gestisci questa struttura', subscriptions_path(oid: organization.id), method: :post, data: { confirm: "Siete sicuri di voler gestire la struttura #{organization}?"}, class: :button %>
+      <%= link_to dm_icon("key", text: "Gestisci questa struttura"), subscriptions_path(oid: organization.id), method: :post, data: {confirm: "Siete sicuri di voler gestire la struttura #{organization}?"}, class: :button %>
       </p>
     <% end %>
     </dd>

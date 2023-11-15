@@ -1,7 +1,7 @@
 <strong><%= t :admins %></strong>: 
 
 <% organization.permissions.each do |p| %>  
-  <%= mail_to p.user.upn, p.user.cn, class: 'btn btn-sm btn-outline-info' %>
+  <%= mail_to p.user.upn, p.user.cn, class: 'underline px-1' %>
 <% end %>
 
 <% if policy(organization).edit? %>

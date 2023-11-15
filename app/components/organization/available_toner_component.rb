@@ -2,7 +2,7 @@
 
 class Organization::AvailableTonerComponent < ViewComponent::Base
   def before_render
-    @cross_icon = helpers.dmicon('times-circle', size: 32)
+    @cross_icon = helpers.dm_icon("times-circle", size: 32)
   end
 
   def initialize(organization:)

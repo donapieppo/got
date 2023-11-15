@@ -1,5 +1,5 @@
 <% if @available_toners.empty? %>  
-  <p class="alert alert-warning"><%= dmicon 'times-circle', size: 32 %> <%= t :no_available_toners %></p>
+  <p class="alert alert-warning"><%= dm_icon 'times-circle', size: 32 %> <%= t :no_available_toners %></p>
 <% end %>
 <ul>
   <% @available_toners.each do |toner| %>  
@@ -17,6 +17,6 @@
 
 <p>
   Puoi controllare direttamente l'<%= link_to 'elenco di tutte le stampanti compatibili', toners_path %> con i toner disponibili. 
-  <%= link_to dmicon('file-pdf-o'), report_path %>  
+  <%= link_to dm_icon('file-pdf-o'), report_path %>  
 </p>
 

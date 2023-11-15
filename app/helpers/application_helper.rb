@@ -15,9 +15,8 @@ module ApplicationHelper
     m.constantize.order(:name).inject(Hash.new {|hash, key| hash[key] = []}) do |res, p| 
       res[p.vendor_id] << p.id
       res
-    end.to_json.html_safe
+    end
   end
-
 end
 
 include DmUniboCommonHelper

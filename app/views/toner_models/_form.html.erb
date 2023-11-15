@@ -18,14 +18,16 @@
 
         <div class="accordion-item">
           <div class="accordion-header" id="heading<%= dom_id(vendor) %>">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= dom_id(vendor) %>" aria-expanded="true" aria-controls="collapse<%= dom_id(vendor) %>">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= dom_id(vendor) %>" aria-expanded="false" aria-controls="collapse<%= dom_id(vendor) %>">
               <%= vendor %>
             </button>
           </div>
           <div id="collapse<%= dom_id(vendor) %>" class="accordion-collapse collapse" aria-labelledby="heading<%= dom_id(vendor) %>" data-bs-parent="#vendorList">
             <div class="accordion-body">
-              <%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false, wrapper_html: {class: 'pippo123'}, wrapper: false %>
-              <%= link_to "aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id) %>
+              <%= toner_model.association :printer_models, collection: models, as: :check_boxes, label: false, wrapper: false %>
+              <div class="m-2 text-end">
+                <%= link_to "Aggiungi nuova stampante #{vendor.name}", new_printer_model_path(vendor_id: vendor.id) %>
+              </div>
             </div>
           </div>
         </div>
@@ -34,4 +36,3 @@
   </div>
   <%= toner_model.submit 'Salva' %> - <%= link_to_back toner_models_path %>  
 <% end %>
-

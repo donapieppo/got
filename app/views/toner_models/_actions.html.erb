@@ -1,19 +1,11 @@
-<% if policy(@toner_model).edit? %>  
-  <%= link_to(dmicon('edit') + ' edit toner model', [:edit, @toner_model], class: :button) %>
-<% end %>
-
-<% if toner = current_organization.toners.where(toner_model_id: @toner_model.id).first %>  
-  <%= link_to dmicon('warehouse') + " edit presence in #{current_organization.name}", edit_toner_path(toner), class: :button %>  
-<% else %>
-  <%= link_to(dmicon('plus') + ' add a toner of this model to ' + current_organization.name, new_toner_model_toner_path(@toner_model), class: :button) %>
+<% if policy(@toner_model).edit? %>
+  <%= link_to dm_icon("edit", text: "Modifica il modello"), [:edit, @toner_model], class: :button %>
 <% end %>
 
 <% if policy(current_organization).add_toner? %>  
-  <p class="centered_action mb-3 mt-3">
-  <%= link_to new_toner_model_toner_path(@toner_model), class: 'btn btn-success btn-lg'  do %>
-    <%= dmicon('plus') %> Aggiungi toner <br/>
-    <%= @toner_model %><br/>
-    a <%= current_organization %>
-<% end %>
-  </p>
+  <% if toner = current_organization.toners.where(toner_model_id: @toner_model.id).first %>  
+    <%= link_to dm_icon("warehouse", text: "Modifica la presenza nella struttura #{current_organization.name}"), edit_toner_path(toner), class: :button %>  
+  <% else %>
+    <%= link_to dm_icon("plus", text: "Aggiungi un toner a #{current_organization.name}"), new_toner_model_toner_path(@toner_model), class: :button %>
+  <% end %>
 <% end %>

@@ -3,7 +3,7 @@ class Printer < ApplicationRecord
   belongs_to :printer_model
 
   validates :name, presence: {}
-  validates :name, uniqueness: { scope: [:organization_id], message: 'La stampante è già stata registrata nella struttura.' }
+  validates :name, uniqueness: { scope: [:organization_id], message: "La stampante è già stata registrata nella struttura." }
 
   validates :organization, presence: {}
   validates :printer_model, presence: {}
@@ -14,7 +14,7 @@ class Printer < ApplicationRecord
 
   # hostname without domain
   def short_name
-    self.name.gsub(/\..*$/, '')
+    self.name.gsub(/\..*$/, "")
   end
 
   def vendor

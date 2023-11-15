@@ -1,30 +1,23 @@
 <% if @available_toners.empty? %>  
   <p class="alert alert-warning"><%= t :no_present_toners %></p>
 <% else %>
-  <div class="alert alert-success">
-    <%= t :present_toners %>:
-    <ul>
+  <%= dm_card title: t(:present_toners) do %>  
+    <div class="list-group">
       <% @available_toners.each do |available_toner| %>
-        <li>
-          <%= link_to available_toner.organization, root_path(__org__: available_toner.organization.code) %>  
-          <% if current_organization == available_toner.organization %>  
-            <%= link_to_edit edit_toner_path(available_toner) %>  
-          <% end %>
-        </li>
+        <%= link_to available_toner.organization.code, root_path(__org__: available_toner.organization.code), class: "list-group-item list-group-item-action" %>  
       <% end %>
-    </ul>
-  </div>
+    </div>
+  <% end %>
 <% end %>
 
 <% if @compatible_printers.empty? %>  
   <p class="alert alert-warning">Registrazione incompleta. Si prega di aggiungere stampanti compatibili.</p>
 <% else %>
-  <h3><%= t :compatible_printers %></h3>
-  <div class="list-group">
-    <% @compatible_printers.each do |compatible_printer| %>  
-      <%= modal_link_to compatible_printer, compatible_printer, addclass: "list-group-item list-group-item-action" %></dd>
+  <%= dm_card title: t(:compatible_printers) do %>  
+    <div class="list-group">
+      <% @compatible_printers.each do |compatible_printer| %>  
+        <%= modal_link_to compatible_printer, compatible_printer, addclass: "list-group-item list-group-item-action" %>
     <% end %>
-  </div>
+    </div>
+  <% end %>
 <% end %>
-
-<%# <%= dm_modal_js_helper %1> %>  

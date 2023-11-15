@@ -23,7 +23,7 @@ class TonerModelsController < ApplicationController
     @toner_model = TonerModel.new(toner_model_params)
     authorize @toner_model
     if @toner_model.save
-      redirect_to toner_models_path, notice: 'toner was successfully created.'
+      redirect_to toner_models_path, notice: "toner was successfully created."
     else
       render action: :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class TonerModelsController < ApplicationController
 
   def update
     if @toner_model.update(toner_model_params)
-      redirect_to toner_models_path, notice: 'toner was successfully updated.'
+      redirect_to toner_models_path, notice: "toner was successfully updated."
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class TonerModelsController < ApplicationController
 
   def destroy
     @toner_model.destroy
-    redirect_to toner_models_path, notice: 'toner was successfully destroyed.'
+    redirect_to toner_models_path, notice: "toner was successfully destroyed."
   end
 
   private

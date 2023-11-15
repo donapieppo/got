@@ -4,14 +4,14 @@ class TonerModel < ApplicationRecord
   has_and_belongs_to_many :printer_models
 
   validates :name, presence: {}
-  validates :name, uniqueness: { scope: [:vendor_id], message: 'Un toner di questa marca con questo nome esiste già.' }
+  validates :name, uniqueness: {scope: [:vendor_id], message: "Un toner di questa marca con questo nome esiste già."}
 
-  default_scope { includes(:vendor).order('vendors.name, toner_models.name') }
+  default_scope { includes(:vendor).order("vendors.name, toner_models.name") }
 
   before_validation :upcase_name
 
   def to_s
-    self.vendor.name + ' ' + self.name
+    self.vendor.name + " " + self.name
   end
 
   def name_with_vendor
@@ -29,10 +29,9 @@ class TonerModel < ApplicationRecord
     res
   end
 
-  # FIXME 
+  # FIXME
   # render scope with group_by
   def interested_organizations
     Printer.where(printer_model_id: self.printer_model_ids).includes(:organization).map(&:organization).uniq
   end
 end
-

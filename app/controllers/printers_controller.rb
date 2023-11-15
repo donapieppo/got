@@ -8,10 +8,10 @@ class PrintersController < ApplicationController
   def new
     @printer = current_organization.printers.new(name: Rails.configuration.domain_name)
     authorize @printer
-    if params[:printer_model_id]
-      @printer.printer_model = PrinterModel.find(params[:printer_model_id])
+    @printer.printer_model = if params[:printer_model_id]
+      PrinterModel.find(params[:printer_model_id])
     else
-      @printer.printer_model = PrinterModel.first
+      PrinterModel.first
     end
   end
 
@@ -19,7 +19,7 @@ class PrintersController < ApplicationController
     @printer = current_organization.printers.new(printer_params)
     authorize @printer
     if @printer.save
-      redirect_to current_organization_root_path, notice: 'Printer was successfully created.'
+      redirect_to current_organization_root_path, notice: "Printer was successfully created."
     else
       render action: :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class PrintersController < ApplicationController
 
   def update
     if @printer.update(printer_params)
-      redirect_to current_organization_root_path, notice: 'La stampante è stata correttamente aggiornata.'
+      redirect_to current_organization_root_path, notice: "La stampante è stata correttamente aggiornata."
     else
       render :edit
     end
@@ -52,4 +52,3 @@ class PrintersController < ApplicationController
     params[:printer].permit(:name, :printer_model_id, :description, :rent)
   end
 end
-

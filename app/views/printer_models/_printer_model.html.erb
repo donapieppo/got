@@ -2,7 +2,7 @@
   <% if @available_toners.empty? %>  
     <p class="alert alert-warning"><%= t :no_available_toners_for_this_printer %></p>
   <% else %>
-    <div class="list-group">
+    <div class="list-group my-2">
       <% @available_toners.each do |available_toner| %>
         <%= link_to available_toner.organization, organization_path(available_toner.organization), class: "list-group-item list-group-item-action" %></li>
     <% end %>
@@ -14,7 +14,7 @@
   <% if @compatible_toners.empty? %>  
     <p class="alert alert-warning">Registrazione incompleta. Si prega di aggiungere i modelli di toner compatibili.</p>
   <% else %>
-    <div class="list-group my-3">
+    <div class="list-group my-2">
       <% @compatible_toners.each do |compatible_toner| %>  
         <%= modal_link_to compatible_toner, compatible_toner, addclass: "list-group-item list-group-item-action" %>
       <% end %>
@@ -24,7 +24,7 @@
 
 <% if (printers = @printer_model.printers).any? %>  
   <%= dm_card title: 'Stampanti di questo modello si trovano presso' do %>
-    <div class="list-group my-3">
+    <div class="list-group my-2">
       <% printers.map(&:organization).uniq.each do |organization| %>  
         <%= link_to organization, organization_path(organization), class: "list-group-item list-group-item-action" %>
         <%# <% if organization == current_organization %1> %>  
