@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
-  mount DmUniboCommon::Engine => "/dm_unibo_common"
+  mount DmUniboCommon::Engine => "/dm_unibo_common", :as => "dm_unibo_common"
 
-  get '/choose_organization', to: "home#choose_organization"
+  get "/choose_organization", to: "home#choose_organization"
 
   resources :helps
+
+  namespace :api, defaults: { format: :json } do
+    get "vendor/:id/toner_models", to: "toner_models#index"
+  end
 
   scope ":__org__" do
     resources :organizations
     resources :permissions
 
     resources :vendors
-    resources :printer_models do 
+    resources :printer_models do
       resources :printers
     end
     resources :toner_models do
@@ -18,14 +22,15 @@ Rails.application.routes.draw do
     end
 
     resources :printers
-    resources :toners 
+    resources :toners
 
-    post 'search', to: 'home#search', as: 'search'
-    get  'report', to: 'home#report', as: 'report'
+    post "search", to: "home#search", as: "search"
+    get "report", to: "home#report", as: "report"
 
-    resources  :subscriptions
+    resources :subscriptions
 
-    get '/', to: 'home#index', as: 'current_organization_root'
+    get "/", to: "home#index", as: "current_organization_root"
   end
-  root to: 'home#index'
+
+  root to: "home#index"
 end
