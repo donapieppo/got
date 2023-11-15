@@ -21,6 +21,8 @@
       <%= link_to_edit "", edit_printer_path(printer) %> 
       <%= link_to_delete "", printer_path(printer) %> 
     <% end %>
-    <%= link_to(dmicon('external-link-alt'), 'http://' + printer.name, target: 'new') if printer.name =~ /unibo.it/ %>  
+    <% if printer.name =~ /unibo.it/ %>
+      <%= link_to dm_icon('external-link-alt'), 'http://' + printer.name, target: 'new' %>  
+    <% end %>
   </div>
 </div>
