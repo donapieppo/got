@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/donapieppo/dm_unibo_common.git
-  revision: 443632606587bf29122157c7e92e81fe896dbf5f
+  revision: 170f9b9d88ad5b56a5db783c5c26f50468538dae
   branch: master
   specs:
     dm_unibo_common (5.1.2)
@@ -15,7 +15,7 @@ GIT
       pretender
       puma (~> 6.0)
       pundit
-      rails (>= 7.0.5)
+      rails (~> 7.1)
       simple_form (~> 5.1)
       sprockets-rails
       stimulus-rails
