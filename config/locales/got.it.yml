@@ -2,8 +2,9 @@ it:
   header_title:   Game of Toners - Gestione toner dismessi. Università di Bologna.
   organization:   Struttura
   organizations:  Strutture
-  permissions:         Amministratori
+  permissions:    Amministratori
   modify_admins:  Modifica amministratori
+  admins:         Amministratori
   vendor:         Marca
   model:          Modello
   models:         Modelli
@@ -15,7 +16,7 @@ it:
   toner_models:   Modelli di toner
   printer_model:  Modello di stampante
   toner_model:    Modello di toner
-  present_toners: Sono presenti toner di questo tipo 
+  present_toners: Strutture presso le quali è presente questo tipo di toner
   no_present_toners: Non sono presenti toner di questo tipo 
   no_available_toners: Non sono al momento disponibili toner in altre strutture per le stampanti registrate.
   no_available_toners_for_this_printer: Non sono al momento disponibili toner inutilizzati compatibili con questo modello di stampante.
