@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   mount DmUniboCommon::Engine => "/dm_unibo_common", :as => "dm_unibo_common"
 
+  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
+  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # get "up" => "rails/health#show", as: :rails_health_check
+
   get "/choose_organization", to: "home#choose_organization"
 
   resources :helps
@@ -32,5 +36,5 @@ Rails.application.routes.draw do
     get "/", to: "home#index", as: "current_organization_root"
   end
 
-  root to: "home#index"
+  root "home#index"
 end
