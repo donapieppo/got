@@ -32,7 +32,7 @@ class PrintersController < ApplicationController
     if @printer.update(printer_params)
       redirect_to current_organization_root_path, notice: "La stampante è stata correttamente aggiornata."
     else
-      render :edit
+      render action: :edit, status: :unprocessable_entity
     end
   end
 
@@ -49,6 +49,7 @@ class PrintersController < ApplicationController
   end
 
   def printer_params
+    params[:printer].delete(:vendor)
     params[:printer].permit(:name, :printer_model_id, :description, :rent)
   end
 end
