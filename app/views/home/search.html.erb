@@ -5,7 +5,7 @@
     <%= dm_card title: t(:printer_models) do %>  
       <div class="list-group">
         <% @printer_models.each do |printer_model| %>  
-          <%= modal_link_to printer_model, printer_model_path(printer_model), addclass: "list-group-item list-group-item-action" %>
+          <%= link_to printer_model, printer_model_path(printer_model), class: "list-group-item list-group-item-action" %>
         <% end %>
       </div>
     <% end %>
@@ -14,7 +14,7 @@
     <%= dm_card title: t(:toner_models) do %>  
       <div class="list-group">
         <% @toner_models.each do |toner_model| %>  
-          <%= modal_link_to toner_model, toner_model_path(toner_model), addclass: "list-group-item list-group-item-action" %>
+          <%= link_to toner_model, toner_model_path(toner_model), class: "list-group-item list-group-item-action" %>
         <% end %>
       </div>
     <% end %>

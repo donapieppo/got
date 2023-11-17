@@ -5,7 +5,7 @@
     <%= render partial: 'layouts/menu' %>
 
     <main role="main" class="container">
-      <%= render DmUniboCommon::PrivacyAlertComponent.new(cookies) %>  
+      <%= privacy_alert %>
       <%= bootstrap_flash %>
       <%= turbo_frame_tag "modal" %>
       <%= yield %>

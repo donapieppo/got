@@ -5,7 +5,7 @@
 <% if (unusable_toners = @organization.unusable_toners).any? %>
   <div class="list-group my-3">
     <% unusable_toners.each do |toner| %>
-      <%= modal_link_to toner.toner_model, toner.toner_model, addclass: 'list-group-item list-group-item-action' %></li>
+      <%= link_to toner.toner_model, toner.toner_model, class: 'list-group-item list-group-item-action' %></li>
   <% end %>
   </div>
 <% end %>

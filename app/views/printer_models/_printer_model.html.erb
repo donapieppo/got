@@ -16,7 +16,7 @@
   <% else %>
     <div class="list-group my-2">
       <% @compatible_toners.each do |compatible_toner| %>  
-        <%= modal_link_to compatible_toner, compatible_toner, addclass: "list-group-item list-group-item-action" %>
+        <%= link_to compatible_toner, compatible_toner, class: "list-group-item list-group-item-action" %>
       <% end %>
     </div>
   <% end %>

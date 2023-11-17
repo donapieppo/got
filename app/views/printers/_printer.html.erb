@@ -8,11 +8,11 @@
     <dd><%= @printer.description %></dd>
 
     <dt><%= t :model %>:</dt>
-    <dd><%= modal_link_to @printer.printer_model, @printer.printer_model %></dd>
+    <dd><%= link_to @printer.printer_model, @printer.printer_model %></dd>
 
     <dt><%= t :toners %>:</dt>
     <% printer.printer_model.toner_models.each do |toner_model| %>  
-      <dd><%= modal_link_to toner_model, toner_model %></dd>
+      <dd><%= link_to toner_model, toner_model %></dd>
     <% end %>
   </dl>
 

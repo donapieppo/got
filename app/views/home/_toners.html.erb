@@ -4,7 +4,7 @@
     <li class="<%= 'gift-class' if toner.gift %>">
       <span class="toner_number"><%= toner.number %></span> 
 
-      <strong><%= modal_link_to toner.to_s, toner_model_path(toner.toner_model) %></strong><br/>
+      <strong><%= link_to toner.to_s, toner_model_path(toner.toner_model) %></strong><br/>
 
       <% if toner.gift %>  
         <%= t(:unused) if toner.gift %> 

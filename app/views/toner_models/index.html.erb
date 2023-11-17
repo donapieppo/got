@@ -12,7 +12,7 @@
         <div class="accordion-body">
           <% models.each do |model| %>  
             <% btn_style = @organization_toner_model_ids.include?(model.id) ? 'btn-success' : 'btn-outline-secondary' %>  
-            <%= modal_link_to model.name, toner_model_path(model), addclass: "btn #{btn_style} m-1" %>
+            <%= link_to model.name, toner_model_path(model), class: "btn #{btn_style} m-1" %>
           <% end %>
         </div>
       </div>
