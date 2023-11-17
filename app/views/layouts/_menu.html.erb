@@ -20,6 +20,8 @@
       <% end %>
     <% end %>
 
+    <li><%= link_to dm_icon("question", size: :xl), helps_path %></li>
+
     <!-- ricerca -->
     <%= form_tag search_path, class: "form-inline my-2 my-lg-0 ms-3", role: "search" do %>
       <div class="form-group">
@@ -27,5 +29,4 @@
       </div>
     <% end %>
   <% end %>
-  <li><%= link_to dm_icon("question", size: :xl), helps_path %></li>
 <% end %>
