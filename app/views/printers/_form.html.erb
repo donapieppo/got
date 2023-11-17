@@ -6,8 +6,7 @@
   <%# vendor_id: array of printer_models %>
   <%# { 10: [1,2,4], 20: [3,7] } %>
   <div data-controller="model-selector" 
-     data-model-selector-vendor-to-models-value=<%= raw vendor_to_models_array(:printers).to_json.html_safe %>
-     data-model-selector-vendor-to-models2-value='{"3": [1,2,3], "2": [2,2,2]}'>
+       data-model-selector-vendor-to-models-value=<%= raw vendor_to_models_array(:printers).to_json.html_safe %>>
     <%= printer.input :vendor, 
       collection: Vendor.with_printer_models.order(:name).all, 
       input_html: {data: {action: "change->model-selector#change"}},
