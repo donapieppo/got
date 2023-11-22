@@ -19,7 +19,7 @@ class PrintersController < ApplicationController
     @printer = current_organization.printers.new(printer_params)
     authorize @printer
     if @printer.save
-      redirect_to current_organization_root_path, notice: "Printer was successfully created."
+      redirect_to current_organization_root_path, notice: "La stampante è stata correttamente creata."
     else
       render action: :new, status: :unprocessable_entity
     end
@@ -38,7 +38,13 @@ class PrintersController < ApplicationController
 
   def destroy
     @printer.destroy
-    redirect_to current_organization_root_path
+    # redirect_to current_organization_root_path
+    respond_to do |format|
+      format.turbo_stream {
+        render turbo_stream: turbo_stream.remove(@printer)
+      }
+      format.html { redirect_to current_organization_root_path }
+    end
   end
 
   private
