@@ -4,10 +4,10 @@ class Toner < ApplicationRecord
 
   validates :organization, presence: {}
   validates :toner_model, presence: {}
-  validates :number, numericality: { greater_than: 0 }
+  validates :number, numericality: {greater_than: 0}
 
   def to_s
-    self.toner_model
+    self.toner_model.to_s
   end
 
   def compatible_printers
