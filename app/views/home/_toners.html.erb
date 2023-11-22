@@ -15,7 +15,7 @@
 
       <% compatible_printers = toner.compatible_printers.all %>  
 
-      <% if compatible_printers.empty? and ! toner.gift %>
+      <% if compatible_printers.empty? && !toner.gift %>
         (verificare se utilizzabile da qualche stampante)
       <% else %>
         <%= compatible_printers.map(&:short_name).join(', ') %>  
