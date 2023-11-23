@@ -5,6 +5,9 @@ gem "dm_unibo_user_search", git: "https://github.com/donapieppo/dm_unibo_user_se
 gem "dm_unibo_common", git: "https://github.com/donapieppo/dm_unibo_common.git", branch: "master"
 # gem "dm_unibo_common", path: "/home/rails/gems/dm_unibo_common/"
 
+gem "jsbundling-rails"
+gem "cssbundling-rails"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
