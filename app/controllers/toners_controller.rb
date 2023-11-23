@@ -32,7 +32,7 @@ class TonersController < ApplicationController
   end
 
   def edit
-    render action: :new, status: :unprocessable_entity
+    render action: :new
   end
 
   def update
