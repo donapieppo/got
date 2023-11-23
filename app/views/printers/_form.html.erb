@@ -9,9 +9,11 @@
        data-model-selector-vendor-to-models-value=<%= raw vendor_to_models_array(:printers).to_json.html_safe %>>
     <%= printer.input :vendor, 
       collection: Vendor.with_printer_models.order(:name).all, 
-      input_html: {data: {action: "change->model-selector#change"}},
+      input_html: {data: {action: "change->model-selector#change", "model-selector-target": "vendor"}},
       selected: @printer.vendor.id if @printer.vendor %>
-    <%= printer.association :printer_model, hint: link_to(t(:add_new_printer_model), new_printer_model_path)  %>  
+    <%= printer.association :printer_model,
+      input_html: {data: {"model-selector-target": "model"}}, 
+      hint: link_to(t(:add_new_printer_model), new_printer_model_path) %>  
   </div>
   <%= printer.input :description, hint: t(:printer_description_hint) %>
   <%= printer.input :rent, hint: t(:printer_rent_hint) %>
