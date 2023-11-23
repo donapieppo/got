@@ -13,7 +13,7 @@
         <% end %>
       <% end %>
 
-      <% compatible_printers = toner.compatible_printers.all %>  
+      <% compatible_printers = toner.compatible_printers.to_a %>  
 
       <% if compatible_printers.empty? && !toner.gift %>
         (verificare se utilizzabile da qualche stampante)
