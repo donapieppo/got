@@ -1,7 +1,7 @@
 <div class="list-group">
   <% organization.printers.order('printers.name').includes(printer_model: :vendor).each do |printer| %>  
-    <div id="p_<%= printer.id %>">
-      <%= link_to printer.name, printer_path(printer), class: "list-group-item list-group-item-action py-2", data: { turbo_frame: :modal } %>
+    <div id="<%= dom_id printer %>">
+      <%= link_to printer.name, printer_path(printer), class: "list-group-item list-group-item-action py-2", data: {turbo_frame: :modal} %>
       <div class="details" style="display: none"><!-- filled by remote app/views/printers/_printer.html.erb --></div>
     </div>
   <% end %>
