@@ -225,7 +225,7 @@ GEM
     pundit (2.3.1)
       activesupport (>= 3.0.0)
     racc (1.7.3)
-    rack (3.0.8)
+    rack (3.0.9.1)
     rack-protection (3.0.6)
       rack
     rack-session (2.0.0)
@@ -337,14 +337,12 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  cssbundling-rails (~> 1.1)
+  cssbundling-rails
   debug
   dm_unibo_common!
   dm_unibo_user_search!
   jsbundling-rails
   selenium-webdriver
-  sprockets-rails
-  turbo-rails
   webdrivers
 
 BUNDLED WITH
